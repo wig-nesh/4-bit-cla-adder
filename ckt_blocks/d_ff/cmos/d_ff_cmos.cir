@@ -19,7 +19,7 @@ vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
         Mp OUT IN vdd vdd CMOSP W={width_P} L={2*LAMBDA} 
         + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
         + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
-    .ends INV
+    .ends
     .subckt nand_cmos A B Y 
         MnA Y A   x gnd CMOSN W={width_N} L={length} 
         + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
