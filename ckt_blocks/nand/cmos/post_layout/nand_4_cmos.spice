@@ -1,0 +1,49 @@
+* SPICE3 file created from nand_4_cmos.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 a_39_n56# C a_23_n56# Gnd nfet w=20 l=2
++  ad=200 pd=100 as=200 ps=100
+M1001 Y A vdd w_n6_n6# pfet w=50 l=2
++  ad=1000 pd=440 as=1000 ps=440
+M1002 Y C vdd w_n6_n6# pfet w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 Y B vdd w_n6_n6# pfet w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 Y D a_39_n56# Gnd nfet w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1005 Y D vdd w_n6_n6# pfet w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 a_7_n56# A gnd Gnd nfet w=20 l=2
++  ad=200 pd=100 as=100 ps=50
+M1007 a_23_n56# B a_7_n56# Gnd nfet w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 vdd A 0.02fF
+C1 gnd a_7_n56# 0.27fF
+C2 Y B 0.26fF
+C3 D C 0.71fF
+C4 w_n6_n6# C 0.06fF
+C5 A B 0.27fF
+C6 Y gnd 0.03fF
+C7 Y A 0.05fF
+C8 a_23_n56# D 0.12fF
+C9 a_23_n56# a_39_n56# 0.21fF
+C10 C B 0.49fF
+C11 a_23_n56# a_7_n56# 0.21fF
+C12 Y C 0.08fF
+C13 w_n6_n6# D 0.06fF
+C14 A C 0.08fF
+C15 D a_39_n56# 0.12fF
+C16 a_23_n56# gnd 0.07fF
+C17 D a_7_n56# 0.12fF
+C18 vdd w_n6_n6# 0.36fF
+C19 D B 0.08fF
+C20 w_n6_n6# B 0.06fF
+C21 Y D 0.13fF
+C22 Y w_n6_n6# 0.29fF
+C23 D gnd 0.04fF
+C24 D A 0.08fF
+C25 w_n6_n6# A 0.06fF
+C26 Y a_39_n56# 0.21fF
+C27 gnd a_39_n56# 0.07fF
+C28 Y vdd 3.81fF

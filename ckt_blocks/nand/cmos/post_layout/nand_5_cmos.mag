@@ -1,0 +1,119 @@
+magic
+tech scmos
+timestamp 1731189606
+<< nwell >>
+rect -6 -6 82 56
+<< ntransistor >>
+rect 5 -62 7 -42
+rect 21 -62 23 -42
+rect 37 -62 39 -42
+rect 53 -62 55 -42
+rect 69 -62 71 -42
+<< ptransistor >>
+rect 5 0 7 50
+rect 21 0 23 50
+rect 37 0 39 50
+rect 53 0 55 50
+rect 69 0 71 50
+<< ndiffusion >>
+rect 4 -62 5 -42
+rect 7 -62 8 -42
+rect 20 -62 21 -42
+rect 23 -62 24 -42
+rect 36 -62 37 -42
+rect 39 -62 40 -42
+rect 52 -62 53 -42
+rect 55 -62 56 -42
+rect 68 -62 69 -42
+rect 71 -62 72 -42
+<< pdiffusion >>
+rect 4 0 5 50
+rect 7 0 8 50
+rect 20 0 21 50
+rect 23 0 24 50
+rect 36 0 37 50
+rect 39 0 40 50
+rect 52 0 53 50
+rect 55 0 56 50
+rect 68 0 69 50
+rect 71 0 72 50
+<< ndcontact >>
+rect 0 -62 4 -42
+rect 8 -62 12 -42
+rect 16 -62 20 -42
+rect 24 -62 28 -42
+rect 32 -62 36 -42
+rect 40 -62 44 -42
+rect 48 -62 52 -42
+rect 56 -62 60 -42
+rect 64 -62 68 -42
+rect 72 -62 76 -42
+<< pdcontact >>
+rect 0 0 4 50
+rect 8 0 12 50
+rect 16 0 20 50
+rect 24 0 28 50
+rect 32 0 36 50
+rect 40 0 44 50
+rect 48 0 52 50
+rect 56 0 60 50
+rect 64 0 68 50
+rect 72 0 76 50
+<< polysilicon >>
+rect 5 50 7 53
+rect 21 50 23 53
+rect 37 50 39 53
+rect 53 50 55 53
+rect 69 50 71 53
+rect 5 -42 7 0
+rect 21 -42 23 0
+rect 37 -42 39 0
+rect 53 -42 55 0
+rect 69 -42 71 0
+rect 5 -65 7 -62
+rect 21 -65 23 -62
+rect 37 -65 39 -62
+rect 53 -65 55 -62
+rect 69 -65 71 -62
+<< polycontact >>
+rect 1 -11 5 -7
+rect 17 -18 21 -14
+rect 33 -25 37 -21
+rect 49 -32 53 -28
+rect 65 -39 69 -35
+<< metal1 >>
+rect -9 55 85 59
+rect 0 50 4 55
+rect 16 50 20 55
+rect 32 50 36 55
+rect 48 50 52 55
+rect 64 50 68 55
+rect 8 -7 12 0
+rect 24 -7 28 0
+rect 40 -7 44 0
+rect 56 -7 60 0
+rect 72 -7 76 0
+rect -9 -11 1 -7
+rect 8 -11 69 -7
+rect 72 -11 85 -7
+rect -9 -18 17 -14
+rect -9 -25 33 -21
+rect -9 -32 49 -28
+rect -9 -39 65 -35
+rect 72 -42 76 -11
+rect 12 -46 16 -42
+rect 28 -46 32 -42
+rect 44 -46 48 -42
+rect 60 -46 64 -42
+rect 0 -67 4 -62
+rect -9 -71 85 -67
+<< labels >>
+rlabel metal1 10 55 14 59 5 vdd
+rlabel metal1 -9 -11 -5 -7 3 A
+rlabel metal1 -9 -18 -5 -14 3 B
+rlabel metal1 -9 -25 -5 -21 3 C
+rlabel metal1 -9 -32 -5 -28 3 D
+rlabel metal1 8 -71 12 -67 1 gnd
+rlabel metal1 81 -11 85 -7 7 Y
+rlabel metal1 -9 -39 -5 -35 3 E
+<< end >>

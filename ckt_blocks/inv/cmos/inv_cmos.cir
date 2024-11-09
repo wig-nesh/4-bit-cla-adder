@@ -19,7 +19,7 @@
     + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
 .ends
 
-* Xinv Y A inv_cmos
+* Xinv A Y inv_cmos
 
 * .tran 1n 20n 
 
