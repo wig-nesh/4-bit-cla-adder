@@ -1,7 +1,4 @@
 * .include ../../../tech_files/TSMC_180nm.txt
-.include ../../inv/cmos/inv_cmos.cir
-.include ../../nand/cmos/nand_cmos.cir
-.include ../../nor/cmos/nor_cmos.cir
 .include ../../xor/cmos/xor_cmos.cir
 
 * .param SUPPLY=1.8

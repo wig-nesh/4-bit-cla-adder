@@ -14,11 +14,16 @@
 * vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
 
 .subckt d_ff_cmos D clk Q Qi
-    Xinv    D     Di inv_cmos
-    Xnand1  D clk  x nand_cmos
-    Xnand2 Di clk  y nand_cmos
-    Xnand3  x  Qi  Q nand_cmos
-    Xnand4  y   Q Qi nand_cmos
+    Xinv      D   Di inv_cmos
+    Xinv1   clk clki inv_cmos
+    Xnand1    D clki  x nand_cmos
+    Xnand2   Di clki  y nand_cmos
+    Xnand3    x R   S nand_cmos
+    Xnand4    y S   R nand_cmos
+    Xnand5 clk S   w nand_cmos
+    Xnand6 clk R   v nand_cmos
+    Xnand7    w Qi  Q nand_cmos
+    Xnand8    v Q  Qi nand_cmos
 .ends
 
 * Xdff D clk Q Qi d_ff_cmos

@@ -1,13 +1,13 @@
 * .include ../../../tech_files/TSMC_180nm.txt
-* .include ../../inv/cmos/inv_cmos.cir
-* .include ../../nand/cmos/nand_cmos.cir
-* .include ../../nand/cmos/nand_3_cmos.cir
-* .include ../../nand/cmos/nand_4_cmos.cir
-* .include ../../nand/cmos/nand_5_cmos.cir
-* .include ../../nor/cmos/nor_cmos.cir
-* .include ../../nor/cmos/nor_3_cmos.cir
-* .include ../../nor/cmos/nor_4_cmos.cir
-* .include ../../nor/cmos/nor_5_cmos.cir
+.include ../../inv/cmos/inv_cmos.cir
+.include ../../nand/cmos/nand_cmos.cir
+.include ../../nand/cmos/nand_3_cmos.cir
+.include ../../nand/cmos/nand_4_cmos.cir
+.include ../../nand/cmos/nand_5_cmos.cir
+.include ../../nor/cmos/nor_cmos.cir
+.include ../../nor/cmos/nor_3_cmos.cir
+.include ../../nor/cmos/nor_4_cmos.cir
+.include ../../nor/cmos/nor_5_cmos.cir
 
 * .param SUPPLY=1.8
 * .param LAMBDA=0.09u
@@ -49,10 +49,14 @@
     X2nand10 P0 C0         ji nand_cmos
     X2and10  ji j inv_cmos
     
-    X5nor1 a b c d G3 C4 nor_5_cmos
-    X4nor2 e f g   G2 C3 nor_4_cmos
-    X3nor3 h i     G1 C2 nor_3_cmos
-    X2nor4 j       G0 C1 nor_cmos
+    X5nor1 a b c d G3 k nor_5_cmos
+    X5or1 k C4 inv_cmos
+    X4nor2 e f g   G2 l nor_4_cmos
+    X4or2 l C3 inv_cmos
+    X3nor3 h i     G1 m nor_3_cmos
+    X3or3 m C2 inv_cmos
+    X2nor4 j       G0 n nor_cmos
+    X2or4 n C1 inv_cmos
 .ends
 
 * X1 C0 G0 P0 P1 G1 P2 G2 P3 G3 C1 C2 C3 C4 cla_gen_cmos
