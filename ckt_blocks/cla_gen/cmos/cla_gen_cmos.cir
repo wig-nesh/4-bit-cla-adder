@@ -1,0 +1,67 @@
+* .include ../../../tech_files/TSMC_180nm.txt
+.include ../../inv/cmos/inv_cmos.cir
+.include ../../nand/cmos/nand_cmos.cir
+.include ../../nand/cmos/nand_3_cmos.cir
+.include ../../nand/cmos/nand_4_cmos.cir
+.include ../../nor/cmos/nor_cmos.cir
+.include ../../nor/cmos/nor_3_cmos.cir
+.include ../../nor/cmos/nor_4_cmos.cir
+
+* .param SUPPLY=1.8
+* .param LAMBDA=0.09u
+* .param width_N={20*LAMBDA}
+* .param width_P={2.5*width_N}
+* .param length={2*LAMBDA}
+* .global gnd vdd
+
+* VDD vdd gnd SUPPLY
+* vinP3 P3 gnd PULSE(0 SUPPLY 160ns 1ps 1ps 160ns 320ns)
+* vinG3 G3 gnd PULSE(0 SUPPLY  80ns 1ps 1ps  80ns 160ns)
+* vinP2 P2 gnd PULSE(0 SUPPLY  40ns 1ps 1ps  40ns  80ns)
+* vinG2 G2 gnd PULSE(0 SUPPLY  20ns 1ps 1ps  20ns  40ns)
+* vinP1 P1 gnd PULSE(0 SUPPLY  10ns 1ps 1ps  10ns  20ns)
+* vinG1 G1 gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns  10ns)
+* VinC1 C1 gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns   5ns)
+
+.subckt cla_gen_cmos C1 G1 P1 G2 P2 G3 P3 C2 C3 C4
+    X4nand1 C1 P1 P2 P3 a nand_4_cmos
+    X4and1  a ai inv_cmos
+    X3nand2 G1 P2 P3    b nand_3_cmos
+    X3and2  b bi inv_cmos
+    X2nand3 G2 P3       c nand_cmos
+    X2and3  c ci inv_cmos
+    X3nand4 C1 P1 P2    d nand_3_cmos
+    X3and4  d di inv_cmos
+    X2nand5 G1 P2       e nand_cmos
+    X2and5  e ei inv_cmos
+    X2nand6 C1 P1       f nand_cmos
+    X2and6  f fi inv_cmos
+    X4nor1  ai bi ci G3 C4i nor_4_cmos
+    X4or1   C4i C4 inv_cmos
+    X3nor2  di ei G2    C3i nor_3_cmos
+    X3or2   C3i C3 inv_cmos
+    X2nor3  fi G1       C2i nor_cmos
+    X2or3   C2i C2 inv_cmos
+.ends
+
+* X1 C1 G1 P1 G2 P2 G3 P3 C2 C3 C4 cla_gen_cmos
+
+* .tran 1n 320n 
+
+* .measure tran t_in WHEN v(C2)=0.5*SUPPLY CROSS=2
+* .measure tran t_out WHEN v(C3)=0.5*SUPPLY CROSS=1
+* .measure tran t_delay PARAM='t_out-t_in'
+
+* .control
+*     set hcopypscolor = 1
+*     set color0=beige
+*     set color1=black
+*     set color2=blue
+*     set color3=darkgreen
+*     set color4=darkred
+*     set color5=darkviolet
+*     set color6=darkorange
+
+*     run
+*     plot v(C1) v(G1) v(P1) v(G2) v(P2) v(G3) v(P3) v(C4)+2 v(C3)+4 v(C2)+6
+* .endc

@@ -1,0 +1,58 @@
+* .include ../../../tech_files/TSMC_180nm.txt
+.include ../../inv/cmos/inv_cmos.cir
+.include ../../nand/cmos/nand_cmos.cir
+.include ../../xor/cmos/xor_cmos.cir
+
+* .param SUPPLY=1.8
+* .param LAMBDA=0.09u
+* .param width_N={20*LAMBDA}
+* .param width_P={2.5*width_N}
+* .param length={2*LAMBDA}
+* .global gnd vdd
+
+* VDD vdd gnd SUPPLY
+* vinA3 A3 gnd PULSE(0 SUPPLY 320ns 1ps 1ps 320ns  640ns)
+* vinA2 A2 gnd PULSE(0 SUPPLY 160ns 1ps 1ps 160ns  320ns)
+* vinA1 A1 gnd PULSE(0 SUPPLY  80ns 1ps 1ps  80ns  160ns)
+* vinA0 A0 gnd PULSE(0 SUPPLY  40ns 1ps 1ps  40ns   80ns)
+* vinB3 B3 gnd PULSE(0 SUPPLY  20ns 1ps 1ps  20ns   40ns)
+* vinB2 B2 gnd PULSE(0 SUPPLY  10ns 1ps 1ps  10ns   20ns)
+* vinB1 B1 gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns   10ns)
+* VinB0 B0 gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns    5ns)
+
+.subckt pg_gen_cmos A3 A2 A1 A0 B3 B2 B1 B0 P3 P2 P1 P0 G3 G2 G1 G0 
+    Xxor3  A3 B3 P3  xor_cmos
+    Xxor2  A2 B2 P2  xor_cmos
+    Xxor1  A1 B1 P1  xor_cmos
+    Xxor0  A0 B0 P0  xor_cmos
+    Xnand3 A3 B3  a nand_cmos
+    Xnand2 A2 B2  b nand_cmos
+    Xnand1 A1 B1  c nand_cmos
+    Xnand0 A0 B0  d nand_cmos
+    Xand3   a    G3  inv_cmos
+    Xand2   b    G2  inv_cmos
+    Xand1   c    G1  inv_cmos
+    Xand0   d    G0  inv_cmos
+.ends
+
+* X1 A3 A2 A1 A0 B3 B2 B1 B0 P3 P2 P1 P0 G3 G2 G1 G0 pg_gen_cmos
+
+* .tran 1n 640n 
+
+* .measure tran t_in WHEN v(A3)=0.5*SUPPLY CROSS=1
+* .measure tran t_out WHEN v(G2)=0.5*SUPPLY CROSS=16
+* .measure tran t_delay PARAM='t_out-t_in'
+
+* .control
+*     set hcopypscolor = 1
+*     set color0=beige
+*     set color1=black
+*     set color2=blue
+*     set color3=darkgreen
+*     set color4=darkred
+*     set color5=darkviolet
+*     set color6=darkorange
+
+*     run
+*     plot v(A3)+30 v(A2)+28 v(A1)+26 v(A0)+24 v(B3)+22 v(B2)+20 v(B1)+18 v(B0)+16 v(P3)+14 v(P2)+12 v(P1)+10 v(P0)+8 v(G3)+6 v(G2)+4 v(G1)+2 v(G0) 
+* .endc
