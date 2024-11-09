@@ -1,0 +1,77 @@
+.include ../../tech_files/TSMC_180nm.txt
+.include ../../ckt_blocks/d_ff/cmos/d_ff_cmos.cir
+.include ../../ckt_blocks/pg_gen/optimized/pg_gen_optimized.cir
+.include ../../ckt_blocks/cla_gen/cmos/cla_gen_cmos.cir
+.include ../../ckt_blocks/sum_gen/optimized/sum_gen_optimized.cir
+
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={20*LAMBDA}
+.param width_P={2.5*width_N}
+.param length={2*LAMBDA}
+.global gnd vdd
+
+VDD vdd gnd SUPPLY
+vinClk clk gnd PULSE(0 SUPPLY 1ns 1ps 1ps 1ns 2ns)
+vinA3 A3 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinA2 A2 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinA1 A1 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinA0 A0 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinB3 B3 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinB2 B2 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinB1 B1 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinB0 B0 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinC0 C0 gnd PWL(0.99ns 0V 1ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+
+Xdffa3 A3 clk Q3a Q3ai d_ff_cmos
+Xdffa2 A2 clk Q2a Q2ai d_ff_cmos
+Xdffa1 A1 clk Q1a Q1ai d_ff_cmos
+Xdffa0 A0 clk Q0a Q0ai d_ff_cmos
+Xdffb3 B3 clk Q3b Q3bi d_ff_cmos
+Xdffb2 B2 clk Q2b Q2bi d_ff_cmos
+Xdffb1 B1 clk Q1b Q1bi d_ff_cmos
+Xdffb0 B0 clk Q0b Q0bi d_ff_cmos
+Xdffc0 C0 clk Qc0 Q0ci d_ff_cmos
+
+Xpg  A3 A2 A1 A0 B3 B2 B1 B0 P3 P2 P1 P0 G3 G2 G1 G0 pg_gen_optimized
+Xcla C0 G0 P0 P1 G1 P2 G2 P3 G3 C1 C2 C3 C4 cla_gen_cmos
+Xsum P3 P2 P1 P0 C3 C2 C1 C0 S3 S2 S1 S0 sum_gen_optimized
+
+Xdffs3 S3 clk Q3s Q3si d_ff_cmos
+Xdffs2 S2 clk Q2s Q2si d_ff_cmos
+Xdffs1 S1 clk Q1s Q1si d_ff_cmos
+Xdffs0 S0 clk Q0s Q0si d_ff_cmos
+Xdffco C4 clk Qco Qcoi d_ff_cmos
+
+.tran 1n 8n 
+
+.measure tran delay_S3_r TRIG V(A3) VAL=0.5*SUPPLY RISE=1 TARG V(S3) VAL=0.5*SUPPLY RISE=1
+.measure tran delay_S2_r TRIG V(A2) VAL=0.5*SUPPLY RISE=1 TARG V(S2) VAL=0.5*SUPPLY RISE=1
+.measure tran delay_S1_r TRIG V(A1) VAL=0.5*SUPPLY RISE=1 TARG V(S1) VAL=0.5*SUPPLY RISE=1
+.measure tran delay_S0_r TRIG V(A0) VAL=0.5*SUPPLY RISE=1 TARG V(S0) VAL=0.5*SUPPLY RISE=1
+.measure tran delay_C4_r TRIG V(C0) VAL=0.5*SUPPLY RISE=1 TARG V(C4) VAL=0.5*SUPPLY RISE=1
+.measure tran delay_S3_f TRIG V(A3) VAL=0.5*SUPPLY FALL=1 TARG V(S3) VAL=0.5*SUPPLY FALL=1
+.measure tran delay_S2_f TRIG V(A2) VAL=0.5*SUPPLY FALL=1 TARG V(S2) VAL=0.5*SUPPLY FALL=1
+.measure tran delay_S1_f TRIG V(A1) VAL=0.5*SUPPLY FALL=1 TARG V(S1) VAL=0.5*SUPPLY FALL=1
+.measure tran delay_S0_f TRIG V(A0) VAL=0.5*SUPPLY FALL=1 TARG V(S0) VAL=0.5*SUPPLY FALL=1
+.measure tran delay_C4_f TRIG V(C0) VAL=0.5*SUPPLY FALL=1 TARG V(C4) VAL=0.5*SUPPLY FALL=1
+
+
+.control
+    set hcopypscolor = 1
+    set color0=beige
+    set color1=black
+    set color2=blue
+    set color3=darkgreen
+    set color4=darkred
+    set color5=darkviolet
+    set color6=darkorange
+
+    run
+    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(S3)+8 v(Q2s)+6 v(S2)+6 v(Q1s)+4 v(S1)+4 v(Q0s)+2 v(S0)+2 v(Qco) v(C4)
+    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(S3)+8 v(S2)+6 v(S1)+4 v(S0)+2 v(C4)
+    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3a)+8 v(Q2a)+6 v(Q1a)+4 v(Q0a)+2 v(Q3b) v(Q2b)-2 v(Q1b)-4 v(Q0b)-6 v(Qc0)-8
+    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(P3)+8 v(P2)+6 v(P1)+4 v(P0)+2 v(G3) v(G2)-2 v(G1)-4 v(G0)-6
+    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(C4)+8 v(C3)+6 v(C2)+4 v(C1)+2
+    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(S3)+8 v(S2)+6 v(S1)+4 v(S0)+2 v(C4)
+.endc

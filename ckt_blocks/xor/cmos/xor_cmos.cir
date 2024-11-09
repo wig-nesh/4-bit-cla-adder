@@ -13,6 +13,7 @@
 * vinB B gnd PULSE(0 SUPPLY  5ns 1ps 1ps  5ns 10ns)
 
 .subckt xor_cmos A B Y 
+    * 12 transistors
     XinvA A Ai inv_cmos
     XinvB B Bi inv_cmos
     MnA  Y A    x gnd CMOSN W={width_N} L={length} 
