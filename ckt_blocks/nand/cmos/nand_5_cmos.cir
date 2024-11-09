@@ -1,0 +1,71 @@
+* .include ../../../tech_files/TSMC_180nm.txt
+
+* .param SUPPLY=1.8
+* .param LAMBDA=0.09u
+* .param width_N={20*LAMBDA}
+* .param width_P={2.5*width_N}
+* .param length={2*LAMBDA}
+* .global gnd vdd
+
+* VDD vdd gnd SUPPLY
+* vinA A gnd PULSE(0 SUPPLY   20ns 1ps 1ps   20ns  40ns)
+* vinB B gnd PULSE(0 SUPPLY   10ns 1ps 1ps   10ns  20ns)
+* vinC C gnd PULSE(0 SUPPLY    5ns 1ps 1ps    5ns  10ns)
+* vinD D gnd PULSE(0 SUPPLY  2.5ns 1ps 1ps  2.5ns   5ns)
+* vinE E gnd PULSE(0 SUPPLY 1.25ns 1ps 1ps 1.25ns 2.5ns)
+
+.subckt nand_5_cmos A B C D E Y 
+    MnA Y A   x gnd CMOSN W={width_N} L={length} 
+    + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
+    + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+    MnB x B   z gnd CMOSN W={width_N} L={length} 
+    + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
+    + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+    MnC z C   w gnd CMOSN W={width_N} L={length} 
+    + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
+    + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+    MnD w D   v gnd CMOSN W={width_N} L={length} 
+    + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
+    + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+    MnE v E gnd gnd CMOSN W={width_N} L={length} 
+    + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
+    + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+    
+    MpA Y A vdd vdd CMOSP W={width_P} L={length} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
+    + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+    MpB Y B vdd vdd CMOSP W={width_P} L={length} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
+    + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+    MpC Y C vdd vdd CMOSP W={width_P} L={length} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
+    + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+    MpD Y D vdd vdd CMOSP W={width_P} L={length} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
+    + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+    MpE Y E vdd vdd CMOSP W={width_P} L={length} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
+    + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+.ends
+
+* Xnand A B C D E Y nand_5_cmos
+
+* .tran 1n 40n 
+
+* .measure tran t_in WHEN v(E)=0.5*SUPPLY CROSS=31
+* .measure tran t_out WHEN v(Y)=0.5*SUPPLY CROSS=1
+* .measure tran t_delay PARAM='t_out-t_in'
+
+* .control
+*     set hcopypscolor = 1
+*     set color0=beige
+*     set color1=black
+*     set color2=blue
+*     set color3=darkgreen
+*     set color4=darkred
+*     set color5=darkviolet
+*     set color6=darkorange
+
+*     run
+*     plot v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
+* .endc

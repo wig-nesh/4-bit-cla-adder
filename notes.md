@@ -27,6 +27,12 @@ t_delay             =  1.19047e-10
 t_delay             =  1.87060e-10
 ```
 
+### cmos 5 input
+
+```jsx
+t_delay             =  2.72849e-10
+```
+
 ## nor
 
 ### cmos
@@ -45,6 +51,13 @@ t_delay             =  3.46705e-11
 
 ```jsx
 t_delay             =  3.93739e-11
+```
+
+### cmos 5 input
+
+```jsx
+t_delay10           =  4.55116e-11
+t_delay01           =  2.25425e-10
 ```
 
 ## xor
