@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1731227090
+timestamp 1731247716
 << nwell >>
 rect 26 37 44 99
 << ntransistor >>
@@ -20,39 +20,31 @@ rect 34 9 38 29
 rect 26 43 30 93
 rect 34 43 38 93
 << polysilicon >>
-rect 31 93 33 105
+rect 31 93 33 96
 rect 31 29 33 43
 rect 31 6 33 9
 << polycontact >>
-rect 30 105 34 109
+rect 30 96 34 100
 << metal1 >>
-rect 26 105 30 109
-rect 14 98 42 102
-rect 34 36 38 43
+rect 26 96 30 100
+rect 26 39 30 43
 rect -5 32 -1 36
 rect 3 32 7 36
-rect 26 29 30 36
-rect 34 32 39 36
-rect 34 29 38 32
-rect 14 0 42 4
+rect 22 32 30 36
+rect 26 29 30 32
+rect 34 29 38 43
 << metal2 >>
-rect 26 42 30 93
-rect -1 38 30 42
+rect -1 38 26 42
 rect -1 32 3 38
 << pad >>
+rect 25 37 30 42
 rect -1 32 4 37
 use inv_cmos  inv_cmos_0 ../../../inv/cmos/post_layout
 timestamp 1731226851
 transform 1 0 4 0 1 37
 box 0 -37 24 65
-use inv_cmos  inv_cmos_1
-timestamp 1731226851
-transform 1 0 36 0 1 37
-box 0 -37 24 65
 << labels >>
-rlabel metal1 26 105 30 109 5 A
 rlabel metal1 -5 32 -1 36 3 B
-rlabel metal1 31 98 35 102 1 vdd
-rlabel metal1 29 0 33 4 1 gnd
-rlabel space 50 29 54 32 1 Y
+rlabel metal1 26 96 30 100 5 A
+rlabel metal1 34 32 38 36 1 Y
 << end >>

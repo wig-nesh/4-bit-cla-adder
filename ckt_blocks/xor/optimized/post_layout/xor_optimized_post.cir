@@ -1,70 +1,66 @@
 .include ../../../../tech_files/TSMC_180nm.txt
+* .include ../../inv/cmos/inv_cmos.cir
 
 .param SUPPLY=1.8
-.param LAMBDA=0.09u
-.param width_N={20*LAMBDA}
-.param width_P={2.5*width_N}
-.param length={2*LAMBDA}
 .global gnd vdd
 
 VDD vdd gnd SUPPLY
 vinA A gnd PULSE(0 SUPPLY 10ns 1ps 1ps 10ns 20ns)
 vinB B gnd PULSE(0 SUPPLY  5ns 1ps 1ps  5ns 10ns)
 
-.option scale=0.01u
-
-M1000 inv_cmos_0/OUT B vdd w_26_37# CMOSP w=450 l=18
-+  ad=20250 pd=990 as=40500 ps=1980
-M1001 inv_cmos_0/OUT B gnd Gnd CMOSN w=180 l=18
-+  ad=8100 pd=450 as=16200 ps=900
-M1002 inv_cmos_1/OUT inv_cmos_1/IN vdd w_26_37# CMOSP w=450 l=18
-+  ad=20250 pd=990 as=0 ps=0
-M1003 inv_cmos_1/OUT inv_cmos_1/IN gnd Gnd CMOSN w=180 l=18
-+  ad=8100 pd=450 as=0 ps=0
-M1004 inv_cmos_1/IN A a_26_9# Gnd CMOSN w=180 l=18
-+  ad=8100 pd=450 as=8100 ps=450
-M1005 inv_cmos_1/IN A a_26_43# w_26_37# CMOSP w=450 l=18
-+  ad=23085 pd=990 as=20250 ps=990
-C0 inv_cmos_1/IN gnd 0.29fF
-C1 w_26_37# vdd 0.18fF
-C2 gnd inv_cmos_0/OUT 0.24fF
-C3 inv_cmos_1/IN w_26_37# 0.14fF
-C4 w_26_37# inv_cmos_0/OUT 0.07fF
-C5 a_26_9# gnd 0.03fF
-C6 inv_cmos_1/IN vdd 0.57fF
-C7 vdd inv_cmos_0/OUT 0.56fF
-C8 inv_cmos_1/OUT gnd 0.21fF
-C9 w_26_37# a_26_43# 0.06fF
-C10 inv_cmos_1/OUT w_26_37# 0.07fF
-C11 inv_cmos_1/IN a_26_9# 0.28fF
-C12 gnd B 0.05fF
-C13 vdd a_26_43# 0.03fF
-C14 inv_cmos_1/IN a_26_43# 0.52fF
-C15 inv_cmos_1/OUT vdd 0.52fF
-C16 a_26_9# inv_cmos_0/OUT 0.28fF
-C17 inv_cmos_1/OUT inv_cmos_1/IN 0.05fF
-C18 w_26_37# B 0.58fF
-C19 a_26_43# inv_cmos_0/OUT 0.52fF
-C20 vdd B 0.02fF
-C21 a_26_9# a_26_43# 0.02fF
-C22 inv_cmos_0/OUT B 0.14fF
-C23 w_26_37# A 0.08fF
-C24 a_26_43# B 0.10fF
-C25 A vdd 0.19fF
-C26 a_26_9# Gnd 0.05fF
-C27 inv_cmos_1/OUT Gnd 0.05fF
-C28 inv_cmos_1/IN Gnd 0.18fF
-C29 gnd Gnd 0.21fF
-C30 inv_cmos_0/OUT Gnd 0.05fF
-C31 B Gnd 0.43fF
-C32 w_26_37# Gnd 4.11fF
+.option scale=0.09u
 
 
-.tran 1n 20n 
+.subckt inv_cmos IN w_0_0# OUT
+M1000 OUT IN vdd w_0_0# CMOSP w=50 l=2
++  ad=250 pd=110 as=250 ps=110
+M1001 OUT IN gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+C0 IN vdd 0.02fF
+C1 vdd w_0_0# 0.07fF
+C2 OUT gnd 0.21fF
+C3 IN gnd 0.05fF
+C4 OUT IN 0.05fF
+C5 OUT w_0_0# 0.07fF
+C6 IN w_0_0# 0.06fF
+C7 OUT vdd 0.52fF
+C8 gnd Gnd 0.06fF
+C9 OUT Gnd 0.05fF
+C10 vdd Gnd 0.00fF
+C11 IN Gnd 0.13fF
+C12 w_0_0# Gnd 1.49fF
+.ends
 
-.measure tran t_in WHEN v(B)=0.5*SUPPLY CROSS=1
-.measure tran t_out WHEN v(Y)=0.5*SUPPLY CROSS=1
-.measure tran t_delay PARAM='t_out-t_in'
+
+* Top level circuit xor_optimized
+
+Xinv_cmos_0 B w_26_37# inv_cmos_0/OUT inv_cmos
+M1000 Y A inv_cmos_0/OUT Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1001 Y A B w_26_37# CMOSP w=50 l=2
++  ad=250 pd=110 as=320 ps=110
+C0 w_26_37# Y 0.07fF
+C1 A B 0.05fF
+C2 inv_cmos_0/OUT B 0.70fF
+C3 A w_26_37# 0.10fF
+C4 inv_cmos_0/OUT Y 0.28fF
+C5 B w_26_37# 0.28fF
+C6 B Y 0.56fF
+C7 Y Gnd 0.05fF
+C8 A Gnd 0.01fF
+C9 inv_cmos_0/OUT Gnd 0.06fF
+C10 B Gnd 0.32fF
+C11 w_26_37# Gnd 1.12fF
+.end
+
+
+
+
+.tran 1n 160n 
+
+* .measure tran t_in WHEN v(B)=0.5*SUPPLY CROSS=1
+* .measure tran t_out WHEN v(Y)=0.5*SUPPLY CROSS=1
+* .measure tran t_delay PARAM='t_out-t_in'
 
 .control
     set hcopypscolor = 1

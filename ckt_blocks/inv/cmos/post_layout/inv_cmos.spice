@@ -6,14 +6,14 @@ M1000 OUT IN vdd w_0_0# pfet w=50 l=2
 +  ad=250 pd=110 as=250 ps=110
 M1001 OUT IN gnd Gnd nfet w=20 l=2
 +  ad=100 pd=50 as=100 ps=50
-C0 OUT w_0_0# 0.07fF
-C1 OUT vdd 0.52fF
-C2 OUT IN 0.05fF
-C3 vdd w_0_0# 0.07fF
-C4 IN w_0_0# 0.06fF
-C5 IN vdd 0.02fF
-C6 OUT gnd 0.21fF
-C7 IN gnd 0.05fF
+C0 gnd IN 0.05fF
+C1 w_0_0# IN 0.06fF
+C2 w_0_0# vdd 0.07fF
+C3 vdd IN 0.02fF
+C4 gnd OUT 0.21fF
+C5 w_0_0# OUT 0.07fF
+C6 IN OUT 0.05fF
+C7 vdd OUT 0.52fF
 C8 gnd Gnd 0.06fF
 C9 OUT Gnd 0.05fF
 C10 vdd Gnd 0.00fF

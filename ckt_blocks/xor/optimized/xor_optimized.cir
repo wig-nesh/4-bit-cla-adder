@@ -13,20 +13,19 @@
 * vinB B gnd PULSE(0 SUPPLY  5ns 1ps 1ps  5ns 10ns)
 
 .subckt xor_optimized A B Y 
-    * 6 transistors
+    * 4 transistors
     XinvB B Bi inv_cmos
-    Mn1  B A Y2 gnd CMOSN W={width_N} L={length} 
+    Mn1  Bi A Y gnd CMOSN W={width_N} L={length} 
     + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
     + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
-    Mp1  Bi  A Y2 vdd CMOSP W={width_P} L={length} 
+    Mp1  B  A Y vdd CMOSP W={width_P} L={length} 
     + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} 
     + AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
-    Xinv1 Y2 Y inv_cmos
 .ends
 
-* Xxor A B Y xor_cmos
+* Xxor A B Y xor_optimized
 
-* .tran 1n 20n 
+* .tran 1n 40n 
 
 * .measure tran t_in WHEN v(B)=0.5*SUPPLY CROSS=1
 * .measure tran t_out WHEN v(Y)=0.5*SUPPLY CROSS=1

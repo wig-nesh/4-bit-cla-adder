@@ -16,7 +16,7 @@ delay_c4_f          =  3.261772e-10 targ=  4.323399e-09 trig=  3.997222e-09
 ## optimized
 
 - rise time is worse (fall time slightly better) , but much less area
-- better xor, 12->6 transistors
+- better xor, 12->4 transistors
 
 ```jsx
 delay_s3_r          =  5.626413e-10 targ=  1.555419e-09 trig=  9.927778e-10
