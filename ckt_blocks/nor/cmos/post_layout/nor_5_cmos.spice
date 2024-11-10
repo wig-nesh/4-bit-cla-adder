@@ -1,0 +1,79 @@
+* SPICE3 file created from nor_5_cmos.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 Y C gnd Gnd nfet w=20 l=2
++  ad=500 pd=250 as=500 ps=250
+M1001 a_7_0# E vdd w_n6_n6# pfet w=50 l=2
++  ad=500 pd=220 as=250 ps=110
+M1002 a_39_0# C a_23_0# w_n6_n6# pfet w=50 l=2
++  ad=500 pd=220 as=500 ps=220
+M1003 a_23_0# D a_7_0# w_n6_n6# pfet w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 Y B gnd Gnd nfet w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 Y A gnd Gnd nfet w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 Y A a_55_0# w_n6_n6# pfet w=50 l=2
++  ad=250 pd=110 as=500 ps=220
+M1007 Y E gnd Gnd nfet w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 a_55_0# B a_39_0# w_n6_n6# pfet w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 Y D gnd Gnd nfet w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 Y B 0.08fF
+C1 a_55_0# A 0.05fF
+C2 Y E 0.05fF
+C3 w_n6_n6# D 0.06fF
+C4 A vdd 0.02fF
+C5 a_23_0# a_39_0# 0.52fF
+C6 a_55_0# a_39_0# 0.52fF
+C7 Y C 0.08fF
+C8 a_55_0# Y 0.52fF
+C9 A w_n6_n6# 0.06fF
+C10 B E 0.08fF
+C11 a_7_0# a_23_0# 0.52fF
+C12 vdd a_39_0# 0.10fF
+C13 Y vdd 0.03fF
+C14 B C 0.71fF
+C15 A D 0.08fF
+C16 w_n6_n6# a_39_0# 0.12fF
+C17 E C 0.08fF
+C18 Y w_n6_n6# 0.07fF
+C19 vdd a_7_0# 0.61fF
+C20 a_7_0# w_n6_n6# 0.12fF
+C21 Y D 0.26fF
+C22 B w_n6_n6# 0.06fF
+C23 w_n6_n6# E 0.06fF
+C24 Y gnd 2.24fF
+C25 vdd a_23_0# 0.10fF
+C26 A a_39_0# 0.05fF
+C27 a_55_0# vdd 0.10fF
+C28 Y A 0.13fF
+C29 B D 0.08fF
+C30 w_n6_n6# a_23_0# 0.12fF
+C31 w_n6_n6# C 0.06fF
+C32 E D 0.27fF
+C33 a_55_0# w_n6_n6# 0.12fF
+C34 A a_7_0# 0.05fF
+C35 gnd E 0.05fF
+C36 B A 0.93fF
+C37 vdd w_n6_n6# 0.18fF
+C38 A E 0.08fF
+C39 D C 0.49fF
+C40 A a_23_0# 0.05fF
+C41 A C 0.08fF
+C42 gnd Gnd 0.50fF
+C43 Y Gnd 0.47fF
+C44 a_55_0# Gnd 0.00fF
+C45 a_39_0# Gnd 0.00fF
+C46 a_23_0# Gnd 0.00fF
+C47 a_7_0# Gnd 0.00fF
+C48 vdd Gnd 0.20fF
+C49 A Gnd 0.50fF
+C50 B Gnd 0.45fF
+C51 C Gnd 0.40fF
+C52 D Gnd 0.36fF
+C53 E Gnd 0.31fF
+C54 w_n6_n6# Gnd 5.48fF

@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1731191836
+timestamp 1731225054
 << nwell >>
 rect -6 -6 82 56
 << ntransistor >>
@@ -76,43 +76,45 @@ rect 37 -65 39 -62
 rect 53 -65 55 -62
 rect 69 -65 71 -62
 << polycontact >>
-rect 1 -11 5 -7
-rect 17 -18 21 -14
+rect 1 -39 5 -35
+rect 17 -32 21 -28
 rect 33 -25 37 -21
-rect 49 -32 53 -28
-rect 65 -39 69 -35
+rect 49 -18 53 -14
+rect 65 -11 69 -7
 << metal1 >>
 rect -9 55 85 59
 rect 0 50 4 55
-rect 16 50 20 55
-rect 32 50 36 55
-rect 48 50 52 55
-rect 64 50 68 55
-rect 8 -7 12 0
-rect 24 -7 28 0
-rect 40 -7 44 0
-rect 56 -7 60 0
+rect 12 46 16 50
+rect 28 46 32 50
+rect 44 46 48 50
+rect 60 46 64 50
 rect 72 -7 76 0
-rect -9 -11 1 -7
-rect 8 -11 85 -7
-rect -9 -18 17 -14
+rect -9 -11 65 -7
+rect 72 -11 85 -7
+rect -9 -18 49 -14
 rect -9 -25 33 -21
-rect -9 -32 49 -28
-rect -9 -39 65 -35
-rect 72 -42 76 -11
-rect 12 -46 16 -42
-rect 28 -46 32 -42
-rect 44 -46 48 -42
-rect 60 -46 64 -42
+rect -9 -32 17 -28
+rect 72 -35 76 -11
+rect -9 -39 1 -35
+rect 8 -39 76 -35
+rect 8 -42 12 -39
+rect 24 -42 28 -39
+rect 40 -42 44 -39
+rect 56 -42 60 -39
+rect 72 -42 76 -39
 rect 0 -67 4 -62
+rect 16 -67 20 -62
+rect 32 -67 36 -62
+rect 48 -67 52 -62
+rect 64 -67 68 -62
 rect -9 -71 85 -67
 << labels >>
-rlabel metal1 10 55 14 59 5 vdd
+rlabel metal1 12 55 16 59 5 vdd
+rlabel metal1 10 -71 14 -67 1 gnd
 rlabel metal1 -9 -11 -5 -7 3 A
 rlabel metal1 -9 -18 -5 -14 3 B
 rlabel metal1 -9 -25 -5 -21 3 C
 rlabel metal1 -9 -32 -5 -28 3 D
-rlabel metal1 8 -71 12 -67 1 gnd
-rlabel metal1 81 -11 85 -7 7 Y
 rlabel metal1 -9 -39 -5 -35 3 E
+rlabel metal1 81 -11 85 -7 7 Y
 << end >>

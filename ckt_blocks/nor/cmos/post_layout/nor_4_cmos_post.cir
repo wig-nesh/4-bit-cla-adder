@@ -1,0 +1,89 @@
+.include ../../../tech_files/TSMC_180nm.txt
+
+.param SUPPLY=1.8
+.global gnd vdd
+
+VDD vdd gnd SUPPLY
+vinA A gnd PULSE(0 SUPPLY   10ns 1ps 1ps   10ns  20ns)
+vinB B gnd PULSE(0 SUPPLY    5ns 1ps 1ps    5ns  10ns)
+vinC C gnd PULSE(0 SUPPLY  2.5ns 1ps 1ps  2.5ns   5ns)
+vinD D gnd PULSE(0 SUPPLY 1.25ns 1ps 1ps 1.25ns 2.5ns)
+
+.option scale=0.09u
+
+M1000 Y B gnd Gnd CMOSN w=20 l=2
++  ad=400 pd=200 as=400 ps=200
+M1001 a_7_0# D vdd w_n6_n6# CMOSP w=50 l=2
++  ad=500 pd=220 as=250 ps=110
+M1002 a_39_0# B a_23_0# w_n6_n6# CMOSP w=50 l=2
++  ad=500 pd=220 as=500 ps=220
+M1003 a_23_0# C a_7_0# w_n6_n6# CMOSP w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 Y A gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 Y A a_39_0# w_n6_n6# CMOSP w=50 l=2
++  ad=250 pd=110 as=0 ps=0
+M1006 Y D gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 Y C gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 Y A 0.13fF
+C1 Y vdd 0.03fF
+C2 vdd a_23_0# 0.10fF
+C3 w_n6_n6# a_39_0# 0.12fF
+C4 vdd a_7_0# 0.61fF
+C5 w_n6_n6# B 0.06fF
+C6 C B 0.49fF
+C7 D A 0.08fF
+C8 w_n6_n6# C 0.06fF
+C9 Y gnd 1.74fF
+C10 Y a_39_0# 0.52fF
+C11 a_23_0# a_39_0# 0.52fF
+C12 Y B 0.08fF
+C13 Y w_n6_n6# 0.07fF
+C14 w_n6_n6# a_23_0# 0.12fF
+C15 gnd D 0.05fF
+C16 Y C 0.26fF
+C17 a_7_0# w_n6_n6# 0.12fF
+C18 D B 0.08fF
+C19 w_n6_n6# D 0.06fF
+C20 D C 0.27fF
+C21 vdd a_39_0# 0.10fF
+C22 a_7_0# a_23_0# 0.52fF
+C23 B A 0.71fF
+C24 Y D 0.05fF
+C25 w_n6_n6# A 0.06fF
+C26 vdd w_n6_n6# 0.16fF
+C27 C A 0.08fF
+C28 gnd Gnd 0.41fF
+C29 Y Gnd 0.38fF
+C30 a_39_0# Gnd 0.00fF
+C31 a_23_0# Gnd 0.00fF
+C32 a_7_0# Gnd 0.00fF
+C33 vdd Gnd 0.17fF
+C34 A Gnd 0.41fF
+C35 B Gnd 0.36fF
+C36 C Gnd 0.32fF
+C37 D Gnd 0.27fF
+C38 w_n6_n6# Gnd 4.48fF
+
+
+.tran 1n 20n 
+
+.measure tran t_in WHEN v(D)=0.5*SUPPLY CROSS=1
+.measure tran t_out WHEN v(Y)=0.5*SUPPLY CROSS=1
+.measure tran t_delay PARAM='t_out-t_in'
+
+.control
+    set hcopypscolor = 1
+    set color0=beige
+    set color1=black
+    set color2=blue
+    set color3=darkgreen
+    set color4=darkred
+    set color5=darkviolet
+    set color6=darkorange
+
+    run
+    plot v(A)+4 v(B)+2 v(C) v(D)-2 v(Y)-4
+.endc
