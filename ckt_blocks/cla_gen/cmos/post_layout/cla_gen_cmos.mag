@@ -1,0 +1,417 @@
+magic
+tech scmos
+timestamp 1731280623
+<< error_s >>
+rect 463 -16 467 -14
+<< metal1 >>
+rect 210 448 240 452
+rect 292 448 318 452
+rect 86 262 90 385
+rect 164 262 168 374
+rect 210 361 214 448
+rect 300 416 315 420
+rect 330 416 334 420
+rect 226 262 230 361
+rect 66 258 67 262
+rect 82 258 90 262
+rect 93 258 97 262
+rect 144 258 146 262
+rect 160 258 168 262
+rect 171 258 175 262
+rect 206 258 207 262
+rect 222 258 230 262
+rect 318 196 322 351
+rect 58 192 210 196
+rect 214 192 240 196
+rect 244 192 448 196
+rect 6 188 354 192
+rect 74 184 320 188
+rect 322 184 354 188
+rect -14 118 3 122
+rect 82 118 83 122
+rect 98 118 104 122
+rect 109 118 113 122
+rect 176 118 177 122
+rect 192 118 198 122
+rect 203 118 207 122
+rect 254 118 255 122
+rect 270 118 278 122
+rect 281 118 285 122
+rect 316 118 317 122
+rect 332 118 340 122
+rect -14 111 19 115
+rect -14 104 -3 108
+rect -14 94 -3 98
+rect 101 92 104 118
+rect 195 92 198 118
+rect -14 84 -3 88
+rect 86 74 90 86
+rect 100 14 104 92
+rect 180 23 184 86
+rect 112 7 116 23
+rect 119 19 184 23
+rect 10 -1 65 3
+rect 6 -5 60 -1
+rect 194 -4 198 92
+rect 258 41 262 86
+rect 274 54 278 118
+rect 320 61 324 86
+rect 288 57 324 61
+rect 274 50 331 54
+rect 214 39 229 41
+rect 210 37 229 39
+rect 265 37 295 41
+rect 54 -48 58 -5
+rect 70 -80 74 -11
+rect 96 -19 100 -7
+rect 194 -8 202 -4
+rect 96 -22 132 -19
+rect 100 -23 132 -22
+rect 128 -48 132 -23
+rect 144 -80 148 -16
+rect 167 -19 171 -8
+rect 291 -9 295 37
+rect 167 -22 203 -19
+rect 171 -23 203 -22
+rect 199 -48 203 -23
+rect 50 -84 51 -80
+rect 66 -84 74 -80
+rect 124 -84 125 -80
+rect 140 -84 148 -80
+rect 195 -84 196 -80
+rect 211 -84 215 -80
+rect 327 -82 331 50
+rect 336 -85 340 118
+rect 444 -12 448 192
+rect 444 -13 474 -12
+rect 448 -16 474 -13
+rect 478 -16 504 -12
+rect 407 -82 411 -78
+rect 426 -82 441 -78
+rect 456 -82 460 -78
+rect 486 -82 490 -78
+rect 516 -82 520 -78
+rect 336 -89 347 -85
+rect 448 -114 474 -110
+rect 478 -114 504 -110
+rect 444 -117 448 -114
+rect 418 -121 448 -117
+rect 42 -150 54 -146
+rect 58 -150 96 -146
+rect 116 -150 128 -146
+rect 132 -150 170 -146
+rect 187 -150 199 -146
+rect 199 -164 203 -150
+rect 462 -164 466 -127
+rect 199 -168 291 -164
+rect 295 -168 466 -164
+<< metal2 >>
+rect 233 389 237 420
+rect 86 385 237 389
+rect 249 378 253 413
+rect 164 374 253 378
+rect 265 365 269 413
+rect 226 361 269 365
+rect 10 357 214 361
+rect 70 294 74 357
+rect 100 341 104 357
+rect 148 294 152 357
+rect 178 320 182 357
+rect 210 294 214 357
+rect 31 274 129 278
+rect -1 119 3 262
+rect 15 112 19 269
+rect 31 108 35 274
+rect -3 104 35 108
+rect 47 257 51 269
+rect 109 257 113 269
+rect 125 265 129 274
+rect 47 253 113 257
+rect 47 98 51 253
+rect 281 122 285 413
+rect -3 94 51 98
+rect 63 88 67 115
+rect 157 88 161 115
+rect 235 88 239 115
+rect 297 88 301 115
+rect -3 84 301 88
+rect 86 3 90 74
+rect 262 57 288 61
+rect 183 37 210 41
+rect 102 14 395 18
+rect 116 8 171 9
+rect 113 7 171 8
+rect 112 5 171 7
+rect 112 3 116 5
+rect 64 -1 116 3
+rect 96 -7 100 -1
+rect 167 -8 171 5
+rect 202 -8 379 -4
+rect 300 -80 304 -48
+rect 215 -84 304 -80
+rect 329 -82 363 -78
+rect 375 -82 379 -8
+rect 391 -82 395 14
+rect 462 -17 467 -16
+rect 462 -127 466 -17
+<< metal3 >>
+rect -1 -84 3 118
+rect 89 114 93 262
+rect 105 114 109 122
+rect 15 -77 19 111
+rect 31 -86 35 111
+rect 47 98 51 111
+rect 89 110 109 114
+rect 141 98 145 115
+rect 167 114 171 262
+rect 199 114 203 122
+rect 167 110 203 114
+rect 219 98 223 115
+rect 47 94 223 98
+rect 273 5 501 9
+rect 70 -2 242 2
+rect 70 -11 74 -2
+rect 254 -12 258 2
+rect 144 -16 258 -12
+rect 319 -52 471 -48
+rect 89 -86 93 -80
+rect 467 -82 471 -52
+rect 497 -82 501 5
+rect 31 -90 93 -86
+<< metal4 >>
+rect 31 108 35 111
+rect 125 108 129 115
+rect 31 104 129 108
+rect 199 9 203 120
+rect 324 57 340 61
+rect 199 5 226 9
+rect 15 -70 180 -66
+rect 15 -74 19 -70
+rect 176 -77 180 -70
+rect -1 -86 3 -84
+rect 160 -86 164 -80
+rect -1 -90 164 -86
+rect 335 -117 340 57
+rect 335 -121 350 -117
+<< metal5 >>
+rect 68 17 72 297
+rect 61 13 72 17
+rect 61 1 65 13
+rect 105 -41 109 118
+rect 105 -45 288 -41
+rect 105 -77 109 -45
+<< pad >>
+rect 233 415 238 420
+rect 249 408 254 413
+rect 265 408 270 413
+rect 281 408 286 413
+rect 86 384 91 389
+rect 164 373 169 378
+rect 8 357 13 362
+rect 209 359 214 364
+rect 226 360 231 365
+rect 100 339 105 344
+rect 178 318 183 323
+rect 70 292 75 297
+rect 148 292 153 297
+rect 210 292 215 297
+rect 15 264 20 269
+rect 31 264 36 269
+rect 47 264 52 269
+rect 109 264 114 269
+rect 125 264 130 269
+rect -1 257 4 262
+rect 92 258 97 263
+rect 170 258 175 263
+rect -1 117 4 122
+rect 105 117 110 122
+rect 199 117 204 122
+rect 281 118 286 123
+rect 14 110 19 115
+rect 31 110 36 115
+rect 47 110 52 115
+rect 63 110 68 115
+rect 125 110 130 115
+rect 157 110 162 115
+rect 219 110 224 115
+rect 235 110 240 115
+rect 297 110 302 115
+rect -7 103 -2 108
+rect -7 93 -2 98
+rect -7 83 -2 88
+rect 86 71 91 76
+rect 260 56 265 61
+rect 285 56 290 61
+rect 321 57 327 63
+rect 181 36 186 41
+rect 206 36 211 41
+rect 99 13 104 18
+rect 112 6 117 11
+rect 222 4 227 9
+rect 272 4 277 9
+rect 60 -2 65 3
+rect 238 -2 243 3
+rect 253 -2 259 3
+rect 96 -9 101 -4
+rect 69 -14 75 -9
+rect 167 -10 172 -5
+rect 199 -8 204 -3
+rect 144 -17 149 -12
+rect 462 -17 467 -11
+rect 284 -46 289 -41
+rect 300 -52 305 -47
+rect 316 -53 322 -47
+rect 15 -78 20 -73
+rect 31 -78 36 -73
+rect 176 -78 181 -73
+rect -1 -85 4 -80
+rect 89 -85 94 -80
+rect 160 -85 165 -80
+rect 214 -84 219 -79
+rect 327 -83 332 -78
+rect 359 -83 364 -78
+rect 375 -83 380 -78
+rect 391 -83 396 -78
+rect 467 -83 472 -78
+rect 497 -83 502 -78
+rect 346 -122 352 -116
+rect 461 -129 467 -124
+use inv_cmos  inv_cmos_8 ../../../inv/cmos/post_layout
+timestamp 1731226851
+transform 1 0 122 0 -1 -85
+box 0 -37 24 65
+use nand_cmos  nand_cmos_2 ../../../nand/cmos/post_layout
+timestamp 1731238409
+transform 1 0 96 0 -1 -91
+box -6 -69 34 59
+use inv_cmos  inv_cmos_7
+timestamp 1731226851
+transform 1 0 48 0 -1 -85
+box 0 -37 24 65
+use nand_3_cmos  nand_3_cmos_2 ../../../nand/cmos/post_layout
+timestamp 1731231675
+transform 1 0 6 0 -1 -91
+box -6 -90 50 59
+use nor_cmos  nor_cmos_0 ../../../nor/cmos/post_layout
+timestamp 1731236797
+transform 1 0 291 0 -1 -59
+box -6 -50 34 109
+use nor_3_cmos  nor_3_cmos_0 ../../../nor/cmos/post_layout
+timestamp 1731240991
+transform 1 0 229 0 -1 -9
+box -6 -50 50 159
+use nor_5_cmos  nor_5_cmos_0 ../../../nor/cmos/post_layout
+timestamp 1731241506
+transform 1 0 350 0 1 -71
+box -6 -50 82 259
+use inv_cmos  inv_cmos_9
+timestamp 1731226851
+transform 1 0 193 0 -1 -85
+box 0 -37 24 65
+use nand_cmos  nand_cmos_3
+timestamp 1731238409
+transform 1 0 167 0 -1 -91
+box -6 -69 34 59
+use inv_cmos  inv_cmos_13
+timestamp 1731226851
+transform 1 0 498 0 1 -77
+box 0 -37 24 65
+use inv_cmos  inv_cmos_12
+timestamp 1731226851
+transform 1 0 468 0 1 -77
+box 0 -37 24 65
+use inv_cmos  inv_cmos_10
+timestamp 1731226851
+transform 1 0 438 0 1 -77
+box 0 -37 24 65
+use inv_cmos  inv_cmos_4
+timestamp 1731226851
+transform 1 0 64 0 -1 257
+box 0 -37 24 65
+use nand_5_cmos  nand_5_cmos_0 ../../../nand/cmos/post_layout
+timestamp 1731232449
+transform 1 0 6 0 1 129
+box -6 -130 82 59
+use nand_4_cmos  nand_4_cmos_1 ../../../nand/cmos/post_layout
+timestamp 1731239310
+transform 1 0 6 0 -1 251
+box -6 -110 66 59
+use nand_3_cmos  nand_3_cmos_1
+timestamp 1731231675
+transform 1 0 100 0 -1 251
+box -6 -90 50 59
+use inv_cmos  inv_cmos_0
+timestamp 1731226851
+transform 1 0 80 0 1 123
+box 0 -37 24 65
+use nand_4_cmos  nand_4_cmos_0
+timestamp 1731239310
+transform 1 0 116 0 1 129
+box -6 -110 66 59
+use nand_3_cmos  nand_3_cmos_0
+timestamp 1731231675
+transform 1 0 210 0 1 129
+box -6 -90 50 59
+use inv_cmos  inv_cmos_1
+timestamp 1731226851
+transform 1 0 174 0 1 123
+box 0 -37 24 65
+use nand_cmos  nand_cmos_1
+timestamp 1731238409
+transform 1 0 178 0 -1 251
+box -6 -69 34 59
+use inv_cmos  inv_cmos_6
+timestamp 1731226851
+transform 1 0 204 0 -1 257
+box 0 -37 24 65
+use inv_cmos  inv_cmos_5
+timestamp 1731226851
+transform 1 0 142 0 -1 257
+box 0 -37 24 65
+use inv_cmos  inv_cmos_2
+timestamp 1731226851
+transform 1 0 252 0 1 123
+box 0 -37 24 65
+use nor_4_cmos  nor_4_cmos_0 ../../../nor/cmos/post_layout
+timestamp 1731241234
+transform 1 0 240 0 -1 401
+box -6 -51 66 209
+use inv_cmos  inv_cmos_3
+timestamp 1731226851
+transform 1 0 314 0 1 123
+box 0 -37 24 65
+use nand_cmos  nand_cmos_0
+timestamp 1731238409
+transform 1 0 288 0 1 129
+box -6 -69 34 59
+use inv_cmos  inv_cmos_11
+timestamp 1731226851
+transform 1 0 312 0 -1 415
+box 0 -37 24 65
+<< labels >>
+rlabel metal1 98 118 102 122 7 a
+rlabel metal1 109 118 113 122 1 G0
+rlabel metal1 192 118 196 122 7 b
+rlabel metal1 203 118 207 122 1 G1
+rlabel metal1 270 118 274 122 7 c
+rlabel metal1 281 118 285 122 1 G2
+rlabel metal1 332 118 336 122 7 d
+rlabel metal1 82 258 86 262 1 e
+rlabel metal1 160 258 164 262 1 f
+rlabel metal1 222 258 226 262 1 g
+rlabel metal1 66 -84 70 -80 1 h
+rlabel metal1 -14 104 -10 108 3 P1
+rlabel metal1 -14 84 -10 88 3 P3
+rlabel metal1 -14 94 -10 98 3 P2
+rlabel metal1 -14 111 -10 115 3 P0
+rlabel metal1 -14 118 -10 122 3 C0
+rlabel metal1 140 -84 144 -80 1 i
+rlabel metal1 211 -84 215 -80 1 j
+rlabel metal1 407 -82 411 -78 1 G3
+rlabel metal1 456 -82 460 -78 1 C4
+rlabel metal1 330 416 334 420 1 C3
+rlabel metal1 486 -82 490 -78 1 C1
+rlabel metal1 516 -82 520 -78 7 C2
+rlabel metal1 54 190 56 192 1 vdd
+rlabel metal1 39 -3 41 -1 1 gnd
+<< end >>
