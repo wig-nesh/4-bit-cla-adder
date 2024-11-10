@@ -1,0 +1,49 @@
+* SPICE3 file created from xor_cmos.ext - technology: scmos
+
+.option scale=0.01u
+
+M1000 inv_cmos_0/OUT B vdd w_26_37# pfet w=450 l=18
++  ad=20250 pd=990 as=40500 ps=1980
+M1001 inv_cmos_0/OUT B gnd Gnd nfet w=180 l=18
++  ad=8100 pd=450 as=16200 ps=900
+M1002 inv_cmos_1/OUT inv_cmos_1/IN vdd w_26_37# pfet w=450 l=18
++  ad=20250 pd=990 as=0 ps=0
+M1003 inv_cmos_1/OUT inv_cmos_1/IN gnd Gnd nfet w=180 l=18
++  ad=8100 pd=450 as=0 ps=0
+M1004 inv_cmos_1/IN A a_26_9# Gnd nfet w=180 l=18
++  ad=8100 pd=450 as=8100 ps=450
+M1005 inv_cmos_1/IN A a_26_43# w_26_37# pfet w=450 l=18
++  ad=23085 pd=990 as=20250 ps=990
+C0 inv_cmos_1/IN gnd 0.29fF
+C1 w_26_37# vdd 0.18fF
+C2 gnd inv_cmos_0/OUT 0.24fF
+C3 inv_cmos_1/IN w_26_37# 0.14fF
+C4 w_26_37# inv_cmos_0/OUT 0.07fF
+C5 a_26_9# gnd 0.03fF
+C6 inv_cmos_1/IN vdd 0.57fF
+C7 vdd inv_cmos_0/OUT 0.56fF
+C8 inv_cmos_1/OUT gnd 0.21fF
+C9 w_26_37# a_26_43# 0.06fF
+C10 inv_cmos_1/OUT w_26_37# 0.07fF
+C11 inv_cmos_1/IN a_26_9# 0.28fF
+C12 gnd B 0.05fF
+C13 vdd a_26_43# 0.03fF
+C14 inv_cmos_1/IN a_26_43# 0.52fF
+C15 inv_cmos_1/OUT vdd 0.52fF
+C16 a_26_9# inv_cmos_0/OUT 0.28fF
+C17 inv_cmos_1/OUT inv_cmos_1/IN 0.05fF
+C18 w_26_37# B 0.58fF
+C19 a_26_43# inv_cmos_0/OUT 0.52fF
+C20 vdd B 0.02fF
+C21 a_26_9# a_26_43# 0.02fF
+C22 inv_cmos_0/OUT B 0.14fF
+C23 w_26_37# A 0.08fF
+C24 a_26_43# B 0.10fF
+C25 A vdd 0.19fF
+C26 a_26_9# Gnd 0.05fF
+C27 inv_cmos_1/OUT Gnd 0.05fF
+C28 inv_cmos_1/IN Gnd 0.18fF
+C29 gnd Gnd 0.21fF
+C30 inv_cmos_0/OUT Gnd 0.05fF
+C31 B Gnd 0.43fF
+C32 w_26_37# Gnd 4.11fF

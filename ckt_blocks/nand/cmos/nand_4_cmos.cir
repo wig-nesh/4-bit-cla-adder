@@ -14,7 +14,8 @@
 * vinD D gnd PULSE(0 SUPPLY 1.25ns 1ps 1ps 1.25ns 2.5ns)
 
 
-.subckt nand_4_cmos A B C D Y 
+.subckt nand_4_cmos A B C D Y
+    .param width_N = 4*width_N
     MnA Y A   x gnd CMOSN W={width_N} L={length} 
     + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
     + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}

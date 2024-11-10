@@ -15,6 +15,7 @@
 
 
 .subckt nor_4_cmos A B C D Y 
+    .param width_P = 4*width_P
     MnA Y A gnd gnd CMOSN W={width_N} L={length} 
     + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
     + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}

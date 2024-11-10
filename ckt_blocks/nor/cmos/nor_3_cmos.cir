@@ -12,7 +12,8 @@
 * vinB B gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
 * vinC C gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns  5ns)
 
-.subckt nor_3_cmos A B C Y 
+.subckt nor_3_cmos A B C Y  
+    .param width_P = 3*width_P
     MnA Y A gnd gnd CMOSN W={width_N} L={length} 
     + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
     + AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
