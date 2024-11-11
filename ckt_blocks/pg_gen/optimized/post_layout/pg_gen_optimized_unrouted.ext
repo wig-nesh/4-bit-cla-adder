@@ -1,0 +1,171 @@
+timestamp 1731340844
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use xor_optimized xor_optimized_0 1 0 5 0 1 -1
+use nand_cmos nand_cmos_0 1 0 15 0 -1 161
+use inv_cmos inv_cmos_0 1 0 41 0 -1 167
+use nand_cmos nand_cmos_1 1 0 77 0 -1 161
+use xor_optimized xor_optimized_1 1 0 67 0 1 -1
+use nand_cmos nand_cmos_2 1 0 139 0 -1 161
+use inv_cmos inv_cmos_1 1 0 103 0 -1 167
+use xor_optimized xor_optimized_2 1 0 129 0 1 -1
+use nand_cmos nand_cmos_3 1 0 201 0 -1 161
+use inv_cmos inv_cmos_2 1 0 165 0 -1 167
+use xor_optimized xor_optimized_3 1 0 191 0 1 -1
+use inv_cmos inv_cmos_3 1 0 227 0 -1 167
+node "P0" 0 21.0864 229 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "B0" 0 21.0864 182 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "P1" 0 21.0864 167 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "B1" 0 21.0864 120 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "P2" 0 21.0864 105 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "B2" 0 21.0864 58 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "P3" 0 21.0864 43 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "B3" 0 21.0864 -4 31 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A0" 0 21.0864 229 95 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A1" 0 21.0864 167 95 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A2" 0 21.0864 105 95 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A3" 0 21.0864 43 95 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_201_101#" 0 11.2836 201 101 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_139_101#" 0 11.2836 139 101 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_77_101#" 0 11.2836 77 101 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_15_101#" 0 11.2836 15 101 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_221_102#" 0 47.2272 221 102 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 32 0 0 0 0 0 0 0 0 0 0
+node "m1_159_102#" 0 47.2272 159 102 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 32 0 0 0 0 0 0 0 0 0 0
+node "m1_97_102#" 0 47.2272 97 102 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 32 0 0 0 0 0 0 0 0 0 0
+node "m1_35_102#" 0 47.2272 35 102 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 32 0 0 0 0 0 0 0 0 0 0
+node "G0" 0 21.0864 245 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_229_168#" 0 11.2836 229 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "B0" 0 21.0864 194 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "G1" 0 21.0864 183 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_167_168#" 0 11.2836 167 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "B1" 0 21.0864 132 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "G2" 0 21.0864 121 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_105_168#" 0 11.2836 105 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "B2" 0 21.0864 70 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "G3" 0 21.0864 59 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_43_168#" 0 11.2836 43 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "B3" 0 21.0864 8 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A0" 0 21.0864 210 175 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A1" 0 21.0864 148 175 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A2" 0 21.0864 86 175 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "A3" 0 21.0864 24 175 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+cap "G1" "B0" 23.5646
+cap "G2" "B1" 23.5646
+cap "G3" "B2" 23.5646
+cap "A2" "m1_97_102#" 54.984
+cap "A3" "m1_35_102#" 54.984
+cap "A1" "m1_159_102#" 54.984
+cap "A0" "m1_221_102#" 54.984
+subcap "m1_77_101#" -41.5014
+subcap "m1_15_101#" -68.6688
+subcap "m1_97_102#" -77.445
+subcap "m1_35_102#" -104.612
+cap "xor_optimized_0/A" "xor_optimized_0/inv_cmos_0/vdd" 54.984
+cap "xor_optimized_0/A" "xor_optimized_0/w_26_37#" 7.7988
+subcap "m1_201_101#" -101.315
+subcap "m1_139_101#" -68.6688
+subcap "m1_159_102#" -104.612
+subcap "m1_97_102#" -74.3946
+cap "xor_optimized_1/A" "xor_optimized_1/w_26_37#" 7.7988
+cap "nand_cmos_1/vdd" "xor_optimized_1/A" 54.984
+cap "xor_optimized_2/A" "nand_cmos_2/vdd" 54.984
+cap "xor_optimized_2/w_26_37#" "xor_optimized_2/A" 7.7988
+subcap "m1_201_101#" -68.6688
+subcap "m1_221_102#" -104.612
+cap "nand_cmos_3/vdd" "xor_optimized_3/A" 54.984
+cap "xor_optimized_3/w_26_37#" "xor_optimized_3/A" 7.7988
+subcap "A3" -7.3424
+subcap "m1_97_102#" -7.2213
+subcap "A2" -1.2856
+cap "nand_cmos_1/B" "nand_cmos_1/a_7_n61#" 41.238
+cap "xor_optimized_0/inv_cmos_0/vdd" "xor_optimized_0/A" 54.984
+cap "nand_cmos_0/a_7_n61#" "nand_cmos_0/B" 41.238
+cap "inv_cmos_0/gnd" "nand_cmos_0/Y" 247.428
+cap "xor_optimized_0/inv_cmos_0/vdd" "nand_cmos_0/Y" 548.465
+cap "nand_cmos_0/w_n6_n6#" "xor_optimized_0/inv_cmos_0/vdd" 13.8108
+cap "nand_cmos_0/B" "nand_cmos_0/Y" 54.984
+cap "nand_cmos_1/B" "nand_cmos_1/Y" 54.984
+cap "nand_cmos_0/w_n6_n6#" "nand_cmos_0/Y" -2.84217e-14
+cap "nand_cmos_1/w_n6_n6#" "nand_cmos_1/vdd" 1.002
+subcap "A1" -7.3424
+subcap "A2" -7.3424
+subcap "m1_201_101#" -98.1561
+subcap "B0" -37.9248
+cap "nand_cmos_1/vdd" "nand_cmos_1/Y" 548.465
+cap "inv_cmos_2/gnd" "nand_cmos_2/Y" 247.428
+cap "nand_cmos_2/Y" "nand_cmos_2/vdd" 548.465
+cap "xor_optimized_2/A" "nand_cmos_2/vdd" 54.984
+cap "xor_optimized_1/A" "nand_cmos_1/vdd" 54.984
+cap "nand_cmos_2/vdd" "nand_cmos_2/w_n6_n6#" 13.8108
+cap "nand_cmos_2/B" "nand_cmos_2/Y" 54.984
+cap "nand_cmos_2/Y" "nand_cmos_2/w_n6_n6#" -2.84217e-14
+cap "nand_cmos_2/B" "nand_cmos_2/a_7_n61#" 41.238
+cap "nand_cmos_1/vdd" "inv_cmos_1/w_0_0#" 13.8108
+cap "nand_cmos_1/Y" "inv_cmos_1/gnd" 247.428
+subcap "A0" -7.3424
+cap "nand_cmos_3/vdd" "nand_cmos_3/w_n6_n6#" 13.8108
+cap "nand_cmos_3/B" "nand_cmos_3/Y" 54.984
+cap "nand_cmos_3/vdd" "nand_cmos_3/Y" 548.465
+cap "inv_cmos_3/gnd" "nand_cmos_3/Y" 247.428
+cap "xor_optimized_3/A" "nand_cmos_3/vdd" 54.984
+cap "nand_cmos_3/B" "nand_cmos_3/a_7_n61#" 41.238
+cap "nand_cmos_3/w_n6_n6#" "nand_cmos_3/Y" -2.84217e-14
+cap "inv_cmos_0/gnd" "nand_cmos_0/Y" 51.5475
+cap "inv_cmos_2/gnd" "nand_cmos_2/Y" 51.5475
+cap "nand_cmos_1/Y" "inv_cmos_1/gnd" 51.5475
+cap "nand_cmos_3/Y" "inv_cmos_3/gnd" 51.5475
+merge "nand_cmos_3/A" "xor_optimized_3/B" -13.5048 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_3/B" "B0"
+merge "inv_cmos_3/w_0_0#" "nand_cmos_3/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/vdd" "xor_optimized_1/inv_cmos_0/vdd" -52.8789 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -19 -32 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/inv_cmos_0/vdd" "nand_cmos_1/vdd"
+merge "nand_cmos_1/vdd" "m1_97_102#"
+merge "m1_97_102#" "m1_77_101#"
+merge "nand_cmos_3/B" "xor_optimized_3/A" -23.8308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_3/A" "A0"
+merge "nand_cmos_1/B" "xor_optimized_1/A" -16.2492 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/A" "A2"
+merge "nand_cmos_1/A" "xor_optimized_1/B" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/B" "B2"
+merge "inv_cmos_3/vdd" "xor_optimized_3/inv_cmos_0/vdd" -52.1928 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20 -32 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_3/inv_cmos_0/vdd" "nand_cmos_3/vdd"
+merge "nand_cmos_3/vdd" "m1_201_101#"
+merge "m1_201_101#" "m1_221_102#"
+merge "xor_optimized_3/Y" "P0" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/Y" "P1" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/w_0_0#" "nand_cmos_1/w_n6_n6#" -62.2728 0 0 0 0 -62 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_0/OUT" "G3" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/Y" "P2" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_2/IN" "nand_cmos_2/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_2/Y" "m1_167_168#"
+merge "xor_optimized_0/Y" "P3" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_3/OUT" "G0" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/IN" "nand_cmos_1/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_1/Y" "m1_105_168#"
+merge "inv_cmos_0/IN" "nand_cmos_0/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_0/Y" "m1_43_168#"
+merge "inv_cmos_0/vdd" "nand_cmos_0/vdd" -52.1928 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20 -32 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_0/vdd" "m1_35_102#"
+merge "m1_35_102#" "xor_optimized_0/inv_cmos_0/vdd"
+merge "xor_optimized_0/inv_cmos_0/vdd" "m1_15_101#"
+merge "inv_cmos_2/w_0_0#" "nand_cmos_2/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_2/OUT" "G1" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_2/vdd" "xor_optimized_2/inv_cmos_0/vdd" -52.1928 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20 -32 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/inv_cmos_0/vdd" "nand_cmos_2/vdd"
+merge "nand_cmos_2/vdd" "m1_159_102#"
+merge "m1_159_102#" "m1_139_101#"
+merge "inv_cmos_1/OUT" "G2" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_2/A" "xor_optimized_2/B" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/B" "B1"
+merge "nand_cmos_2/B" "xor_optimized_2/A" -23.8308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/A" "A1"
+merge "nand_cmos_0/A" "xor_optimized_0/B" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_0/B" "B3"
+merge "inv_cmos_3/IN" "nand_cmos_3/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_3/Y" "m1_229_168#"
+merge "nand_cmos_0/B" "xor_optimized_0/A" -23.8308 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_0/A" "A3"
+merge "inv_cmos_0/w_0_0#" "nand_cmos_0/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

@@ -35,7 +35,7 @@
     Xand0   d    G0  inv_cmos
 .ends
 
-* X1 A3 A2 A1 A0 B3 B2 B1 B0 P3 P2 P1 P0 G3 G2 G1 G0 pg_gen_cmos
+* X1 A3 A2 A1 A0 B3 B2 B1 B0 P3 P2 P1 P0 G3 G2 G1 G0 pg_gen_optimized
 
 * .tran 1n 640n 
 

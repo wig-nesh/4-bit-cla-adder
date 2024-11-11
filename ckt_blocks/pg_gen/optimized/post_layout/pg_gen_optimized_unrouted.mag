@@ -1,0 +1,114 @@
+magic
+tech scmos
+timestamp 1731340844
+<< metal1 >>
+rect 24 175 28 179
+rect 86 175 90 179
+rect 148 175 152 179
+rect 210 175 214 179
+rect 8 168 12 172
+rect 43 168 44 172
+rect 59 168 63 172
+rect 70 168 74 172
+rect 105 168 106 172
+rect 121 168 125 172
+rect 132 168 136 172
+rect 167 168 168 172
+rect 183 168 187 172
+rect 194 168 198 172
+rect 229 168 230 172
+rect 245 168 249 172
+rect 35 102 47 106
+rect 97 102 109 106
+rect 159 102 171 106
+rect 221 102 233 106
+rect 15 101 19 102
+rect 77 101 81 102
+rect 139 101 143 102
+rect 201 101 205 102
+rect 43 95 47 99
+rect 105 95 109 99
+rect 167 95 171 99
+rect 229 95 233 99
+rect -4 31 0 35
+rect 43 31 47 35
+rect 58 31 62 35
+rect 105 31 109 35
+rect 120 31 124 35
+rect 167 31 171 35
+rect 182 31 186 35
+rect 229 31 233 35
+use xor_optimized  xor_optimized_0 ../../../xor/optimized/post_layout
+timestamp 1731320890
+transform 1 0 5 0 1 -1
+box -5 0 44 102
+use nand_cmos  nand_cmos_0 ../../../nand/cmos/post_layout
+timestamp 1731238409
+transform 1 0 15 0 -1 161
+box -6 -69 34 59
+use inv_cmos  inv_cmos_0 ../../../inv/cmos/post_layout
+timestamp 1731226851
+transform 1 0 41 0 -1 167
+box 0 -37 24 65
+use nand_cmos  nand_cmos_1
+timestamp 1731238409
+transform 1 0 77 0 -1 161
+box -6 -69 34 59
+use xor_optimized  xor_optimized_1
+timestamp 1731320890
+transform 1 0 67 0 1 -1
+box -5 0 44 102
+use nand_cmos  nand_cmos_2
+timestamp 1731238409
+transform 1 0 139 0 -1 161
+box -6 -69 34 59
+use inv_cmos  inv_cmos_1
+timestamp 1731226851
+transform 1 0 103 0 -1 167
+box 0 -37 24 65
+use xor_optimized  xor_optimized_2
+timestamp 1731320890
+transform 1 0 129 0 1 -1
+box -5 0 44 102
+use nand_cmos  nand_cmos_3
+timestamp 1731238409
+transform 1 0 201 0 -1 161
+box -6 -69 34 59
+use inv_cmos  inv_cmos_2
+timestamp 1731226851
+transform 1 0 165 0 -1 167
+box 0 -37 24 65
+use xor_optimized  xor_optimized_3
+timestamp 1731320890
+transform 1 0 191 0 1 -1
+box -5 0 44 102
+use inv_cmos  inv_cmos_3
+timestamp 1731226851
+transform 1 0 227 0 -1 167
+box 0 -37 24 65
+<< labels >>
+rlabel metal1 -4 31 0 35 3 B3
+rlabel metal1 43 95 47 99 5 A3
+rlabel metal1 8 168 12 172 1 B3
+rlabel metal1 24 175 28 179 1 A3
+rlabel metal1 59 168 63 172 1 G3
+rlabel metal1 58 31 62 35 1 B2
+rlabel metal1 105 95 109 99 5 A2
+rlabel metal1 120 31 124 35 1 B1
+rlabel metal1 167 95 171 99 5 A1
+rlabel metal1 182 31 186 35 1 B0
+rlabel metal1 229 95 233 99 6 A0
+rlabel metal1 70 168 74 172 1 B2
+rlabel metal1 86 175 90 179 1 A2
+rlabel metal1 132 168 136 172 1 B1
+rlabel metal1 148 175 152 179 1 A1
+rlabel metal1 121 168 125 172 1 G2
+rlabel metal1 183 168 187 172 1 G1
+rlabel metal1 194 168 198 172 1 B0
+rlabel metal1 210 175 214 179 1 A0
+rlabel metal1 245 168 249 172 7 G0
+rlabel metal1 43 31 47 35 1 P3
+rlabel metal1 105 31 109 35 1 P2
+rlabel metal1 167 31 171 35 1 P1
+rlabel metal1 229 31 233 35 1 P0
+<< end >>

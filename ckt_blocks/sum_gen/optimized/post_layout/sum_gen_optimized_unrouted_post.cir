@@ -1,0 +1,114 @@
+.include ../../../../tech_files/TSMC_180nm.txt
+
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={20*LAMBDA}
+.param width_P={2.5*width_N}
+.param length={2*LAMBDA}
+.global gnd vdd
+
+VDD vdd gnd SUPPLY
+vinP3 P3 gnd PULSE(0 SUPPLY  320ns 1ps 1ps  320ns   640ns)
+vinP2 P2 gnd PULSE(0 SUPPLY  160ns 1ps 1ps  160ns   320ns)
+vinP1 P1 gnd PULSE(0 SUPPLY   80ns 1ps 1ps   80ns   160ns)
+vinP0 P0 gnd PULSE(0 SUPPLY   40ns 1ps 1ps   40ns    80ns)
+vinC3 C3 gnd PULSE(0 SUPPLY   20ns 1ps 1ps   20ns    40ns)
+vinC2 C2 gnd PULSE(0 SUPPLY   10ns 1ps 1ps   10ns    20ns)
+vinC1 C1 gnd PULSE(0 SUPPLY    5ns 1ps 1ps    5ns    10ns)
+VinC0 C0 gnd PULSE(0 SUPPLY  2.5ns 1ps 1ps  2.5ns     5ns)
+
+.option scale=0.09u
+
+.subckt inv_cmos IN w_0_0# vdd OUT
+M1000 OUT IN vdd w_0_0# CMOSP w=50 l=2
++  ad=250 pd=110 as=250 ps=110
+M1001 OUT IN gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+C0 OUT vdd 0.52fF
+C1 OUT IN 0.05fF
+C2 vdd w_0_0# 0.07fF
+C3 IN w_0_0# 0.06fF
+C4 IN gnd 0.05fF
+C5 OUT w_0_0# 0.07fF
+C6 OUT gnd 0.21fF
+C7 IN vdd 0.02fF
+C8 gnd Gnd 0.06fF
+C9 OUT Gnd 0.05fF
+C10 vdd Gnd 0.00fF
+C11 IN Gnd 0.13fF
+C12 w_0_0# Gnd 1.49fF
+.ends
+
+.subckt xor_optimized Y w_26_37# A B inv_cmos_0/vdd
+Xinv_cmos_0 B w_26_37# inv_cmos_0/vdd inv_cmos_0/OUT inv_cmos
+M1000 Y A inv_cmos_0/OUT Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+M1001 Y A B w_26_37# CMOSP w=50 l=2
++  ad=250 pd=110 as=320 ps=110
+C0 inv_cmos_0/OUT B 0.70fF
+C1 A B 0.05fF
+C2 inv_cmos_0/OUT Y 0.28fF
+C3 B w_26_37# 0.28fF
+C4 Y w_26_37# 0.07fF
+C5 A w_26_37# 0.10fF
+C6 Y B 0.56fF
+C7 Y Gnd 0.05fF
+C8 A Gnd 0.01fF
+C9 inv_cmos_0/OUT Gnd 0.06fF
+C10 B Gnd 0.32fF
+C11 w_26_37# Gnd 1.12fF
+.ends
+
+
+* Top level circuit sum_gen_cmos_unrouted
+
+Xxor_optimized_0 S2 xor_optimized_0/w_26_37# C2 P2 xor_optimized_2/inv_cmos_0/vdd
++ xor_optimized
+Xxor_optimized_1 S1 xor_optimized_1/w_26_37# C1 P1 xor_optimized_3/inv_cmos_0/vdd
++ xor_optimized
+Xxor_optimized_2 S0 xor_optimized_2/w_26_37# C0 P0 xor_optimized_2/inv_cmos_0/vdd
++ xor_optimized
+Xxor_optimized_3 S3 xor_optimized_3/w_26_37# C3 P3 xor_optimized_3/inv_cmos_0/vdd
++ xor_optimized
+C0 xor_optimized_3/w_26_37# C3 0.01fF
+C1 C1 xor_optimized_1/w_26_37# 0.01fF
+C2 C1 C3 0.15fF
+C3 xor_optimized_0/w_26_37# C2 0.01fF
+C4 C0 C2 0.15fF
+C5 P1 S2 0.08fF
+C6 S0 P3 0.08fF
+C7 C0 xor_optimized_2/w_26_37# 0.01fF
+C8 S3 Gnd -0.06fF
+C9 C3 Gnd -0.20fF
+C10 P3 Gnd 0.02fF
+C11 S0 Gnd 0.02fF
+C12 C0 Gnd -0.04fF
+C13 P0 Gnd 0.02fF
+C14 S1 Gnd -0.06fF
+C15 C1 Gnd -0.15fF
+C16 P1 Gnd 0.02fF
+C17 S2 Gnd 0.02fF
+C18 C2 Gnd 0.01fF
+C19 P2 Gnd 0.02fF
+.end
+
+
+.tran 1n 640n 
+
+.measure tran t_in WHEN v(P0)=0.5*SUPPLY CROSS=1
+.measure tran t_out WHEN v(S3)=0.5*SUPPLY CROSS=2
+.measure tran t_delay PARAM='t_out-t_in'
+
+.control
+    set hcopypscolor = 1
+    set color0=beige
+    set color1=black
+    set color2=blue
+    set color3=darkgreen
+    set color4=darkred
+    set color5=darkviolet
+    set color6=darkorange
+
+    run
+    plot v(P3)+22 v(P2)+20 v(P1)+18 v(P0)+16 v(C3)+14 v(C2)+12 v(C1)+10 v(C0)+8 v(S3)+6 v(S2)+4 v(S1)+2 v(S0) 
+.endc
