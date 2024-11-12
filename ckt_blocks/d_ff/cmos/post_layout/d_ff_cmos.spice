@@ -1,0 +1,177 @@
+* SPICE3 file created from d_ff_cmos.ext - technology: scmos
+
+.option scale=0.09u
+
+.global Vdd Gnd 
+
+.subckt nand_cmos w_n6_n6# a_7_n61# Y gnd A vdd B
+M1000 a_7_n61# A gnd Gnd nfet w=40 l=2
++  ad=400 pd=180 as=200 ps=90
+M1001 Y B a_7_n61# Gnd nfet w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1002 Y A vdd w_n6_n6# pfet w=50 l=2
++  ad=500 pd=220 as=500 ps=220
+M1003 Y B vdd w_n6_n6# pfet w=50 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 B a_7_n61# 0.05fF
+C1 gnd a_7_n61# 0.45fF
+C2 w_n6_n6# A 0.06fF
+C3 B Y 0.24fF
+C4 vdd A 0.02fF
+C5 Y A 0.05fF
+C6 w_n6_n6# vdd 0.16fF
+C7 w_n6_n6# Y 0.15fF
+C8 w_n6_n6# B 0.06fF
+C9 vdd Y 1.60fF
+C10 Y a_7_n61# 0.41fF
+C11 a_7_n61# Gnd 0.13fF
+C12 gnd Gnd 0.07fF
+C13 Y Gnd 0.14fF
+C14 vdd Gnd 0.05fF
+C15 B Gnd 0.17fF
+C16 A Gnd 0.17fF
+C17 w_n6_n6# Gnd 2.49fF
+.ends
+
+.subckt inv_cmos IN w_0_0# gnd vdd OUT
+M1000 OUT IN vdd w_0_0# pfet w=50 l=2
++  ad=250 pd=110 as=250 ps=110
+M1001 OUT IN gnd Gnd nfet w=20 l=2
++  ad=100 pd=50 as=100 ps=50
+C0 IN vdd 0.02fF
+C1 OUT w_0_0# 0.07fF
+C2 w_0_0# IN 0.06fF
+C3 OUT IN 0.05fF
+C4 gnd OUT 0.21fF
+C5 gnd IN 0.05fF
+C6 w_0_0# vdd 0.07fF
+C7 OUT vdd 0.52fF
+C8 gnd Gnd 0.06fF
+C9 OUT Gnd 0.05fF
+C10 vdd Gnd 0.00fF
+C11 IN Gnd 0.13fF
+C12 w_0_0# Gnd 1.49fF
+.ends
+
+
+* Top level circuit d_ff_cmos
+
+Xnand_cmos_0 nand_cmos_0/w_n6_n6# nand_cmos_0/a_7_n61# nand_cmos_3/B gnd nand_cmos_1/B
++ vdd D nand_cmos
+Xnand_cmos_1 nand_cmos_1/w_n6_n6# nand_cmos_1/a_7_n61# nand_cmos_2/B gnd nand_cmos_1/A
++ vdd nand_cmos_1/B nand_cmos
+Xnand_cmos_2 nand_cmos_2/w_n6_n6# nand_cmos_2/a_7_n61# nand_cmos_7/B gnd nand_cmos_4/B
++ vdd nand_cmos_2/B nand_cmos
+Xnand_cmos_3 nand_cmos_3/w_n6_n6# nand_cmos_3/a_7_n61# nand_cmos_4/B gnd nand_cmos_7/B
++ vdd nand_cmos_3/B nand_cmos
+Xnand_cmos_4 nand_cmos_4/w_n6_n6# nand_cmos_4/a_7_n61# nand_cmos_5/B gnd clk vdd nand_cmos_4/B
++ nand_cmos
+Xnand_cmos_5 nand_cmos_5/w_n6_n6# nand_cmos_5/a_7_n61# Q gnd Qi vdd nand_cmos_5/B
++ nand_cmos
+Xnand_cmos_6 nand_cmos_6/w_n6_n6# nand_cmos_6/a_7_n61# Qi gnd Q vdd nand_cmos_7/Y
++ nand_cmos
+Xnand_cmos_7 nand_cmos_7/w_n6_n6# nand_cmos_7/a_7_n61# nand_cmos_7/Y gnd clk vdd nand_cmos_7/B
++ nand_cmos
+Xinv_cmos_0 clk inv_cmos_0/w_0_0# gnd vdd nand_cmos_1/B inv_cmos
+Xinv_cmos_1 D inv_cmos_1/w_0_0# gnd vdd nand_cmos_1/A inv_cmos
+C0 nand_cmos_4/B gnd 0.05fF
+C1 nand_cmos_1/B nand_cmos_2/B 0.07fF
+C2 nand_cmos_7/B vdd 0.85fF
+C3 clk nand_cmos_2/B 0.14fF
+C4 nand_cmos_4/B nand_cmos_2/w_n6_n6# 0.75fF
+C5 gnd nand_cmos_2/a_7_n61# 0.12fF
+C6 gnd nand_cmos_7/a_7_n61# 0.12fF
+C7 nand_cmos_5/B Qi 0.19fF
+C8 inv_cmos_1/w_0_0# D 0.15fF
+C9 inv_cmos_1/w_0_0# vdd 0.02fF
+C10 nand_cmos_1/w_n6_n6# nand_cmos_1/B 0.31fF
+C11 nand_cmos_4/B nand_cmos_7/B 0.64fF
+C12 nand_cmos_1/B D 0.35fF
+C13 nand_cmos_3/B D 0.07fF
+C14 nand_cmos_1/w_n6_n6# clk 0.01fF
+C15 vdd nand_cmos_1/B 0.54fF
+C16 nand_cmos_3/B vdd 0.03fF
+C17 clk vdd 0.10fF
+C18 nand_cmos_6/w_n6_n6# Qi 0.02fF
+C19 nand_cmos_7/B nand_cmos_7/a_7_n61# 0.05fF
+C20 gnd nand_cmos_1/a_7_n61# 0.12fF
+C21 nand_cmos_4/B nand_cmos_3/B 0.07fF
+C22 nand_cmos_4/B clk 0.23fF
+C23 nand_cmos_5/B Q 0.07fF
+C24 nand_cmos_7/Y Qi 0.07fF
+C25 gnd nand_cmos_7/B 0.05fF
+C26 nand_cmos_1/B inv_cmos_0/w_0_0# 0.03fF
+C27 clk inv_cmos_0/w_0_0# 0.01fF
+C28 Q Qi 0.58fF
+C29 nand_cmos_7/B nand_cmos_2/w_n6_n6# 0.02fF
+C30 nand_cmos_6/w_n6_n6# Q 0.72fF
+C31 nand_cmos_1/A nand_cmos_1/w_n6_n6# 0.06fF
+C32 nand_cmos_1/A D 0.19fF
+C33 nand_cmos_1/A vdd 0.20fF
+C34 gnd nand_cmos_1/B 0.09fF
+C35 gnd nand_cmos_3/B 0.05fF
+C36 nand_cmos_1/a_7_n61# nand_cmos_1/B 0.05fF
+C37 clk nand_cmos_4/w_n6_n6# 0.02fF
+C38 nand_cmos_5/B vdd 0.03fF
+C39 nand_cmos_7/Y Q 0.21fF
+C40 nand_cmos_7/Y nand_cmos_6/a_7_n61# 0.05fF
+C41 nand_cmos_3/B nand_cmos_7/B 0.19fF
+C42 vdd nand_cmos_0/w_n6_n6# 0.02fF
+C43 clk nand_cmos_7/B 0.28fF
+C44 Qi vdd 0.81fF
+C45 nand_cmos_6/w_n6_n6# vdd 0.01fF
+C46 nand_cmos_1/A inv_cmos_0/w_0_0# 0.32fF
+C47 nand_cmos_4/B nand_cmos_5/B 0.07fF
+C48 nand_cmos_5/w_n6_n6# Qi 0.03fF
+C49 clk nand_cmos_1/B 0.09fF
+C50 nand_cmos_1/A gnd 0.03fF
+C51 gnd nand_cmos_3/a_7_n61# 0.12fF
+C52 vdd nand_cmos_3/w_n6_n6# 0.02fF
+C53 nand_cmos_7/Y vdd 0.03fF
+C54 Q vdd 0.00fF
+C55 nand_cmos_5/a_7_n61# nand_cmos_5/B 0.05fF
+C56 gnd nand_cmos_5/B 0.05fF
+C57 nand_cmos_4/B nand_cmos_3/w_n6_n6# 0.69fF
+C58 nand_cmos_5/w_n6_n6# Q 0.69fF
+C59 vdd nand_cmos_7/w_n6_n6# 0.02fF
+C60 vdd nand_cmos_2/B 0.03fF
+C61 nand_cmos_1/A inv_cmos_1/w_0_0# 0.32fF
+C62 nand_cmos_0/a_7_n61# D 0.05fF
+C63 nand_cmos_4/B nand_cmos_4/a_7_n61# 0.05fF
+C64 nand_cmos_1/A nand_cmos_1/B 0.87fF
+C65 nand_cmos_1/A clk 0.16fF
+C66 nand_cmos_3/B nand_cmos_3/a_7_n61# 0.05fF
+C67 nand_cmos_4/B nand_cmos_2/B 0.21fF
+C68 nand_cmos_1/w_n6_n6# vdd 0.02fF
+C69 vdd D 0.00fF
+C70 nand_cmos_2/a_7_n61# nand_cmos_2/B 0.05fF
+C71 nand_cmos_7/Y gnd 0.05fF
+C72 nand_cmos_5/w_n6_n6# vdd 0.01fF
+C73 nand_cmos_4/B vdd 0.18fF
+C74 nand_cmos_0/w_n6_n6# nand_cmos_1/B 0.27fF
+C75 gnd nand_cmos_4/a_7_n61# 0.12fF
+C76 nand_cmos_7/B nand_cmos_3/w_n6_n6# 0.03fF
+C77 nand_cmos_7/Y nand_cmos_7/B 0.07fF
+C78 gnd nand_cmos_2/B 0.05fF
+C79 vdd inv_cmos_0/w_0_0# 0.02fF
+C80 gnd nand_cmos_0/a_7_n61# 0.12fF
+C81 gnd D 0.05fF
+C82 nand_cmos_7/B nand_cmos_2/B 0.07fF
+C83 nand_cmos_2/w_n6_n6# vdd 0.03fF
+C84 nand_cmos_4/w_n6_n6# vdd 0.02fF
+C85 Qi Gnd 0.02fF
+C86 nand_cmos_7/B Gnd 0.09fF
+C87 D Gnd -0.11fF
+C88 gnd Gnd 1.15fF
+C89 nand_cmos_1/B Gnd 0.49fF
+C90 vdd Gnd 0.32fF
+C91 clk Gnd 0.21fF
+C92 nand_cmos_7/Y Gnd 0.11fF
+C93 Q Gnd 0.27fF
+C94 nand_cmos_5/B Gnd -0.15fF
+C95 nand_cmos_4/B Gnd 0.07fF
+C96 nand_cmos_2/B Gnd 0.11fF
+C97 nand_cmos_1/A Gnd -0.98fF
+C98 nand_cmos_3/B Gnd -0.14fF
+.end
+

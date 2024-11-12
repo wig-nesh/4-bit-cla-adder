@@ -1,0 +1,129 @@
+magic
+tech scmos
+timestamp 1731437335
+<< metal1 >>
+rect 26 233 178 237
+rect 26 207 30 233
+rect 10 203 30 207
+rect 31 178 53 182
+rect 64 178 95 182
+rect 110 178 141 182
+rect 156 178 187 182
+rect 202 178 212 182
+rect -1 171 2 175
+rect 18 171 25 175
+rect 21 159 25 171
+rect 29 143 33 175
+rect 110 171 115 175
+rect 10 105 36 109
+rect 56 105 194 108
+rect 6 102 194 105
+rect 10 98 36 102
+rect 56 98 194 102
+rect 21 46 33 50
+rect 21 36 25 46
+rect -1 32 3 36
+rect 18 32 25 36
+rect 202 32 212 36
+rect 21 29 25 32
+rect 21 25 49 29
+rect 64 25 95 29
+rect 110 25 141 29
+rect 156 25 187 29
+rect 10 0 30 4
+rect 26 -26 30 0
+rect 26 -30 178 -26
+<< m2contact >>
+rect 26 178 31 183
+rect 2 170 7 175
+rect 21 154 26 159
+rect 29 32 34 37
+rect 78 32 83 37
+rect 170 32 175 37
+<< metal2 >>
+rect 3 169 7 170
+rect 26 169 30 178
+rect 3 165 30 169
+rect 21 44 25 154
+rect 29 50 33 143
+rect 21 40 33 44
+rect 111 41 115 175
+rect 203 41 207 175
+rect 29 37 33 40
+rect 79 37 115 41
+rect 171 37 207 41
+<< metal3 >>
+rect 79 170 83 173
+rect 117 171 125 175
+rect 79 166 98 170
+rect 3 37 72 41
+rect 3 36 7 37
+rect 68 29 72 37
+rect 94 33 98 166
+rect 117 29 121 171
+rect 171 170 175 173
+rect 171 166 190 170
+rect 186 32 190 166
+rect 125 29 129 32
+rect 68 25 129 29
+<< pad >>
+rect 78 170 83 175
+rect 110 170 115 175
+rect 122 170 127 175
+rect 170 170 175 175
+rect 202 170 207 175
+rect 28 140 33 145
+rect 28 49 33 54
+rect 2 31 7 36
+rect 93 31 98 36
+rect 124 31 129 36
+rect 185 31 190 36
+use inv_cmos  inv_cmos_0 ../../../inv/cmos/post_layout
+timestamp 1731226851
+transform 1 0 0 0 1 37
+box 0 -37 24 65
+use nand_cmos  nand_cmos_1 ../../../nand/cmos/post_layout
+timestamp 1731238409
+transform 1 0 36 0 1 43
+box -6 -69 34 59
+use nand_cmos  nand_cmos_2
+timestamp 1731238409
+transform 1 0 82 0 1 43
+box -6 -69 34 59
+use nand_cmos  nand_cmos_6
+timestamp 1731238409
+transform 1 0 174 0 1 43
+box -6 -69 34 59
+use nand_cmos  nand_cmos_7
+timestamp 1731238409
+transform 1 0 128 0 1 43
+box -6 -69 34 59
+use inv_cmos  inv_cmos_1
+timestamp 1731226851
+transform 1 0 0 0 -1 170
+box 0 -37 24 65
+use nand_cmos  nand_cmos_0
+timestamp 1731238409
+transform 1 0 36 0 -1 164
+box -6 -69 34 59
+use nand_cmos  nand_cmos_3
+timestamp 1731238409
+transform 1 0 82 0 -1 164
+box -6 -69 34 59
+use nand_cmos  nand_cmos_4
+timestamp 1731238409
+transform 1 0 128 0 -1 164
+box -6 -69 34 59
+use nand_cmos  nand_cmos_5
+timestamp 1731238409
+transform 1 0 174 0 -1 164
+box -6 -69 34 59
+<< labels >>
+rlabel metal1 -1 171 3 175 3 D
+rlabel metal1 -1 32 3 36 3 clk
+rlabel metal1 208 32 212 36 7 Qi
+rlabel metal1 208 178 212 182 7 Q
+rlabel metal1 19 204 21 206 1 gnd
+rlabel metal1 20 1 22 3 1 gnd
+rlabel metal1 11 103 13 105 1 vdd
+<< end >>

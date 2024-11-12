@@ -1,4 +1,4 @@
-.include ../../../tech_files/TSMC_180nm.txt
+* .include ../../../tech_files/TSMC_180nm.txt
 .include ../../inv/cmos/inv_cmos.cir
 .include ../../nand/cmos/nand_cmos.cir
 .include ../../nand/cmos/nand_3_cmos.cir
@@ -9,23 +9,23 @@
 .include ../../nor/cmos/nor_4_cmos.cir
 .include ../../nor/cmos/nor_5_cmos.cir
 
-.param SUPPLY=1.8
-.param LAMBDA=0.09u
-.param width_N={20*LAMBDA}
-.param width_P={2.5*width_N}
-.param length={2*LAMBDA}
-.global gnd vdd
+* .param SUPPLY=1.8
+* .param LAMBDA=0.09u
+* .param width_N={20*LAMBDA}
+* .param width_P={2.5*width_N}
+* .param length={2*LAMBDA}
+* .global gnd vdd
 
-VDD vdd gnd SUPPLY
-vinP3 P3 gnd PULSE(0 SUPPLY 640ns 1ps 1ps 640ns 1280ns)
-vinG3 G3 gnd PULSE(0 SUPPLY 320ns 1ps 1ps 320ns  640ns)
-vinP2 P2 gnd PULSE(0 SUPPLY 160ns 1ps 1ps 160ns  320ns)
-vinG2 G2 gnd PULSE(0 SUPPLY  80ns 1ps 1ps  80ns  160ns)
-vinP1 P1 gnd PULSE(0 SUPPLY  40ns 1ps 1ps  40ns   80ns)
-vinG1 G1 gnd PULSE(0 SUPPLY  20ns 1ps 1ps  20ns   40ns)
-vinP0 P0 gnd PULSE(0 SUPPLY  10ns 1ps 1ps  10ns   20ns)
-vinG0 G0 gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns   10ns)
-VinC0 C0 gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns    5ns)
+* VDD vdd gnd SUPPLY
+* vinP3 P3 gnd PULSE(0 SUPPLY 640ns 1ps 1ps 640ns 1280ns)
+* vinG3 G3 gnd PULSE(0 SUPPLY 320ns 1ps 1ps 320ns  640ns)
+* vinP2 P2 gnd PULSE(0 SUPPLY 160ns 1ps 1ps 160ns  320ns)
+* vinG2 G2 gnd PULSE(0 SUPPLY  80ns 1ps 1ps  80ns  160ns)
+* vinP1 P1 gnd PULSE(0 SUPPLY  40ns 1ps 1ps  40ns   80ns)
+* vinG1 G1 gnd PULSE(0 SUPPLY  20ns 1ps 1ps  20ns   40ns)
+* vinP0 P0 gnd PULSE(0 SUPPLY  10ns 1ps 1ps  10ns   20ns)
+* vinG0 G0 gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns   10ns)
+* VinC0 C0 gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns    5ns)
 
 .subckt cla_gen_cmos C0 G0 P0 P1 G1 P2 G2 P3 G3 C1 C2 C3 C4
     X5nand1  P3 P2 P1 P0 C0 ai nand_5_cmos
@@ -59,24 +59,24 @@ VinC0 C0 gnd PULSE(0 SUPPLY 2.5ns 1ps 1ps 2.5ns    5ns)
     X2or4 n C1 inv_cmos
 .ends
 
-X1 C0 G0 P0 P1 G1 P2 G2 P3 G3 C1 C2 C3 C4 cla_gen_cmos
+* X1 C0 G0 P0 P1 G1 P2 G2 P3 G3 C1 C2 C3 C4 cla_gen_cmos
 
-.tran 1n 1280n 
+* .tran 1n 1280n 
 
-.measure tran t_in WHEN v(C2)=0.5*SUPPLY CROSS=2
-.measure tran t_out WHEN v(C3)=0.5*SUPPLY CROSS=1
-.measure tran t_delay PARAM='t_out-t_in'
+* .measure tran t_in WHEN v(C2)=0.5*SUPPLY CROSS=2
+* .measure tran t_out WHEN v(C3)=0.5*SUPPLY CROSS=1
+* .measure tran t_delay PARAM='t_out-t_in'
 
-.control
-    set hcopypscolor = 1
-    set color0=beige
-    set color1=black
-    set color2=blue
-    set color3=darkgreen
-    set color4=darkred
-    set color5=darkviolet
-    set color6=darkorange
+* .control
+*     set hcopypscolor = 1
+*     set color0=beige
+*     set color1=black
+*     set color2=blue
+*     set color3=darkgreen
+*     set color4=darkred
+*     set color5=darkviolet
+*     set color6=darkorange
 
-    run
-    plot v(C0)+16 v(G0)+14 v(P0)+12 v(G1)+10 v(P1)+8 v(G2)+6 v(P2)+4 v(G3)+2 v(P3) v(C1)-2 v(C2)-4 v(C3)-6 v(C4)-8
-.endc
+*     run
+*     plot v(C0)+16 v(G0)+14 v(P0)+12 v(G1)+10 v(P1)+8 v(G2)+6 v(P2)+4 v(G3)+2 v(P3) v(C1)-2 v(C2)-4 v(C3)-6 v(C4)-8
+* .endc

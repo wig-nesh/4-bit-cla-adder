@@ -1,0 +1,246 @@
+timestamp 1731437335
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use inv_cmos inv_cmos_0 1 0 0 0 1 37
+use nand_cmos nand_cmos_1 1 0 36 0 1 43
+use nand_cmos nand_cmos_2 1 0 82 0 1 43
+use nand_cmos nand_cmos_6 1 0 174 0 1 43
+use nand_cmos nand_cmos_7 1 0 128 0 1 43
+use inv_cmos inv_cmos_1 1 0 0 0 -1 170
+use nand_cmos nand_cmos_0 1 0 36 0 -1 164
+use nand_cmos nand_cmos_3 1 0 82 0 -1 164
+use nand_cmos nand_cmos_4 1 0 128 0 -1 164
+use nand_cmos nand_cmos_5 1 0 174 0 -1 164
+node "m3_171_166#" 3 248.75 171 166 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 624 320 0 0 0 0 50 40
+node "m3_79_166#" 3 247.963 79 166 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 620 318 0 0 0 0 50 40
+node "gnd" 4 655.001 10 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 792 404 0 0 0 0 0 0 0 0 0 0
+node "m1_156_25#" 1 109.312 156 25 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "m1_110_25#" 1 109.312 110 25 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "m1_64_25#" 1 109.312 64 25 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "Qi" 0 40.692 202 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0 0 0 0 0 0 0
+node "m1_170_32#" 4 2072.39 170 32 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 20 705 360 0 0 0 0 0 0 25 20
+node "clk" 6 409.772 -1 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 1168 592 0 0 0 0 75 60
+node "vdd" 2 961.858 6 102 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1738 412 0 0 0 0 0 0 0 0 0 0
+node "m1_78_32#" 4 1962.75 78 32 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 45 38 705 360 0 0 0 0 0 0 25 20
+node "m1_18_32#" 4 1306.59 18 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 368 200 372 194 0 0 0 0 0 0 50 40
+node "m1_18_171#" 4 1476.54 18 171 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 126 78 550 282 0 0 0 0 0 0 0 0
+node "Q" 0 40.692 202 178 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 28 0 0 0 0 0 0 0 0 0 0
+node "m1_156_178#" 1 109.312 156 178 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "m1_110_178#" 1 109.312 110 178 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "m1_64_178#" 1 109.312 64 178 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "D" 2 568.721 -1 171 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 150 90 198 106 0 0 0 0 0 0 0 0
+node "gnd" 4 655.001 10 203 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 792 404 0 0 0 0 0 0 0 0 0 0
+cap "m3_171_166#" "vdd" 95.256
+cap "m1_64_25#" "m1_78_32#" 68.73
+cap "clk" "vdd" 95.256
+cap "clk" "m1_18_32#" 37.0008
+cap "m3_79_166#" "m1_78_32#" 74.0448
+cap "D" "m1_18_171#" 94.1352
+cap "m1_18_171#" "vdd" 164.387
+cap "m3_79_166#" "vdd" 95.256
+cap "m1_110_178#" "m1_78_32#" 68.73
+cap "m1_18_171#" "m1_18_32#" 696.278
+cap "m1_78_32#" "vdd" 153.108
+cap "clk" "m1_64_25#" 51.1272
+cap "D" "m1_18_32#" 168.861
+cap "clk" "m1_110_25#" 60.4584
+cap "clk" "m1_18_171#" 157.507
+cap "clk" "m3_79_166#" 9.54
+cap "m1_18_32#" "vdd" 164.387
+cap "m1_170_32#" "m1_156_25#" 68.73
+cap "clk" "m1_78_32#" 39.5357
+cap "m3_171_166#" "m1_170_32#" 74.0448
+subcap "gnd" -80.2584
+subcap "clk" -203.248
+subcap "m1_78_32#" -1679.29
+subcap "m1_18_32#" -818.587
+cap "nand_cmos_1/Y" "inv_cmos_0/IN" 96.1632
+cap "nand_cmos_2/w_n6_n6#" "nand_cmos_2/Y" 8.698
+cap "nand_cmos_1/Y" "inv_cmos_0/OUT" 68.73
+cap "inv_cmos_0/OUT" "nand_cmos_1/vdd" 54.984
+cap "nand_cmos_1/A" "inv_cmos_0/IN" 3.352
+cap "inv_cmos_0/OUT" "nand_cmos_1/A" 172.794
+cap "nand_cmos_1/Y" "nand_cmos_2/a_7_n61#" 54.984
+cap "nand_cmos_1/a_7_n61#" "inv_cmos_0/OUT" 54.984
+cap "nand_cmos_2/w_n6_n6#" "nand_cmos_2/A" 112.808
+cap "nand_cmos_1/w_n6_n6#" "inv_cmos_0/IN" 12.875
+cap "inv_cmos_0/OUT" "nand_cmos_1/w_n6_n6#" 146.345
+cap "nand_cmos_2/Y" "nand_cmos_2/A" 91.3263
+cap "inv_cmos_0/OUT" "inv_cmos_0/IN" 57.0064
+cap "nand_cmos_2/vdd" "nand_cmos_2/A" 0.981857
+cap "inv_cmos_0/w_0_0#" "nand_cmos_1/A" 165.834
+cap "nand_cmos_1/Y" "nand_cmos_2/Y" 68.73
+cap "inv_cmos_0/gnd" "nand_cmos_1/Y" 54.984
+cap "nand_cmos_1/Y" "nand_cmos_2/A" 131.556
+cap "nand_cmos_1/a_7_n61#" "inv_cmos_0/gnd" 123.714
+cap "nand_cmos_2/Y" "nand_cmos_2/vdd" 174.96
+cap "inv_cmos_0/OUT" "inv_cmos_0/w_0_0#" 28.3521
+cap "inv_cmos_0/w_0_0#" "inv_cmos_0/IN" 7.104
+cap "inv_cmos_0/gnd" "inv_cmos_0/OUT" 87.9744
+cap "nand_cmos_1/w_n6_n6#" "nand_cmos_1/A" 64.6599
+cap "inv_cmos_0/gnd" "nand_cmos_2/a_7_n61#" 92.7855
+cap "nand_cmos_2/A" "inv_cmos_0/IN" 0.928
+subcap "m1_170_32#" -1738.93
+cap "nand_cmos_7/a_7_n61#" "nand_cmos_2/Y" 54.984
+cap "nand_cmos_6/gnd" "nand_cmos_7/a_7_n61#" 123.714
+cap "nand_cmos_6/gnd" "nand_cmos_2/Y" 54.984
+cap "nand_cmos_6/A" "nand_cmos_6/Y" 107.645
+cap "nand_cmos_6/w_n6_n6#" "nand_cmos_6/Y" 8.698
+cap "nand_cmos_7/A" "nand_cmos_2/B" -11.9616
+cap "nand_cmos_6/B" "nand_cmos_6/Y" 68.73
+cap "nand_cmos_6/Y" "nand_cmos_6/vdd" 174.96
+cap "m1_78_32#" "nand_cmos_2/B" 5.48
+cap "nand_cmos_6/B" "nand_cmos_2/Y" 68.73
+cap "nand_cmos_6/gnd" "nand_cmos_6/B" 54.984
+cap "nand_cmos_7/A" "nand_cmos_2/Y" 214.274
+cap "nand_cmos_2/w_n6_n6#" "m1_78_32#" 331.988
+cap "nand_cmos_6/A" "nand_cmos_6/vdd" 0.981857
+cap "nand_cmos_6/gnd" "nand_cmos_2/a_7_n61#" 30.9285
+cap "nand_cmos_6/w_n6_n6#" "nand_cmos_6/A" 100.226
+cap "m1_78_32#" "nand_cmos_2/Y" 85.4352
+cap "nand_cmos_6/B" "nand_cmos_6/a_7_n61#" 54.984
+cap "nand_cmos_6/B" "nand_cmos_6/A" 137.036
+cap "nand_cmos_6/Y" "m1_170_32#" 3.5964
+cap "nand_cmos_6/w_n6_n6#" "m1_170_32#" 302.81
+subcap "m3_79_166#" -232.811
+subcap "vdd" -637.656
+subcap "m1_18_171#" -1041.94
+subcap "m1_64_178#" -250.208
+subcap "D" -640.657
+cap "nand_cmos_3/A" "nand_cmos_2/Y" 149.04
+cap "nand_cmos_3/A" "nand_cmos_2/w_n6_n6#" 9.107
+cap "nand_cmos_3/A" "nand_cmos_3/Y" 390.614
+cap "inv_cmos_0/vdd" "nand_cmos_2/w_n6_n6#" 9.9114
+cap "nand_cmos_0/A" "inv_cmos_0/vdd" 288.666
+cap "nand_cmos_0/Y" "inv_cmos_0/vdd" 27.492
+cap "inv_cmos_1/OUT" "inv_cmos_0/vdd" 32.9904
+cap "inv_cmos_0/vdd" "nand_cmos_0/w_n6_n6#" 20.9334
+cap "inv_cmos_0/vdd" "inv_cmos_1/w_0_0#" 17.4486
+cap "inv_cmos_0/vdd" "inv_cmos_1/IN" 0.490929
+cap "inv_cmos_0/vdd" "inv_cmos_0/w_0_0#" 17.4486
+cap "nand_cmos_1/w_n6_n6#" "inv_cmos_0/vdd" 24.354
+cap "nand_cmos_0/A" "nand_cmos_0/w_n6_n6#" 267.726
+cap "nand_cmos_0/A" "inv_cmos_1/IN" -5.04
+cap "nand_cmos_0/A" "nand_cmos_1/w_n6_n6#" 159.088
+cap "inv_cmos_1/OUT" "inv_cmos_1/w_0_0#" 315.978
+cap "nand_cmos_3/A" "nand_cmos_3/w_n6_n6#" 25.424
+cap "inv_cmos_0/vdd" "inv_cmos_0/OUT" 32.9904
+cap "inv_cmos_1/OUT" "inv_cmos_1/IN" 85.4352
+cap "inv_cmos_1/w_0_0#" "inv_cmos_1/IN" 143.723
+cap "inv_cmos_1/OUT" "inv_cmos_0/w_0_0#" 159.088
+cap "inv_cmos_0/vdd" "nand_cmos_3/w_n6_n6#" 6.012
+cap "inv_cmos_0/vdd" "nand_cmos_1/Y" 32.9904
+cap "nand_cmos_3/A" "inv_cmos_0/vdd" 544.774
+subcap "m3_171_166#" -233.599
+subcap "Q" -105.717
+subcap "m1_156_178#" -257.017
+subcap "m1_110_178#" -325.306
+cap "nand_cmos_6/w_n6_n6#" "nand_cmos_5/A" 9.107
+cap "nand_cmos_2/vdd" "nand_cmos_5/A" 544.774
+cap "nand_cmos_2/vdd" "nand_cmos_7/w_n6_n6#" 24.354
+cap "nand_cmos_2/vdd" "nand_cmos_4/Y" 27.492
+cap "nand_cmos_2/vdd" "nand_cmos_3/w_n6_n6#" 14.028
+cap "nand_cmos_2/vdd" "nand_cmos_3/Y" 27.492
+cap "nand_cmos_5/w_n6_n6#" "nand_cmos_2/vdd" 6.012
+cap "nand_cmos_2/vdd" "nand_cmos_2/w_n6_n6#" 17.4486
+cap "nand_cmos_6/Y" "nand_cmos_5/A" 149.04
+cap "nand_cmos_5/w_n6_n6#" "nand_cmos_5/A" 25.424
+cap "nand_cmos_3/Y" "nand_cmos_3/w_n6_n6#" 685.447
+cap "nand_cmos_2/vdd" "nand_cmos_6/w_n6_n6#" 6.9054
+cap "nand_cmos_2/Y" "nand_cmos_2/vdd" 32.9904
+cap "nand_cmos_3/Y" "nand_cmos_2/w_n6_n6#" 309.557
+cap "nand_cmos_2/vdd" "nand_cmos_7/Y" 32.9904
+cap "nand_cmos_4/w_n6_n6#" "nand_cmos_2/vdd" 20.04
+cap "nand_cmos_5/Y" "nand_cmos_5/A" 390.614
+cap "nand_cmos_2/vdd" "nand_cmos_4/A" 1.42109e-14
+cap "nand_cmos_5/w_n6_n6#" "nand_cmos_5/Y" 685.447
+cap "nand_cmos_6/w_n6_n6#" "nand_cmos_5/Y" 320.612
+subcap "m3_79_166#" -35.3034
+subcap "m1_18_171#" -1411.8
+subcap "D" -33.275
+subcap "gnd" -80.2584
+cap "inv_cmos_1/vdd" "inv_cmos_1/IN" 0.490929
+cap "nand_cmos_3/Y" "nand_cmos_0/Y" 68.73
+cap "inv_cmos_1/gnd" "inv_cmos_1/OUT" 32.9904
+cap "nand_cmos_3/A" "nand_cmos_3/w_n6_n6#" 3.78
+cap "nand_cmos_0/a_7_n61#" "inv_cmos_1/IN" 54.984
+cap "inv_cmos_1/gnd" "nand_cmos_0/Y" 54.984
+cap "nand_cmos_3/A" "nand_cmos_0/Y" 186.54
+cap "nand_cmos_0/A" "inv_cmos_1/IN" 186.54
+cap "nand_cmos_3/a_7_n61#" "nand_cmos_0/Y" 54.984
+cap "inv_cmos_1/gnd" "nand_cmos_3/a_7_n61#" 92.7855
+cap "inv_cmos_1/OUT" "inv_cmos_1/IN" 5.89114
+cap "inv_cmos_1/w_0_0#" "inv_cmos_1/IN" 10.23
+cap "inv_cmos_1/gnd" "inv_cmos_1/IN" 54.984
+cap "inv_cmos_1/IN" "nand_cmos_0/Y" 68.73
+cap "inv_cmos_1/gnd" "nand_cmos_0/a_7_n61#" 123.714
+subcap "m3_171_166#" -36.0906
+cap "nand_cmos_5/a_7_n61#" "nand_cmos_4/Y" 54.984
+cap "nand_cmos_4/Y" "nand_cmos_5/Y" 68.73
+cap "nand_cmos_3/Y" "nand_cmos_4/gnd" 54.984
+cap "nand_cmos_5/w_n6_n6#" "nand_cmos_5/A" 3.78
+cap "nand_cmos_3/Y" "nand_cmos_4/A" 186.54
+cap "nand_cmos_3/Y" "nand_cmos_4/a_7_n61#" 54.984
+cap "nand_cmos_3/a_7_n61#" "nand_cmos_4/gnd" 30.9285
+cap "nand_cmos_4/Y" "nand_cmos_4/gnd" 54.984
+cap "nand_cmos_5/A" "nand_cmos_4/Y" 186.54
+cap "nand_cmos_4/a_7_n61#" "nand_cmos_4/gnd" 123.714
+cap "nand_cmos_3/w_n6_n6#" "nand_cmos_3/Y" 3.78
+cap "nand_cmos_3/Y" "nand_cmos_4/Y" 68.73
+cap "nand_cmos_4/w_n6_n6#" "nand_cmos_4/A" 18.9
+cap "nand_cmos_5/w_n6_n6#" "nand_cmos_5/Y" 3.78
+merge "nand_cmos_5/gnd" "nand_cmos_4/gnd" -80.16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -80 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_4/gnd" "nand_cmos_3/gnd"
+merge "nand_cmos_3/gnd" "nand_cmos_0/gnd"
+merge "nand_cmos_0/gnd" "inv_cmos_1/gnd"
+merge "inv_cmos_1/gnd" "nand_cmos_7/gnd"
+merge "nand_cmos_7/gnd" "nand_cmos_6/gnd"
+merge "nand_cmos_6/gnd" "nand_cmos_2/gnd"
+merge "nand_cmos_2/gnd" "nand_cmos_1/gnd"
+merge "nand_cmos_1/gnd" "inv_cmos_0/gnd"
+merge "inv_cmos_0/gnd" "gnd"
+merge "nand_cmos_3/A" "nand_cmos_7/B" -124.436 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 96 0 0 0 0 0 0 0
+merge "nand_cmos_7/B" "nand_cmos_2/Y"
+merge "nand_cmos_2/Y" "m3_79_166#"
+merge "m3_79_166#" "m1_110_25#"
+merge "nand_cmos_3/B" "nand_cmos_0/Y" -37.7304 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -48 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_0/Y" "m1_64_178#"
+merge "nand_cmos_5/vdd" "nand_cmos_4/vdd" -731.365 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -385 -424 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_4/vdd" "nand_cmos_7/vdd"
+merge "nand_cmos_7/vdd" "nand_cmos_6/vdd"
+merge "nand_cmos_6/vdd" "nand_cmos_3/vdd"
+merge "nand_cmos_3/vdd" "nand_cmos_0/vdd"
+merge "nand_cmos_0/vdd" "inv_cmos_1/vdd"
+merge "inv_cmos_1/vdd" "nand_cmos_2/vdd"
+merge "nand_cmos_2/vdd" "nand_cmos_1/vdd"
+merge "nand_cmos_1/vdd" "inv_cmos_0/vdd"
+merge "inv_cmos_0/vdd" "vdd"
+merge "nand_cmos_5/A" "nand_cmos_6/Y" -179.695 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_6/Y" "m3_171_166#"
+merge "m3_171_166#" "Qi"
+merge "inv_cmos_1/OUT" "nand_cmos_1/A" -753.32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -28 -18 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_1/A" "m1_18_171#"
+merge "nand_cmos_0/A" "nand_cmos_1/B" -633.357 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4 -24 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_1/B" "inv_cmos_0/OUT"
+merge "inv_cmos_0/OUT" "m1_18_32#"
+merge "nand_cmos_4/A" "nand_cmos_7/A" -124.475 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_7/A" "inv_cmos_0/IN"
+merge "inv_cmos_0/IN" "clk"
+merge "nand_cmos_5/B" "nand_cmos_4/Y" -32.676 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -32 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_4/Y" "m1_156_178#"
+merge "nand_cmos_5/Y" "Q" -1701.41 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -60 -24 -148 -74 0 0 0 0 0 0 0 0
+merge "Q" "nand_cmos_6/A"
+merge "nand_cmos_6/A" "m1_170_32#"
+merge "nand_cmos_0/B" "inv_cmos_1/IN" -278.502 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 -32 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/IN" "D"
+merge "nand_cmos_7/Y" "nand_cmos_6/B" -22.5672 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_6/B" "m1_156_25#"
+merge "nand_cmos_2/B" "nand_cmos_1/Y" -17.5128 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 -16 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_1/Y" "m1_64_25#"
+merge "nand_cmos_4/B" "nand_cmos_3/Y" -1776.99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -48 -40 -180 -90 0 0 0 0 0 0 0 0
+merge "nand_cmos_3/Y" "m1_110_178#"
+merge "m1_110_178#" "nand_cmos_2/A"
+merge "nand_cmos_2/A" "m1_78_32#"

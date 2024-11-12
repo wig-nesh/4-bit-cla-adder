@@ -1,49 +1,49 @@
-* .include ../../../tech_files/TSMC_180nm.txt
+.include ../../../tech_files/TSMC_180nm.txt
 .include ../../inv/cmos/inv_cmos.cir
 .include ../../nand/cmos/nand_cmos.cir
 
-* .param SUPPLY=1.8
-* .param LAMBDA=0.09u
-* .param width_N={20*LAMBDA}
-* .param width_P={2.5*width_N}
-* .param length={2*LAMBDA}
-* .global gnd vdd
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.param width_N={20*LAMBDA}
+.param width_P={2.5*width_N}
+.param length={2*LAMBDA}
+.global gnd vdd
 
-* VDD vdd gnd SUPPLY
-* vinD     D gnd PULSE(0 SUPPLY  12ns 1ps 1ps  8ns 32ns)
-* vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
+VDD vdd gnd SUPPLY
+vinD     D gnd PULSE(0 SUPPLY  12ns 1ps 1ps  8ns 32ns)
+vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
 
-.subckt d_ff_cmos D clk Q Qi
+.subckt d_ff_cmos D clk Q Qi S R
     Xinv      D   Di inv_cmos
     Xinv1   clk clki inv_cmos
     Xnand1    D clki  x nand_cmos
     Xnand2   Di clki  y nand_cmos
     Xnand3    x R   S nand_cmos
     Xnand4    y S   R nand_cmos
-    Xnand5 clk S   w nand_cmos
-    Xnand6 clk R   v nand_cmos
+    Xnand5  clk S   w nand_cmos
+    Xnand6  clk R   v nand_cmos
     Xnand7    w Qi  Q nand_cmos
     Xnand8    v Q  Qi nand_cmos
 .ends
 
-* Xdff D clk Q Qi d_ff_cmos
+Xdff D clk Q Qi S R d_ff_cmos
 
-* .tran 1n 80n 
+.tran 1n 80n 
 
-* .measure tran t_in WHEN v(clk)=0.5*SUPPLY CROSS=3
-* .measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=2
-* .measure tran t_delay PARAM='t_out-t_in'
+.measure tran t_in WHEN v(clk)=0.5*SUPPLY CROSS=3
+.measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=2
+.measure tran t_delay PARAM='t_out-t_in'
 
-* .control
-*     set hcopypscolor = 1
-*     set color0=beige
-*     set color1=black
-*     set color2=blue
-*     set color3=darkgreen
-*     set color4=darkred
-*     set color5=darkviolet
-*     set color6=darkorange
+.control
+    set hcopypscolor = 1
+    set color0=beige
+    set color1=black
+    set color2=blue
+    set color3=darkgreen
+    set color4=darkred
+    set color5=darkviolet
+    set color6=darkorange
 
-*     run
-*     plot v(clk)+4 v(D)+2 v(Q) V(Qi)-2
-* .endc
+    run
+    plot v(clk)+4 v(D)+2 v(Q) V(Qi)-2 v(S)-4 v(R)-6
+.endc

@@ -1,0 +1,56 @@
+magic
+tech scmos
+timestamp 1731444346
+use d_ff_cmos  d_ff_cmos_3 ../../../ckt_blocks/d_ff/cmos/post_layout
+timestamp 1731437335
+transform 1 0 -220 0 1 -272
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_4
+timestamp 1731437335
+transform 1 0 -220 0 1 -2
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_1
+timestamp 1731437335
+transform 1 0 -3 0 1 -272
+box -1 -30 212 237
+use pg_gen_optimized_unrouted  pg_gen_optimized_unrouted_0 ../../../ckt_blocks/pg_gen/optimized/post_layout
+timestamp 1731444346
+transform 1 0 4 0 1 1
+box -4 -1 251 230
+use cla_gen_cmos_unrouted  cla_gen_cmos_unrouted_0 ../../../ckt_blocks/cla_gen/cmos/post_layout
+timestamp 1731444346
+transform 1 0 261 0 1 -85
+box -1 -168 522 452
+use d_ff_cmos  d_ff_cmos_0
+timestamp 1731437335
+transform 1 0 823 0 1 -275
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_5
+timestamp 1731437335
+transform 1 0 823 0 -1 205
+box -1 -30 212 237
+use sum_gen_optimized_unrouted  sum_gen_optimized_unrouted_0 ../../../ckt_blocks/sum_gen/optimized/post_layout
+timestamp 1731444346
+transform 1 0 711 0 1 1
+box -4 0 99 204
+use d_ff_cmos  d_ff_cmos_2
+timestamp 1731437335
+transform -1 0 469 0 1 311
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_8
+timestamp 1731437335
+transform 1 0 -220 0 1 268
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_9
+timestamp 1731437335
+transform 1 0 -3 0 1 268
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_7
+timestamp 1731437335
+transform 1 0 606 0 -1 475
+box -1 -30 212 237
+use d_ff_cmos  d_ff_cmos_6
+timestamp 1731437335
+transform 1 0 823 0 -1 475
+box -1 -30 212 237
+<< end >>
