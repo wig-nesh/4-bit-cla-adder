@@ -13,7 +13,7 @@ VDD vdd gnd SUPPLY
 vinD     D gnd PULSE(0 SUPPLY  12ns 1ps 1ps  8ns 32ns)
 vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
 
-.subckt d_ff_cmos D clk Q Qi S R
+.subckt d_ff_cmos D clk Q Qi
     Xinv      D   Di inv_cmos
     Xinv1   clk clki inv_cmos
     Xnand1    D clki  x nand_cmos
@@ -26,12 +26,12 @@ vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
     Xnand8    v Q  Qi nand_cmos
 .ends
 
-Xdff D clk Q Qi S R d_ff_cmos
+Xdff D clk Q Qi d_ff_cmos
 
-.tran 1n 80n 
+.tran 1n 160n 
 
 .measure tran t_in WHEN v(clk)=0.5*SUPPLY CROSS=3
-.measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=2
+.measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=1
 .measure tran t_delay PARAM='t_out-t_in'
 
 .control
@@ -45,5 +45,5 @@ Xdff D clk Q Qi S R d_ff_cmos
     set color6=darkorange
 
     run
-    plot v(clk)+4 v(D)+2 v(Q) V(Qi)-2 v(S)-4 v(R)-6
+    plot v(clk)+4 v(D)+2 v(Q) V(Qi)-2
 .endc

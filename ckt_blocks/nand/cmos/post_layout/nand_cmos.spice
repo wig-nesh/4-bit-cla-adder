@@ -10,14 +10,14 @@ M1002 Y A vdd w_n6_n6# pfet w=50 l=2
 +  ad=500 pd=220 as=500 ps=220
 M1003 Y B vdd w_n6_n6# pfet w=50 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 a_7_n61# Y 0.41fF
-C1 A vdd 0.02fF
-C2 w_n6_n6# vdd 0.16fF
-C3 A Y 0.05fF
-C4 w_n6_n6# Y 0.15fF
-C5 gnd a_7_n61# 0.45fF
-C6 B Y 0.24fF
-C7 w_n6_n6# A 0.06fF
-C8 B a_7_n61# 0.05fF
-C9 vdd Y 1.60fF
-C10 w_n6_n6# B 0.06fF
+C0 a_7_n61# B 0.05fF
+C1 w_n6_n6# A 0.06fF
+C2 Y A 0.05fF
+C3 B w_n6_n6# 0.06fF
+C4 vdd w_n6_n6# 0.16fF
+C5 B Y 0.24fF
+C6 vdd Y 1.60fF
+C7 vdd A 0.02fF
+C8 a_7_n61# Y 0.41fF
+C9 a_7_n61# gnd 0.41fF
+C10 Y w_n6_n6# 0.15fF
