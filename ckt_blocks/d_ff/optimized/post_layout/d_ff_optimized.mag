@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1731790356
+timestamp 1731798549
 << ntransistor >>
 rect 65 73 67 93
 rect -1 48 1 68
@@ -43,7 +43,7 @@ rect 76 102 88 104
 rect -26 98 54 102
 rect 76 100 100 102
 rect -6 68 -2 72
-rect -15 45 -11 59
+rect -14 45 -10 59
 rect 51 56 54 98
 rect 88 98 100 100
 rect 60 93 64 95
@@ -54,13 +54,13 @@ rect 57 59 61 63
 rect 92 60 96 64
 rect 51 53 73 56
 rect -22 38 -18 42
-rect -15 41 -5 45
+rect -14 41 -5 45
 rect 2 44 17 48
 rect 56 45 57 49
 rect -37 32 -34 36
-rect -15 36 -11 41
+rect -14 36 -10 41
 rect 13 37 17 44
-rect -18 32 -11 36
+rect -18 32 -10 36
 rect -5 36 -1 37
 rect 32 32 33 36
 rect 48 32 55 36
@@ -82,7 +82,7 @@ rect 13 32 18 37
 rect 60 2 65 7
 << metal2 >>
 rect 64 96 111 100
-rect 107 66 111 96
+rect 107 68 111 96
 rect 49 45 51 49
 rect 5 41 53 45
 rect -33 37 9 41
@@ -90,19 +90,19 @@ rect -9 32 -5 37
 rect 13 6 17 32
 rect 13 2 60 6
 << metal3 >>
-rect -16 59 59 63
+rect -14 59 59 63
 rect 2 37 56 40
 rect 2 36 55 37
 rect 2 32 6 36
-rect 107 8 111 66
+rect 107 8 111 68
 rect -6 4 111 8
-<< metal4 >>
+<< metal5 >>
 rect 72 2 76 104
 rect 44 -2 76 2
 << pad >>
 rect 72 101 77 106
-rect 106 65 111 70
-rect -16 58 -11 63
+rect 106 67 111 72
+rect -14 58 -9 63
 rect 56 58 61 63
 rect -9 32 -4 37
 rect 2 31 7 36
@@ -130,11 +130,9 @@ timestamp 1731226851
 transform -1 0 110 0 -1 65
 box 0 -37 24 65
 << labels >>
-rlabel space 28 -36 32 -32 5 OUT
-rlabel space 33 -36 37 -32 5 IN
 rlabel metal1 -37 32 -33 36 3 clk
 rlabel metal1 -6 68 -2 72 1 D
 rlabel metal1 -7 98 -3 102 1 vdd
 rlabel metal1 -15 -1 -11 3 1 gnd
-rlabel metal1 68 66 72 70 1 Q
+rlabel metal1 68 66 71 70 1 Q
 << end >>

@@ -1,78 +1,138 @@
-timestamp 1731456754
+timestamp 1731794565
 version 8.3
 tech scmos
 style TSMC0.18um(tsmc18)from:t11b
 scale 1000 1 9
 resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
-use inv_cmos inv_cmos_0 1 0 1 0 1 37
-node "a_86_13#" 14 16.032 86 13 ndif 200 60 0 0 0 0 0 0 0 0 0 0 0 0 160 56 0 0 0 0 0 0 0 0 0 0
-node "a_40_13#" 14 16.032 40 13 ndif 200 60 0 0 0 0 0 0 0 0 0 0 0 0 160 56 0 0 0 0 0 0 0 0 0 0
-node "gnd" 158 554.92 33 13 ndc 400 200 0 0 0 0 0 0 0 0 0 0 0 0 884 456 0 0 0 0 0 0 0 0 0 0
-node "clk" 126 1196.6 92 6 pc 0 0 0 0 0 0 0 0 0 0 80 76 0 0 52 42 500 258 0 0 0 0 0 0 50 40
-node "a_46_6#" 125 682.359 46 6 pc 0 0 0 0 0 0 0 0 0 0 80 76 0 0 32 32 172 94 0 0 0 0 0 0 50 40
-node "Q" 103 50.1888 114 13 ndif 100 50 250 110 0 0 0 0 0 0 0 0 0 0 336 176 0 0 0 0 0 0 0 0 0 0
-node "vdd" 354 259.863 45 47 pdc 0 0 1000 440 0 0 0 0 0 0 0 0 0 0 1296 656 0 0 0 0 0 0 0 0 0 0
-node "a_98_13#" 450 176.765 98 13 ndif 100 50 250 110 0 0 0 0 0 0 196 192 0 0 372 194 0 0 0 0 0 0 0 0 0 0
-node "a_68_13#" 496 216.15 68 13 ndif 100 50 250 110 0 0 0 0 0 0 220 216 0 0 380 198 0 0 0 0 0 0 0 0 0 0
-node "a_52_13#" 450 176.765 52 13 ndif 100 50 250 110 0 0 0 0 0 0 196 192 0 0 372 194 0 0 0 0 0 0 0 0 0 0
-node "D" 394 617.415 34 36 pc 0 0 0 0 0 0 0 0 0 0 220 216 0 0 81 56 135 74 0 0 0 0 0 0 25 20
-node "w_85_41#" 1440 2490.91 85 41 nw 0 0 0 0 2480 204 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-node "w_39_41#" 1440 2490.91 39 41 nw 0 0 0 0 2480 204 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-cap "w_85_41#" "vdd" 168.143
-cap "clk" "gnd" 1014.02
-cap "a_46_6#" "gnd" 154.165
-cap "w_39_41#" "vdd" 185.592
-cap "Q" "a_98_13#" 54.984
-cap "a_46_6#" "clk" 57.42
-cap "w_85_41#" "a_98_13#" 138.484
-cap "a_68_13#" "a_52_13#" 54.984
-cap "Q" "gnd" 206.19
-cap "w_39_41#" "a_52_13#" 138.484
-cap "a_68_13#" "gnd" 398.634
-cap "a_98_13#" "vdd" 1087.5
-cap "clk" "a_68_13#" 10.5768
-cap "a_40_13#" "a_52_13#" 206.19
-cap "a_52_13#" "vdd" 1087.5
-cap "gnd" "D" 54.984
-cap "a_86_13#" "a_98_13#" 206.19
-cap "clk" "D" 165.318
-cap "a_46_6#" "D" 10.5768
-cap "a_40_13#" "gnd" 206.19
-cap "a_46_6#" "a_40_13#" 54.984
-cap "w_85_41#" "Q" 73.7136
-cap "a_86_13#" "gnd" 206.19
-cap "w_85_41#" "a_68_13#" 101.64
-cap "a_98_13#" "gnd" 261.174
-cap "a_86_13#" "clk" 54.984
-cap "a_68_13#" "w_39_41#" 73.7136
-cap "gnd" "a_52_13#" 261.174
-cap "Q" "vdd" 515.475
-cap "w_39_41#" "D" 101.64
-cap "a_68_13#" "vdd" 548.465
-fet nfet 112 13 113 14 40 44 "Gnd!" "a_98_13#" 4 0 "gnd" 20 0 "Q" 20 0
-fet nfet 96 13 97 14 40 44 "Gnd!" "clk" 4 0 "a_86_13#" 20 0 "a_98_13#" 20 0
-fet nfet 84 13 85 14 40 44 "Gnd!" "a_68_13#" 4 0 "gnd" 20 0 "a_86_13#" 20 0
-fet nfet 66 13 67 14 40 44 "Gnd!" "a_52_13#" 4 0 "gnd" 20 0 "a_68_13#" 20 0
-fet nfet 50 13 51 14 40 44 "Gnd!" "a_46_6#" 4 0 "a_40_13#" 20 0 "a_52_13#" 20 0
-fet nfet 38 13 39 14 40 44 "Gnd!" "D" 4 0 "gnd" 20 0 "a_40_13#" 20 0
-fet pfet 112 47 113 48 100 104 "w_85_41#" "a_98_13#" 4 0 "vdd" 50 0 "Q" 50 0
-fet pfet 96 47 97 48 100 104 "w_85_41#" "a_68_13#" 4 0 "vdd" 50 0 "a_98_13#" 50 0
-fet pfet 66 47 67 48 100 104 "w_39_41#" "a_52_13#" 4 0 "vdd" 50 0 "a_68_13#" 50 0
-fet pfet 50 47 51 48 100 104 "w_39_41#" "D" 4 0 "vdd" 50 0 "a_52_13#" 50 0
-subcap "gnd" -58.2936
-subcap "vdd" -372.323
-subcap "a_52_13#" -4.16
-subcap "D" -295.618
-subcap "w_85_41#" -1861.15
-subcap "w_39_41#" -200.88
-cap "D" "inv_cmos_0/vdd" 44.116
-cap "inv_cmos_0/w_0_0#" "D" 190.025
-cap "inv_cmos_0/gnd" "inv_cmos_0/OUT" 27.492
-cap "inv_cmos_0/gnd" "inv_cmos_0/IN" 2.3976
-cap "D" "inv_cmos_0/OUT" 85.8112
-cap "inv_cmos_0/IN" "D" 5.48
-subcap "a_98_13#" -0.9096
-merge "inv_cmos_0/IN" "clk" -131.219 0 0 0 0 0 0 0 0 0 0 -64 -64 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_0/OUT" "a_46_6#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_0/gnd" "gnd" -108.285 -100 -50 0 0 0 0 0 0 0 0 0 0 0 0 -150 -106 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_0/vdd" "vdd" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+use inv_cmos inv_cmos_3 -1 0 110 0 -1 65
+use inv_cmos inv_cmos_4 -1 0 94 0 -1 65
+use inv_cmos inv_cmos_2 1 0 30 0 1 37
+use inv_cmos inv_cmos_1 1 0 14 0 1 37
+use inv_cmos inv_cmos_0 1 0 -36 0 1 37
+node "m1_88_0#" 0 47.2272 88 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 32 0 0 0 0 0 0 0 0 0 0
+node "m1_32_32#" 0 11.2836 32 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_n22_38#" 0 21.0864 -22 38 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_92_60#" 0 21.0864 92 60 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_91_66#" 0 11.2836 91 66 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "vdd" 5 650.716 -26 98 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 715 424 0 0 0 0 0 0 0 0 0 0
+node "gnd" 5 756.709 -30 -1 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 396 218 0 0 0 0 0 0 536 276 50 40
+node "a_1_9#" 72 206.901 1 9 ndif 200 100 0 0 0 0 0 0 0 0 0 0 0 0 212 124 0 0 231 124 0 0 0 0 50 40
+node "clk" 296 1293.74 -5 32 pc 0 0 0 0 0 0 0 0 0 0 176 168 0 0 102 74 438 226 0 0 0 0 0 0 25 20
+node "a_1_48#" 73 925.081 1 48 ndif 200 100 0 0 0 0 0 0 0 0 0 0 0 0 306 168 342 178 0 0 0 0 0 0 0 0
+node "D" 27 41.1264 -6 48 ndc 100 50 0 0 0 0 0 0 0 0 0 0 0 0 96 56 0 0 0 0 0 0 0 0 0 0
+node "Q" 27 63.9996 67 73 ndif 100 50 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
+node "a_n6_9#" 76 1075.76 -6 9 ndc 200 100 0 0 0 0 0 0 0 0 0 0 0 0 205 118 325 170 708 362 0 0 0 0 50 40
+node "a_n5_41#" 288 565.026 -5 41 pc 0 0 0 0 0 0 0 0 0 0 172 164 0 0 192 112 0 0 300 158 0 0 0 0 50 40
+cap "D" "a_1_48#" 206.19
+cap "a_n6_9#" "clk" 45.054
+cap "a_1_9#" "m1_32_32#" 6.48
+cap "a_1_48#" "clk" 183.035
+cap "D" "a_n5_41#" 200.244
+cap "vdd" "a_n6_9#" 310.445
+cap "a_1_9#" "clk" 146.259
+cap "vdd" "gnd" 227.822
+cap "clk" "a_n5_41#" 295.315
+cap "m1_n22_38#" "a_n5_41#" 54.984
+cap "vdd" "a_1_48#" 192.444
+cap "a_n6_9#" "Q" 206.19
+cap "gnd" "a_n6_9#" 416.647
+cap "gnd" "Q" 115.747
+cap "a_n6_9#" "a_1_48#" 564.586
+cap "gnd" "a_1_48#" 442.612
+cap "vdd" "a_n5_41#" 211.673
+cap "a_1_9#" "a_n6_9#" 206.19
+cap "vdd" "m1_88_0#" 41.238
+cap "a_1_9#" "gnd" 27.492
+cap "a_n6_9#" "a_n5_41#" 1.512
+cap "a_1_9#" "a_1_48#" 303.05
+cap "a_n6_9#" "m1_88_0#" 77.76
+cap "clk" "m1_n22_38#" 74.1564
+cap "a_1_48#" "a_n5_41#" 68.2824
+cap "vdd" "clk" 79.0395
+fet nfet 57 9 58 10 40 44 "Gnd!" "clk" 4 0 "a_1_9#" 20 0 "a_1_48#" 20 0
+fet nfet -1 9 0 10 40 44 "Gnd!" "clk" 4 0 "a_n6_9#" 20 0 "a_1_9#" 20 0
+fet nfet -1 48 0 49 40 44 "Gnd!" "a_n5_41#" 4 0 "D" 20 0 "a_1_48#" 20 0
+fet nfet 65 73 66 74 40 44 "Gnd!" "a_n5_41#" 4 0 "a_n6_9#" 20 0 "Q" 20 0
+subcap "vdd" -754.341
+subcap "gnd" -306.172
+subcap "clk" -521.487
+subcap "a_1_48#" -74.4603
+subcap "Q" -106.646
+subcap "a_n6_9#" -964.561
+subcap "a_n5_41#" -244.977
+cap "a_n6_9#" "inv_cmos_1/IN" 1.676
+cap "inv_cmos_0/OUT" "inv_cmos_1/IN" 3.352
+cap "inv_cmos_2/w_0_0#" "inv_cmos_1/IN" 30.6747
+cap "inv_cmos_2/OUT" "inv_cmos_1/IN" 49.64
+cap "inv_cmos_0/IN" "inv_cmos_1/IN" 5.48
+cap "inv_cmos_2/w_0_0#" "inv_cmos_0/OUT" 9.698
+cap "inv_cmos_0/OUT" "inv_cmos_2/OUT" 54.5364
+cap "inv_cmos_1/IN" "inv_cmos_2/vdd" 68.73
+cap "inv_cmos_0/IN" "inv_cmos_0/OUT" 17.1699
+cap "inv_cmos_0/w_0_0#" "inv_cmos_0/OUT" 86.9384
+cap "inv_cmos_2/gnd" "inv_cmos_1/IN" 67.6728
+cap "inv_cmos_2/w_0_0#" "inv_cmos_2/OUT" 11.1
+cap "inv_cmos_0/IN" "inv_cmos_2/w_0_0#" 267.101
+cap "inv_cmos_0/OUT" "inv_cmos_2/vdd" 125.568
+cap "a_n6_9#" "inv_cmos_2/gnd" 53.6544
+cap "inv_cmos_0/IN" "inv_cmos_2/OUT" 187.84
+cap "inv_cmos_1/IN" "inv_cmos_2/IN" 1.512
+cap "a_n6_9#" "inv_cmos_2/IN" 1.676
+cap "inv_cmos_2/gnd" "inv_cmos_0/OUT" 27.492
+cap "inv_cmos_2/w_0_0#" "inv_cmos_2/vdd" 86.8431
+cap "inv_cmos_0/w_0_0#" "inv_cmos_0/IN" 101.137
+cap "inv_cmos_0/OUT" "inv_cmos_2/IN" 57.8884
+cap "inv_cmos_2/OUT" "inv_cmos_2/vdd" 566.335
+cap "inv_cmos_0/IN" "inv_cmos_2/vdd" 128.105
+cap "inv_cmos_2/w_0_0#" "inv_cmos_2/IN" -1.42109e-14
+cap "inv_cmos_2/gnd" "inv_cmos_2/OUT" -1.06581e-14
+cap "inv_cmos_2/OUT" "inv_cmos_2/IN" 109.774
+cap "inv_cmos_0/IN" "inv_cmos_2/IN" 91.5992
+cap "inv_cmos_2/IN" "inv_cmos_2/vdd" 531.97
+cap "inv_cmos_2/gnd" "inv_cmos_2/IN" 233.682
+cap "inv_cmos_4/OUT" "inv_cmos_3/vdd" 679.052
+cap "inv_cmos_3/IN" "inv_cmos_3/OUT" 2.896
+cap "inv_cmos_3/gnd" "inv_cmos_3/OUT" 222.685
+cap "inv_cmos_3/vdd" "inv_cmos_3/OUT" 548.465
+cap "inv_cmos_3/IN" "inv_cmos_3/w_0_0#" 39.444
+cap "inv_cmos_3/gnd" "inv_cmos_3/w_0_0#" 32.4
+cap "inv_cmos_3/gnd" "inv_cmos_3/IN" -1.42109e-14
+cap "inv_cmos_3/vdd" "inv_cmos_3/w_0_0#" 132.644
+cap "inv_cmos_3/IN" "inv_cmos_3/vdd" 107.309
+cap "inv_cmos_3/gnd" "inv_cmos_4/OUT" 336.502
+subcap "vdd" -455.031
+cap "inv_cmos_2/vdd" "inv_cmos_2/OUT" 16.4952
+cap "inv_cmos_2/vdd" "inv_cmos_0/OUT" 16.4952
+cap "inv_cmos_1/w_0_0#" "inv_cmos_2/vdd" 39.0582
+cap "inv_cmos_2/vdd" "inv_cmos_1/OUT" 16.4952
+cap "inv_cmos_0/w_0_0#" "inv_cmos_2/vdd" 17.4486
+cap "a_n6_9#" "inv_cmos_4/IN" 0.756
+cap "a_n6_9#" "inv_cmos_3/IN" 0.756
+cap "inv_cmos_4/OUT" "inv_cmos_3/gnd" 11.7823
+cap "a_n6_9#" "inv_cmos_3/gnd" 90.2304
+cap "inv_cmos_3/OUT" "inv_cmos_3/gnd" 16.4952
+merge "inv_cmos_4/IN" "inv_cmos_3/OUT" -37.1184 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 -32 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_3/OUT" "m1_91_66#"
+merge "m1_91_66#" "m1_92_60#"
+merge "inv_cmos_0/OUT" "m1_n22_38#" -286.614 0 0 0 0 0 0 0 0 0 0 -86 -84 0 0 -16 -32 0 0 16 0 0 0 0 0 10 0
+merge "m1_n22_38#" "a_n5_41#"
+merge "inv_cmos_4/vdd" "inv_cmos_0/vdd" -263.387 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -32 -64 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_0/vdd" "inv_cmos_1/vdd"
+merge "inv_cmos_1/vdd" "inv_cmos_2/vdd"
+merge "inv_cmos_2/vdd" "vdd"
+merge "vdd" "inv_cmos_3/vdd"
+merge "inv_cmos_3/vdd" "m1_88_0#"
+merge "inv_cmos_0/IN" "clk" -528.806 0 0 0 0 0 0 0 0 0 0 192 0 0 0 67 -16 35 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/w_0_0#" "inv_cmos_2/w_0_0#" -474.077 0 0 0 0 -472 -126 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_4/OUT" "Q" -8.9637 -12 0 0 0 0 0 0 0 0 0 0 0 0 0 -3 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/IN" "a_1_48#" -222.604 40 -22 0 0 0 0 0 0 0 0 0 0 0 0 -36 -41 2 -9 0 0 0 0 0 0 0 0
+merge "inv_cmos_4/gnd" "inv_cmos_3/gnd" -296.384 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -76 -66 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_3/gnd" "inv_cmos_0/gnd"
+merge "inv_cmos_0/gnd" "inv_cmos_1/gnd"
+merge "inv_cmos_1/gnd" "inv_cmos_2/gnd"
+merge "inv_cmos_2/gnd" "gnd"
+merge "inv_cmos_2/OUT" "a_1_9#" 29.1105 260 0 0 0 0 0 0 0 0 0 0 0 0 0 193 -8 0 0 29 0 0 0 0 0 35 0
+merge "inv_cmos_4/w_0_0#" "inv_cmos_3/w_0_0#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/OUT" "inv_cmos_2/IN" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_2/IN" "m1_32_32#"
+merge "inv_cmos_3/IN" "a_n6_9#" -545.673 12 0 0 0 0 0 0 0 0 0 0 0 0 0 -4 -13 -204 -103 0 0 0 0 0 0 0 0

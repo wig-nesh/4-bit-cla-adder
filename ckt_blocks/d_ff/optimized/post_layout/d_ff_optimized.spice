@@ -9,14 +9,14 @@ M1000 OUT IN vdd w_0_0# pfet w=50 l=2
 +  ad=250 pd=110 as=250 ps=110
 M1001 OUT IN gnd Gnd nfet w=20 l=2
 +  ad=100 pd=50 as=100 ps=50
-C0 OUT IN 0.05fF
-C1 w_0_0# vdd 0.07fF
-C2 OUT w_0_0# 0.07fF
-C3 w_0_0# IN 0.06fF
-C4 OUT gnd 0.21fF
-C5 gnd IN 0.05fF
-C6 OUT vdd 0.52fF
-C7 IN vdd 0.02fF
+C0 vdd OUT 0.52fF
+C1 OUT gnd 0.21fF
+C2 w_0_0# OUT 0.07fF
+C3 IN OUT 0.05fF
+C4 w_0_0# vdd 0.07fF
+C5 vdd IN 0.02fF
+C6 IN gnd 0.05fF
+C7 w_0_0# IN 0.06fF
 C8 gnd Gnd 0.06fF
 C9 OUT Gnd 0.05fF
 C10 vdd Gnd 0.00fF
@@ -33,71 +33,70 @@ Xinv_cmos_0 clk inv_cmos_0/w_0_0# gnd vdd inv_cmos_0/OUT inv_cmos
 Xinv_cmos_1 inv_cmos_1/IN inv_cmos_2/w_0_0# gnd vdd inv_cmos_2/IN inv_cmos
 Xinv_cmos_2 inv_cmos_2/IN inv_cmos_2/w_0_0# gnd vdd inv_cmos_2/OUT inv_cmos
 M1000 Q inv_cmos_0/OUT inv_cmos_3/IN Gnd nfet w=20 l=2
-+  ad=460 pd=50 as=122 ps=50
++  ad=78 pd=50 as=224 ps=100
 M1001 inv_cmos_2/OUT clk inv_cmos_3/IN Gnd nfet w=20 l=2
 +  ad=720 pd=100 as=0 ps=0
 M1002 inv_cmos_1/IN clk inv_cmos_2/OUT Gnd nfet w=20 l=2
-+  ad=240 pd=32 as=0 ps=0
++  ad=280 pd=58 as=0 ps=0
 M1003 inv_cmos_1/IN inv_cmos_0/OUT D Gnd nfet w=20 l=2
 +  ad=0 pd=0 as=100 ps=50
-C0 inv_cmos_4/w_0_0# vdd 0.13fF
-C1 inv_cmos_1/IN inv_cmos_2/IN 0.00fF
-C2 gnd inv_cmos_2/OUT 0.03fF
-C3 clk vdd 0.21fF
-C4 inv_cmos_3/IN inv_cmos_4/IN 0.00fF
-C5 inv_cmos_2/IN vdd 0.55fF
-C6 Q vdd 0.68fF
-C7 inv_cmos_1/IN vdd 0.26fF
-C8 gnd inv_cmos_4/w_0_0# 0.01fF
-C9 inv_cmos_2/OUT inv_cmos_0/OUT 0.05fF
-C10 gnd inv_cmos_2/IN 0.23fF
-C11 Q gnd 0.13fF
-C12 gnd inv_cmos_1/IN 0.54fF
-C13 inv_cmos_2/w_0_0# inv_cmos_2/OUT 0.01fF
-C14 gnd vdd 0.06fF
-C15 clk inv_cmos_0/OUT 0.39fF
-C16 D inv_cmos_0/OUT 0.20fF
-C17 inv_cmos_3/IN inv_cmos_2/OUT 0.21fF
-C18 inv_cmos_2/IN inv_cmos_0/OUT 0.06fF
-C19 inv_cmos_1/IN inv_cmos_0/OUT 0.07fF
-C20 inv_cmos_4/w_0_0# inv_cmos_4/IN 0.00fF
-C21 inv_cmos_4/w_0_0# inv_cmos_3/IN 0.04fF
-C22 clk inv_cmos_2/w_0_0# 0.27fF
-C23 inv_cmos_0/w_0_0# clk 0.10fF
-C24 vdd inv_cmos_0/OUT 0.35fF
-C25 clk inv_cmos_3/IN 0.05fF
-C26 inv_cmos_2/IN inv_cmos_2/w_0_0# -0.00fF
-C27 inv_cmos_1/IN inv_cmos_2/w_0_0# 0.03fF
-C28 inv_cmos_3/IN inv_cmos_2/IN 0.00fF
-C29 Q inv_cmos_3/IN 0.21fF
-C30 inv_cmos_3/IN inv_cmos_1/IN 0.57fF
-C31 inv_cmos_2/w_0_0# vdd 0.13fF
-C32 inv_cmos_0/w_0_0# vdd 0.02fF
-C33 gnd inv_cmos_0/OUT 0.03fF
-C34 vdd inv_cmos_4/IN 0.55fF
-C35 inv_cmos_3/IN vdd 0.50fF
-C36 clk inv_cmos_2/OUT 0.33fF
-C37 gnd inv_cmos_4/IN 0.24fF
-C38 gnd inv_cmos_3/IN 0.60fF
-C39 inv_cmos_2/IN inv_cmos_2/OUT 0.12fF
-C40 inv_cmos_1/IN inv_cmos_2/OUT 0.35fF
-C41 inv_cmos_2/w_0_0# inv_cmos_0/OUT 0.01fF
+C0 clk inv_cmos_0/w_0_0# 0.11fF
+C1 inv_cmos_2/IN gnd 0.23fF
+C2 inv_cmos_3/IN gnd 0.56fF
+C3 inv_cmos_4/IN inv_cmos_3/IN 0.00fF
+C4 gnd inv_cmos_0/OUT 0.03fF
+C5 inv_cmos_0/OUT inv_cmos_0/w_0_0# 0.07fF
+C6 inv_cmos_2/OUT inv_cmos_2/w_0_0# 0.01fF
+C7 inv_cmos_3/IN Q 0.21fF
+C8 inv_cmos_2/OUT inv_cmos_1/IN 0.35fF
+C9 clk vdd 0.21fF
+C10 inv_cmos_4/w_0_0# vdd 0.13fF
+C11 inv_cmos_2/IN vdd 0.55fF
+C12 inv_cmos_1/IN inv_cmos_2/w_0_0# 0.03fF
+C13 inv_cmos_3/IN vdd 0.50fF
+C14 inv_cmos_0/OUT vdd 0.35fF
+C15 inv_cmos_4/IN gnd 0.24fF
+C16 Q gnd 0.46fF
+C17 inv_cmos_2/OUT clk 0.33fF
+C18 inv_cmos_2/OUT inv_cmos_2/IN 0.12fF
+C19 inv_cmos_2/OUT inv_cmos_3/IN 0.21fF
+C20 clk inv_cmos_2/w_0_0# 0.27fF
+C21 inv_cmos_2/OUT inv_cmos_0/OUT 0.05fF
+C22 gnd vdd 0.23fF
+C23 inv_cmos_1/IN clk 0.19fF
+C24 inv_cmos_4/IN vdd 0.55fF
+C25 inv_cmos_2/IN inv_cmos_2/w_0_0# -0.00fF
+C26 vdd inv_cmos_0/w_0_0# 0.02fF
+C27 inv_cmos_1/IN inv_cmos_2/IN 0.00fF
+C28 inv_cmos_1/IN inv_cmos_3/IN 0.57fF
+C29 inv_cmos_0/OUT inv_cmos_2/w_0_0# 0.01fF
+C30 inv_cmos_1/IN inv_cmos_0/OUT 0.07fF
+C31 Q vdd 0.68fF
+C32 inv_cmos_1/IN D 0.21fF
+C33 inv_cmos_2/OUT gnd 0.03fF
+C34 inv_cmos_2/IN clk 0.09fF
+C35 clk inv_cmos_3/IN 0.05fF
+C36 inv_cmos_4/w_0_0# inv_cmos_3/IN 0.04fF
+C37 inv_cmos_1/IN gnd 0.51fF
+C38 inv_cmos_2/IN inv_cmos_3/IN 0.00fF
+C39 clk inv_cmos_0/OUT 0.38fF
+C40 inv_cmos_2/IN inv_cmos_0/OUT 0.06fF
+C41 inv_cmos_3/IN inv_cmos_0/OUT 0.00fF
 C42 inv_cmos_2/OUT vdd 0.58fF
-C43 inv_cmos_0/w_0_0# inv_cmos_0/OUT 0.09fF
-C44 clk inv_cmos_2/IN 0.09fF
-C45 inv_cmos_3/IN inv_cmos_0/OUT 0.00fF
-C46 clk inv_cmos_1/IN 0.19fF
-C47 inv_cmos_1/IN D 0.21fF
-C48 inv_cmos_0/OUT Gnd 0.33fF
-C49 inv_cmos_4/IN Gnd -0.04fF
-C50 vdd Gnd 0.26fF
-C51 D Gnd 0.01fF
-C52 inv_cmos_2/OUT Gnd 0.21fF
-C53 inv_cmos_2/IN Gnd 0.01fF
-C54 inv_cmos_1/IN Gnd 0.84fF
-C55 gnd Gnd 0.42fF
-C56 clk Gnd 0.77fF
-C57 Q Gnd -0.04fF
-C58 inv_cmos_3/IN Gnd 0.11fF
+C43 D inv_cmos_0/OUT 0.22fF
+C44 vdd inv_cmos_2/w_0_0# 0.13fF
+C45 inv_cmos_1/IN vdd 0.26fF
+C46 inv_cmos_4/w_0_0# gnd 0.03fF
+C47 inv_cmos_0/OUT Gnd 0.36fF
+C48 inv_cmos_4/IN Gnd 0.03fF
+C49 vdd Gnd -0.51fF
+C50 D Gnd 0.04fF
+C51 inv_cmos_2/OUT Gnd 0.21fF
+C52 inv_cmos_2/IN Gnd 0.01fF
+C53 inv_cmos_1/IN Gnd 0.85fF
+C54 gnd Gnd 0.45fF
+C55 clk Gnd 0.77fF
+C56 Q Gnd -0.04fF
+C57 inv_cmos_3/IN Gnd 0.11fF
 .end
 
