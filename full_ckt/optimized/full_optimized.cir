@@ -23,25 +23,25 @@ vinB1 B1 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
 vinB0 B0 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
 vinC0 C0 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
 
-Xdffa3 A3 clk Q3a Q3ai d_ff_optimized
-Xdffa2 A2 clk Q2a Q2ai d_ff_optimized
-Xdffa1 A1 clk Q1a Q1ai d_ff_optimized
-Xdffa0 A0 clk Q0a Q0ai d_ff_optimized
-Xdffb3 B3 clk Q3b Q3bi d_ff_optimized
-Xdffb2 B2 clk Q2b Q2bi d_ff_optimized
-Xdffb1 B1 clk Q1b Q1bi d_ff_optimized
-Xdffb0 B0 clk Q0b Q0bi d_ff_optimized
-Xdffc0 C0 clk Qc0 Q0ci d_ff_optimized
+Xdffa3 A3 clk Q3a d_ff_optimized
+Xdffa2 A2 clk Q2a d_ff_optimized
+Xdffa1 A1 clk Q1a d_ff_optimized
+Xdffa0 A0 clk Q0a d_ff_optimized
+Xdffb3 B3 clk Q3b d_ff_optimized
+Xdffb2 B2 clk Q2b d_ff_optimized
+Xdffb1 B1 clk Q1b d_ff_optimized
+Xdffb0 B0 clk Q0b d_ff_optimized
+Xdffc0 C0 clk Qc0 d_ff_optimized
 
-Xpg  A3 A2 A1 A0 B3 B2 B1 B0 P3 P2 P1 P0 G3 G2 G1 G0 pg_gen_optimized
-Xcla C0 G0 P0 P1 G1 P2 G2 P3 G3 C1 C2 C3 C4 cla_gen_cmos
-Xsum P3 P2 P1 P0 C3 C2 C1 C0 S3 S2 S1 S0 sum_gen_optimized
+Xpg  Q3a Q2a Q1a Q0a Q3b Q2b Q1b Q0b P3 P2 P1 P0 G3 G2 G1 G0 pg_gen_optimized
+Xcla Qc0  G0  P0  P1  G1  P2  G2  P3 G3 C1 C2 C3 C4 cla_gen_cmos
+Xsum  P3  P2  P1  P0  C3  C2  C1  C0 S3 S2 S1 S0 sum_gen_optimized
 
-Xdffs3 S3 clk Q3s Q3si d_ff_optimized
-Xdffs2 S2 clk Q2s Q2si d_ff_optimized
-Xdffs1 S1 clk Q1s Q1si d_ff_optimized
-Xdffs0 S0 clk Q0s Q0si d_ff_optimized
-Xdffco C4 clk Qco Qcoi d_ff_optimized
+Xdffs3 S3 clk Q3s d_ff_optimized
+Xdffs2 S2 clk Q2s d_ff_optimized
+Xdffs1 S1 clk Q1s d_ff_optimized
+Xdffs0 S0 clk Q0s d_ff_optimized
+Xdffco C4 clk Qco d_ff_optimized
 
 .tran 1n 6n 
 
@@ -84,5 +84,5 @@ Xdffco C4 clk Qco Qcoi d_ff_optimized
     
     run
     * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(S3)+8 v(Q2s)+6 v(S2)+6 v(Q1s)+4 v(S1)+4 v(Q0s)+2 v(S0)+2 v(Qco) v(C4)
-    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(pg_gen_optimized_unrouted_0/A3)+10 v(pg_gen_optimized_unrouted_0/A2)+8 v(pg_gen_optimized_unrouted_0/A1)+6 v(pg_gen_optimized_unrouted_0/A0)+4 v(pg_gen_optimized_unrouted_0/B3)+2 v(pg_gen_optimized_unrouted_0/B2) v(pg_gen_optimized_unrouted_0/B1)-2 v(pg_gen_optimized_unrouted_0/B0)-4
+    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(G3)+10 v(G2)+8 v(G1)+6 v(G0)+4
 .endc

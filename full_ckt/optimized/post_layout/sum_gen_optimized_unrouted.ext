@@ -1,4 +1,4 @@
-timestamp 1731794565
+timestamp 1731799201
 version 8.3
 tech scmos
 style TSMC0.18um(tsmc18)from:t11b
@@ -20,28 +20,28 @@ node "S3" 0 21.0864 93 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 
 node "S0" 0 21.0864 43 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "P0" 0 21.0864 -4 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "P3" 0 21.0864 50 172 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-cap "C1" "C3" 41.238
+cap "C3" "C1" 41.238
 cap "C0" "C2" 41.238
 subcap "C3" -61.386
 subcap "C0" -62.6496
 cap "xor_optimized_0/A" "xor_optimized_2/A" 52.569
+cap "xor_optimized_1/A" "xor_optimized_1/w_26_37#" 1.8411
 cap "xor_optimized_1/B" "xor_optimized_0/Y" 78.5486
-cap "xor_optimized_1/A" "xor_optimized_3/A" 52.569
-cap "xor_optimized_1/w_26_37#" "xor_optimized_1/A" 1.8411
 cap "xor_optimized_0/w_26_37#" "xor_optimized_0/A" 7.7988
+cap "xor_optimized_3/A" "xor_optimized_1/A" 52.569
 subcap "S1" -76.359
 subcap "C1" -162.912
 cap "xor_optimized_1/A" "xor_optimized_1/w_26_37#" 4.9557
 subcap "C1" -8.3444
 subcap "C2" -7.3424
-cap "xor_optimized_3/A" "xor_optimized_1/A" 52.569
-cap "xor_optimized_2/A" "xor_optimized_0/A" 52.569
-cap "xor_optimized_2/A" "xor_optimized_2/w_26_37#" 7.7988
+cap "xor_optimized_1/A" "xor_optimized_3/A" 52.569
+cap "xor_optimized_3/w_26_37#" "xor_optimized_3/A" 1.8411
+cap "xor_optimized_2/w_26_37#" "xor_optimized_2/A" 7.7988
+cap "xor_optimized_0/A" "xor_optimized_2/A" 52.569
 cap "xor_optimized_2/Y" "xor_optimized_3/B" 78.5486
-cap "xor_optimized_3/A" "xor_optimized_3/w_26_37#" 1.8411
 subcap "C3" -162.912
 subcap "S3" -76.359
-cap "xor_optimized_3/A" "xor_optimized_3/w_26_37#" 4.9557
+cap "xor_optimized_3/w_26_37#" "xor_optimized_3/A" 4.9557
 merge "xor_optimized_1/inv_cmos_0/vdd" "xor_optimized_3/inv_cmos_0/vdd" -5.4888 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -8 0 0 0 0 0 0 0 0 0 0
 merge "xor_optimized_2/Y" "S0" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "xor_optimized_1/Y" "S1" -4.2252 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 -8 0 0 0 0 0 0 0 0 0 0
