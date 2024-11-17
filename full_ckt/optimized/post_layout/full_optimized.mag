@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1731835526
+timestamp 1731864618
 << metal1 >>
 rect -179 408 52 412
 rect -179 287 -175 408
@@ -36,6 +36,7 @@ rect 331 209 335 252
 rect 409 235 413 252
 rect 471 235 475 363
 rect 565 331 572 335
+rect 923 307 926 311
 rect 825 269 909 276
 rect 583 267 909 269
 rect 583 265 825 267
@@ -45,6 +46,8 @@ rect -74 171 -70 174
 rect 347 173 351 228
 rect 409 209 413 231
 rect 471 209 475 231
+rect 425 173 429 187
+rect 487 173 491 177
 rect 67 169 71 173
 rect 129 169 133 173
 rect 191 169 195 173
@@ -55,11 +58,15 @@ rect 198 160 202 170
 rect 252 169 256 173
 rect 260 115 264 173
 rect 579 107 583 265
+rect 923 231 926 235
 rect 730 201 776 205
-rect 925 157 959 165
+rect 780 201 815 205
+rect 811 168 815 201
+rect 754 162 765 166
+rect 811 164 850 168
 rect -72 103 53 107
 rect 55 103 208 107
-rect 241 103 615 107
+rect 241 103 727 107
 rect -72 99 -38 103
 rect 35 96 39 100
 rect 97 96 101 100
@@ -67,12 +74,12 @@ rect 159 96 163 100
 rect 221 96 225 100
 rect -179 -77 -175 64
 rect -74 32 -70 36
+rect 33 33 35 35
 rect 51 32 55 36
 rect 113 32 117 36
 rect 175 32 179 36
 rect 237 32 241 36
 rect 252 30 256 51
-rect 825 46 909 55
 rect 261 33 265 37
 rect -148 23 -144 27
 rect 252 26 276 30
@@ -87,7 +94,6 @@ rect -148 -41 -144 -37
 rect -74 -49 -70 -47
 rect 347 -62 351 1
 rect 441 -42 445 2
-rect 730 1 776 5
 rect 519 -21 523 1
 rect 581 -21 585 1
 rect 519 -25 549 -21
@@ -116,14 +122,12 @@ rect 234 -100 257 -96
 rect 315 -133 319 -86
 rect 347 -107 351 -86
 rect 552 -94 556 -48
-rect 925 -64 959 -55
-rect 708 -101 769 -97
+rect 571 -98 600 -94
 rect 347 -111 358 -107
 rect 361 -111 464 -107
 rect 389 -133 393 -111
 rect 460 -133 464 -111
 rect 156 -146 160 -142
-rect 690 -167 698 -163
 rect -179 -176 52 -173
 rect -179 -177 56 -176
 rect 52 -250 56 -177
@@ -131,10 +135,32 @@ rect 124 -184 128 -170
 rect 200 -177 204 -173
 rect 228 -180 232 -170
 rect 219 -184 232 -180
+rect 596 -202 600 -98
+rect 693 -97 697 103
+rect 761 78 765 162
+rect 925 157 959 165
+rect 923 87 926 91
+rect 761 74 767 78
+rect 825 46 909 55
+rect 923 11 926 15
+rect 730 1 776 5
+rect 779 1 811 5
+rect 807 -52 811 1
+rect 807 -56 843 -52
+rect 925 -64 959 -55
+rect 693 -101 705 -97
+rect 708 -101 769 -97
+rect 923 -133 926 -129
+rect 690 -167 698 -163
+rect 721 -179 725 -163
+rect 751 -167 755 -153
+rect 781 -167 785 -163
 rect 709 -197 766 -195
 rect 705 -199 766 -197
 rect 705 -202 709 -199
+rect 596 -206 611 -202
 rect 678 -206 709 -202
+rect 113 -214 117 -210
 rect 52 -254 83 -250
 rect 267 -282 271 -234
 rect 303 -235 460 -231
@@ -152,6 +178,8 @@ rect 135 154 140 159
 rect 197 155 202 160
 << metal2 >>
 rect 60 404 192 408
+rect 195 404 826 408
+rect 822 344 826 404
 rect 347 331 494 335
 rect 80 302 83 307
 rect 169 302 172 307
@@ -164,6 +192,7 @@ rect 168 250 202 254
 rect 136 178 140 250
 rect 198 178 202 250
 rect 347 228 351 331
+rect 425 323 511 327
 rect 252 194 390 198
 rect 0 174 35 178
 rect 72 176 96 178
@@ -191,12 +220,16 @@ rect 292 124 296 180
 rect 308 132 312 180
 rect 354 170 358 186
 rect 386 182 390 194
+rect 425 187 429 323
+rect 526 319 530 326
+rect 487 315 530 319
 rect 432 170 436 173
 rect 354 166 436 170
 rect 308 128 328 132
 rect 292 120 312 124
 rect 276 111 296 115
 rect 252 54 256 111
+rect 32 39 34 41
 rect -74 35 11 39
 rect 70 -11 74 33
 rect 132 -11 136 32
@@ -217,6 +250,10 @@ rect 276 -162 280 -103
 rect 324 -108 328 128
 rect 386 21 390 166
 rect 448 104 452 183
+rect 487 177 491 315
+rect 822 205 826 337
+rect 765 147 769 164
+rect 542 143 769 147
 rect 448 100 500 104
 rect 480 21 484 30
 rect 386 17 484 21
@@ -225,6 +262,8 @@ rect 61 -173 192 -169
 rect 292 -186 296 -112
 rect 363 -150 367 13
 rect 496 -71 500 100
+rect 542 36 546 143
+rect 694 109 758 113
 rect 597 33 656 37
 rect 535 5 544 9
 rect 496 -75 519 -71
@@ -236,8 +275,19 @@ rect 437 -186 441 -161
 rect 604 -172 608 -154
 rect 636 -165 640 -146
 rect 652 -165 656 33
-rect 230 -190 441 -186
+rect 694 -186 698 109
+rect 748 -1 752 98
+rect 748 -4 755 -1
+rect 751 -153 755 -4
+rect 822 -18 826 202
+rect 822 -95 826 -22
+rect 849 -175 853 -135
+rect 725 -179 853 -175
+rect 234 -190 698 -186
+rect 234 -222 238 -190
+rect 195 -226 238 -222
 << metal3 >>
+rect 595 331 606 335
 rect 542 215 546 327
 rect 129 211 562 215
 rect 129 173 133 211
@@ -269,11 +319,48 @@ rect 416 26 420 170
 rect 464 16 468 35
 rect 542 16 546 36
 rect 558 29 562 211
+rect 602 133 606 331
+rect 806 305 849 309
+rect 806 167 810 305
+rect 602 129 810 133
+rect 806 105 810 129
+rect 724 101 777 105
+rect 785 97 808 101
 rect 370 12 546 16
+rect 331 -80 483 -76
+rect 538 -80 697 -76
 rect 260 -175 264 -168
+rect 331 -169 335 -80
+rect 499 -98 503 -87
+rect 405 -102 503 -98
+rect 405 -169 409 -102
+rect 584 -130 597 -126
+rect 545 -165 549 -130
+rect 476 -169 549 -165
 rect 350 -175 354 -169
 rect 260 -179 354 -175
+rect 593 -181 597 -130
+rect 693 -170 697 -80
+rect 728 -170 732 -166
+rect 785 -167 789 97
+rect 808 81 853 85
+rect 808 33 812 81
+rect 693 -174 732 -170
+rect 758 -181 762 -167
+rect 593 -185 762 -181
+<< metal4 >>
+rect 292 164 296 183
+rect 715 164 719 170
+rect 292 160 719 164
+rect 256 51 719 55
+rect 292 40 703 44
+rect 292 26 296 40
+rect 699 29 703 40
+rect 715 37 719 51
+rect 765 29 769 36
+rect 699 25 769 29
 << metal5 >>
+rect 760 233 849 237
 rect 67 218 576 222
 rect 67 171 71 218
 rect 571 116 576 218
@@ -287,13 +374,24 @@ rect 366 -162 370 -74
 rect 561 -137 565 -74
 rect 620 -166 624 -66
 rect 668 -165 672 111
+rect 760 85 764 233
+rect 756 82 764 85
+rect 756 33 760 82
+rect 767 74 853 78
+rect 849 17 853 74
 rect 421 -180 425 -167
 rect 276 -184 425 -180
 << pad >>
 rect 493 331 498 336
+rect 593 330 598 335
+rect 510 323 515 328
+rect 526 323 531 328
 rect 542 323 547 328
+rect 848 304 853 309
 rect -76 254 -71 259
+rect 848 233 853 238
 rect 347 226 352 231
+rect 425 185 430 190
 rect 30 174 36 180
 rect 92 174 98 180
 rect 154 174 160 180
@@ -311,11 +409,21 @@ rect 190 169 195 174
 rect 251 169 256 174
 rect 354 173 359 178
 rect 432 172 437 177
+rect 486 173 491 178
+rect 805 168 810 173
 rect 259 111 264 116
+rect 754 107 759 112
+rect 723 100 728 105
+rect 775 101 780 106
+rect 805 105 810 110
 rect 31 95 36 100
 rect 93 95 98 100
 rect 155 95 160 100
 rect 217 95 222 100
+rect 748 95 753 100
+rect 804 95 809 100
+rect 848 81 853 86
+rect 765 74 770 79
 rect 252 50 257 55
 rect -76 34 -71 39
 rect 50 32 55 37
@@ -327,6 +435,8 @@ rect 370 33 375 38
 rect 464 32 469 37
 rect 542 32 547 37
 rect 596 32 601 37
+rect 755 33 760 38
+rect 807 33 812 38
 rect 292 25 297 30
 rect 308 25 313 30
 rect 324 25 329 30
@@ -337,91 +447,107 @@ rect 480 25 485 30
 rect 496 26 501 31
 rect 558 26 563 31
 rect 362 10 367 15
+rect 848 13 853 18
 rect 457 4 462 9
 rect 535 5 540 10
 rect -76 -50 -71 -45
 rect 81 -74 86 -69
 rect 167 -74 172 -69
+rect 480 -81 485 -76
+rect 534 -81 539 -76
+rect 499 -88 504 -83
 rect 515 -87 520 -82
+rect 545 -131 550 -126
+rect 582 -131 587 -126
 rect 561 -137 566 -132
+rect 848 -136 853 -131
+rect 750 -156 755 -151
 rect 276 -163 281 -158
 rect 292 -163 297 -158
 rect 366 -162 371 -157
 rect 437 -163 442 -158
 rect 260 -169 265 -164
+rect 330 -169 335 -164
 rect 350 -170 355 -165
+rect 404 -169 409 -164
 rect 421 -170 426 -165
+rect 475 -169 480 -164
 rect 620 -167 625 -162
 rect 636 -167 641 -162
 rect 652 -167 657 -162
 rect 668 -168 673 -163
+rect 728 -168 733 -163
+rect 758 -168 763 -163
+rect 784 -167 789 -162
 rect 604 -174 609 -169
+rect 721 -180 726 -175
+rect 197 -227 202 -222
+use pg_gen_optimized_unrouted  pg_gen_optimized_unrouted_0 ../../../ckt_blocks/pg_gen/optimized/post_layout
+timestamp 1731848652
+transform 1 0 4 0 1 1
+box -4 -1 251 230
 use d_ff_optimized  d_ff_optimized_2 ../../../ckt_blocks/d_ff/optimized/post_layout
-timestamp 1731827514
+timestamp 1731848652
 transform 0 1 20 1 0 -140
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_3
-timestamp 1731827514
+timestamp 1731848652
 transform 0 -1 232 1 0 -140
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_8
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 119 0 1 -286
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_7
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 -142 0 1 -113
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_6
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 -142 0 -1 99
 box -37 -4 111 106
-use pg_gen_optimized_unrouted  pg_gen_optimized_unrouted_0 ../../../ckt_blocks/pg_gen/optimized/post_layout
-timestamp 1731827514
-transform 1 0 4 0 1 1
-box -4 -1 251 230
 use d_ff_optimized  d_ff_optimized_0
-timestamp 1731827514
+timestamp 1731848652
 transform 0 -1 232 -1 0 375
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_5
-timestamp 1731827514
+timestamp 1731848652
 transform 0 1 20 -1 0 375
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_4
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 -142 0 -1 319
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_1
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 -142 0 1 107
 box -37 -4 111 106
 use cla_gen_cmos_unrouted  cla_gen_cmos_unrouted_0 ../../../ckt_blocks/cla_gen/cmos/post_layout
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 261 0 1 -85
 box -1 -168 522 452
 use d_ff_optimized  d_ff_optimized_13
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 855 0 -1 -63
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_9
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 855 0 1 -55
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_12
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 855 0 -1 377
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_11
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 855 0 1 165
 box -37 -4 111 106
 use d_ff_optimized  d_ff_optimized_10
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 855 0 -1 157
 box -37 -4 111 106
 use sum_gen_optimized_unrouted  sum_gen_optimized_unrouted_0 ../../../ckt_blocks/sum_gen/optimized/post_layout
-timestamp 1731827514
+timestamp 1731848652
 transform 1 0 711 0 1 1
 box -4 0 99 204
 << labels >>
@@ -436,4 +562,10 @@ rlabel metal1 -148 23 -144 27 1 B3
 rlabel metal1 -148 179 -144 183 1 A3
 rlabel metal1 -148 243 -144 247 1 A2
 rlabel metal1 -11 -177 -7 -173 1 clk
+rlabel metal1 113 -214 117 -210 1 C0
+rlabel metal1 923 307 926 311 1 Q3s
+rlabel metal1 923 231 926 235 1 Q2s
+rlabel metal1 923 87 926 91 1 Q1s
+rlabel metal1 923 11 926 15 1 Q0s
+rlabel metal1 923 -133 926 -129 1 Qco
 << end >>

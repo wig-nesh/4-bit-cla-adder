@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1731840161
+timestamp 1731317355
 << metal1 >>
 rect 233 416 237 420
 rect 300 416 304 420
@@ -190,4 +190,71 @@ use inv_cmos  inv_cmos_11
 timestamp 1731316665
 transform 1 0 312 0 -1 415
 box 0 -37 24 65
+<< labels >>
+rlabel metal1 -1 118 3 122 3 P3
+rlabel metal1 15 111 19 115 1 P2
+rlabel metal1 31 111 35 115 1 P1
+rlabel metal1 47 111 51 115 1 P0
+rlabel metal1 63 111 67 115 1 C0
+rlabel metal1 98 118 102 122 1 a
+rlabel metal1 109 118 113 122 1 P3
+rlabel metal1 125 111 129 115 1 P2
+rlabel metal1 141 111 145 115 1 P1
+rlabel metal1 157 111 161 115 1 G0
+rlabel metal1 192 118 196 122 1 b
+rlabel metal1 203 118 207 122 1 P3
+rlabel metal1 219 111 223 115 1 P2
+rlabel metal1 235 111 239 115 1 G1
+rlabel metal1 270 118 274 122 1 c
+rlabel metal1 332 118 336 122 1 d
+rlabel metal1 281 118 285 122 1 P3
+rlabel metal1 -1 258 3 262 3 P2
+rlabel metal1 15 265 19 269 1 P1
+rlabel metal1 31 265 35 269 1 P0
+rlabel metal1 47 265 51 269 1 C0
+rlabel metal1 82 258 86 262 1 e
+rlabel metal1 93 258 97 262 1 P2
+rlabel metal1 109 265 113 269 1 P1
+rlabel metal1 125 265 129 269 1 G0
+rlabel metal1 160 258 164 262 1 f
+rlabel metal1 222 258 226 262 1 g
+rlabel metal1 171 258 175 262 1 P2
+rlabel metal1 187 265 191 269 1 G1
+rlabel metal1 66 -84 70 -80 1 h
+rlabel metal1 -1 -84 3 -80 3 P1
+rlabel metal1 15 -77 19 -73 1 P0
+rlabel metal1 31 -77 35 -73 1 C0
+rlabel metal1 89 -84 93 -80 1 P1
+rlabel metal1 105 -77 109 -73 1 G0
+rlabel metal1 160 -84 164 -80 1 P0
+rlabel metal1 176 -77 180 -73 1 C0
+rlabel metal1 140 -84 144 -80 1 i
+rlabel metal1 211 -84 215 -80 1 j
+rlabel metal1 233 416 237 420 1 e
+rlabel metal1 249 409 253 413 1 f
+rlabel metal1 265 409 269 413 1 g
+rlabel metal1 281 409 285 413 1 G2
+rlabel metal1 300 416 304 420 1 l
+rlabel metal1 330 416 334 420 1 C3
+rlabel metal1 343 -89 347 -85 1 a
+rlabel metal1 359 -82 363 -78 1 b
+rlabel metal1 375 -82 379 -78 1 c
+rlabel metal1 391 -82 395 -78 1 d
+rlabel metal1 407 -82 411 -78 1 G3
+rlabel metal1 426 -82 430 -78 1 k
+rlabel metal1 437 -82 441 -78 1 k
+rlabel metal1 456 -82 460 -78 1 C4
+rlabel metal1 222 5 226 9 1 h
+rlabel metal1 238 -2 242 2 1 i
+rlabel metal1 254 -2 258 2 1 G1
+rlabel metal1 300 -52 304 -48 1 G0
+rlabel metal1 284 -45 288 -41 1 j
+rlabel metal1 319 -45 323 -41 1 n
+rlabel metal1 273 5 277 9 1 m
+rlabel metal1 467 -82 471 -78 1 m
+rlabel metal1 486 -82 490 -78 1 C2
+rlabel metal1 516 -82 520 -78 7 C1
+rlabel metal1 497 -82 501 -78 1 n
+rlabel metal1 311 416 315 420 1 l
+rlabel metal1 297 111 301 115 1 G2
 << end >>

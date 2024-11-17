@@ -1,35 +1,38 @@
 .include ../../../tech_files/TSMC_180nm.txt
 
+
 .param SUPPLY=1.8
 .global gnd vdd
 
 VDD vdd gnd SUPPLY
-vinClk clk gnd PULSE(0 SUPPLY 1ns 1ps 1ps 1ns 2ns)
-vinA3 A3 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinA2 A2 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinA1 A1 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinA0 A0 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinB3 B3 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinB2 B2 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinB1 B1 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinB0 B0 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
-vinC0 C0 gnd PWL(1.99ns 0V 2ns SUPPLY 3.99ns SUPPLY 4ns 0V)
+vinClk clk gnd PULSE(0 SUPPLY 2ns 1ps 1ps 2ns 4ns)
+vinA3 A3 gnd PWL(1.99ns 0V 2ns SUPPLY)
+vinA2 A2 gnd PWL(1.99ns 0V 2ns SUPPLY)
+vinA1 A1 gnd PWL(1.99ns 0V 2ns SUPPLY)
+vinA0 A0 gnd PWL(1.99ns 0V 2ns SUPPLY)
+vinB3 B3 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns SUPPLY 13.99ns SUPPLY 14ns      0)
+vinB2 B2 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns SUPPLY 13.99ns SUPPLY 14ns      0)
+vinB1 B1 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns SUPPLY 13.99ns SUPPLY 14ns      0)
+vinB0 B0 gnd PWL(1.99ns 0V 2ns      0 7.99ns      0 8ns      0 13.99ns      0 14ns SUPPLY)
+vinC0 C0 gnd PWL(1.99ns 0V 2ns      0)
+
 
 .option scale=0.09u
+
 
 .subckt inv_cmos IN w_0_0# gnd vdd OUT
 M1000 OUT IN vdd w_0_0# CMOSP w=50 l=2
 +  ad=250 pd=110 as=250 ps=110
 M1001 OUT IN gnd Gnd CMOSN w=20 l=2
 +  ad=100 pd=50 as=100 ps=50
-C0 OUT vdd 0.52fF
-C1 OUT gnd 0.21fF
-C2 w_0_0# vdd 0.07fF
-C3 w_0_0# OUT 0.07fF
-C4 IN vdd 0.02fF
-C5 IN OUT 0.05fF
+C0 OUT IN 0.05fF
+C1 w_0_0# OUT 0.07fF
+C2 OUT vdd 0.52fF
+C3 OUT gnd 0.21fF
+C4 w_0_0# IN 0.06fF
+C5 vdd IN 0.02fF
 C6 IN gnd 0.05fF
-C7 IN w_0_0# 0.06fF
+C7 w_0_0# vdd 0.07fF
 C8 gnd Gnd 0.06fF
 C9 OUT Gnd 0.05fF
 C10 vdd Gnd 0.00fF
@@ -52,53 +55,53 @@ M1002 inv_cmos_1/IN clk inv_cmos_2/OUT Gnd CMOSN w=20 l=2
 +  ad=280 pd=58 as=0 ps=0
 M1003 inv_cmos_1/IN inv_cmos_0/OUT D Gnd CMOSN w=20 l=2
 +  ad=0 pd=0 as=100 ps=50
-C0 inv_cmos_2/OUT inv_cmos_1/IN 0.35fF
-C1 inv_cmos_2/IN gnd 0.23fF
-C2 inv_cmos_2/IN clk 0.09fF
-C3 inv_cmos_2/IN inv_cmos_2/w_0_0# -0.00fF
-C4 inv_cmos_2/OUT inv_cmos_3/IN 0.21fF
-C5 inv_cmos_2/OUT vdd 0.58fF
-C6 inv_cmos_0/OUT gnd 0.03fF
-C7 inv_cmos_0/OUT clk 0.38fF
-C8 inv_cmos_0/OUT inv_cmos_2/w_0_0# 0.01fF
-C9 inv_cmos_3/IN inv_cmos_1/IN 0.57fF
-C10 inv_cmos_1/IN vdd 0.26fF
-C11 inv_cmos_4/w_0_0# gnd 0.03fF
-C12 inv_cmos_2/IN inv_cmos_0/OUT 0.06fF
-C13 inv_cmos_3/IN vdd 0.50fF
-C14 inv_cmos_1/IN D 0.21fF
-C15 inv_cmos_0/w_0_0# vdd 0.02fF
-C16 inv_cmos_2/OUT gnd 0.03fF
-C17 inv_cmos_2/OUT clk 0.33fF
-C18 inv_cmos_2/OUT inv_cmos_2/w_0_0# 0.01fF
-C19 inv_cmos_4/IN inv_cmos_3/IN 0.00fF
-C20 inv_cmos_4/IN vdd 0.55fF
-C21 inv_cmos_2/IN inv_cmos_2/OUT 0.12fF
-C22 inv_cmos_1/IN gnd 0.51fF
-C23 inv_cmos_1/IN clk 0.19fF
-C24 inv_cmos_1/IN inv_cmos_2/w_0_0# 0.03fF
-C25 Q inv_cmos_3/IN 0.21fF
-C26 Q vdd 0.68fF
-C27 inv_cmos_3/IN gnd 0.56fF
-C28 gnd vdd 0.23fF
-C29 inv_cmos_3/IN clk 0.05fF
-C30 vdd clk 0.21fF
-C31 inv_cmos_2/OUT inv_cmos_0/OUT 0.05fF
-C32 inv_cmos_2/w_0_0# vdd 0.13fF
-C33 inv_cmos_0/w_0_0# clk 0.11fF
-C34 inv_cmos_2/IN inv_cmos_1/IN 0.00fF
-C35 inv_cmos_2/IN inv_cmos_3/IN 0.00fF
-C36 inv_cmos_2/IN vdd 0.55fF
-C37 inv_cmos_0/OUT inv_cmos_1/IN 0.07fF
-C38 inv_cmos_3/IN inv_cmos_0/OUT 0.00fF
-C39 inv_cmos_0/OUT vdd 0.35fF
-C40 inv_cmos_4/IN gnd 0.24fF
-C41 inv_cmos_0/w_0_0# inv_cmos_0/OUT 0.07fF
-C42 Q gnd 0.46fF
-C43 inv_cmos_0/OUT D 0.22fF
-C44 inv_cmos_2/w_0_0# clk 0.27fF
-C45 inv_cmos_3/IN inv_cmos_4/w_0_0# 0.04fF
-C46 inv_cmos_4/w_0_0# vdd 0.13fF
+C0 clk inv_cmos_2/w_0_0# 0.27fF
+C1 clk inv_cmos_0/OUT 0.38fF
+C2 inv_cmos_2/w_0_0# inv_cmos_2/IN -0.00fF
+C3 D inv_cmos_0/OUT 0.22fF
+C4 inv_cmos_1/IN clk 0.19fF
+C5 inv_cmos_0/OUT inv_cmos_2/IN 0.06fF
+C6 inv_cmos_3/IN vdd 0.50fF
+C7 inv_cmos_1/IN D 0.21fF
+C8 inv_cmos_1/IN inv_cmos_2/IN 0.00fF
+C9 gnd inv_cmos_2/IN 0.23fF
+C10 inv_cmos_3/IN inv_cmos_0/OUT 0.00fF
+C11 inv_cmos_4/IN vdd 0.55fF
+C12 inv_cmos_2/OUT vdd 0.58fF
+C13 inv_cmos_1/IN inv_cmos_3/IN 0.57fF
+C14 gnd inv_cmos_3/IN 0.56fF
+C15 clk inv_cmos_2/IN 0.09fF
+C16 inv_cmos_2/OUT inv_cmos_2/w_0_0# 0.01fF
+C17 vdd inv_cmos_0/w_0_0# 0.02fF
+C18 inv_cmos_3/IN inv_cmos_4/w_0_0# 0.04fF
+C19 inv_cmos_2/OUT inv_cmos_0/OUT 0.05fF
+C20 Q inv_cmos_3/IN 0.21fF
+C21 gnd inv_cmos_4/IN 0.24fF
+C22 inv_cmos_1/IN inv_cmos_2/OUT 0.35fF
+C23 inv_cmos_2/OUT gnd 0.03fF
+C24 inv_cmos_0/OUT inv_cmos_0/w_0_0# 0.07fF
+C25 inv_cmos_2/w_0_0# vdd 0.13fF
+C26 clk inv_cmos_3/IN 0.05fF
+C27 inv_cmos_0/OUT vdd 0.35fF
+C28 inv_cmos_3/IN inv_cmos_2/IN 0.00fF
+C29 inv_cmos_1/IN vdd 0.26fF
+C30 gnd vdd 0.23fF
+C31 inv_cmos_2/w_0_0# inv_cmos_0/OUT 0.01fF
+C32 inv_cmos_2/OUT clk 0.33fF
+C33 inv_cmos_4/w_0_0# vdd 0.13fF
+C34 inv_cmos_1/IN inv_cmos_2/w_0_0# 0.03fF
+C35 Q vdd 0.68fF
+C36 inv_cmos_1/IN inv_cmos_0/OUT 0.07fF
+C37 gnd inv_cmos_0/OUT 0.03fF
+C38 inv_cmos_2/OUT inv_cmos_2/IN 0.12fF
+C39 clk inv_cmos_0/w_0_0# 0.11fF
+C40 inv_cmos_1/IN gnd 0.51fF
+C41 clk vdd 0.21fF
+C42 inv_cmos_2/IN vdd 0.55fF
+C43 gnd inv_cmos_4/w_0_0# 0.03fF
+C44 inv_cmos_3/IN inv_cmos_4/IN 0.00fF
+C45 inv_cmos_2/OUT inv_cmos_3/IN 0.21fF
+C46 gnd Q 0.46fF
 C47 D Gnd 0.04fF
 C48 inv_cmos_2/OUT Gnd 0.21fF
 C49 inv_cmos_2/IN Gnd 0.01fF
@@ -125,23 +128,23 @@ M1004 Y B gnd Gnd CMOSN w=20 l=2
 +  ad=0 pd=0 as=0 ps=0
 M1005 Y C gnd Gnd CMOSN w=20 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 w_n6_n6# A 0.06fF
-C1 a_23_0# Y 1.55fF
-C2 w_n6_n6# C 0.06fF
-C3 a_23_0# a_7_0# 1.55fF
-C4 vdd a_7_0# 1.55fF
-C5 gnd Y 1.21fF
-C6 a_23_0# w_n6_n6# 0.32fF
-C7 w_n6_n6# vdd 0.17fF
+C0 A w_n6_n6# 0.06fF
+C1 A Y 0.05fF
+C2 C w_n6_n6# 0.06fF
+C3 w_n6_n6# Y 0.17fF
+C4 w_n6_n6# B 0.06fF
+C5 C Y 0.24fF
+C6 vdd w_n6_n6# 0.17fF
+C7 a_7_0# w_n6_n6# 0.32fF
 C8 Y B 0.19fF
-C9 w_n6_n6# Y 0.17fF
-C10 a_23_0# C 0.02fF
-C11 Y A 0.05fF
-C12 B a_7_0# 0.02fF
-C13 gnd A 0.05fF
-C14 w_n6_n6# a_7_0# 0.32fF
-C15 Y C 0.24fF
-C16 w_n6_n6# B 0.06fF
+C9 a_23_0# w_n6_n6# 0.32fF
+C10 C a_23_0# 0.02fF
+C11 a_23_0# Y 1.55fF
+C12 a_7_0# B 0.02fF
+C13 vdd a_7_0# 1.55fF
+C14 gnd A 0.05fF
+C15 a_7_0# a_23_0# 1.55fF
+C16 gnd Y 1.21fF
 C17 gnd Gnd 0.23fF
 C18 Y Gnd 0.22fF
 C19 a_23_0# Gnd 0.00fF
@@ -166,21 +169,21 @@ M1004 a_23_n81# B a_7_n81# Gnd CMOSN w=60 l=2
 +  ad=600 pd=260 as=0 ps=0
 M1005 Y C a_23_n81# Gnd CMOSN w=60 l=2
 +  ad=300 pd=130 as=0 ps=0
-C0 vdd A 0.02fF
-C1 vdd Y 2.69fF
-C2 B Y 0.19fF
-C3 a_23_n81# a_7_n81# 0.62fF
-C4 B a_7_n81# 0.10fF
-C5 gnd a_7_n81# 0.62fF
-C6 w_n6_n6# C 0.06fF
-C7 w_n6_n6# A 0.06fF
-C8 w_n6_n6# Y 0.22fF
-C9 w_n6_n6# vdd 0.25fF
-C10 w_n6_n6# B 0.06fF
-C11 Y C 0.24fF
-C12 Y A 0.05fF
-C13 a_23_n81# C 0.10fF
-C14 Y a_23_n81# 0.62fF
+C0 w_n6_n6# B 0.06fF
+C1 a_23_n81# Y 0.62fF
+C2 vdd w_n6_n6# 0.25fF
+C3 w_n6_n6# C 0.06fF
+C4 B Y 0.19fF
+C5 vdd Y 2.69fF
+C6 C Y 0.24fF
+C7 w_n6_n6# Y 0.22fF
+C8 a_7_n81# a_23_n81# 0.62fF
+C9 vdd A 0.02fF
+C10 a_7_n81# B 0.10fF
+C11 a_23_n81# C 0.10fF
+C12 a_7_n81# gnd 0.62fF
+C13 w_n6_n6# A 0.06fF
+C14 Y A 0.05fF
 C15 a_23_n81# Gnd 0.14fF
 C16 a_7_n81# Gnd 0.14fF
 C17 gnd Gnd 0.10fF
@@ -192,7 +195,7 @@ C22 A Gnd 0.17fF
 C23 w_n6_n6# Gnd 3.49fF
 .ends
 
-.subckt nor_4_cmos Y gnd A vdd B C D
+.subckt nor_4_cmos a_23_0# w_n6_n6# Y a_7_0# gnd A vdd B C D a_39_0#
 M1000 Y D gnd Gnd CMOSN w=20 l=2
 +  ad=400 pd=200 as=400 ps=200
 M1001 a_7_0# A vdd w_n6_n6# CMOSP w=200 l=2
@@ -209,25 +212,25 @@ M1006 Y C gnd Gnd CMOSN w=20 l=2
 +  ad=0 pd=0 as=0 ps=0
 M1007 Y D a_39_0# w_n6_n6# CMOSP w=200 l=2
 +  ad=1000 pd=410 as=0 ps=0
-C0 Y A 0.05fF
-C1 w_n6_n6# A 0.06fF
-C2 a_39_0# a_23_0# 2.06fF
-C3 a_39_0# Y 2.06fF
-C4 a_39_0# w_n6_n6# 0.42fF
-C5 Y gnd 1.71fF
-C6 a_23_0# a_7_0# 2.06fF
-C7 B Y 0.19fF
-C8 B w_n6_n6# 0.06fF
-C9 D Y 0.24fF
-C10 w_n6_n6# a_7_0# 0.42fF
-C11 gnd A 0.05fF
-C12 D w_n6_n6# 0.06fF
-C13 Y C 0.19fF
-C14 w_n6_n6# C 0.06fF
-C15 vdd w_n6_n6# 0.22fF
-C16 vdd a_7_0# 2.06fF
-C17 w_n6_n6# a_23_0# 0.42fF
-C18 Y w_n6_n6# 0.22fF
+C0 w_n6_n6# a_39_0# 0.42fF
+C1 gnd A 0.05fF
+C2 Y C 0.19fF
+C3 a_23_0# a_39_0# 2.06fF
+C4 a_7_0# vdd 2.06fF
+C5 w_n6_n6# D 0.06fF
+C6 Y a_39_0# 2.06fF
+C7 Y gnd 1.71fF
+C8 w_n6_n6# vdd 0.22fF
+C9 w_n6_n6# a_7_0# 0.42fF
+C10 Y D 0.24fF
+C11 a_23_0# a_7_0# 2.06fF
+C12 w_n6_n6# B 0.06fF
+C13 w_n6_n6# A 0.06fF
+C14 a_23_0# w_n6_n6# 0.42fF
+C15 Y B 0.19fF
+C16 w_n6_n6# C 0.06fF
+C17 w_n6_n6# Y 0.22fF
+C18 Y A 0.05fF
 C19 gnd Gnd 0.32fF
 C20 Y Gnd 0.30fF
 C21 a_39_0# Gnd 0.00fF
@@ -250,17 +253,17 @@ M1002 Y A vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=500 pd=220 as=500 ps=220
 M1003 Y B vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 w_n6_n6# A 0.06fF
-C1 gnd a_7_n61# 0.41fF
-C2 Y A 0.05fF
-C3 w_n6_n6# Y 0.15fF
-C4 w_n6_n6# B 0.06fF
-C5 Y B 0.24fF
-C6 Y a_7_n61# 0.41fF
-C7 B a_7_n61# 0.05fF
-C8 vdd A 0.02fF
-C9 w_n6_n6# vdd 0.16fF
-C10 Y vdd 1.60fF
+C0 Y vdd 1.60fF
+C1 a_7_n61# B 0.05fF
+C2 A w_n6_n6# 0.06fF
+C3 a_7_n61# Y 0.41fF
+C4 B w_n6_n6# 0.06fF
+C5 A Y 0.05fF
+C6 A vdd 0.02fF
+C7 a_7_n61# gnd 0.41fF
+C8 Y w_n6_n6# 0.15fF
+C9 Y B 0.24fF
+C10 vdd w_n6_n6# 0.16fF
 C11 a_7_n61# Gnd 0.10fF
 C12 gnd Gnd 0.07fF
 C13 Y Gnd 0.14fF
@@ -279,18 +282,18 @@ M1002 Y A gnd Gnd CMOSN w=20 l=2
 +  ad=200 pd=100 as=200 ps=100
 M1003 Y B gnd Gnd CMOSN w=20 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 w_n6_n6# A 0.06fF
-C1 B w_n6_n6# 0.06fF
-C2 a_7_0# w_n6_n6# 0.22fF
-C3 gnd A 0.05fF
-C4 w_n6_n6# vdd 0.12fF
-C5 Y w_n6_n6# 0.12fF
-C6 Y A 0.05fF
-C7 a_7_0# B 0.02fF
-C8 Y B 0.24fF
-C9 a_7_0# vdd 1.03fF
-C10 Y gnd 0.71fF
-C11 Y a_7_0# 1.03fF
+C0 A w_n6_n6# 0.06fF
+C1 w_n6_n6# B 0.06fF
+C2 w_n6_n6# a_7_0# 0.22fF
+C3 a_7_0# B 0.02fF
+C4 w_n6_n6# Y 0.12fF
+C5 A Y 0.05fF
+C6 Y B 0.24fF
+C7 Y a_7_0# 1.03fF
+C8 A gnd 0.05fF
+C9 vdd w_n6_n6# 0.12fF
+C10 vdd a_7_0# 1.03fF
+C11 gnd Y 0.71fF
 C12 gnd Gnd 0.15fF
 C13 Y Gnd 0.15fF
 C14 a_7_0# Gnd 0.00fF
@@ -318,25 +321,25 @@ M1006 a_23_n101# B a_7_n101# Gnd CMOSN w=80 l=2
 +  ad=0 pd=0 as=0 ps=0
 M1007 a_7_0# D vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 a_7_n101# a_23_n101# 0.82fF
-C1 w_n6_n6# A 0.06fF
-C2 vdd a_7_0# 3.78fF
-C3 C a_7_0# 0.19fF
-C4 a_7_n101# gnd 0.82fF
-C5 w_n6_n6# D 0.06fF
-C6 B a_7_n101# 0.10fF
-C7 A a_7_0# 0.05fF
-C8 a_39_n101# a_23_n101# 0.82fF
-C9 w_n6_n6# B 0.06fF
-C10 w_n6_n6# a_7_0# 0.29fF
-C11 D a_39_n101# 0.10fF
-C12 D a_7_0# 0.24fF
-C13 B a_7_0# 0.19fF
-C14 a_39_n101# a_7_0# 0.82fF
-C15 A vdd 0.02fF
-C16 C a_23_n101# 0.10fF
-C17 w_n6_n6# vdd 0.34fF
-C18 w_n6_n6# C 0.06fF
+C0 a_23_n101# a_7_n101# 0.82fF
+C1 a_23_n101# a_39_n101# 0.82fF
+C2 B a_7_n101# 0.10fF
+C3 C a_23_n101# 0.10fF
+C4 vdd w_n6_n6# 0.34fF
+C5 B w_n6_n6# 0.06fF
+C6 D a_39_n101# 0.10fF
+C7 C w_n6_n6# 0.06fF
+C8 D w_n6_n6# 0.06fF
+C9 A w_n6_n6# 0.06fF
+C10 A vdd 0.02fF
+C11 a_7_0# a_39_n101# 0.82fF
+C12 a_7_0# w_n6_n6# 0.29fF
+C13 a_7_0# vdd 3.78fF
+C14 B a_7_0# 0.19fF
+C15 C a_7_0# 0.19fF
+C16 a_7_0# D 0.24fF
+C17 A a_7_0# 0.05fF
+C18 gnd a_7_n101# 0.82fF
 C19 a_39_n101# Gnd 0.18fF
 C20 a_23_n101# Gnd 0.18fF
 C21 a_7_n101# Gnd 0.18fF
@@ -350,7 +353,7 @@ C28 A Gnd -0.00fF
 C29 w_n6_n6# Gnd 4.48fF
 .ends
 
-.subckt nor_5_cmos a_23_0# w_n6_n6# Y a_7_0# A vdd B C D a_39_0# E a_55_0#
+.subckt nor_5_cmos a_23_0# w_n6_n6# Y a_7_0# gnd A vdd B C D a_39_0# E a_55_0#
 M1000 a_7_0# A vdd w_n6_n6# CMOSP w=250 l=2
 +  ad=2500 pd=1020 as=1250 ps=510
 M1001 a_39_0# C a_23_0# w_n6_n6# CMOSP w=250 l=2
@@ -371,33 +374,33 @@ M1008 a_55_0# D a_39_0# w_n6_n6# CMOSP w=250 l=2
 +  ad=0 pd=0 as=0 ps=0
 M1009 Y C gnd Gnd CMOSN w=20 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 w_n6_n6# A 0.06fF
-C1 a_23_0# a_7_0# 2.58fF
-C2 a_23_0# a_39_0# 2.58fF
-C3 Y a_55_0# 2.58fF
-C4 a_23_0# w_n6_n6# 0.52fF
-C5 Y B 0.19fF
-C6 Y D 0.19fF
-C7 gnd A 0.05fF
-C8 B a_7_0# 0.02fF
-C9 a_39_0# a_55_0# 2.58fF
-C10 a_7_0# vdd 2.58fF
-C11 a_55_0# w_n6_n6# 0.52fF
-C12 B w_n6_n6# 0.06fF
-C13 Y C 0.19fF
-C14 D a_39_0# 0.02fF
-C15 w_n6_n6# vdd 0.27fF
-C16 D w_n6_n6# 0.06fF
-C17 E Y 0.24fF
-C18 w_n6_n6# C 0.06fF
-C19 E w_n6_n6# 0.06fF
-C20 a_23_0# C 0.02fF
-C21 Y w_n6_n6# 0.27fF
-C22 Y A 0.05fF
-C23 E a_55_0# 0.02fF
-C24 w_n6_n6# a_7_0# 0.52fF
-C25 a_39_0# w_n6_n6# 0.52fF
-C26 gnd Y 2.21fF
+C0 a_7_0# w_n6_n6# 0.52fF
+C1 a_7_0# B 0.02fF
+C2 a_7_0# a_23_0# 2.58fF
+C3 A w_n6_n6# 0.06fF
+C4 w_n6_n6# B 0.06fF
+C5 w_n6_n6# D 0.06fF
+C6 w_n6_n6# a_23_0# 0.52fF
+C7 a_55_0# w_n6_n6# 0.52fF
+C8 Y w_n6_n6# 0.27fF
+C9 w_n6_n6# E 0.06fF
+C10 Y A 0.05fF
+C11 A gnd 0.05fF
+C12 vdd a_7_0# 2.58fF
+C13 a_39_0# w_n6_n6# 0.52fF
+C14 Y B 0.19fF
+C15 Y D 0.19fF
+C16 vdd w_n6_n6# 0.27fF
+C17 a_55_0# Y 2.58fF
+C18 a_39_0# D 0.02fF
+C19 a_55_0# E 0.02fF
+C20 a_39_0# a_23_0# 2.58fF
+C21 Y gnd 2.21fF
+C22 Y E 0.24fF
+C23 C w_n6_n6# 0.06fF
+C24 a_55_0# a_39_0# 2.58fF
+C25 C a_23_0# 0.02fF
+C26 C Y 0.19fF
 C27 gnd Gnd 0.41fF
 C28 Y Gnd 0.38fF
 C29 a_55_0# Gnd -0.00fF
@@ -435,29 +438,29 @@ M1008 a_39_n121# C a_23_n121# Gnd CMOSN w=100 l=2
 +  ad=0 pd=0 as=1000 ps=420
 M1009 a_23_n121# B a_7_n121# Gnd CMOSN w=100 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 gnd a_7_n121# 1.03fF
-C1 w_n6_n6# A 0.06fF
-C2 a_55_n121# E 0.10fF
-C3 C a_23_n121# 0.10fF
-C4 A Y 0.05fF
-C5 w_n6_n6# Y 0.37fF
-C6 w_n6_n6# D 0.06fF
-C7 A vdd 0.02fF
-C8 B a_7_n121# 0.10fF
-C9 D Y 0.19fF
-C10 a_23_n121# a_7_n121# 1.03fF
-C11 w_n6_n6# B 0.06fF
-C12 w_n6_n6# vdd 0.42fF
-C13 B Y 0.19fF
-C14 vdd Y 4.87fF
-C15 a_55_n121# Y 1.03fF
-C16 D a_39_n121# 0.10fF
-C17 w_n6_n6# E 0.06fF
-C18 a_23_n121# a_39_n121# 1.03fF
-C19 w_n6_n6# C 0.06fF
-C20 a_55_n121# a_39_n121# 1.03fF
-C21 E Y 0.24fF
-C22 C Y 0.19fF
+C0 a_39_n121# D 0.10fF
+C1 Y a_55_n121# 1.03fF
+C2 Y w_n6_n6# 0.37fF
+C3 Y E 0.24fF
+C4 B Y 0.19fF
+C5 a_7_n121# gnd 1.03fF
+C6 C Y 0.19fF
+C7 Y D 0.19fF
+C8 a_7_n121# a_23_n121# 1.03fF
+C9 A Y 0.05fF
+C10 B a_7_n121# 0.10fF
+C11 Y vdd 4.87fF
+C12 E a_55_n121# 0.10fF
+C13 E w_n6_n6# 0.06fF
+C14 C a_23_n121# 0.10fF
+C15 B w_n6_n6# 0.06fF
+C16 C w_n6_n6# 0.06fF
+C17 D w_n6_n6# 0.06fF
+C18 A w_n6_n6# 0.06fF
+C19 vdd w_n6_n6# 0.42fF
+C20 a_39_n121# a_23_n121# 1.03fF
+C21 a_39_n121# a_55_n121# 1.03fF
+C22 A vdd 0.02fF
 C23 a_55_n121# Gnd 0.22fF
 C24 a_39_n121# Gnd 0.22fF
 C25 a_23_n121# Gnd 0.22fF
@@ -473,218 +476,299 @@ C34 A Gnd 0.13fF
 C35 w_n6_n6# Gnd 5.48fF
 .ends
 
-.subckt cla_gen_cmos_unrouted m inv_cmos_9/w_0_0# h inv_cmos_6/gnd nand_3_cmos_1/a_7_n81#
-+ nand_cmos_1/vdd nor_3_cmos_0/vdd inv_cmos_3/vdd nand_cmos_0/a_7_n61# inv_cmos_9/gnd
-+ nand_5_cmos_0/a_55_n121# inv_cmos_6/vdd nand_cmos_3/a_7_n61# P3 nand_cmos_2/Y inv_cmos_9/vdd
-+ nor_cmos_0/gnd nand_cmos_0/gnd inv_cmos_2/w_0_0# nor_3_cmos_0/a_7_0# inv_cmos_1/IN
-+ inv_cmos_2/gnd nand_4_cmos_1/a_39_n101# nand_4_cmos_1/a_23_n101# inv_cmos_4/IN nand_cmos_0/Y
-+ nand_cmos_3/gnd nand_3_cmos_0/a_7_n81# nand_3_cmos_2/vdd inv_cmos_7/IN inv_cmos_5/gnd
-+ nand_4_cmos_0/a_39_n101# nor_cmos_0/vdd nand_cmos_0/vdd nand_4_cmos_1/a_7_n101#
-+ inv_cmos_2/vdd inv_cmos_8/w_0_0# nand_4_cmos_0/a_23_n101# j inv_cmos_2/IN inv_cmos_8/gnd
-+ inv_cmos_1/w_0_0# nand_4_cmos_1/gnd nand_cmos_3/vdd inv_cmos_5/vdd nand_cmos_2/a_7_n61#
-+ nand_3_cmos_1/gnd inv_cmos_8/vdd nor_cmos_0/w_n6_n6# nand_4_cmos_1/vdd inv_cmos_1/gnd
-+ nor_3_cmos_0/a_23_0# nand_4_cmos_0/a_7_n101# nor_3_cmos_0/w_n6_n6# nand_cmos_2/gnd
-+ inv_cmos_6/w_0_0# inv_cmos_0/w_0_0# nand_3_cmos_1/vdd nand_5_cmos_0/a_39_n121# inv_cmos_7/w_0_0#
-+ inv_cmos_4/gnd nand_5_cmos_0/gnd nand_cmos_3/Y nand_5_cmos_0/a_23_n121# inv_cmos_1/vdd
-+ nand_3_cmos_1/a_23_n81# i inv_cmos_7/gnd nand_4_cmos_0/gnd nand_cmos_2/vdd nand_5_cmos_0/vdd
-+ inv_cmos_4/vdd nand_cmos_1/Y nand_cmos_1/a_7_n61# k inv_cmos_0/IN nor_4_cmos_0/gnd
-+ nand_3_cmos_0/gnd inv_cmos_11/gnd inv_cmos_7/vdd nand_4_cmos_0/vdd nor_5_cmos_0/vdd
-+ inv_cmos_0/gnd inv_cmos_5/IN nand_5_cmos_0/a_7_n121# nor_3_cmos_0/gnd nand_cmos_1/gnd
-+ inv_cmos_5/w_0_0# nor_4_cmos_0/vdd nand_3_cmos_0/vdd inv_cmos_11/vdd inv_cmos_3/gnd
-+ inv_cmos_0/vdd nor_5_cmos_0/w_n6_n6# l
-Xinv_cmos_3 nand_cmos_0/Y inv_cmos_3/w_0_0# inv_cmos_3/gnd inv_cmos_3/vdd d inv_cmos
-Xinv_cmos_4 inv_cmos_4/IN inv_cmos_4/w_0_0# inv_cmos_4/gnd inv_cmos_4/vdd e inv_cmos
-Xinv_cmos_6 nand_cmos_1/Y inv_cmos_6/w_0_0# inv_cmos_6/gnd inv_cmos_6/vdd g inv_cmos
-Xinv_cmos_5 inv_cmos_5/IN inv_cmos_5/w_0_0# inv_cmos_5/gnd inv_cmos_5/vdd f inv_cmos
-Xinv_cmos_7 inv_cmos_7/IN inv_cmos_7/w_0_0# inv_cmos_7/gnd inv_cmos_7/vdd h inv_cmos
-Xnor_3_cmos_0 nor_3_cmos_0/a_23_0# nor_3_cmos_0/w_n6_n6# m nor_3_cmos_0/a_7_0# nor_3_cmos_0/gnd
-+ h nor_3_cmos_0/vdd i G1 nor_3_cmos
-Xinv_cmos_8 nand_cmos_2/Y inv_cmos_8/w_0_0# inv_cmos_8/gnd inv_cmos_8/vdd i inv_cmos
-Xinv_cmos_9 nand_cmos_3/Y inv_cmos_9/w_0_0# inv_cmos_9/gnd inv_cmos_9/vdd j inv_cmos
+.subckt cla_gen_cmos_unrouted nand_4_cmos_1/D nand_cmos_3/A inv_cmos_9/w_0_0# nand_3_cmos_1/a_7_n81#
++ nand_cmos_3/B inv_cmos_6/gnd inv_cmos_7/OUT nor_3_cmos_0/vdd nand_cmos_1/vdd inv_cmos_3/vdd
++ nor_5_cmos_0/a_23_0# nor_4_cmos_0/a_39_0# nand_cmos_1/A nand_cmos_0/a_7_n61# inv_cmos_12/w_0_0#
++ inv_cmos_9/gnd nand_cmos_1/B nor_4_cmos_0/Y inv_cmos_4/w_0_0# inv_cmos_11/IN nand_5_cmos_0/a_55_n121#
++ inv_cmos_10/gnd inv_cmos_6/vdd inv_cmos_11/OUT nor_cmos_0/Y nor_5_cmos_0/A nand_5_cmos_0/A
++ inv_cmos_0/OUT nand_5_cmos_0/B nor_5_cmos_0/B nand_cmos_3/a_7_n61# nand_cmos_2/Y
++ nand_3_cmos_1/A nor_5_cmos_0/C nand_5_cmos_0/C inv_cmos_9/vdd inv_cmos_13/gnd nand_cmos_0/gnd
++ nor_cmos_0/gnd inv_cmos_2/w_0_0# nand_3_cmos_1/B nor_5_cmos_0/D inv_cmos_12/IN nand_5_cmos_0/D
++ nor_3_cmos_0/a_7_0# inv_cmos_1/IN nand_4_cmos_1/a_39_n101# inv_cmos_2/gnd inv_cmos_10/vdd
++ inv_cmos_3/OUT nor_5_cmos_0/E nand_5_cmos_0/E nand_3_cmos_1/C nor_cmos_0/a_7_0#
++ inv_cmos_13/w_0_0# inv_cmos_4/IN nand_4_cmos_1/a_23_n101# nand_cmos_0/Y inv_cmos_7/IN
++ nand_cmos_3/gnd nand_3_cmos_0/a_7_n81# nand_3_cmos_2/vdd nor_4_cmos_0/a_23_0# inv_cmos_5/gnd
++ nand_4_cmos_0/a_39_n101# nor_cmos_0/vdd inv_cmos_13/vdd inv_cmos_6/OUT nand_cmos_0/vdd
++ nand_4_cmos_1/a_7_n101# inv_cmos_2/vdd inv_cmos_8/w_0_0# nand_4_cmos_0/a_23_n101#
++ inv_cmos_2/IN inv_cmos_8/gnd inv_cmos_9/OUT nor_3_cmos_0/Y nand_3_cmos_2/a_23_n81#
++ inv_cmos_1/w_0_0# nand_cmos_3/vdd nand_4_cmos_1/gnd inv_cmos_5/vdd inv_cmos_10/OUT
++ nor_4_cmos_0/A nand_4_cmos_0/A nand_4_cmos_0/B nor_cmos_0/A nor_4_cmos_0/B nand_cmos_2/a_7_n61#
++ inv_cmos_3/w_0_0# nor_5_cmos_0/a_7_0# nand_4_cmos_0/C nor_cmos_0/B nor_4_cmos_0/C
++ nand_3_cmos_1/gnd inv_cmos_8/vdd inv_cmos_12/gnd inv_cmos_13/OUT nand_4_cmos_0/D
++ nor_4_cmos_0/D nor_cmos_0/w_n6_n6# nand_cmos_2/A nand_4_cmos_1/vdd inv_cmos_1/gnd
++ nand_cmos_2/B inv_cmos_2/OUT nor_3_cmos_0/a_23_0# nand_4_cmos_0/a_7_n101# nor_3_cmos_0/w_n6_n6#
++ inv_cmos_6/w_0_0# nand_cmos_2/gnd inv_cmos_0/w_0_0# nand_3_cmos_1/vdd nand_cmos_0/A
++ nand_5_cmos_0/a_39_n121# inv_cmos_7/w_0_0# nand_5_cmos_0/gnd inv_cmos_12/vdd inv_cmos_4/gnd
++ inv_cmos_5/OUT nand_cmos_3/Y nand_cmos_0/B nand_5_cmos_0/a_23_n121# nand_3_cmos_2/A
++ nand_3_cmos_1/a_23_n81# inv_cmos_1/vdd nand_3_cmos_2/B nand_3_cmos_2/a_7_n81# inv_cmos_7/gnd
++ nand_3_cmos_2/C inv_cmos_8/OUT nand_cmos_2/vdd nand_4_cmos_0/gnd nor_5_cmos_0/gnd
++ inv_cmos_10/w_0_0# nand_cmos_1/Y inv_cmos_4/vdd nand_5_cmos_0/vdd nor_3_cmos_0/A
++ nand_3_cmos_0/A nor_3_cmos_0/B nand_cmos_1/a_7_n61# nand_3_cmos_0/B inv_cmos_10/IN
++ nor_5_cmos_0/a_39_0# nor_4_cmos_0/w_n6_n6# nor_3_cmos_0/C nand_3_cmos_0/C inv_cmos_13/IN
++ nor_5_cmos_0/Y inv_cmos_0/IN nor_5_cmos_0/a_55_0# nand_3_cmos_0/gnd nor_4_cmos_0/gnd
++ inv_cmos_7/vdd inv_cmos_11/gnd inv_cmos_12/OUT inv_cmos_5/w_0_0# nor_5_cmos_0/vdd
++ nand_4_cmos_0/vdd inv_cmos_0/gnd inv_cmos_1/OUT inv_cmos_5/IN nor_4_cmos_0/a_7_0#
++ nand_4_cmos_1/A nand_5_cmos_0/a_7_n121# nand_3_cmos_0/a_23_n81# nor_3_cmos_0/gnd
++ inv_cmos_11/w_0_0# nand_cmos_1/gnd nand_4_cmos_1/B nand_3_cmos_0/vdd nor_4_cmos_0/vdd
++ inv_cmos_3/gnd inv_cmos_11/vdd inv_cmos_4/OUT nand_4_cmos_1/C inv_cmos_0/vdd nor_5_cmos_0/w_n6_n6#
+Xinv_cmos_3 nand_cmos_0/Y inv_cmos_3/w_0_0# inv_cmos_3/gnd inv_cmos_3/vdd inv_cmos_3/OUT
++ inv_cmos
+Xinv_cmos_4 inv_cmos_4/IN inv_cmos_4/w_0_0# inv_cmos_4/gnd inv_cmos_4/vdd inv_cmos_4/OUT
++ inv_cmos
+Xinv_cmos_6 nand_cmos_1/Y inv_cmos_6/w_0_0# inv_cmos_6/gnd inv_cmos_6/vdd inv_cmos_6/OUT
++ inv_cmos
+Xinv_cmos_5 inv_cmos_5/IN inv_cmos_5/w_0_0# inv_cmos_5/gnd inv_cmos_5/vdd inv_cmos_5/OUT
++ inv_cmos
+Xinv_cmos_7 inv_cmos_7/IN inv_cmos_7/w_0_0# inv_cmos_7/gnd inv_cmos_7/vdd inv_cmos_7/OUT
++ inv_cmos
+Xnor_3_cmos_0 nor_3_cmos_0/a_23_0# nor_3_cmos_0/w_n6_n6# nor_3_cmos_0/Y nor_3_cmos_0/a_7_0#
++ nor_3_cmos_0/gnd nor_3_cmos_0/A nor_3_cmos_0/vdd nor_3_cmos_0/B nor_3_cmos_0/C nor_3_cmos
+Xinv_cmos_8 nand_cmos_2/Y inv_cmos_8/w_0_0# inv_cmos_8/gnd inv_cmos_8/vdd inv_cmos_8/OUT
++ inv_cmos
+Xinv_cmos_9 nand_cmos_3/Y inv_cmos_9/w_0_0# inv_cmos_9/gnd inv_cmos_9/vdd inv_cmos_9/OUT
++ inv_cmos
 Xnand_3_cmos_0 inv_cmos_2/w_0_0# nand_3_cmos_0/a_7_n81# inv_cmos_2/IN nand_3_cmos_0/gnd
-+ P3 nand_3_cmos_0/vdd P2 G1 nand_3_cmos_0/a_23_n81# nand_3_cmos
-Xnor_4_cmos_0 l nor_4_cmos_0/gnd e nor_4_cmos_0/vdd f g G2 nor_4_cmos
++ nand_3_cmos_0/A nand_3_cmos_0/vdd nand_3_cmos_0/B nand_3_cmos_0/C nand_3_cmos_0/a_23_n81#
++ nand_3_cmos
+Xnor_4_cmos_0 nor_4_cmos_0/a_23_0# nor_4_cmos_0/w_n6_n6# nor_4_cmos_0/Y nor_4_cmos_0/a_7_0#
++ nor_4_cmos_0/gnd nor_4_cmos_0/A nor_4_cmos_0/vdd nor_4_cmos_0/B nor_4_cmos_0/C nor_4_cmos_0/D
++ nor_4_cmos_0/a_39_0# nor_4_cmos
 Xnand_3_cmos_1 inv_cmos_5/w_0_0# nand_3_cmos_1/a_7_n81# inv_cmos_5/IN nand_3_cmos_1/gnd
-+ P2 nand_3_cmos_1/vdd P1 G0 nand_3_cmos_1/a_23_n81# nand_3_cmos
++ nand_3_cmos_1/A nand_3_cmos_1/vdd nand_3_cmos_1/B nand_3_cmos_1/C nand_3_cmos_1/a_23_n81#
++ nand_3_cmos
 Xnand_3_cmos_2 inv_cmos_7/w_0_0# nand_3_cmos_2/a_7_n81# inv_cmos_7/IN nand_5_cmos_0/gnd
-+ P1 nand_3_cmos_2/vdd P0 C0 nand_3_cmos_2/a_23_n81# nand_3_cmos
++ nand_3_cmos_2/A nand_3_cmos_2/vdd nand_3_cmos_2/B nand_3_cmos_2/C nand_3_cmos_2/a_23_n81#
++ nand_3_cmos
 Xnand_cmos_1 inv_cmos_6/w_0_0# nand_cmos_1/a_7_n61# nand_cmos_1/Y nand_cmos_1/gnd
-+ P2 nand_cmos_1/vdd G1 nand_cmos
++ nand_cmos_1/A nand_cmos_1/vdd nand_cmos_1/B nand_cmos
 Xnand_cmos_0 inv_cmos_3/w_0_0# nand_cmos_0/a_7_n61# nand_cmos_0/Y nand_cmos_0/gnd
-+ P3 nand_cmos_0/vdd G2 nand_cmos
++ nand_cmos_0/A nand_cmos_0/vdd nand_cmos_0/B nand_cmos
 Xnand_cmos_2 inv_cmos_8/w_0_0# nand_cmos_2/a_7_n61# nand_cmos_2/Y nand_cmos_2/gnd
-+ P1 nand_cmos_2/vdd G0 nand_cmos
-Xinv_cmos_11 l inv_cmos_11/w_0_0# inv_cmos_11/gnd inv_cmos_11/vdd C3 inv_cmos
-Xinv_cmos_10 k inv_cmos_10/w_0_0# inv_cmos_10/gnd inv_cmos_10/vdd C4 inv_cmos
-Xnor_cmos_0 nor_cmos_0/w_n6_n6# n nor_cmos_0/a_7_0# nor_cmos_0/gnd j nor_cmos_0/vdd
-+ G0 nor_cmos
-Xnand_4_cmos_0 inv_cmos_1/w_0_0# nand_4_cmos_0/a_7_n101# inv_cmos_1/IN nand_4_cmos_0/gnd
-+ P3 nand_4_cmos_0/vdd nand_4_cmos_0/a_39_n101# P2 nand_4_cmos_0/a_23_n101# P1 G0
-+ nand_4_cmos
++ nand_cmos_2/A nand_cmos_2/vdd nand_cmos_2/B nand_cmos
+Xinv_cmos_11 inv_cmos_11/IN inv_cmos_11/w_0_0# inv_cmos_11/gnd inv_cmos_11/vdd inv_cmos_11/OUT
++ inv_cmos
+Xinv_cmos_10 inv_cmos_10/IN inv_cmos_10/w_0_0# inv_cmos_10/gnd inv_cmos_10/vdd inv_cmos_10/OUT
++ inv_cmos
+Xnor_cmos_0 nor_cmos_0/w_n6_n6# nor_cmos_0/Y nor_cmos_0/a_7_0# nor_cmos_0/gnd nor_cmos_0/A
++ nor_cmos_0/vdd nor_cmos_0/B nor_cmos
 Xnand_cmos_3 inv_cmos_9/w_0_0# nand_cmos_3/a_7_n61# nand_cmos_3/Y nand_cmos_3/gnd
-+ P0 nand_cmos_3/vdd C0 nand_cmos
++ nand_cmos_3/A nand_cmos_3/vdd nand_cmos_3/B nand_cmos
+Xnand_4_cmos_0 inv_cmos_1/w_0_0# nand_4_cmos_0/a_7_n101# inv_cmos_1/IN nand_4_cmos_0/gnd
++ nand_4_cmos_0/A nand_4_cmos_0/vdd nand_4_cmos_0/a_39_n101# nand_4_cmos_0/B nand_4_cmos_0/a_23_n101#
++ nand_4_cmos_0/C nand_4_cmos_0/D nand_4_cmos
 Xnand_4_cmos_1 inv_cmos_4/w_0_0# nand_4_cmos_1/a_7_n101# inv_cmos_4/IN nand_4_cmos_1/gnd
-+ P2 nand_4_cmos_1/vdd nand_4_cmos_1/a_39_n101# P1 nand_4_cmos_1/a_23_n101# P0 C0
-+ nand_4_cmos
-Xinv_cmos_12 m inv_cmos_12/w_0_0# inv_cmos_12/gnd inv_cmos_12/vdd C2 inv_cmos
-Xnor_5_cmos_0 nor_5_cmos_0/a_23_0# nor_5_cmos_0/w_n6_n6# k nor_5_cmos_0/a_7_0# a nor_5_cmos_0/vdd
-+ b c d nor_5_cmos_0/a_39_0# G3 nor_5_cmos_0/a_55_0# nor_5_cmos
-Xinv_cmos_13 n inv_cmos_13/w_0_0# inv_cmos_13/gnd inv_cmos_13/vdd C1 inv_cmos
++ nand_4_cmos_1/A nand_4_cmos_1/vdd nand_4_cmos_1/a_39_n101# nand_4_cmos_1/B nand_4_cmos_1/a_23_n101#
++ nand_4_cmos_1/C nand_4_cmos_1/D nand_4_cmos
+Xinv_cmos_12 inv_cmos_12/IN inv_cmos_12/w_0_0# inv_cmos_12/gnd inv_cmos_12/vdd inv_cmos_12/OUT
++ inv_cmos
+Xnor_5_cmos_0 nor_5_cmos_0/a_23_0# nor_5_cmos_0/w_n6_n6# nor_5_cmos_0/Y nor_5_cmos_0/a_7_0#
++ nor_5_cmos_0/gnd nor_5_cmos_0/A nor_5_cmos_0/vdd nor_5_cmos_0/B nor_5_cmos_0/C nor_5_cmos_0/D
++ nor_5_cmos_0/a_39_0# nor_5_cmos_0/E nor_5_cmos_0/a_55_0# nor_5_cmos
+Xinv_cmos_13 inv_cmos_13/IN inv_cmos_13/w_0_0# inv_cmos_13/gnd inv_cmos_13/vdd inv_cmos_13/OUT
++ inv_cmos
 Xnand_5_cmos_0 nand_5_cmos_0/a_7_n121# inv_cmos_0/w_0_0# nand_5_cmos_0/a_55_n121#
 + inv_cmos_0/IN nand_5_cmos_0/gnd nand_5_cmos_0/a_39_n121# nand_5_cmos_0/a_23_n121#
-+ P3 nand_5_cmos_0/vdd P2 P1 P0 C0 nand_5_cmos
-Xinv_cmos_0 inv_cmos_0/IN inv_cmos_0/w_0_0# inv_cmos_0/gnd inv_cmos_0/vdd a inv_cmos
-Xinv_cmos_1 inv_cmos_1/IN inv_cmos_1/w_0_0# inv_cmos_1/gnd inv_cmos_1/vdd b inv_cmos
-Xinv_cmos_2 inv_cmos_2/IN inv_cmos_2/w_0_0# inv_cmos_2/gnd inv_cmos_2/vdd c inv_cmos
-C0 nor_3_cmos_0/gnd nand_3_cmos_0/a_23_n81# 0.05fF
-C1 nand_cmos_3/a_7_n61# C0 0.05fF
-C2 inv_cmos_1/IN P1 0.05fF
-C3 b c 0.04fF
-C4 nor_5_cmos_0/a_39_0# d 0.02fF
-C5 inv_cmos_2/IN inv_cmos_2/w_0_0# 0.00fF
-C6 inv_cmos_5/IN G0 0.05fF
-C7 nand_3_cmos_1/a_23_n81# G0 0.05fF
-C8 inv_cmos_0/vdd inv_cmos_0/IN 0.52fF
-C9 k G3 0.05fF
-C10 i m 0.05fF
-C11 P3 b 0.02fF
-C12 inv_cmos_7/vdd inv_cmos_7/IN 0.52fF
-C13 f l 0.05fF
-C14 nor_5_cmos_0/w_n6_n6# nor_5_cmos_0/vdd -0.00fF
-C15 nand_5_cmos_0/a_55_n121# C0 0.05fF
-C16 C4 m 0.02fF
-C17 inv_cmos_1/gnd inv_cmos_1/IN 0.30fF
-C18 P2 nand_4_cmos_0/a_7_n101# 0.05fF
-C19 inv_cmos_0/IN P1 0.05fF
-C20 P1 nand_4_cmos_1/a_7_n101# 0.05fF
-C21 inv_cmos_2/IN inv_cmos_2/gnd 0.30fF
-C22 nand_3_cmos_2/a_7_n81# P0 0.07fF
-C23 nand_cmos_2/a_7_n61# G0 0.05fF
-C24 inv_cmos_1/vdd inv_cmos_1/IN 0.52fF
-C25 i nor_3_cmos_0/a_7_0# 0.02fF
-C26 C0 nand_cmos_3/Y 0.05fF
-C27 nor_5_cmos_0/a_23_0# c 0.02fF
-C28 inv_cmos_4/vdd inv_cmos_4/IN 0.52fF
-C29 P1 inv_cmos_5/IN 0.05fF
-C30 inv_cmos_5/vdd nand_4_cmos_0/vdd 0.04fF
-C31 inv_cmos_4/gnd inv_cmos_4/IN 0.30fF
-C32 nand_4_cmos_0/a_23_n101# P1 0.05fF
-C33 G0 nand_cmos_2/Y 0.05fF
-C34 nand_3_cmos_2/a_23_n81# C0 0.07fF
-C35 P2 inv_cmos_1/IN 0.05fF
-C36 nand_4_cmos_0/vdd nand_3_cmos_1/vdd 0.21fF
-C37 inv_cmos_9/gnd nand_cmos_3/Y 0.30fF
-C38 G1 m 0.05fF
-C39 k c 0.05fF
-C40 inv_cmos_2/IN inv_cmos_2/vdd 0.52fF
-C41 inv_cmos_3/vdd nand_cmos_0/Y 0.52fF
-C42 P0 inv_cmos_7/IN 0.05fF
-C43 G2 g 0.04fF
-C44 nand_cmos_1/Y G1 0.05fF
-C45 inv_cmos_3/gnd nand_cmos_0/Y 0.30fF
-C46 inv_cmos_8/w_0_0# nand_cmos_2/Y -0.00fF
-C47 b nor_5_cmos_0/a_7_0# 0.02fF
-C48 G1 nor_3_cmos_0/a_23_0# 0.02fF
-C49 inv_cmos_8/vdd nand_cmos_2/Y 0.52fF
-C50 G2 nand_cmos_0/a_7_n61# 0.04fF
-C51 P2 G1 0.04fF
-C52 P1 inv_cmos_4/IN 0.05fF
-C53 nor_3_cmos_0/gnd nand_3_cmos_0/a_7_n81# 0.01fF
-C54 C0 inv_cmos_7/IN 0.05fF
-C55 inv_cmos_0/IN inv_cmos_0/gnd 0.30fF
-C56 d G3 0.04fF
-C57 inv_cmos_0/IN P0 0.05fF
-C58 P2 inv_cmos_0/IN 0.05fF
-C59 P2 e 0.02fF
-C60 C2 n 0.02fF
-C61 P2 f 0.02fF
-C62 nand_cmos_1/Y inv_cmos_6/vdd 0.52fF
-C63 P0 P1 0.08fF
-C64 P2 P1 0.08fF
-C65 P2 nand_3_cmos_0/a_7_n81# 0.05fF
-C66 P3 c 0.02fF
-C67 G0 n 0.05fF
-C68 inv_cmos_2/IN G1 0.05fF
-C69 inv_cmos_0/IN C0 0.05fF
-C70 nand_5_cmos_0/vdd inv_cmos_4/vdd 0.04fF
-C71 nand_cmos_1/Y inv_cmos_6/gnd 0.30fF
-C72 inv_cmos_5/w_0_0# inv_cmos_5/IN 0.00fF
-C73 inv_cmos_7/IN inv_cmos_7/w_0_0# -0.00fF
-C74 nand_5_cmos_0/a_39_n121# P0 0.05fF
-C75 nand_3_cmos_0/vdd nor_4_cmos_0/vdd 0.04fF
-C76 k d 0.05fF
-C77 nor_5_cmos_0/a_55_0# G3 0.02fF
-C78 inv_cmos_1/IN inv_cmos_1/w_0_0# 0.00fF
-C79 G2 nand_cmos_0/Y 0.05fF
-C80 G2 l 0.05fF
-C81 nand_5_cmos_0/a_7_n121# P2 0.05fF
-C82 inv_cmos_5/gnd inv_cmos_5/IN 0.30fF
-C83 G1 nand_3_cmos_0/a_23_n81# 0.05fF
-C84 P1 nand_3_cmos_1/a_7_n81# 0.05fF
-C85 P3 a 0.02fF
-C86 inv_cmos_1/vdd nand_cmos_1/vdd 0.04fF
-C87 P0 inv_cmos_4/IN 0.05fF
-C88 d c 0.04fF
-C89 inv_cmos_1/IN G0 0.05fF
-C90 g l 0.05fF
-C91 inv_cmos_4/w_0_0# inv_cmos_4/IN 0.00fF
-C92 i G1 0.04fF
-C93 C0 nand_4_cmos_1/a_39_n101# 0.05fF
-C94 nand_4_cmos_0/a_39_n101# G0 0.05fF
-C95 f g 0.04fF
-C96 C0 inv_cmos_4/IN 0.05fF
-C97 nor_cmos_0/a_7_0# G0 0.02fF
-C98 nand_3_cmos_0/vdd inv_cmos_6/vdd 0.04fF
-C99 nand_5_cmos_0/vdd nand_4_cmos_1/vdd 0.54fF
-C100 inv_cmos_7/gnd inv_cmos_7/IN 0.30fF
-C101 nand_5_cmos_0/a_23_n121# P1 0.05fF
-C102 inv_cmos_2/IN nor_3_cmos_0/gnd 0.02fF
-C103 inv_cmos_5/vdd inv_cmos_5/IN 0.52fF
-C104 nand_cmos_3/Y inv_cmos_9/vdd 0.52fF
-C105 k b 0.05fF
-C106 P0 C0 0.12fF
-C107 P0 nand_4_cmos_1/a_23_n101# 0.05fF
-C108 inv_cmos_8/gnd nand_cmos_2/Y 0.30fF
-C109 G1 nand_cmos_1/a_7_n61# 0.04fF
-C110 P1 G0 0.08fF
-C111 inv_cmos_2/IN P2 0.05fF
-C112 inv_cmos_0/IN Gnd 0.01fF
-C113 P2 Gnd 0.02fF
-C114 P3 Gnd 0.06fF
-C115 C1 Gnd 0.02fF
-C116 n Gnd 0.00fF
-C117 k Gnd 0.04fF
-C118 G3 Gnd -0.01fF
-C119 d Gnd -0.01fF
-C120 c Gnd 0.04fF
-C121 b Gnd -0.06fF
-C122 a Gnd 0.02fF
-C123 C2 Gnd 0.02fF
-C124 nand_cmos_3/Y Gnd 0.00fF
-C125 inv_cmos_1/IN Gnd 0.01fF
-C126 C4 Gnd 0.02fF
-C127 C3 Gnd 0.02fF
-C128 nand_cmos_2/Y Gnd 0.01fF
-C129 G0 Gnd -0.04fF
-C130 G2 Gnd 0.00fF
-C131 nand_cmos_1/Y Gnd -0.02fF
-C132 inv_cmos_7/IN Gnd 0.01fF
-C133 C0 Gnd -0.01fF
-C134 P0 Gnd 0.05fF
-C135 P1 Gnd 0.13fF
-C136 inv_cmos_5/IN Gnd 0.01fF
-C137 l Gnd 0.04fF
-C138 inv_cmos_2/IN Gnd 0.01fF
-C139 j Gnd 0.04fF
-C140 i Gnd 0.04fF
-C141 m Gnd 0.04fF
-C142 G1 Gnd 0.06fF
-C143 h Gnd 0.04fF
-C144 f Gnd 0.04fF
-C145 g Gnd 0.04fF
-C146 e Gnd 0.04fF
-C147 inv_cmos_4/IN Gnd 0.01fF
-C148 nand_cmos_0/Y Gnd 0.01fF
++ nand_5_cmos_0/A nand_5_cmos_0/vdd nand_5_cmos_0/B nand_5_cmos_0/C nand_5_cmos_0/D
++ nand_5_cmos_0/E nand_5_cmos
+Xinv_cmos_0 inv_cmos_0/IN inv_cmos_0/w_0_0# inv_cmos_0/gnd inv_cmos_0/vdd inv_cmos_0/OUT
++ inv_cmos
+Xinv_cmos_1 inv_cmos_1/IN inv_cmos_1/w_0_0# inv_cmos_1/gnd inv_cmos_1/vdd inv_cmos_1/OUT
++ inv_cmos
+Xinv_cmos_2 inv_cmos_2/IN inv_cmos_2/w_0_0# inv_cmos_2/gnd inv_cmos_2/vdd inv_cmos_2/OUT
++ inv_cmos
+C0 nand_4_cmos_1/C inv_cmos_4/IN 0.05fF
+C1 nand_5_cmos_0/B nand_5_cmos_0/C 0.04fF
+C2 nand_cmos_0/A inv_cmos_2/OUT 0.02fF
+C3 nand_cmos_2/Y inv_cmos_8/gnd 0.30fF
+C4 nand_3_cmos_0/a_23_n81# nand_3_cmos_0/C 0.05fF
+C5 nor_5_cmos_0/D nor_5_cmos_0/E 0.04fF
+C6 nor_4_cmos_0/C nor_4_cmos_0/D 0.04fF
+C7 inv_cmos_2/IN nor_3_cmos_0/gnd 0.02fF
+C8 inv_cmos_5/IN nand_3_cmos_1/B 0.05fF
+C9 nand_3_cmos_0/B inv_cmos_2/IN 0.05fF
+C10 nand_4_cmos_1/D nand_4_cmos_1/C 0.04fF
+C11 inv_cmos_0/IN nand_5_cmos_0/C 0.05fF
+C12 nand_3_cmos_1/A inv_cmos_4/OUT 0.02fF
+C13 nor_4_cmos_0/Y nor_4_cmos_0/B 0.05fF
+C14 nand_4_cmos_1/D nand_4_cmos_1/a_39_n101# 0.05fF
+C15 inv_cmos_4/vdd inv_cmos_4/IN 0.52fF
+C16 nand_4_cmos_1/B nand_4_cmos_1/C 0.04fF
+C17 nand_4_cmos_1/a_23_n101# nand_4_cmos_1/C 0.05fF
+C18 nor_5_cmos_0/B nor_5_cmos_0/C 0.04fF
+C19 nand_3_cmos_0/a_23_n81# nor_3_cmos_0/gnd 0.05fF
+C20 inv_cmos_2/w_0_0# inv_cmos_2/IN 0.00fF
+C21 nand_3_cmos_2/B inv_cmos_7/IN 0.05fF
+C22 inv_cmos_8/w_0_0# nand_cmos_2/Y -0.00fF
+C23 inv_cmos_6/vdd nand_cmos_1/Y 0.52fF
+C24 nor_cmos_0/B nor_cmos_0/a_7_0# 0.02fF
+C25 nor_5_cmos_0/Y nor_5_cmos_0/C 0.05fF
+C26 nand_3_cmos_2/a_7_n81# nand_3_cmos_2/B 0.07fF
+C27 inv_cmos_11/IN nor_4_cmos_0/Y 0.02fF
+C28 nor_5_cmos_0/Y nor_5_cmos_0/E 0.05fF
+C29 inv_cmos_0/gnd inv_cmos_0/IN 0.30fF
+C30 nand_cmos_2/a_7_n61# nand_cmos_2/B 0.05fF
+C31 inv_cmos_4/vdd nand_5_cmos_0/vdd 0.04fF
+C32 inv_cmos_0/IN nand_5_cmos_0/E 0.05fF
+C33 inv_cmos_1/IN nand_4_cmos_0/C 0.05fF
+C34 nand_4_cmos_0/a_23_n101# nand_4_cmos_0/C 0.05fF
+C35 nor_3_cmos_0/gnd nand_3_cmos_0/a_7_n81# 0.01fF
+C36 nor_5_cmos_0/w_n6_n6# nor_5_cmos_0/vdd -0.00fF
+C37 inv_cmos_1/w_0_0# inv_cmos_1/IN 0.00fF
+C38 inv_cmos_2/vdd inv_cmos_2/IN 0.52fF
+C39 nand_3_cmos_0/B nand_3_cmos_0/a_7_n81# 0.05fF
+C40 inv_cmos_5/IN nand_3_cmos_1/C 0.05fF
+C41 inv_cmos_5/OUT nand_cmos_1/A 0.02fF
+C42 nand_cmos_0/Y inv_cmos_3/vdd 0.52fF
+C43 nand_4_cmos_0/D nand_4_cmos_0/C 0.04fF
+C44 nand_cmos_0/Y inv_cmos_3/gnd 0.30fF
+C45 inv_cmos_0/IN nand_5_cmos_0/D 0.05fF
+C46 nor_3_cmos_0/B nor_3_cmos_0/C 0.04fF
+C47 nand_5_cmos_0/C nand_5_cmos_0/D 0.04fF
+C48 inv_cmos_5/w_0_0# inv_cmos_5/IN 0.00fF
+C49 nor_3_cmos_0/B nor_3_cmos_0/Y 0.05fF
+C50 nand_4_cmos_0/B nand_4_cmos_0/C 0.04fF
+C51 inv_cmos_2/gnd inv_cmos_2/IN 0.30fF
+C52 inv_cmos_10/IN nor_5_cmos_0/Y 0.02fF
+C53 nand_cmos_0/B nand_cmos_0/a_7_n61# 0.04fF
+C54 nand_4_cmos_0/a_7_n101# nand_4_cmos_0/B 0.05fF
+C55 nand_4_cmos_1/B nand_4_cmos_1/a_7_n101# 0.05fF
+C56 inv_cmos_0/IN inv_cmos_0/vdd 0.52fF
+C57 nand_4_cmos_1/D inv_cmos_4/IN 0.05fF
+C58 nand_5_cmos_0/a_23_n121# nand_5_cmos_0/C 0.05fF
+C59 nand_4_cmos_1/B inv_cmos_4/IN 0.05fF
+C60 nand_3_cmos_1/C nand_3_cmos_1/a_23_n81# 0.05fF
+C61 inv_cmos_12/OUT inv_cmos_13/IN 0.02fF
+C62 nand_cmos_3/Y inv_cmos_9/gnd 0.30fF
+C63 nor_cmos_0/B nor_cmos_0/Y 0.05fF
+C64 inv_cmos_7/IN nand_3_cmos_2/C 0.05fF
+C65 nor_4_cmos_0/Y nor_4_cmos_0/D 0.05fF
+C66 nand_4_cmos_1/vdd nand_5_cmos_0/vdd 0.54fF
+C67 nor_5_cmos_0/Y nor_5_cmos_0/D 0.05fF
+C68 inv_cmos_10/OUT inv_cmos_12/IN 0.02fF
+C69 nand_cmos_0/B nand_cmos_0/Y 0.05fF
+C70 nand_cmos_3/Y nand_cmos_3/B 0.05fF
+C71 nand_cmos_1/vdd inv_cmos_1/vdd 0.04fF
+C72 nand_5_cmos_0/D nand_5_cmos_0/E 0.04fF
+C73 nor_5_cmos_0/C nor_5_cmos_0/a_23_0# 0.02fF
+C74 nor_4_cmos_0/C nor_4_cmos_0/Y 0.05fF
+C75 inv_cmos_6/gnd nand_cmos_1/Y 0.30fF
+C76 inv_cmos_5/vdd inv_cmos_5/IN 0.52fF
+C77 inv_cmos_4/gnd inv_cmos_4/IN 0.30fF
+C78 inv_cmos_1/OUT nand_3_cmos_0/A 0.02fF
+C79 nor_5_cmos_0/a_55_0# nor_5_cmos_0/E 0.02fF
+C80 nor_5_cmos_0/D nor_5_cmos_0/a_39_0# 0.02fF
+C81 inv_cmos_5/gnd inv_cmos_5/IN 0.30fF
+C82 nand_4_cmos_0/vdd nand_3_cmos_1/vdd 0.21fF
+C83 nor_3_cmos_0/C nor_3_cmos_0/Y 0.05fF
+C84 nand_3_cmos_1/B nand_3_cmos_1/C 0.04fF
+C85 nor_5_cmos_0/Y nor_5_cmos_0/B 0.05fF
+C86 nor_4_cmos_0/C nor_4_cmos_0/B 0.04fF
+C87 nand_cmos_1/B nand_cmos_1/Y 0.05fF
+C88 nor_3_cmos_0/a_23_0# nor_3_cmos_0/C 0.02fF
+C89 inv_cmos_1/gnd inv_cmos_1/IN 0.30fF
+C90 nand_3_cmos_2/a_23_n81# nand_3_cmos_2/C 0.07fF
+C91 nand_4_cmos_0/D nand_4_cmos_0/a_39_n101# 0.05fF
+C92 nor_5_cmos_0/B nor_5_cmos_0/a_7_0# 0.02fF
+C93 nand_cmos_3/a_7_n61# nand_cmos_3/B 0.05fF
+C94 nand_5_cmos_0/a_55_n121# nand_5_cmos_0/E 0.05fF
+C95 nor_4_cmos_0/vdd nand_3_cmos_0/vdd 0.04fF
+C96 inv_cmos_7/gnd inv_cmos_7/IN 0.30fF
+C97 inv_cmos_8/vdd nand_cmos_2/Y 0.52fF
+C98 nand_5_cmos_0/B nand_5_cmos_0/a_7_n121# 0.05fF
+C99 inv_cmos_0/OUT nand_4_cmos_0/A 0.02fF
+C100 nand_3_cmos_1/B nand_3_cmos_1/a_7_n81# 0.05fF
+C101 inv_cmos_1/IN nand_4_cmos_0/D 0.05fF
+C102 nand_cmos_3/Y inv_cmos_9/vdd 0.52fF
+C103 nand_cmos_2/B nand_cmos_2/Y 0.05fF
+C104 inv_cmos_7/vdd inv_cmos_7/IN 0.52fF
+C105 nand_4_cmos_0/B inv_cmos_1/IN 0.05fF
+C106 inv_cmos_5/vdd nand_4_cmos_0/vdd 0.04fF
+C107 inv_cmos_6/vdd nand_3_cmos_0/vdd 0.04fF
+C108 inv_cmos_2/IN nand_3_cmos_0/C 0.05fF
+C109 nor_3_cmos_0/B nor_3_cmos_0/a_7_0# 0.02fF
+C110 nand_5_cmos_0/a_39_n121# nand_5_cmos_0/D 0.05fF
+C111 inv_cmos_1/IN inv_cmos_1/vdd 0.52fF
+C112 nand_3_cmos_0/B nand_3_cmos_0/C 0.04fF
+C113 nand_3_cmos_2/B nand_3_cmos_2/C 0.04fF
+C114 nand_cmos_1/a_7_n61# nand_cmos_1/B 0.04fF
+C115 nor_5_cmos_0/C nor_5_cmos_0/D 0.04fF
+C116 inv_cmos_0/IN nand_5_cmos_0/B 0.05fF
+C117 inv_cmos_2/OUT Gnd 0.02fF
+C118 inv_cmos_1/OUT Gnd -0.08fF
+C119 inv_cmos_0/OUT Gnd 0.00fF
+C120 inv_cmos_0/IN Gnd 0.01fF
+C121 nand_5_cmos_0/E Gnd 0.02fF
+C122 nand_5_cmos_0/D Gnd 0.02fF
+C123 nand_5_cmos_0/C Gnd 0.02fF
+C124 nand_5_cmos_0/B Gnd 0.02fF
+C125 nand_5_cmos_0/A Gnd 0.02fF
+C126 inv_cmos_13/OUT Gnd 0.02fF
+C127 inv_cmos_13/IN Gnd -0.02fF
+C128 nor_5_cmos_0/Y Gnd 0.02fF
+C129 nor_5_cmos_0/E Gnd -0.01fF
+C130 nor_5_cmos_0/D Gnd -0.03fF
+C131 nor_5_cmos_0/C Gnd 0.02fF
+C132 nor_5_cmos_0/B Gnd 0.02fF
+C133 nor_5_cmos_0/A Gnd 0.02fF
+C134 inv_cmos_12/OUT Gnd 0.02fF
+C135 inv_cmos_12/IN Gnd 0.02fF
+C136 inv_cmos_4/IN Gnd 0.01fF
+C137 nand_4_cmos_1/D Gnd 0.02fF
+C138 nand_4_cmos_1/C Gnd 0.02fF
+C139 nand_4_cmos_1/B Gnd 0.02fF
+C140 nand_4_cmos_1/A Gnd 0.02fF
+C141 inv_cmos_1/IN Gnd 0.01fF
+C142 nand_4_cmos_0/D Gnd 0.02fF
+C143 nand_4_cmos_0/C Gnd 0.02fF
+C144 nand_4_cmos_0/B Gnd 0.02fF
+C145 nand_4_cmos_0/A Gnd 0.02fF
+C146 nand_cmos_3/Y Gnd 0.00fF
+C147 nand_cmos_3/B Gnd -0.04fF
+C148 nand_cmos_3/A Gnd 0.02fF
+C149 nor_cmos_0/Y Gnd 0.02fF
+C150 nor_cmos_0/B Gnd -0.00fF
+C151 nor_cmos_0/A Gnd 0.02fF
+C152 inv_cmos_10/OUT Gnd 0.02fF
+C153 inv_cmos_10/IN Gnd 0.02fF
+C154 inv_cmos_11/OUT Gnd 0.02fF
+C155 inv_cmos_11/IN Gnd 0.02fF
+C156 nand_cmos_2/B Gnd -0.08fF
+C157 nand_cmos_2/A Gnd 0.02fF
+C158 nand_cmos_0/B Gnd -0.02fF
+C159 nand_cmos_0/A Gnd 0.02fF
+C160 nand_cmos_1/Y Gnd -0.02fF
+C161 nand_cmos_1/B Gnd 0.02fF
+C162 nand_cmos_1/A Gnd 0.02fF
+C163 inv_cmos_7/IN Gnd 0.01fF
+C164 nand_3_cmos_2/C Gnd -0.01fF
+C165 nand_3_cmos_2/B Gnd -0.01fF
+C166 nand_3_cmos_2/A Gnd 0.02fF
+C167 inv_cmos_5/IN Gnd 0.01fF
+C168 nand_3_cmos_1/C Gnd 0.02fF
+C169 nand_3_cmos_1/B Gnd 0.02fF
+C170 nand_3_cmos_1/A Gnd -0.09fF
+C171 nor_4_cmos_0/Y Gnd 0.02fF
+C172 nor_4_cmos_0/D Gnd 0.02fF
+C173 nor_4_cmos_0/C Gnd 0.02fF
+C174 nor_4_cmos_0/B Gnd 0.02fF
+C175 nor_4_cmos_0/A Gnd 0.02fF
+C176 inv_cmos_2/IN Gnd 0.01fF
+C177 nand_3_cmos_0/C Gnd 0.02fF
+C178 nand_3_cmos_0/B Gnd 0.02fF
+C179 nand_3_cmos_0/A Gnd -0.01fF
+C180 inv_cmos_9/OUT Gnd 0.02fF
+C181 inv_cmos_8/OUT Gnd 0.02fF
+C182 nand_cmos_2/Y Gnd 0.01fF
+C183 nor_3_cmos_0/Y Gnd 0.02fF
+C184 nor_3_cmos_0/C Gnd 0.02fF
+C185 nor_3_cmos_0/B Gnd 0.02fF
+C186 nor_3_cmos_0/A Gnd 0.02fF
+C187 inv_cmos_7/OUT Gnd 0.02fF
+C188 inv_cmos_5/OUT Gnd 0.02fF
+C189 inv_cmos_6/OUT Gnd 0.02fF
+C190 inv_cmos_4/OUT Gnd 0.02fF
+C191 inv_cmos_3/OUT Gnd 0.02fF
+C192 nand_cmos_0/Y Gnd 0.01fF
 .ends
 
 .subckt xor_optimized inv_cmos_0/OUT Y w_26_37# A B inv_cmos_0/gnd inv_cmos_0/vdd
@@ -693,13 +777,13 @@ M1000 Y A inv_cmos_0/OUT Gnd CMOSN w=20 l=2
 +  ad=100 pd=50 as=100 ps=50
 M1001 Y A B w_26_37# CMOSP w=50 l=2
 +  ad=250 pd=110 as=320 ps=110
-C0 B Y 0.56fF
-C1 inv_cmos_0/OUT Y 0.28fF
-C2 A B 0.05fF
-C3 w_26_37# Y 0.07fF
-C4 w_26_37# A 0.10fF
-C5 B inv_cmos_0/OUT 0.70fF
-C6 w_26_37# B 0.28fF
+C0 Y w_26_37# 0.07fF
+C1 A Y 0.05fF
+C2 w_26_37# B 0.28fF
+C3 Y inv_cmos_0/OUT 0.28fF
+C4 A w_26_37# 0.10fF
+C5 inv_cmos_0/OUT B 0.70fF
+C6 Y B 0.56fF
 C7 Y Gnd 0.05fF
 C8 A Gnd 0.01fF
 C9 inv_cmos_0/OUT Gnd 0.06fF
@@ -707,15 +791,16 @@ C10 B Gnd 0.32fF
 C11 w_26_37# Gnd 1.12fF
 .ends
 
-.subckt pg_gen_optimized_unrouted inv_cmos_3/w_0_0# inv_cmos_1/vdd nand_cmos_0/a_7_n61#
-+ P1 xor_optimized_2/inv_cmos_0/OUT G3 xor_optimized_0/inv_cmos_0/gnd P2 xor_optimized_1/inv_cmos_0/OUT
-+ nand_cmos_2/Y nand_cmos_3/a_7_n61# P3 xor_optimized_1/w_26_37# nand_cmos_0/gnd G0
-+ inv_cmos_2/gnd nand_cmos_0/Y inv_cmos_0/vdd inv_cmos_2/w_0_0# nand_cmos_3/gnd xor_optimized_3/inv_cmos_0/gnd
-+ G1 inv_cmos_3/vdd G2 xor_optimized_0/inv_cmos_0/OUT nand_cmos_2/a_7_n61# A0 B1 B0
-+ xor_optimized_0/w_26_37# A1 B2 inv_cmos_1/gnd A2 B3 inv_cmos_1/w_0_0# nand_cmos_2/gnd
-+ A3 xor_optimized_3/w_26_37# xor_optimized_2/inv_cmos_0/gnd nand_cmos_3/Y inv_cmos_2/vdd
-+ nand_cmos_1/Y nand_cmos_1/a_7_n61# inv_cmos_0/gnd xor_optimized_1/inv_cmos_0/gnd
-+ inv_cmos_0/w_0_0# nand_cmos_1/gnd xor_optimized_2/w_26_37# inv_cmos_3/gnd
+.subckt pg_gen_optimized_unrouted B0 inv_cmos_1/vdd inv_cmos_3/w_0_0# A0 A2 B2 m1_105_31#
++ nand_cmos_0/a_7_n61# xor_optimized_2/inv_cmos_0/OUT P1 xor_optimized_0/inv_cmos_0/gnd
++ G3 nand_cmos_3/a_7_n61# xor_optimized_1/inv_cmos_0/OUT nand_cmos_2/Y nand_cmos_0/gnd
++ xor_optimized_1/w_26_37# G0 P3 inv_cmos_2/gnd inv_cmos_0/vdd nand_cmos_0/Y nand_cmos_3/gnd
++ inv_cmos_2/w_0_0# xor_optimized_3/inv_cmos_0/gnd inv_cmos_3/vdd xor_optimized_0/inv_cmos_0/OUT
++ nand_cmos_2/a_7_n61# A1 B1 xor_optimized_0/w_26_37# inv_cmos_1/gnd G1 A3 B3 nand_cmos_2/gnd
++ inv_cmos_1/w_0_0# P0 xor_optimized_2/inv_cmos_0/gnd xor_optimized_3/w_26_37# nand_cmos_3/Y
++ xor_optimized_3/inv_cmos_0/OUT P2 inv_cmos_2/vdd nand_cmos_1/Y nand_cmos_1/a_7_n61#
++ G2 inv_cmos_0/gnd xor_optimized_1/inv_cmos_0/gnd inv_cmos_0/w_0_0# nand_cmos_1/gnd
++ xor_optimized_2/w_26_37# inv_cmos_3/gnd
 Xinv_cmos_3 nand_cmos_3/Y inv_cmos_3/w_0_0# inv_cmos_3/gnd inv_cmos_3/vdd G0 inv_cmos
 Xnand_cmos_1 inv_cmos_1/w_0_0# nand_cmos_1/a_7_n61# nand_cmos_1/Y nand_cmos_1/gnd
 + B2 inv_cmos_1/vdd A2 nand_cmos
@@ -736,69 +821,72 @@ Xxor_optimized_3 xor_optimized_3/inv_cmos_0/OUT P0 xor_optimized_3/w_26_37# A0 B
 Xinv_cmos_0 nand_cmos_0/Y inv_cmos_0/w_0_0# inv_cmos_0/gnd inv_cmos_0/vdd G3 inv_cmos
 Xinv_cmos_1 nand_cmos_1/Y inv_cmos_1/w_0_0# inv_cmos_1/gnd inv_cmos_1/vdd G2 inv_cmos
 Xinv_cmos_2 nand_cmos_2/Y inv_cmos_2/w_0_0# inv_cmos_2/gnd inv_cmos_2/vdd G1 inv_cmos
-C0 G3 B2 0.02fF
-C1 nand_cmos_1/a_7_n61# A2 0.04fF
-C2 inv_cmos_0/w_0_0# nand_cmos_0/Y -0.00fF
-C3 inv_cmos_3/vdd A0 0.16fF
-C4 A1 inv_cmos_2/vdd 0.16fF
-C5 nand_cmos_1/Y inv_cmos_1/gnd 0.30fF
-C6 A3 xor_optimized_0/w_26_37# 0.01fF
-C7 inv_cmos_2/vdd nand_cmos_2/Y 0.55fF
-C8 inv_cmos_2/vdd inv_cmos_2/w_0_0# 0.01fF
-C9 A1 nand_cmos_2/a_7_n61# 0.04fF
-C10 inv_cmos_3/vdd nand_cmos_3/Y 0.55fF
-C11 nand_cmos_1/Y inv_cmos_1/vdd 0.55fF
-C12 nand_cmos_3/Y inv_cmos_3/w_0_0# -0.00fF
-C13 nand_cmos_1/Y A2 0.05fF
-C14 A3 nand_cmos_0/Y 0.05fF
-C15 inv_cmos_0/w_0_0# inv_cmos_0/vdd 0.01fF
-C16 nand_cmos_0/Y inv_cmos_0/vdd 0.55fF
-C17 nand_cmos_0/Y inv_cmos_0/gnd 0.30fF
-C18 inv_cmos_3/gnd nand_cmos_3/Y 0.30fF
-C19 B1 G2 0.02fF
-C20 A3 nand_cmos_0/a_7_n61# 0.04fF
-C21 inv_cmos_2/gnd nand_cmos_2/Y 0.30fF
-C22 A0 nand_cmos_3/Y 0.05fF
-C23 inv_cmos_1/w_0_0# inv_cmos_1/vdd 0.01fF
-C24 A1 nand_cmos_2/Y 0.05fF
-C25 nand_cmos_3/a_7_n61# A0 0.04fF
-C26 xor_optimized_1/w_26_37# A2 0.01fF
-C27 G1 B0 0.02fF
-C28 A2 inv_cmos_1/vdd 0.16fF
-C29 A3 inv_cmos_0/vdd 0.16fF
-C30 inv_cmos_3/vdd inv_cmos_3/w_0_0# 0.01fF
-C31 A1 xor_optimized_2/w_26_37# 0.01fF
-C32 inv_cmos_2/w_0_0# nand_cmos_2/Y -0.00fF
-C33 xor_optimized_3/w_26_37# A0 0.01fF
+C0 nand_cmos_1/Y inv_cmos_1/gnd 0.30fF
+C1 inv_cmos_1/vdd A2 0.16fF
+C2 A2 xor_optimized_1/w_26_37# 0.01fF
+C3 B1 G2 0.02fF
+C4 inv_cmos_0/gnd nand_cmos_0/Y 0.30fF
+C5 nand_cmos_2/Y inv_cmos_2/w_0_0# -0.00fF
+C6 inv_cmos_1/vdd inv_cmos_1/w_0_0# 0.01fF
+C7 nand_cmos_0/Y inv_cmos_0/w_0_0# -0.00fF
+C8 nand_cmos_0/Y inv_cmos_0/vdd 0.55fF
+C9 xor_optimized_2/w_26_37# A1 0.01fF
+C10 inv_cmos_1/vdd nand_cmos_1/Y 0.55fF
+C11 nand_cmos_0/a_7_n61# A3 0.04fF
+C12 inv_cmos_2/w_0_0# inv_cmos_2/vdd 0.01fF
+C13 inv_cmos_3/w_0_0# nand_cmos_3/Y -0.00fF
+C14 nand_cmos_0/Y A3 0.05fF
+C15 B0 G1 0.02fF
+C16 nand_cmos_2/Y A1 0.05fF
+C17 A0 nand_cmos_3/Y 0.05fF
+C18 inv_cmos_0/vdd inv_cmos_0/w_0_0# 0.01fF
+C19 inv_cmos_3/vdd nand_cmos_3/Y 0.55fF
+C20 nand_cmos_1/Y A2 0.05fF
+C21 nand_cmos_3/a_7_n61# A0 0.04fF
+C22 nand_cmos_2/Y inv_cmos_2/vdd 0.55fF
+C23 xor_optimized_3/w_26_37# A0 0.01fF
+C24 inv_cmos_2/vdd A1 0.16fF
+C25 inv_cmos_3/vdd inv_cmos_3/w_0_0# 0.01fF
+C26 inv_cmos_0/vdd A3 0.16fF
+C27 inv_cmos_3/vdd A0 0.16fF
+C28 inv_cmos_3/gnd nand_cmos_3/Y 0.30fF
+C29 xor_optimized_0/w_26_37# A3 0.01fF
+C30 B2 G3 0.02fF
+C31 nand_cmos_2/Y inv_cmos_2/gnd 0.30fF
+C32 nand_cmos_2/a_7_n61# A1 0.04fF
+C33 nand_cmos_1/a_7_n61# A2 0.04fF
 C34 G1 Gnd 0.02fF
 C35 G2 Gnd 0.02fF
 C36 G3 Gnd 0.02fF
-C37 P0 Gnd 0.02fF
-C38 A0 Gnd 0.03fF
-C39 B0 Gnd 0.00fF
-C40 P1 Gnd 0.02fF
-C41 A1 Gnd 0.03fF
-C42 B1 Gnd 0.04fF
-C43 P2 Gnd 0.02fF
-C44 A2 Gnd 0.03fF
-C45 B2 Gnd 0.04fF
-C46 P3 Gnd 0.02fF
-C47 A3 Gnd 0.03fF
-C48 inv_cmos_0/vdd Gnd -0.11fF
-C49 B3 Gnd 0.04fF
-C50 nand_cmos_3/Y Gnd 0.01fF
-C51 inv_cmos_3/vdd Gnd -0.31fF
-C52 nand_cmos_2/Y Gnd 0.01fF
-C53 inv_cmos_2/vdd Gnd -0.11fF
-C54 nand_cmos_0/Y Gnd 0.01fF
-C55 nand_cmos_1/Y Gnd 0.01fF
-C56 inv_cmos_1/vdd Gnd -0.14fF
+C37 nand_cmos_0/Y Gnd 0.01fF
+C38 P0 Gnd 0.02fF
+C39 A0 Gnd 0.03fF
+C40 inv_cmos_3/vdd Gnd -0.31fF
+C41 B0 Gnd 0.00fF
+C42 P1 Gnd 0.02fF
+C43 A1 Gnd 0.03fF
+C44 inv_cmos_2/vdd Gnd -0.11fF
+C45 B1 Gnd 0.04fF
+C46 P2 Gnd 0.02fF
+C47 A2 Gnd 0.03fF
+C48 inv_cmos_1/vdd Gnd -0.14fF
+C49 B2 Gnd 0.04fF
+C50 P3 Gnd 0.02fF
+C51 A3 Gnd 0.03fF
+C52 inv_cmos_0/vdd Gnd -0.11fF
+C53 B3 Gnd 0.04fF
+C54 nand_cmos_3/Y Gnd 0.01fF
+C55 nand_cmos_2/Y Gnd 0.01fF
+C56 nand_cmos_1/Y Gnd 0.01fF
 C57 G0 Gnd 0.02fF
 .ends
 
-.subckt sum_gen_optimized_unrouted S0 S2 xor_optimized_0/inv_cmos_0/gnd xor_optimized_3/inv_cmos_0/gnd
-+ xor_optimized_0/inv_cmos_0/OUT xor_optimized_2/inv_cmos_0/gnd xor_optimized_1/inv_cmos_0/gnd
-+ xor_optimized_2/inv_cmos_0/OUT
+.subckt sum_gen_optimized_unrouted xor_optimized_3/inv_cmos_0/vdd C1 P1 xor_optimized_0/inv_cmos_0/gnd
++ S0 xor_optimized_1/inv_cmos_0/OUT xor_optimized_1/w_26_37# S2 xor_optimized_3/inv_cmos_0/gnd
++ P0 xor_optimized_0/inv_cmos_0/OUT xor_optimized_2/w_26_37# C0 xor_optimized_0/w_26_37#
++ C2 P2 xor_optimized_3/w_26_37# xor_optimized_2/inv_cmos_0/gnd S3 xor_optimized_3/inv_cmos_0/OUT
++ S1 xor_optimized_2/inv_cmos_0/vdd xor_optimized_1/inv_cmos_0/gnd xor_optimized_2/inv_cmos_0/OUT
++ C3 P3
 Xxor_optimized_0 xor_optimized_0/inv_cmos_0/OUT S2 xor_optimized_0/w_26_37# C2 P2
 + xor_optimized_0/inv_cmos_0/gnd xor_optimized_2/inv_cmos_0/vdd xor_optimized
 Xxor_optimized_1 xor_optimized_1/inv_cmos_0/OUT S1 xor_optimized_1/w_26_37# C1 P1
@@ -807,14 +895,14 @@ Xxor_optimized_2 xor_optimized_2/inv_cmos_0/OUT S0 xor_optimized_2/w_26_37# C0 P
 + xor_optimized_2/inv_cmos_0/gnd xor_optimized_2/inv_cmos_0/vdd xor_optimized
 Xxor_optimized_3 xor_optimized_3/inv_cmos_0/OUT S3 xor_optimized_3/w_26_37# C3 P3
 + xor_optimized_3/inv_cmos_0/gnd xor_optimized_3/inv_cmos_0/vdd xor_optimized
-C0 C3 xor_optimized_3/w_26_37# 0.01fF
-C1 C3 C1 0.15fF
-C2 C2 C0 0.15fF
-C3 xor_optimized_2/w_26_37# C0 0.01fF
-C4 xor_optimized_1/w_26_37# C1 0.01fF
-C5 P3 S0 0.08fF
-C6 C2 xor_optimized_0/w_26_37# 0.01fF
-C7 P1 S2 0.08fF
+C0 C1 xor_optimized_1/w_26_37# 0.01fF
+C1 C3 xor_optimized_3/w_26_37# 0.01fF
+C2 C0 xor_optimized_2/w_26_37# 0.01fF
+C3 C0 C2 0.15fF
+C4 xor_optimized_0/w_26_37# C2 0.01fF
+C5 P1 S2 0.08fF
+C6 C3 C1 0.15fF
+C7 S0 P3 0.08fF
 C8 S3 Gnd -0.06fF
 C9 C3 Gnd -0.20fF
 C10 P3 Gnd 0.02fF
@@ -832,54 +920,70 @@ C19 P2 Gnd 0.02fF
 
 * Top level circuit full_optimized
 
-Xd_ff_optimized_10 d_ff_optimized_9/vdd d_ff_optimized_10/clk d_ff_optimized_10/inv_cmos_0/OUT
-+ d_ff_optimized_10/Q d_ff_optimized_10/inv_cmos_1/IN d_ff_optimized_10/inv_cmos_4/IN
-+ d_ff_optimized_10/inv_cmos_4/w_0_0# d_ff_optimized_10/inv_cmos_3/IN d_ff_optimized_9/gnd
-+ d_ff_optimized_10/D d_ff_optimized_10/inv_cmos_0/w_0_0# d_ff_optimized
-Xd_ff_optimized_11 d_ff_optimized_9/vdd d_ff_optimized_11/clk d_ff_optimized_11/inv_cmos_0/OUT
-+ d_ff_optimized_11/Q d_ff_optimized_11/inv_cmos_1/IN d_ff_optimized_11/inv_cmos_4/IN
-+ d_ff_optimized_11/inv_cmos_4/w_0_0# d_ff_optimized_11/inv_cmos_3/IN d_ff_optimized_9/gnd
-+ d_ff_optimized_11/D d_ff_optimized_11/inv_cmos_0/w_0_0# d_ff_optimized
-Xd_ff_optimized_12 d_ff_optimized_9/vdd d_ff_optimized_12/clk d_ff_optimized_12/inv_cmos_0/OUT
-+ d_ff_optimized_12/Q d_ff_optimized_12/inv_cmos_1/IN d_ff_optimized_12/inv_cmos_4/IN
-+ d_ff_optimized_12/inv_cmos_4/w_0_0# d_ff_optimized_12/inv_cmos_3/IN d_ff_optimized_9/gnd
-+ d_ff_optimized_12/D d_ff_optimized_12/inv_cmos_0/w_0_0# d_ff_optimized
-Xd_ff_optimized_13 d_ff_optimized_9/vdd d_ff_optimized_13/clk d_ff_optimized_13/inv_cmos_0/OUT
-+ d_ff_optimized_13/Q d_ff_optimized_13/inv_cmos_1/IN d_ff_optimized_13/inv_cmos_4/IN
-+ d_ff_optimized_13/inv_cmos_4/w_0_0# d_ff_optimized_13/inv_cmos_3/IN d_ff_optimized_9/gnd
-+ d_ff_optimized_13/D d_ff_optimized_13/inv_cmos_0/w_0_0# d_ff_optimized
-Xcla_gen_cmos_unrouted_0 cla_gen_cmos_unrouted_0/m cla_gen_cmos_unrouted_0/inv_cmos_9/w_0_0#
-+ cla_gen_cmos_unrouted_0/h gnd cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# vdd
-+ cla_gen_cmos_unrouted_0/nor_cmos_0/vdd vdd cla_gen_cmos_unrouted_0/nand_cmos_0/a_7_n61#
-+ cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_55_n121#
-+ vdd cla_gen_cmos_unrouted_0/nand_cmos_3/a_7_n61# cla_gen_cmos_unrouted_0/P3 cla_gen_cmos_unrouted_0/nand_cmos_2/Y
-+ cla_gen_cmos_unrouted_0/nor_cmos_0/vdd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd
-+ cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0# cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0#
-+ cla_gen_cmos_unrouted_0/inv_cmos_1/IN cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101#
-+ cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# cla_gen_cmos_unrouted_0/inv_cmos_4/IN
-+ cla_gen_cmos_unrouted_0/nand_cmos_0/Y cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_7_n81#
-+ cla_gen_cmos_unrouted_0/nor_cmos_0/vdd cla_gen_cmos_unrouted_0/inv_cmos_7/IN gnd
-+ cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd
+Xd_ff_optimized_10 vdd clk d_ff_optimized_10/inv_cmos_0/OUT Q1s d_ff_optimized_10/inv_cmos_1/IN
++ d_ff_optimized_10/inv_cmos_4/IN d_ff_optimized_10/inv_cmos_4/w_0_0# d_ff_optimized_10/inv_cmos_3/IN
++ gnd d_ff_optimized_10/D d_ff_optimized_10/inv_cmos_0/w_0_0# d_ff_optimized
+Xd_ff_optimized_11 vdd clk d_ff_optimized_11/inv_cmos_0/OUT Q2s d_ff_optimized_11/inv_cmos_1/IN
++ d_ff_optimized_11/inv_cmos_4/IN d_ff_optimized_11/inv_cmos_4/w_0_0# d_ff_optimized_11/inv_cmos_3/IN
++ gnd d_ff_optimized_11/D d_ff_optimized_11/inv_cmos_0/w_0_0# d_ff_optimized
+Xd_ff_optimized_12 vdd clk d_ff_optimized_12/inv_cmos_0/OUT Q3s d_ff_optimized_12/inv_cmos_1/IN
++ d_ff_optimized_12/inv_cmos_4/IN d_ff_optimized_12/inv_cmos_4/w_0_0# d_ff_optimized_12/inv_cmos_3/IN
++ gnd d_ff_optimized_12/D d_ff_optimized_12/inv_cmos_0/w_0_0# d_ff_optimized
+Xd_ff_optimized_13 vdd clk d_ff_optimized_13/inv_cmos_0/OUT Qco d_ff_optimized_13/inv_cmos_1/IN
++ d_ff_optimized_13/inv_cmos_4/IN d_ff_optimized_13/inv_cmos_4/w_0_0# d_ff_optimized_13/inv_cmos_3/IN
++ gnd d_ff_optimized_13/D d_ff_optimized_13/inv_cmos_0/w_0_0# d_ff_optimized
+Xcla_gen_cmos_unrouted_0 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_9/w_0_0#
++ cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# d_ff_optimized_8/Q gnd cla_gen_cmos_unrouted_0/nor_3_cmos_0/A
++ vdd vdd vdd cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_23_0# cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_39_0#
++ pg_gen_optimized_unrouted_0/P2 cla_gen_cmos_unrouted_0/nand_cmos_0/a_7_n61# cla_gen_cmos_unrouted_0/inv_cmos_12/w_0_0#
++ gnd pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y cla_gen_cmos_unrouted_0/inv_cmos_4/w_0_0#
++ cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_55_n121#
++ gnd vdd sum_gen_optimized_unrouted_0/C3 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/A
++ pg_gen_optimized_unrouted_0/P3 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A pg_gen_optimized_unrouted_0/P2
++ cla_gen_cmos_unrouted_0/nor_5_cmos_0/B cla_gen_cmos_unrouted_0/nand_cmos_3/a_7_n61#
++ cla_gen_cmos_unrouted_0/nand_cmos_2/Y pg_gen_optimized_unrouted_0/P2 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C
++ pg_gen_optimized_unrouted_0/P1 vdd gnd gnd gnd cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0#
++ pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y
++ pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/inv_cmos_1/IN
++ cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# gnd vdd cla_gen_cmos_unrouted_0/nor_5_cmos_0/D
++ pg_gen_optimized_unrouted_0/G3 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/G0
++ cla_gen_cmos_unrouted_0/nor_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/inv_cmos_13/w_0_0#
++ cla_gen_cmos_unrouted_0/inv_cmos_4/IN cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101#
++ cla_gen_cmos_unrouted_0/nand_cmos_0/Y cla_gen_cmos_unrouted_0/inv_cmos_7/IN gnd
++ cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_7_n81# vdd cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_23_0#
++ gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# vdd vdd cla_gen_cmos_unrouted_0/nor_4_cmos_0/C
 + vdd cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# vdd cla_gen_cmos_unrouted_0/inv_cmos_8/w_0_0#
-+ cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_23_n101# cla_gen_cmos_unrouted_0/j cla_gen_cmos_unrouted_0/inv_cmos_2/IN
-+ cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0#
-+ gnd cla_gen_cmos_unrouted_0/nor_cmos_0/vdd vdd cla_gen_cmos_unrouted_0/nand_cmos_2/a_7_n61#
-+ gnd cla_gen_cmos_unrouted_0/nor_cmos_0/vdd cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6#
-+ vdd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0#
-+ cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_7_n101# cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6#
-+ cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0#
-+ cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# vdd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_39_n121#
-+ cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0# gnd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd
-+ cla_gen_cmos_unrouted_0/nand_cmos_3/Y cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_23_n121#
-+ vdd cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# cla_gen_cmos_unrouted_0/i cla_gen_cmos_unrouted_0/nor_cmos_0/gnd
-+ cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nor_cmos_0/vdd vdd
-+ vdd cla_gen_cmos_unrouted_0/nand_cmos_1/Y cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61#
-+ cla_gen_cmos_unrouted_0/k cla_gen_cmos_unrouted_0/inv_cmos_0/IN gnd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd
-+ gnd cla_gen_cmos_unrouted_0/nor_cmos_0/vdd vdd vdd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd
-+ cla_gen_cmos_unrouted_0/inv_cmos_5/IN cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121#
-+ cla_gen_cmos_unrouted_0/nor_cmos_0/gnd gnd cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0#
-+ vdd vdd vdd cla_gen_cmos_unrouted_0/nor_cmos_0/gnd vdd cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6#
-+ cla_gen_cmos_unrouted_0/l cla_gen_cmos_unrouted
++ cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_23_n101# cla_gen_cmos_unrouted_0/inv_cmos_2/IN
++ gnd cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y
++ cla_gen_cmos_unrouted_0/nand_3_cmos_2/a_23_n81# cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0#
++ vdd gnd vdd d_ff_optimized_13/D cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/P3
++ pg_gen_optimized_unrouted_0/P2 cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_4_cmos_0/B
++ cla_gen_cmos_unrouted_0/nand_cmos_2/a_7_n61# cla_gen_cmos_unrouted_0/inv_cmos_3/w_0_0#
++ cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/G0
++ cla_gen_cmos_unrouted_0/nor_4_cmos_0/C gnd vdd gnd sum_gen_optimized_unrouted_0/C1
++ pg_gen_optimized_unrouted_0/G0 pg_gen_optimized_unrouted_0/G2 cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6#
++ pg_gen_optimized_unrouted_0/P1 vdd gnd pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C
++ cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0# cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_7_n101#
++ cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0#
++ gnd cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# vdd pg_gen_optimized_unrouted_0/P3
++ cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_39_n121# cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0#
++ gnd vdd gnd cla_gen_cmos_unrouted_0/nor_4_cmos_0/B cla_gen_cmos_unrouted_0/nand_cmos_3/Y
++ pg_gen_optimized_unrouted_0/G2 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_23_n121#
++ pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# vdd
++ pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_3_cmos_2/a_7_n81# gnd
++ d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_3_cmos_0/B vdd gnd gnd cla_gen_cmos_unrouted_0/inv_cmos_10/w_0_0#
++ cla_gen_cmos_unrouted_0/nand_cmos_1/Y vdd vdd cla_gen_cmos_unrouted_0/nor_3_cmos_0/A
++ pg_gen_optimized_unrouted_0/P3 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61#
++ pg_gen_optimized_unrouted_0/P2 cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_39_0#
++ cla_gen_cmos_unrouted_0/nor_4_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/G1
++ cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y cla_gen_cmos_unrouted_0/inv_cmos_0/IN
++ cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_55_0# gnd gnd vdd gnd sum_gen_optimized_unrouted_0/C2
++ cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# vdd vdd gnd cla_gen_cmos_unrouted_0/nor_5_cmos_0/B
++ cla_gen_cmos_unrouted_0/inv_cmos_5/IN cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_7_0#
++ pg_gen_optimized_unrouted_0/P2 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121# cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_23_n81#
++ gnd cla_gen_cmos_unrouted_0/inv_cmos_11/w_0_0# gnd pg_gen_optimized_unrouted_0/P1
++ vdd vdd gnd vdd cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/P0
++ vdd cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# cla_gen_cmos_unrouted
 Xd_ff_optimized_0 vdd clk d_ff_optimized_0/inv_cmos_0/OUT d_ff_optimized_0/Q d_ff_optimized_0/inv_cmos_1/IN
 + d_ff_optimized_0/inv_cmos_4/IN d_ff_optimized_0/inv_cmos_4/w_0_0# d_ff_optimized_0/inv_cmos_3/IN
 + gnd A0 d_ff_optimized_0/inv_cmos_0/w_0_0# d_ff_optimized
@@ -895,20 +999,21 @@ Xd_ff_optimized_3 vdd clk d_ff_optimized_3/inv_cmos_0/OUT d_ff_optimized_3/Q d_f
 Xd_ff_optimized_4 vdd clk d_ff_optimized_4/inv_cmos_0/OUT d_ff_optimized_4/Q d_ff_optimized_4/inv_cmos_1/IN
 + d_ff_optimized_4/inv_cmos_4/IN d_ff_optimized_4/inv_cmos_4/w_0_0# d_ff_optimized_4/inv_cmos_3/IN
 + gnd A2 d_ff_optimized_4/inv_cmos_0/w_0_0# d_ff_optimized
-Xpg_gen_optimized_unrouted_0 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# vdd pg_gen_optimized_unrouted_0/nand_cmos_0/a_7_n61#
-+ pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT
-+ pg_gen_optimized_unrouted_0/G3 gnd pg_gen_optimized_unrouted_0/P2 pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT
-+ pg_gen_optimized_unrouted_0/nand_cmos_2/Y pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61#
-+ pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37#
-+ gnd pg_gen_optimized_unrouted_0/G0 gnd pg_gen_optimized_unrouted_0/nand_cmos_0/Y
-+ vdd pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# gnd gnd pg_gen_optimized_unrouted_0/G1
-+ vdd pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT
-+ pg_gen_optimized_unrouted_0/nand_cmos_2/a_7_n61# d_ff_optimized_0/Q d_ff_optimized_2/Q
-+ d_ff_optimized_3/Q pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# d_ff_optimized_5/Q
-+ d_ff_optimized_7/Q gnd d_ff_optimized_4/Q d_ff_optimized_6/Q pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0#
-+ gnd d_ff_optimized_1/Q pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# gnd
-+ pg_gen_optimized_unrouted_0/nand_cmos_3/Y vdd pg_gen_optimized_unrouted_0/nand_cmos_1/Y
-+ pg_gen_optimized_unrouted_0/nand_cmos_1/a_7_n61# gnd gnd pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0#
+Xpg_gen_optimized_unrouted_0 d_ff_optimized_3/Q vdd pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0#
++ d_ff_optimized_0/Q d_ff_optimized_4/Q d_ff_optimized_7/Q pg_gen_optimized_unrouted_0/P2
++ pg_gen_optimized_unrouted_0/nand_cmos_0/a_7_n61# pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT
++ pg_gen_optimized_unrouted_0/P1 gnd pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61#
++ pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT pg_gen_optimized_unrouted_0/nand_cmos_2/Y
++ gnd pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# pg_gen_optimized_unrouted_0/G0
++ pg_gen_optimized_unrouted_0/P3 gnd vdd pg_gen_optimized_unrouted_0/nand_cmos_0/Y
++ gnd pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# gnd vdd pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT
++ pg_gen_optimized_unrouted_0/nand_cmos_2/a_7_n61# d_ff_optimized_5/Q d_ff_optimized_2/Q
++ pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# gnd pg_gen_optimized_unrouted_0/G1
++ d_ff_optimized_1/Q d_ff_optimized_6/Q gnd pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0#
++ pg_gen_optimized_unrouted_0/P0 gnd pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37#
++ pg_gen_optimized_unrouted_0/nand_cmos_3/Y pg_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT
++ pg_gen_optimized_unrouted_0/P2 vdd pg_gen_optimized_unrouted_0/nand_cmos_1/Y pg_gen_optimized_unrouted_0/nand_cmos_1/a_7_n61#
++ pg_gen_optimized_unrouted_0/G2 gnd gnd pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0#
 + gnd pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# gnd pg_gen_optimized_unrouted
 Xd_ff_optimized_5 vdd clk d_ff_optimized_5/inv_cmos_0/OUT d_ff_optimized_5/Q d_ff_optimized_5/inv_cmos_1/IN
 + d_ff_optimized_5/inv_cmos_4/IN d_ff_optimized_5/inv_cmos_4/w_0_0# d_ff_optimized_5/inv_cmos_3/IN
@@ -919,245 +1024,774 @@ Xd_ff_optimized_6 vdd clk d_ff_optimized_6/inv_cmos_0/OUT d_ff_optimized_6/Q d_f
 Xd_ff_optimized_7 vdd clk d_ff_optimized_7/inv_cmos_0/OUT d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_1/IN
 + d_ff_optimized_7/inv_cmos_4/IN d_ff_optimized_7/inv_cmos_4/w_0_0# d_ff_optimized_7/inv_cmos_3/IN
 + gnd B2 d_ff_optimized_7/inv_cmos_0/w_0_0# d_ff_optimized
-Xsum_gen_optimized_unrouted_0 sum_gen_optimized_unrouted_0/S0 sum_gen_optimized_unrouted_0/S2
-+ sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/gnd sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/gnd
-+ sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/gnd
-+ sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/gnd sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT
-+ sum_gen_optimized_unrouted
-Xd_ff_optimized_8 vdd d_ff_optimized_8/clk d_ff_optimized_8/inv_cmos_0/OUT d_ff_optimized_8/Q
-+ d_ff_optimized_8/inv_cmos_1/IN d_ff_optimized_8/inv_cmos_4/IN d_ff_optimized_8/inv_cmos_4/w_0_0#
-+ d_ff_optimized_8/inv_cmos_3/IN gnd d_ff_optimized_8/D d_ff_optimized_8/inv_cmos_0/w_0_0#
-+ d_ff_optimized
-Xd_ff_optimized_9 d_ff_optimized_9/vdd d_ff_optimized_9/clk d_ff_optimized_9/inv_cmos_0/OUT
-+ d_ff_optimized_9/Q d_ff_optimized_9/inv_cmos_1/IN d_ff_optimized_9/inv_cmos_4/IN
-+ d_ff_optimized_9/inv_cmos_4/w_0_0# d_ff_optimized_9/inv_cmos_3/IN d_ff_optimized_9/gnd
-+ d_ff_optimized_9/D d_ff_optimized_9/inv_cmos_0/w_0_0# d_ff_optimized
-C0 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121# 0.07fF
-C1 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_cmos_0/a_7_n61# 0.12fF
-C2 pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# vdd 0.02fF
-C3 d_ff_optimized_5/Q gnd 0.13fF
-C4 d_ff_optimized_7/Q vdd 0.20fF
-C5 pg_gen_optimized_unrouted_0/nand_cmos_1/a_7_n61# gnd 0.12fF
-C6 d_ff_optimized_1/inv_cmos_4/w_0_0# d_ff_optimized_1/Q 0.30fF
-C7 pg_gen_optimized_unrouted_0/G1 vdd 0.03fF
-C8 d_ff_optimized_1/inv_cmos_4/IN d_ff_optimized_1/Q 0.09fF
-C9 d_ff_optimized_2/inv_cmos_4/w_0_0# vdd -0.00fF
-C10 d_ff_optimized_2/inv_cmos_0/OUT d_ff_optimized_2/Q 0.04fF
-C11 pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# pg_gen_optimized_unrouted_0/G3 0.00fF
-C12 cla_gen_cmos_unrouted_0/inv_cmos_2/IN vdd 0.00fF
-C13 sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/gnd 0.07fF
-C14 cla_gen_cmos_unrouted_0/nand_cmos_0/Y vdd -0.00fF
-C15 pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61# gnd 0.12fF
-C16 pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# d_ff_optimized_5/Q 0.08fF
-C17 d_ff_optimized_1/Q pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# 0.09fF
-C18 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/inv_cmos_1/IN 0.63fF
-C19 pg_gen_optimized_unrouted_0/nand_cmos_1/Y d_ff_optimized_4/Q 0.66fF
-C20 cla_gen_cmos_unrouted_0/inv_cmos_7/IN cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.03fF
-C21 d_ff_optimized_5/inv_cmos_4/IN d_ff_optimized_5/Q 0.09fF
-C22 cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.01fF
-C23 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# vdd 0.02fF
-C24 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# vdd 0.02fF
-C25 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# gnd 0.07fF
-C26 cla_gen_cmos_unrouted_0/inv_cmos_8/w_0_0# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.04fF
-C27 d_ff_optimized_6/inv_cmos_3/IN d_ff_optimized_6/inv_cmos_4/w_0_0# -0.00fF
-C28 d_ff_optimized_0/Q gnd 0.13fF
-C29 d_ff_optimized_2/Q vdd 0.20fF
-C30 d_ff_optimized_7/inv_cmos_0/w_0_0# clk 0.09fF
-C31 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# gnd 0.07fF
-C32 cla_gen_cmos_unrouted_0/l gnd 0.03fF
-C33 cla_gen_cmos_unrouted_0/inv_cmos_4/IN gnd 0.63fF
-C34 d_ff_optimized_7/inv_cmos_0/w_0_0# d_ff_optimized_7/inv_cmos_0/OUT 0.00fF
-C35 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/inv_cmos_0/IN 0.84fF
-C36 sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/gnd 0.07fF
-C37 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.10fF
-C38 d_ff_optimized_3/inv_cmos_3/IN d_ff_optimized_3/inv_cmos_4/w_0_0# -0.00fF
-C39 pg_gen_optimized_unrouted_0/nand_cmos_3/Y d_ff_optimized_0/Q 0.62fF
-C40 pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# d_ff_optimized_2/Q 0.32fF
-C41 cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61# gnd 0.12fF
-C42 d_ff_optimized_7/Q d_ff_optimized_4/Q 0.06fF
-C43 d_ff_optimized_7/inv_cmos_4/w_0_0# vdd 0.01fF
-C44 d_ff_optimized_1/inv_cmos_0/w_0_0# clk 0.09fF
-C45 pg_gen_optimized_unrouted_0/nand_cmos_3/Y gnd 0.23fF
-C46 d_ff_optimized_3/Q vdd 0.18fF
-C47 cla_gen_cmos_unrouted_0/j cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.03fF
-C48 sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/gnd sum_gen_optimized_unrouted_0/S0 0.03fF
-C49 d_ff_optimized_1/inv_cmos_0/OUT d_ff_optimized_1/Q 0.03fF
-C50 cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0# vdd 0.00fF
-C51 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# cla_gen_cmos_unrouted_0/P3 -0.00fF
-C52 d_ff_optimized_4/inv_cmos_4/w_0_0# vdd 0.01fF
-C53 cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/nand_cmos_3/a_7_n61# 0.12fF
-C54 d_ff_optimized_1/inv_cmos_4/w_0_0# d_ff_optimized_1/inv_cmos_3/IN -0.00fF
-C55 pg_gen_optimized_unrouted_0/G2 vdd 0.03fF
-C56 cla_gen_cmos_unrouted_0/inv_cmos_5/IN gnd 0.42fF
-C57 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_4/IN 0.09fF
-C58 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# d_ff_optimized_4/Q 0.09fF
-C59 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_0/OUT 0.02fF
-C60 pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# d_ff_optimized_0/Q 0.07fF
-C61 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# gnd 0.07fF
-C62 d_ff_optimized_5/inv_cmos_0/w_0_0# clk 0.09fF
-C63 d_ff_optimized_0/Q d_ff_optimized_0/inv_cmos_4/IN 0.09fF
-C64 cla_gen_cmos_unrouted_0/nor_cmos_0/vdd cla_gen_cmos_unrouted_0/h 0.03fF
-C65 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_55_n121# 0.07fF
-C66 d_ff_optimized_6/Q vdd 0.25fF
-C67 d_ff_optimized_3/inv_cmos_4/w_0_0# d_ff_optimized_3/Q 0.31fF
-C68 cla_gen_cmos_unrouted_0/nand_cmos_3/Y cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.03fF
-C69 cla_gen_cmos_unrouted_0/nand_cmos_1/Y gnd 0.23fF
-C70 pg_gen_optimized_unrouted_0/nand_cmos_1/Y gnd 0.23fF
-C71 d_ff_optimized_2/inv_cmos_1/IN gnd -0.01fF
-C72 d_ff_optimized_1/inv_cmos_4/w_0_0# gnd -0.01fF
-C73 cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/nand_cmos_3/Y 0.23fF
-C74 d_ff_optimized_2/Q d_ff_optimized_5/Q 0.06fF
-C75 pg_gen_optimized_unrouted_0/G0 vdd 0.03fF
-C76 d_ff_optimized_0/inv_cmos_4/w_0_0# d_ff_optimized_0/inv_cmos_3/IN -0.00fF
-C77 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_23_n101# 0.07fF
-C78 d_ff_optimized_6/Q d_ff_optimized_1/Q 0.06fF
-C79 d_ff_optimized_4/inv_cmos_4/w_0_0# d_ff_optimized_4/Q 0.31fF
-C80 d_ff_optimized_7/Q pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# 0.31fF
-C81 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_4/w_0_0# 0.31fF
-C82 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/inv_cmos_7/IN 0.39fF
-C83 pg_gen_optimized_unrouted_0/nand_cmos_2/a_7_n61# gnd 0.12fF
-C84 cla_gen_cmos_unrouted_0/i cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.03fF
-C85 pg_gen_optimized_unrouted_0/nand_cmos_2/Y d_ff_optimized_5/Q 0.66fF
-C86 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_3/IN 0.09fF
-C87 d_ff_optimized_7/Q gnd 0.12fF
-C88 d_ff_optimized_6/inv_cmos_0/w_0_0# clk 0.09fF
-C89 d_ff_optimized_2/inv_cmos_3/IN d_ff_optimized_2/inv_cmos_4/w_0_0# -0.00fF
-C90 pg_gen_optimized_unrouted_0/G3 vdd 0.03fF
-C91 d_ff_optimized_2/inv_cmos_4/w_0_0# gnd -0.01fF
-C92 cla_gen_cmos_unrouted_0/inv_cmos_9/gnd cla_gen_cmos_unrouted_0/nand_cmos_2/a_7_n61# 0.12fF
-C93 pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# vdd 0.02fF
-C94 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_23_n121# 0.07fF
-C95 d_ff_optimized_3/inv_cmos_3/IN gnd 0.07fF
-C96 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# d_ff_optimized_0/Q 0.09fF
-C97 d_ff_optimized_1/Q vdd 0.69fF
-C98 d_ff_optimized_2/inv_cmos_4/IN d_ff_optimized_2/Q 0.09fF
-C99 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_7_n81# 0.04fF
-C100 d_ff_optimized_5/inv_cmos_4/w_0_0# d_ff_optimized_5/inv_cmos_3/IN -0.00fF
-C101 d_ff_optimized_2/inv_cmos_3/IN d_ff_optimized_2/Q 0.09fF
-C102 d_ff_optimized_2/Q gnd 0.30fF
-C103 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/k 0.00fF
-C104 cla_gen_cmos_unrouted_0/inv_cmos_1/IN vdd 0.00fF
-C105 cla_gen_cmos_unrouted_0/nand_cmos_2/Y cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.03fF
-C106 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# gnd 0.07fF
-C107 pg_gen_optimized_unrouted_0/nand_cmos_2/Y gnd 0.23fF
-C108 d_ff_optimized_4/Q vdd 0.69fF
-C109 d_ff_optimized_3/Q d_ff_optimized_0/Q 0.06fF
-C110 pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT gnd 0.09fF
-C111 pg_gen_optimized_unrouted_0/nand_cmos_0/Y d_ff_optimized_1/Q 0.66fF
-C112 d_ff_optimized_2/Q pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.31fF
-C113 d_ff_optimized_7/inv_cmos_3/IN d_ff_optimized_7/inv_cmos_4/w_0_0# -0.00fF
-C114 cla_gen_cmos_unrouted_0/nand_cmos_2/Y cla_gen_cmos_unrouted_0/inv_cmos_9/gnd 0.23fF
-C115 d_ff_optimized_7/inv_cmos_4/w_0_0# gnd -0.01fF
-C116 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.08fF
-C117 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# vdd -0.00fF
-C118 cla_gen_cmos_unrouted_0/m cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.03fF
-C119 d_ff_optimized_3/Q gnd 0.12fF
-C120 cla_gen_cmos_unrouted_0/inv_cmos_0/IN vdd 0.00fF
-C121 cla_gen_cmos_unrouted_0/inv_cmos_9/w_0_0# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.04fF
-C122 d_ff_optimized_4/inv_cmos_4/w_0_0# gnd -0.01fF
-C123 vdd clk 6.47fF
-C124 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/inv_cmos_2/IN 0.52fF
-C125 d_ff_optimized_4/inv_cmos_3/IN d_ff_optimized_4/inv_cmos_4/w_0_0# -0.00fF
-C126 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_cmos_0/Y 0.23fF
-C127 d_ff_optimized_5/inv_cmos_4/w_0_0# d_ff_optimized_5/Q 0.31fF
-C128 d_ff_optimized_5/Q vdd 0.72fF
-C129 pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT gnd 0.09fF
-C130 d_ff_optimized_0/inv_cmos_3/IN d_ff_optimized_0/Q 0.09fF
-C131 pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# d_ff_optimized_5/Q 0.09fF
-C132 d_ff_optimized_6/Q gnd 0.03fF
-C133 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# gnd 0.07fF
-C134 pg_gen_optimized_unrouted_0/P3 gnd 0.05fF
-C135 d_ff_optimized_1/inv_cmos_3/IN d_ff_optimized_1/Q 0.09fF
-C136 cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# vdd 0.00fF
-C137 d_ff_optimized_0/Q vdd 0.68fF
-C138 pg_gen_optimized_unrouted_0/nand_cmos_0/a_7_n61# gnd 0.12fF
-C139 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.10fF
-C140 d_ff_optimized_3/inv_cmos_4/IN d_ff_optimized_3/Q 0.09fF
-C141 pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT gnd 0.09fF
-C142 sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/gnd sum_gen_optimized_unrouted_0/S2 0.03fF
-C143 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# d_ff_optimized_7/Q 0.32fF
-C144 d_ff_optimized_3/inv_cmos_0/OUT d_ff_optimized_3/Q 0.05fF
-C145 d_ff_optimized_1/inv_cmos_0/OUT d_ff_optimized_1/inv_cmos_0/w_0_0# 0.00fF
-C146 d_ff_optimized_5/Q d_ff_optimized_5/inv_cmos_3/IN 0.09fF
-C147 d_ff_optimized_3/Q pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# 0.31fF
-C148 cla_gen_cmos_unrouted_0/inv_cmos_4/IN vdd -0.00fF
-C149 d_ff_optimized_7/Q d_ff_optimized_2/Q 0.01fF
-C150 d_ff_optimized_5/inv_cmos_4/w_0_0# gnd -0.01fF
-C151 d_ff_optimized_2/inv_cmos_3/IN vdd -0.01fF
-C152 d_ff_optimized_7/inv_cmos_3/IN vdd 0.05fF
-C153 gnd vdd 0.00fF
-C154 d_ff_optimized_2/inv_cmos_4/w_0_0# d_ff_optimized_2/Q 0.30fF
-C155 d_ff_optimized_0/inv_cmos_4/w_0_0# d_ff_optimized_0/Q 0.31fF
-C156 pg_gen_optimized_unrouted_0/P2 gnd 0.05fF
-C157 d_ff_optimized_4/inv_cmos_3/IN vdd 0.05fF
-C158 d_ff_optimized_4/Q d_ff_optimized_5/Q 0.02fF
-C159 pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# d_ff_optimized_6/Q 0.31fF
-C160 d_ff_optimized_4/inv_cmos_4/IN d_ff_optimized_4/Q 0.09fF
-C161 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# 0.07fF
-C162 d_ff_optimized_4/inv_cmos_0/OUT d_ff_optimized_4/Q 0.05fF
-C163 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_0/OUT 0.05fF
-C164 d_ff_optimized_0/inv_cmos_4/w_0_0# gnd -0.01fF
-C165 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_4/w_0_0# 0.30fF
-C166 d_ff_optimized_1/Q gnd 0.03fF
-C167 d_ff_optimized_4/inv_cmos_0/w_0_0# clk 0.09fF
-C168 d_ff_optimized_6/inv_cmos_4/w_0_0# gnd -0.01fF
-C169 cla_gen_cmos_unrouted_0/inv_cmos_5/IN vdd 0.00fF
-C170 pg_gen_optimized_unrouted_0/nand_cmos_0/Y gnd 0.23fF
-C171 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_39_n121# 0.07fF
-C172 d_ff_optimized_3/inv_cmos_4/w_0_0# gnd -0.01fF
-C173 d_ff_optimized_9/vdd d_ff_optimized_9/gnd 0.03fF
-C174 d_ff_optimized_3/inv_cmos_3/IN d_ff_optimized_3/Q 0.09fF
-C175 pg_gen_optimized_unrouted_0/P1 gnd 0.05fF
-C176 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/m 0.03fF
-C177 pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# d_ff_optimized_4/Q 0.08fF
-C178 cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0# vdd 0.00fF
-C179 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# d_ff_optimized_3/Q 0.33fF
-C180 d_ff_optimized_4/Q gnd 0.12fF
-C181 d_ff_optimized_6/Q pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# 0.32fF
-C182 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_7_n101# 0.07fF
-C183 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# pg_gen_optimized_unrouted_0/G2 0.00fF
-C184 cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0# cla_gen_cmos_unrouted_0/nor_cmos_0/vdd 0.02fF
-C185 pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# d_ff_optimized_1/Q 0.08fF
-C186 d_ff_optimized_5/inv_cmos_1/IN vdd 0.05fF
-C187 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# vdd -0.00fF
-C188 d_ff_optimized_4/inv_cmos_3/IN d_ff_optimized_4/Q 0.09fF
-C189 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_3/IN 0.09fF
-C190 d_ff_optimized_0/inv_cmos_0/w_0_0# clk 0.09fF
-C191 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_4/IN 0.09fF
-C192 d_ff_optimized_2/inv_cmos_0/w_0_0# clk 0.32fF
-C193 d_ff_optimized_3/inv_cmos_0/w_0_0# clk 0.32fF
-C194 gnd clk 2.58fF
-C195 cla_gen_cmos_unrouted_0/nor_cmos_0/vdd Gnd 0.46fF
-C196 clk Gnd 3.79fF
-C197 vdd Gnd -1.47fF
-C198 sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/gnd Gnd -0.09fF
-C199 sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/gnd Gnd -0.04fF
-C200 B2 Gnd 0.02fF
-C201 gnd Gnd 0.13fF
-C202 B3 Gnd 0.02fF
-C203 A1 Gnd 0.02fF
-C204 d_ff_optimized_0/Q Gnd -2.03fF
-C205 d_ff_optimized_3/Q Gnd 1.30fF
-C206 d_ff_optimized_5/Q Gnd -2.60fF
-C207 d_ff_optimized_2/Q Gnd 1.22fF
-C208 d_ff_optimized_4/Q Gnd -3.05fF
-C209 d_ff_optimized_7/Q Gnd -1.03fF
-C210 d_ff_optimized_1/Q Gnd -1.53fF
-C211 d_ff_optimized_6/Q Gnd 0.24fF
-C212 A2 Gnd 0.02fF
-C213 B0 Gnd 0.02fF
-C214 B1 Gnd 0.02fF
-C215 A3 Gnd 0.02fF
-C216 A0 Gnd 0.02fF
-C217 cla_gen_cmos_unrouted_0/inv_cmos_9/gnd Gnd 0.29fF
-C218 cla_gen_cmos_unrouted_0/l Gnd 0.03fF
-C219 cla_gen_cmos_unrouted_0/nor_cmos_0/gnd Gnd -0.22fF
-C220 d_ff_optimized_9/vdd Gnd -0.41fF
+Xsum_gen_optimized_unrouted_0 vdd sum_gen_optimized_unrouted_0/C1 pg_gen_optimized_unrouted_0/P1
++ gnd d_ff_optimized_9/D sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT
++ sum_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# d_ff_optimized_11/D gnd pg_gen_optimized_unrouted_0/P0
++ sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37#
++ d_ff_optimized_8/Q sum_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# sum_gen_optimized_unrouted_0/C2
++ pg_gen_optimized_unrouted_0/P2 sum_gen_optimized_unrouted_0/xor_optimized_3/w_26_37#
++ gnd d_ff_optimized_12/D sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT
++ d_ff_optimized_10/D vdd gnd sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT
++ sum_gen_optimized_unrouted_0/C3 pg_gen_optimized_unrouted_0/P3 sum_gen_optimized_unrouted
+Xd_ff_optimized_8 vdd clk d_ff_optimized_8/inv_cmos_0/OUT d_ff_optimized_8/Q d_ff_optimized_8/inv_cmos_1/IN
++ d_ff_optimized_8/inv_cmos_4/IN d_ff_optimized_8/inv_cmos_4/w_0_0# d_ff_optimized_8/inv_cmos_3/IN
++ gnd C0 d_ff_optimized_8/inv_cmos_0/w_0_0# d_ff_optimized
+Xd_ff_optimized_9 vdd clk d_ff_optimized_9/inv_cmos_0/OUT Q0s d_ff_optimized_9/inv_cmos_1/IN
++ d_ff_optimized_9/inv_cmos_4/IN d_ff_optimized_9/inv_cmos_4/w_0_0# d_ff_optimized_9/inv_cmos_3/IN
++ gnd d_ff_optimized_9/D d_ff_optimized_9/inv_cmos_0/w_0_0# d_ff_optimized
+C0 gnd d_ff_optimized_13/D 0.21fF
+C1 vdd d_ff_optimized_7/inv_cmos_4/w_0_0# 0.01fF
+C2 pg_gen_optimized_unrouted_0/P3 sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.13fF
+C3 gnd sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT 0.07fF
+C4 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_23_0# 0.05fF
+C5 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A pg_gen_optimized_unrouted_0/G0 0.06fF
+C6 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0# d_ff_optimized_8/Q 0.17fF
+C7 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/G0 0.17fF
+C8 sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# sum_gen_optimized_unrouted_0/C3 0.01fF
+C9 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# pg_gen_optimized_unrouted_0/G1 0.11fF
+C10 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# 0.32fF
+C11 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.09fF
+C12 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.01fF
+C13 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/G3 0.55fF
+C14 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A pg_gen_optimized_unrouted_0/G1 0.02fF
+C15 vdd d_ff_optimized_5/Q 0.72fF
+C16 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_9/w_0_0# 0.03fF
+C17 pg_gen_optimized_unrouted_0/P2 pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT 0.05fF
+C18 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT 0.05fF
+C19 d_ff_optimized_1/Q pg_gen_optimized_unrouted_0/nand_cmos_0/Y 0.66fF
+C20 d_ff_optimized_2/Q d_ff_optimized_5/Q 0.06fF
+C21 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/G1 0.09fF
+C22 d_ff_optimized_0/inv_cmos_4/IN d_ff_optimized_0/Q 0.09fF
+C23 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_7_0# 0.06fF
+C24 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_23_0# 0.17fF
+C25 d_ff_optimized_6/Q d_ff_optimized_1/Q 0.06fF
+C26 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_39_0# pg_gen_optimized_unrouted_0/P3 0.47fF
+C27 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.01fF
+C28 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.01fF
+C29 d_ff_optimized_4/inv_cmos_4/w_0_0# d_ff_optimized_4/Q 0.31fF
+C30 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/P3 0.08fF
+C31 gnd d_ff_optimized_3/inv_cmos_3/IN 0.07fF
+C32 d_ff_optimized_7/Q pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# 0.31fF
+C33 gnd sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT 0.07fF
+C34 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_3/Y 0.04fF
+C35 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_3/IN 0.09fF
+C36 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_39_0# 0.02fF
+C37 d_ff_optimized_11/D sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.10fF
+C38 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B vdd 0.04fF
+C39 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_cmos_1/Y 0.71fF
+C40 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# 0.04fF
+C41 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A cla_gen_cmos_unrouted_0/nor_3_cmos_0/B 0.00fF
+C42 cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0# pg_gen_optimized_unrouted_0/P1 0.02fF
+C43 cla_gen_cmos_unrouted_0/nand_cmos_2/Y gnd 0.23fF
+C44 cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.18fF
+C45 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.11fF
+C46 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# 0.06fF
+C47 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y gnd 0.03fF
+C48 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/inv_cmos_7/IN 0.59fF
+C49 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.16fF
+C50 cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0# vdd 0.02fF
+C51 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C52 pg_gen_optimized_unrouted_0/nand_cmos_2/Y d_ff_optimized_5/Q 0.66fF
+C53 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.06fF
+C54 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# 0.01fF
+C55 cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# pg_gen_optimized_unrouted_0/P1 0.03fF
+C56 gnd d_ff_optimized_9/D 0.03fF
+C57 gnd cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.26fF
+C58 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_4/IN 0.09fF
+C59 cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# vdd 0.00fF
+C60 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C pg_gen_optimized_unrouted_0/G2 0.08fF
+C61 cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# pg_gen_optimized_unrouted_0/G0 0.01fF
+C62 gnd cla_gen_cmos_unrouted_0/inv_cmos_2/IN 0.52fF
+C63 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61# 0.11fF
+C64 gnd pg_gen_optimized_unrouted_0/P1 0.39fF
+C65 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nor_cmos_0/Y 0.13fF
+C66 d_ff_optimized_7/inv_cmos_3/IN d_ff_optimized_7/inv_cmos_4/w_0_0# -0.00fF
+C67 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.02fF
+C68 gnd vdd 0.04fF
+C69 gnd d_ff_optimized_2/Q 0.30fF
+C70 d_ff_optimized_10/inv_cmos_0/w_0_0# d_ff_optimized_9/D 0.02fF
+C71 gnd pg_gen_optimized_unrouted_0/G0 0.45fF
+C72 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# d_ff_optimized_0/Q 0.09fF
+C73 pg_gen_optimized_unrouted_0/P1 d_ff_optimized_0/Q 0.00fF
+C74 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# 0.36fF
+C75 sum_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# sum_gen_optimized_unrouted_0/C3 0.03fF
+C76 d_ff_optimized_2/inv_cmos_4/w_0_0# d_ff_optimized_2/inv_cmos_3/IN -0.00fF
+C77 sum_gen_optimized_unrouted_0/C1 sum_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# 0.07fF
+C78 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_23_0# pg_gen_optimized_unrouted_0/G2 0.11fF
+C79 cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# 0.01fF
+C80 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_0/IN 0.71fF
+C81 gnd pg_gen_optimized_unrouted_0/G1 0.53fF
+C82 vdd d_ff_optimized_0/Q 0.68fF
+C83 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.75fF
+C84 pg_gen_optimized_unrouted_0/P2 pg_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT 0.05fF
+C85 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_cmos_0/A 0.01fF
+C86 pg_gen_optimized_unrouted_0/P0 pg_gen_optimized_unrouted_0/P3 0.23fF
+C87 gnd cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# 0.07fF
+C88 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.08fF
+C89 d_ff_optimized_8/Q d_ff_optimized_8/inv_cmos_4/w_0_0# 0.22fF
+C90 pg_gen_optimized_unrouted_0/P0 sum_gen_optimized_unrouted_0/C3 0.14fF
+C91 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_7_0# pg_gen_optimized_unrouted_0/G2 0.08fF
+C92 cla_gen_cmos_unrouted_0/inv_cmos_10/w_0_0# vdd 0.02fF
+C93 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/P2 0.10fF
+C94 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/P1 0.49fF
+C95 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_4/Q 0.00fF
+C96 pg_gen_optimized_unrouted_0/G1 d_ff_optimized_0/Q 0.08fF
+C97 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.09fF
+C98 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# pg_gen_optimized_unrouted_0/P2 0.16fF
+C99 gnd pg_gen_optimized_unrouted_0/nand_cmos_2/Y 0.23fF
+C100 d_ff_optimized_13/D sum_gen_optimized_unrouted_0/C2 0.09fF
+C101 gnd cla_gen_cmos_unrouted_0/nor_3_cmos_0/B 0.05fF
+C102 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B pg_gen_optimized_unrouted_0/G0 0.39fF
+C103 cla_gen_cmos_unrouted_0/inv_cmos_5/IN vdd 0.00fF
+C104 gnd cla_gen_cmos_unrouted_0/nand_cmos_0/Y 0.23fF
+C105 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.06fF
+C106 clk d_ff_optimized_10/D 0.08fF
+C107 gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121# 0.07fF
+C108 gnd pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT 0.09fF
+C109 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/G0 0.26fF
+C110 pg_gen_optimized_unrouted_0/P1 sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT 0.02fF
+C111 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B 0.08fF
+C112 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_1/Y 0.04fF
+C113 gnd cla_gen_cmos_unrouted_0/nand_cmos_0/a_7_n61# 0.12fF
+C114 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/G1 0.06fF
+C115 gnd d_ff_optimized_12/D 0.31fF
+C116 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C pg_gen_optimized_unrouted_0/P0 0.01fF
+C117 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.21fF
+C118 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.02fF
+C119 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0# vdd 0.10fF
+C120 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# 0.10fF
+C121 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nand_cmos_3/Y 0.42fF
+C122 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_39_0# pg_gen_optimized_unrouted_0/G2 0.81fF
+C123 d_ff_optimized_8/Q sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT 0.05fF
+C124 vdd d_ff_optimized_4/inv_cmos_3/IN 0.05fF
+C125 gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_23_n101# 0.07fF
+C126 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# 0.02fF
+C127 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A cla_gen_cmos_unrouted_0/nor_cmos_0/A 0.00fF
+C128 pg_gen_optimized_unrouted_0/G2 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# 0.11fF
+C129 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# 0.01fF
+C130 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/G3 0.01fF
+C131 cla_gen_cmos_unrouted_0/inv_cmos_8/w_0_0# pg_gen_optimized_unrouted_0/P0 0.09fF
+C132 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# vdd 0.20fF
+C133 gnd d_ff_optimized_3/Q 0.12fF
+C134 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_23_0# pg_gen_optimized_unrouted_0/P0 0.02fF
+C135 sum_gen_optimized_unrouted_0/C2 d_ff_optimized_9/D 0.05fF
+C136 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D pg_gen_optimized_unrouted_0/P2 0.01fF
+C137 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y pg_gen_optimized_unrouted_0/G3 0.06fF
+C138 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A cla_gen_cmos_unrouted_0/inv_cmos_0/IN 0.03fF
+C139 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_7/IN 0.13fF
+C140 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.16fF
+C141 gnd d_ff_optimized_4/inv_cmos_4/w_0_0# -0.01fF
+C142 cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y pg_gen_optimized_unrouted_0/P2 0.01fF
+C143 d_ff_optimized_3/Q d_ff_optimized_0/Q 0.06fF
+C144 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_7_0# pg_gen_optimized_unrouted_0/P0 0.01fF
+C145 cla_gen_cmos_unrouted_0/inv_cmos_7/IN vdd 0.03fF
+C146 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.01fF
+C147 pg_gen_optimized_unrouted_0/P0 pg_gen_optimized_unrouted_0/P2 0.15fF
+C148 gnd cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.56fF
+C149 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# pg_gen_optimized_unrouted_0/P3 0.08fF
+C150 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 1.06fF
+C151 pg_gen_optimized_unrouted_0/P1 sum_gen_optimized_unrouted_0/C2 0.06fF
+C152 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_5/Q 0.00fF
+C153 d_ff_optimized_2/Q pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.31fF
+C154 sum_gen_optimized_unrouted_0/C2 vdd 0.20fF
+C155 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/nand_cmos_3/Y 0.06fF
+C156 cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61# pg_gen_optimized_unrouted_0/G2 0.11fF
+C157 vdd pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# 0.02fF
+C158 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_2/a_7_n61# 0.08fF
+C159 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nand_cmos_2/a_7_n61# 0.09fF
+C160 clk d_ff_optimized_9/D 0.06fF
+C161 gnd pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT 0.09fF
+C162 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B pg_gen_optimized_unrouted_0/P3 0.14fF
+C163 pg_gen_optimized_unrouted_0/G3 d_ff_optimized_7/Q 0.05fF
+C164 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# pg_gen_optimized_unrouted_0/G3 0.07fF
+C165 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C cla_gen_cmos_unrouted_0/nor_4_cmos_0/A 0.01fF
+C166 d_ff_optimized_1/inv_cmos_4/IN d_ff_optimized_1/Q 0.09fF
+C167 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_39_0# pg_gen_optimized_unrouted_0/P0 0.02fF
+C168 pg_gen_optimized_unrouted_0/P0 pg_gen_optimized_unrouted_0/G2 0.09fF
+C169 clk vdd 8.74fF
+C170 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# pg_gen_optimized_unrouted_0/P2 0.16fF
+C171 vdd d_ff_optimized_8/inv_cmos_4/w_0_0# 0.01fF
+C172 d_ff_optimized_13/D cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 0.16fF
+C173 gnd pg_gen_optimized_unrouted_0/nand_cmos_0/Y 0.23fF
+C174 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C175 d_ff_optimized_4/inv_cmos_3/IN d_ff_optimized_4/inv_cmos_4/w_0_0# -0.00fF
+C176 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_1/IN 0.46fF
+C177 gnd cla_gen_cmos_unrouted_0/inv_cmos_0/IN 0.84fF
+C178 d_ff_optimized_10/inv_cmos_0/OUT d_ff_optimized_10/D 0.05fF
+C179 gnd d_ff_optimized_6/Q 0.03fF
+C180 d_ff_optimized_5/inv_cmos_4/w_0_0# d_ff_optimized_5/Q 0.31fF
+C181 d_ff_optimized_0/inv_cmos_3/IN d_ff_optimized_0/inv_cmos_4/w_0_0# -0.00fF
+C182 cla_gen_cmos_unrouted_0/inv_cmos_1/IN vdd 0.00fF
+C183 gnd pg_gen_optimized_unrouted_0/P3 0.22fF
+C184 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y pg_gen_optimized_unrouted_0/G3 0.04fF
+C185 cla_gen_cmos_unrouted_0/nand_cmos_3/a_7_n61# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C186 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/P2 0.20fF
+C187 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# 0.01fF
+C188 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/inv_cmos_1/IN 0.45fF
+C189 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# pg_gen_optimized_unrouted_0/P2 0.15fF
+C190 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.08fF
+C191 cla_gen_cmos_unrouted_0/nand_cmos_2/Y d_ff_optimized_8/Q 0.18fF
+C192 pg_gen_optimized_unrouted_0/P2 d_ff_optimized_5/Q 0.00fF
+C193 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_0/Q 0.00fF
+C194 gnd sum_gen_optimized_unrouted_0/C1 0.05fF
+C195 pg_gen_optimized_unrouted_0/G3 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_55_0# 1.00fF
+C196 cla_gen_cmos_unrouted_0/inv_cmos_11/w_0_0# vdd 0.02fF
+C197 cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_7_n81# pg_gen_optimized_unrouted_0/P3 0.11fF
+C198 d_ff_optimized_8/Q d_ff_optimized_9/D 0.11fF
+C199 pg_gen_optimized_unrouted_0/G2 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# 0.11fF
+C200 cla_gen_cmos_unrouted_0/nand_cmos_3/Y vdd 0.03fF
+C201 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.01fF
+C202 gnd pg_gen_optimized_unrouted_0/nand_cmos_0/a_7_n61# 0.12fF
+C203 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/G3 0.13fF
+C204 clk d_ff_optimized_12/D 0.08fF
+C205 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# 0.01fF
+C206 gnd pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT 0.09fF
+C207 gnd d_ff_optimized_11/D 0.07fF
+C208 vdd d_ff_optimized_5/inv_cmos_1/IN 0.05fF
+C209 pg_gen_optimized_unrouted_0/G3 vdd 0.14fF
+C210 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B pg_gen_optimized_unrouted_0/P2 0.19fF
+C211 cla_gen_cmos_unrouted_0/nor_4_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/P3 0.30fF
+C212 pg_gen_optimized_unrouted_0/G3 d_ff_optimized_2/Q 0.02fF
+C213 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# pg_gen_optimized_unrouted_0/G2 0.11fF
+C214 cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_23_0# 0.11fF
+C215 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.08fF
+C216 pg_gen_optimized_unrouted_0/P1 d_ff_optimized_8/Q 0.20fF
+C217 cla_gen_cmos_unrouted_0/nand_cmos_2/a_7_n61# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.55fF
+C218 pg_gen_optimized_unrouted_0/G0 pg_gen_optimized_unrouted_0/G3 0.02fF
+C219 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_39_0# pg_gen_optimized_unrouted_0/P2 0.02fF
+C220 pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# d_ff_optimized_5/Q 0.09fF
+C221 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_4/IN 0.09fF
+C222 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_55_0# 0.11fF
+C223 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_55_n121# 0.03fF
+C224 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/G2 0.06fF
+C225 clk d_ff_optimized_0/inv_cmos_0/w_0_0# 0.32fF
+C226 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nand_3_cmos_2/a_23_n81# 0.64fF
+C227 d_ff_optimized_8/Q vdd 3.80fF
+C228 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_0/OUT 0.02fF
+C229 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_7_n101# pg_gen_optimized_unrouted_0/P3 0.11fF
+C230 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/G3 0.02fF
+C231 d_ff_optimized_10/D d_ff_optimized_9/D 0.09fF
+C232 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/G0 0.01fF
+C233 gnd d_ff_optimized_5/inv_cmos_4/w_0_0# -0.01fF
+C234 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# pg_gen_optimized_unrouted_0/G3 0.07fF
+C235 pg_gen_optimized_unrouted_0/G2 d_ff_optimized_5/Q 0.08fF
+C236 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y vdd 0.11fF
+C237 cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# pg_gen_optimized_unrouted_0/P2 0.67fF
+C238 pg_gen_optimized_unrouted_0/G1 d_ff_optimized_8/Q 0.01fF
+C239 cla_gen_cmos_unrouted_0/nand_cmos_1/Y pg_gen_optimized_unrouted_0/G2 0.05fF
+C240 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_23_n81# 0.70fF
+C241 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 0.11fF
+C242 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_2/Y 0.04fF
+C243 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C cla_gen_cmos_unrouted_0/nor_4_cmos_0/B 0.07fF
+C244 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C cla_gen_cmos_unrouted_0/nor_4_cmos_0/w_n6_n6# 0.22fF
+C245 d_ff_optimized_10/inv_cmos_0/OUT d_ff_optimized_9/D 0.04fF
+C246 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 0.43fF
+C247 vdd d_ff_optimized_10/D 0.03fF
+C248 gnd pg_gen_optimized_unrouted_0/P2 0.44fF
+C249 d_ff_optimized_3/inv_cmos_4/IN d_ff_optimized_3/Q 0.09fF
+C250 d_ff_optimized_1/inv_cmos_4/w_0_0# d_ff_optimized_1/Q 0.30fF
+C251 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# d_ff_optimized_7/Q 0.32fF
+C252 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B d_ff_optimized_8/Q 0.09fF
+C253 d_ff_optimized_3/inv_cmos_0/OUT d_ff_optimized_3/Q 0.05fF
+C254 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/inv_cmos_4/w_0_0# 0.33fF
+C255 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_23_n121# 0.10fF
+C256 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# d_ff_optimized_8/Q 0.17fF
+C257 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# 0.09fF
+C258 d_ff_optimized_3/Q pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# 0.31fF
+C259 pg_gen_optimized_unrouted_0/P2 d_ff_optimized_0/Q 0.00fF
+C260 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61# 0.11fF
+C261 cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_7_n81# pg_gen_optimized_unrouted_0/P2 0.12fF
+C262 vdd d_ff_optimized_7/Q 0.20fF
+C263 d_ff_optimized_7/Q d_ff_optimized_2/Q 0.01fF
+C264 cla_gen_cmos_unrouted_0/inv_cmos_4/IN pg_gen_optimized_unrouted_0/P2 0.09fF
+C265 d_ff_optimized_13/D vdd 0.12fF
+C266 sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT d_ff_optimized_9/D 0.02fF
+C267 pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# pg_gen_optimized_unrouted_0/P2 0.01fF
+C268 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.01fF
+C269 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# 0.17fF
+C270 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B pg_gen_optimized_unrouted_0/P2 0.07fF
+C271 pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# d_ff_optimized_6/Q 0.32fF
+C272 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A pg_gen_optimized_unrouted_0/P0 0.04fF
+C273 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/P0 0.01fF
+C274 pg_gen_optimized_unrouted_0/G3 d_ff_optimized_3/Q 0.02fF
+C275 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# 0.11fF
+C276 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/P2 0.81fF
+C277 cla_gen_cmos_unrouted_0/inv_cmos_13/w_0_0# vdd 0.01fF
+C278 d_ff_optimized_12/inv_cmos_0/w_0_0# clk 0.32fF
+C279 gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_55_n121# 0.07fF
+C280 gnd pg_gen_optimized_unrouted_0/G2 0.54fF
+C281 gnd d_ff_optimized_1/Q 0.03fF
+C282 gnd cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# 0.07fF
+C283 cla_gen_cmos_unrouted_0/nand_cmos_3/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.09fF
+C284 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_7_n101# pg_gen_optimized_unrouted_0/P2 0.21fF
+C285 d_ff_optimized_8/Q d_ff_optimized_8/inv_cmos_4/IN 0.10fF
+C286 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_cmos_1/Y 0.02fF
+C287 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.01fF
+C288 pg_gen_optimized_unrouted_0/G2 d_ff_optimized_0/Q 0.08fF
+C289 d_ff_optimized_4/Q d_ff_optimized_5/Q 0.02fF
+C290 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/inv_cmos_9/w_0_0# 0.30fF
+C291 pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# d_ff_optimized_6/Q 0.31fF
+C292 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_39_0# 2.16fF
+C293 sum_gen_optimized_unrouted_0/C2 d_ff_optimized_11/D 0.93fF
+C294 cla_gen_cmos_unrouted_0/nand_cmos_2/Y vdd 0.03fF
+C295 d_ff_optimized_4/inv_cmos_4/IN d_ff_optimized_4/Q 0.09fF
+C296 d_ff_optimized_11/inv_cmos_0/w_0_0# d_ff_optimized_11/D 0.02fF
+C297 pg_gen_optimized_unrouted_0/P1 d_ff_optimized_9/D 0.06fF
+C298 sum_gen_optimized_unrouted_0/C2 sum_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# 0.03fF
+C299 pg_gen_optimized_unrouted_0/G2 cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.05fF
+C300 pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# pg_gen_optimized_unrouted_0/P3 0.02fF
+C301 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.02fF
+C302 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.01fF
+C303 d_ff_optimized_4/inv_cmos_0/OUT d_ff_optimized_4/Q 0.05fF
+C304 gnd d_ff_optimized_3/inv_cmos_4/w_0_0# -0.01fF
+C305 d_ff_optimized_2/inv_cmos_4/IN d_ff_optimized_2/Q 0.09fF
+C306 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B pg_gen_optimized_unrouted_0/G2 0.08fF
+C307 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_4/w_0_0# 0.31fF
+C308 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_55_0# 0.02fF
+C309 vdd d_ff_optimized_9/D 0.20fF
+C310 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C vdd 0.15fF
+C311 cla_gen_cmos_unrouted_0/nor_4_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/G2 0.08fF
+C312 d_ff_optimized_8/inv_cmos_0/w_0_0# d_ff_optimized_8/inv_cmos_0/OUT 0.00fF
+C313 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/P2 0.02fF
+C314 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/G2 0.05fF
+C315 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.09fF
+C316 cla_gen_cmos_unrouted_0/inv_cmos_2/IN pg_gen_optimized_unrouted_0/P1 0.03fF
+C317 cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0# pg_gen_optimized_unrouted_0/P0 0.07fF
+C318 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.05fF
+C319 gnd cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61# 0.12fF
+C320 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# pg_gen_optimized_unrouted_0/P2 0.01fF
+C321 vdd pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# 0.02fF
+C322 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_23_0# 0.11fF
+C323 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_3_cmos_2/a_7_n81# 0.74fF
+C324 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.00fF
+C325 clk d_ff_optimized_7/inv_cmos_0/w_0_0# 0.09fF
+C326 cla_gen_cmos_unrouted_0/inv_cmos_2/IN vdd 0.00fF
+C327 vdd pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# 0.02fF
+C328 pg_gen_optimized_unrouted_0/P1 vdd 0.88fF
+C329 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_3/IN 0.09fF
+C330 clk d_ff_optimized_3/inv_cmos_0/w_0_0# 0.32fF
+C331 cla_gen_cmos_unrouted_0/inv_cmos_1/IN pg_gen_optimized_unrouted_0/P3 0.06fF
+C332 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y 0.23fF
+C333 cla_gen_cmos_unrouted_0/inv_cmos_5/w_0_0# pg_gen_optimized_unrouted_0/P0 0.01fF
+C334 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/G0 1.34fF
+C335 clk d_ff_optimized_11/D 0.06fF
+C336 d_ff_optimized_0/inv_cmos_3/IN d_ff_optimized_0/Q 0.09fF
+C337 gnd d_ff_optimized_0/inv_cmos_4/w_0_0# -0.01fF
+C338 vdd d_ff_optimized_2/Q 0.20fF
+C339 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_cmos_0/a_7_0# 0.17fF
+C340 gnd cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y 0.03fF
+C341 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/inv_cmos_2/IN 0.71fF
+C342 pg_gen_optimized_unrouted_0/G0 vdd 0.11fF
+C343 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/P1 0.30fF
+C344 pg_gen_optimized_unrouted_0/P2 pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.01fF
+C345 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# 0.01fF
+C346 sum_gen_optimized_unrouted_0/C2 pg_gen_optimized_unrouted_0/P2 0.01fF
+C347 gnd pg_gen_optimized_unrouted_0/P0 0.15fF
+C348 pg_gen_optimized_unrouted_0/G1 vdd 0.75fF
+C349 d_ff_optimized_0/inv_cmos_4/w_0_0# d_ff_optimized_0/Q 0.31fF
+C350 cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_cmos_0/Y -0.00fF
+C351 cla_gen_cmos_unrouted_0/inv_cmos_11/w_0_0# sum_gen_optimized_unrouted_0/C3 0.02fF
+C352 cla_gen_cmos_unrouted_0/nor_cmos_0/A d_ff_optimized_8/Q 0.09fF
+C353 pg_gen_optimized_unrouted_0/P3 sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT 0.09fF
+C354 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/G0 0.16fF
+C355 gnd d_ff_optimized_4/Q 0.12fF
+C356 sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT sum_gen_optimized_unrouted_0/C3 0.05fF
+C357 cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0# pg_gen_optimized_unrouted_0/P1 0.03fF
+C358 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/P3 0.05fF
+C359 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# pg_gen_optimized_unrouted_0/G0 0.17fF
+C360 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# 0.36fF
+C361 cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 0.05fF
+C362 d_ff_optimized_3/inv_cmos_3/IN d_ff_optimized_3/Q 0.09fF
+C363 cla_gen_cmos_unrouted_0/nand_cmos_0/Y pg_gen_optimized_unrouted_0/P1 0.02fF
+C364 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_4/w_0_0# 0.42fF
+C365 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121# 0.12fF
+C366 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/inv_cmos_0/IN 0.71fF
+C367 cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0# vdd 0.00fF
+C368 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.83fF
+C369 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# 0.11fF
+C370 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B vdd 0.09fF
+C371 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/nand_cmos_3/Y 0.05fF
+C372 cla_gen_cmos_unrouted_0/nand_cmos_0/Y vdd -0.00fF
+C373 cla_gen_cmos_unrouted_0/inv_cmos_4/w_0_0# vdd 0.00fF
+C374 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/P3 0.08fF
+C375 cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_23_n81# pg_gen_optimized_unrouted_0/P3 0.08fF
+C376 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.01fF
+C377 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B pg_gen_optimized_unrouted_0/G0 0.01fF
+C378 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# vdd 0.10fF
+C379 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B pg_gen_optimized_unrouted_0/P0 -0.00fF
+C380 d_ff_optimized_8/Q sum_gen_optimized_unrouted_0/C3 0.00fF
+C381 cla_gen_cmos_unrouted_0/nor_4_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/P0 0.02fF
+C382 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0# 0.39fF
+C383 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/P0 0.01fF
+C384 pg_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# d_ff_optimized_4/Q 0.08fF
+C385 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B 0.01fF
+C386 vdd d_ff_optimized_12/D 0.09fF
+C387 pg_gen_optimized_unrouted_0/inv_cmos_0/w_0_0# d_ff_optimized_1/Q 0.09fF
+C388 cla_gen_cmos_unrouted_0/inv_cmos_3/w_0_0# pg_gen_optimized_unrouted_0/P1 0.02fF
+C389 cla_gen_cmos_unrouted_0/nand_cmos_2/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.09fF
+C390 d_ff_optimized_5/inv_cmos_4/w_0_0# d_ff_optimized_5/inv_cmos_3/IN -0.00fF
+C391 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C pg_gen_optimized_unrouted_0/G3 0.06fF
+C392 gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_23_n121# 0.07fF
+C393 gnd cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# 0.07fF
+C394 vdd d_ff_optimized_7/inv_cmos_3/IN 0.05fF
+C395 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# d_ff_optimized_3/Q 0.33fF
+C396 pg_gen_optimized_unrouted_0/P1 d_ff_optimized_3/Q 0.16fF
+C397 cla_gen_cmos_unrouted_0/inv_cmos_1/IN pg_gen_optimized_unrouted_0/P2 0.82fF
+C398 gnd d_ff_optimized_2/inv_cmos_4/w_0_0# -0.01fF
+C399 cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0# vdd 0.00fF
+C400 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.18fF
+C401 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 1.22fF
+C402 vdd d_ff_optimized_3/Q 0.18fF
+C403 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# gnd 0.07fF
+C404 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/nor_3_cmos_0/B 0.08fF
+C405 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_23_0# 0.20fF
+C406 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# 0.10fF
+C407 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A gnd 0.11fF
+C408 pg_gen_optimized_unrouted_0/P2 pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# 0.01fF
+C409 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A gnd 0.17fF
+C410 pg_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# d_ff_optimized_1/Q 0.08fF
+C411 cla_gen_cmos_unrouted_0/inv_cmos_9/w_0_0# vdd 0.04fF
+C412 gnd d_ff_optimized_7/inv_cmos_4/w_0_0# -0.01fF
+C413 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_23_0# pg_gen_optimized_unrouted_0/G3 0.07fF
+C414 vdd d_ff_optimized_4/inv_cmos_4/w_0_0# 0.01fF
+C415 gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_39_n101# 0.07fF
+C416 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.05fF
+C417 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0# 0.36fF
+C418 d_ff_optimized_4/inv_cmos_3/IN d_ff_optimized_4/Q 0.09fF
+C419 d_ff_optimized_7/Q pg_gen_optimized_unrouted_0/P3 0.16fF
+C420 pg_gen_optimized_unrouted_0/G1 d_ff_optimized_3/Q 0.03fF
+C421 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_23_0# 0.02fF
+C422 cla_gen_cmos_unrouted_0/inv_cmos_8/w_0_0# d_ff_optimized_8/Q 0.22fF
+C423 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A vdd 0.17fF
+C424 d_ff_optimized_2/inv_cmos_3/IN vdd -0.01fF
+C425 d_ff_optimized_2/inv_cmos_3/IN d_ff_optimized_2/Q 0.09fF
+C426 gnd d_ff_optimized_5/Q 0.13fF
+C427 sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT sum_gen_optimized_unrouted_0/C3 0.05fF
+C428 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_7_0# pg_gen_optimized_unrouted_0/G3 0.04fF
+C429 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.43fF
+C430 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/P2 0.15fF
+C431 gnd cla_gen_cmos_unrouted_0/nand_cmos_1/Y 0.23fF
+C432 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_7/IN 0.27fF
+C433 cla_gen_cmos_unrouted_0/nor_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.13fF
+C434 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.00fF
+C435 d_ff_optimized_6/inv_cmos_3/IN d_ff_optimized_6/inv_cmos_4/w_0_0# -0.00fF
+C436 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.01fF
+C437 d_ff_optimized_13/D sum_gen_optimized_unrouted_0/C1 0.09fF
+C438 d_ff_optimized_1/inv_cmos_0/OUT d_ff_optimized_1/Q 0.03fF
+C439 gnd pg_gen_optimized_unrouted_0/nand_cmos_1/a_7_n61# 0.12fF
+C440 clk d_ff_optimized_5/inv_cmos_0/w_0_0# 0.32fF
+C441 gnd cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.18fF
+C442 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/P2 0.12fF
+C443 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A cla_gen_cmos_unrouted_0/nor_4_cmos_0/B 0.19fF
+C444 d_ff_optimized_1/inv_cmos_3/IN d_ff_optimized_1/Q 0.09fF
+C445 gnd d_ff_optimized_1/inv_cmos_4/w_0_0# -0.01fF
+C446 cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.08fF
+C447 cla_gen_cmos_unrouted_0/inv_cmos_12/w_0_0# sum_gen_optimized_unrouted_0/C2 0.33fF
+C448 d_ff_optimized_8/inv_cmos_4/w_0_0# d_ff_optimized_8/inv_cmos_3/IN -0.00fF
+C449 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y pg_gen_optimized_unrouted_0/P3 0.09fF
+C450 d_ff_optimized_8/Q sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# 0.59fF
+C451 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C452 gnd pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61# 0.12fF
+C453 d_ff_optimized_7/inv_cmos_0/w_0_0# d_ff_optimized_7/inv_cmos_0/OUT 0.00fF
+C454 sum_gen_optimized_unrouted_0/C1 sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT 0.57fF
+C455 cla_gen_cmos_unrouted_0/nor_4_cmos_0/a_39_0# pg_gen_optimized_unrouted_0/G3 0.05fF
+C456 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C457 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_9/D 0.42fF
+C458 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/G3 0.07fF
+C459 cla_gen_cmos_unrouted_0/nor_cmos_0/A vdd 0.09fF
+C460 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C pg_gen_optimized_unrouted_0/P3 0.14fF
+C461 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# 0.38fF
+C462 d_ff_optimized_9/D sum_gen_optimized_unrouted_0/C3 0.11fF
+C463 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# pg_gen_optimized_unrouted_0/G3 0.07fF
+C464 gnd cla_gen_cmos_unrouted_0/nor_cmos_0/Y 0.78fF
+C465 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_0/IN 0.74fF
+C466 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# vdd -0.00fF
+C467 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_55_n121# 1.14fF
+C468 cla_gen_cmos_unrouted_0/inv_cmos_2/IN pg_gen_optimized_unrouted_0/P3 0.06fF
+C469 d_ff_optimized_8/Q pg_gen_optimized_unrouted_0/G2 0.00fF
+C470 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/P3 0.29fF
+C471 cla_gen_cmos_unrouted_0/inv_cmos_0/IN vdd 0.00fF
+C472 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nor_cmos_0/A 0.00fF
+C473 sum_gen_optimized_unrouted_0/C1 d_ff_optimized_9/D 0.07fF
+C474 vdd d_ff_optimized_6/Q 0.25fF
+C475 vdd pg_gen_optimized_unrouted_0/P3 0.75fF
+C476 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_2/Q 0.13fF
+C477 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# pg_gen_optimized_unrouted_0/P2 0.16fF
+C478 vdd sum_gen_optimized_unrouted_0/C3 0.20fF
+C479 pg_gen_optimized_unrouted_0/G0 pg_gen_optimized_unrouted_0/P3 0.06fF
+C480 d_ff_optimized_11/D d_ff_optimized_9/D 0.44fF
+C481 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# 0.05fF
+C482 gnd d_ff_optimized_0/Q 0.13fF
+C483 pg_gen_optimized_unrouted_0/P1 sum_gen_optimized_unrouted_0/C1 0.07fF
+C484 gnd cla_gen_cmos_unrouted_0/nand_3_cmos_0/a_7_n81# 0.04fF
+C485 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/P3 0.08fF
+C486 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# vdd -0.00fF
+C487 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B cla_gen_cmos_unrouted_0/nor_cmos_0/A 0.00fF
+C488 gnd cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.63fF
+C489 cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61# pg_gen_optimized_unrouted_0/G3 0.07fF
+C490 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# 0.00fF
+C491 pg_gen_optimized_unrouted_0/P1 d_ff_optimized_11/D 0.06fF
+C492 cla_gen_cmos_unrouted_0/nor_3_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/nor_cmos_0/A 0.11fF
+C493 gnd cla_gen_cmos_unrouted_0/nor_4_cmos_0/B 0.17fF
+C494 cla_gen_cmos_unrouted_0/nor_5_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.20fF
+C495 d_ff_optimized_12/inv_cmos_0/w_0_0# d_ff_optimized_12/D 0.00fF
+C496 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# 0.06fF
+C497 cla_gen_cmos_unrouted_0/inv_cmos_5/IN gnd 0.42fF
+C498 vdd d_ff_optimized_11/D 0.08fF
+C499 d_ff_optimized_8/Q d_ff_optimized_8/inv_cmos_3/IN 0.17fF
+C500 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/nand_cmos_2/a_7_n61# 0.11fF
+C501 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_7_0# 0.31fF
+C502 vdd sum_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# 0.01fF
+C503 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C vdd 0.05fF
+C504 pg_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# d_ff_optimized_5/Q 0.08fF
+C505 gnd cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_7_n101# 0.07fF
+C506 pg_gen_optimized_unrouted_0/nand_cmos_1/Y d_ff_optimized_4/Q 0.66fF
+C507 pg_gen_optimized_unrouted_0/G2 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# 0.11fF
+C508 gnd sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT 0.07fF
+C509 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.01fF
+C510 pg_gen_optimized_unrouted_0/P0 pg_gen_optimized_unrouted_0/G3 0.12fF
+C511 cla_gen_cmos_unrouted_0/inv_cmos_8/w_0_0# pg_gen_optimized_unrouted_0/P1 0.01fF
+C512 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y 0.45fF
+C513 cla_gen_cmos_unrouted_0/inv_cmos_8/w_0_0# vdd 0.04fF
+C514 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C pg_gen_optimized_unrouted_0/P2 0.01fF
+C515 pg_gen_optimized_unrouted_0/G3 d_ff_optimized_4/Q 0.06fF
+C516 sum_gen_optimized_unrouted_0/C3 d_ff_optimized_12/D 0.05fF
+C517 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.08fF
+C518 sum_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# d_ff_optimized_10/D 0.02fF
+C519 cla_gen_cmos_unrouted_0/nor_cmos_0/a_7_0# cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C520 pg_gen_optimized_unrouted_0/P0 d_ff_optimized_8/Q 0.24fF
+C521 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_55_0# pg_gen_optimized_unrouted_0/P2 0.02fF
+C522 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y 0.08fF
+C523 gnd cla_gen_cmos_unrouted_0/nand_cmos_3/a_7_n61# 0.12fF
+C524 clk d_ff_optimized_6/inv_cmos_0/w_0_0# 0.09fF
+C525 clk d_ff_optimized_4/inv_cmos_0/w_0_0# 0.09fF
+C526 cla_gen_cmos_unrouted_0/inv_cmos_2/IN pg_gen_optimized_unrouted_0/P2 0.03fF
+C527 pg_gen_optimized_unrouted_0/inv_cmos_3/w_0_0# pg_gen_optimized_unrouted_0/P2 0.06fF
+C528 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/P2 1.12fF
+C529 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_23_n101# pg_gen_optimized_unrouted_0/P3 0.11fF
+C530 cla_gen_cmos_unrouted_0/inv_cmos_3/w_0_0# pg_gen_optimized_unrouted_0/P3 0.35fF
+C531 sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# d_ff_optimized_9/D 0.02fF
+C532 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# 0.18fF
+C533 cla_gen_cmos_unrouted_0/nor_cmos_0/A cla_gen_cmos_unrouted_0/nor_5_cmos_0/A 0.17fF
+C534 vdd pg_gen_optimized_unrouted_0/P2 1.43fF
+C535 d_ff_optimized_2/Q pg_gen_optimized_unrouted_0/P2 0.16fF
+C536 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_3/Q 0.13fF
+C537 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# d_ff_optimized_8/Q 0.17fF
+C538 d_ff_optimized_11/D d_ff_optimized_12/D 0.05fF
+C539 pg_gen_optimized_unrouted_0/G0 pg_gen_optimized_unrouted_0/P2 0.82fF
+C540 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y pg_gen_optimized_unrouted_0/G2 0.68fF
+C541 gnd pg_gen_optimized_unrouted_0/nand_cmos_3/Y 0.23fF
+C542 gnd cla_gen_cmos_unrouted_0/inv_cmos_7/IN 0.39fF
+C543 cla_gen_cmos_unrouted_0/nor_cmos_0/Y sum_gen_optimized_unrouted_0/C2 0.09fF
+C544 clk d_ff_optimized_9/inv_cmos_0/w_0_0# 0.32fF
+C545 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/P2 0.07fF
+C546 vdd sum_gen_optimized_unrouted_0/xor_optimized_2/w_26_37# -0.00fF
+C547 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/OUT 0.05fF
+C548 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A pg_gen_optimized_unrouted_0/P3 0.09fF
+C549 gnd sum_gen_optimized_unrouted_0/C2 0.12fF
+C550 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# pg_gen_optimized_unrouted_0/G3 0.07fF
+C551 d_ff_optimized_3/inv_cmos_3/IN d_ff_optimized_3/inv_cmos_4/w_0_0# -0.00fF
+C552 gnd cla_gen_cmos_unrouted_0/nand_cmos_2/a_7_n61# 0.12fF
+C553 vdd pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# 0.02fF
+C554 pg_gen_optimized_unrouted_0/nand_cmos_3/Y d_ff_optimized_0/Q 0.62fF
+C555 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# 0.00fF
+C556 pg_gen_optimized_unrouted_0/inv_cmos_2/w_0_0# d_ff_optimized_2/Q 0.32fF
+C557 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/G2 0.09fF
+C558 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_39_n121# 1.21fF
+C559 d_ff_optimized_5/Q d_ff_optimized_5/inv_cmos_3/IN 0.09fF
+C560 cla_gen_cmos_unrouted_0/inv_cmos_2/w_0_0# pg_gen_optimized_unrouted_0/P2 0.02fF
+C561 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# 0.09fF
+C562 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# pg_gen_optimized_unrouted_0/G3 0.07fF
+C563 cla_gen_cmos_unrouted_0/nand_cmos_0/Y pg_gen_optimized_unrouted_0/P2 0.02fF
+C564 cla_gen_cmos_unrouted_0/inv_cmos_4/w_0_0# pg_gen_optimized_unrouted_0/P2 0.48fF
+C565 pg_gen_optimized_unrouted_0/G2 vdd 0.17fF
+C566 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121# pg_gen_optimized_unrouted_0/P2 0.01fF
+C567 vdd d_ff_optimized_1/Q 0.69fF
+C568 pg_gen_optimized_unrouted_0/G2 d_ff_optimized_2/Q 0.03fF
+C569 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/G3 0.05fF
+C570 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/OUT 0.05fF
+C571 d_ff_optimized_7/Q d_ff_optimized_4/Q 0.06fF
+C572 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/G0 0.00fF
+C573 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# 0.17fF
+C574 d_ff_optimized_1/inv_cmos_3/IN d_ff_optimized_1/inv_cmos_4/w_0_0# -0.00fF
+C575 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A d_ff_optimized_8/Q 0.10fF
+C576 pg_gen_optimized_unrouted_0/G3 d_ff_optimized_5/Q 0.06fF
+C577 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/G2 0.00fF
+C578 gnd clk 4.59fF
+C579 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_39_n101# 0.11fF
+C580 sum_gen_optimized_unrouted_0/xor_optimized_1/w_26_37# d_ff_optimized_9/D 0.06fF
+C581 cla_gen_cmos_unrouted_0/nand_cmos_1/Y pg_gen_optimized_unrouted_0/G3 0.04fF
+C582 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_23_n81# pg_gen_optimized_unrouted_0/G2 0.11fF
+C583 cla_gen_cmos_unrouted_0/nand_4_cmos_0/a_23_n101# pg_gen_optimized_unrouted_0/P2 0.20fF
+C584 cla_gen_cmos_unrouted_0/inv_cmos_3/w_0_0# pg_gen_optimized_unrouted_0/P2 0.01fF
+C585 gnd d_ff_optimized_6/inv_cmos_4/w_0_0# -0.01fF
+C586 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_1/a_7_n61# 0.08fF
+C587 cla_gen_cmos_unrouted_0/nand_cmos_2/Y pg_gen_optimized_unrouted_0/P0 0.10fF
+C588 pg_gen_optimized_unrouted_0/G2 pg_gen_optimized_unrouted_0/nand_cmos_2/Y 0.05fF
+C589 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.01fF
+C590 cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0# pg_gen_optimized_unrouted_0/P2 0.05fF
+C591 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y pg_gen_optimized_unrouted_0/P0 0.00fF
+C592 pg_gen_optimized_unrouted_0/P2 d_ff_optimized_3/Q 0.13fF
+C593 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# pg_gen_optimized_unrouted_0/P3 0.03fF
+C594 cla_gen_cmos_unrouted_0/nand_cmos_0/Y pg_gen_optimized_unrouted_0/G2 0.44fF
+C595 vdd d_ff_optimized_8/inv_cmos_3/IN 0.05fF
+C596 gnd cla_gen_cmos_unrouted_0/inv_cmos_1/IN 0.63fF
+C597 d_ff_optimized_10/inv_cmos_0/w_0_0# clk 0.32fF
+C598 cla_gen_cmos_unrouted_0/inv_cmos_0/IN pg_gen_optimized_unrouted_0/P3 0.17fF
+C599 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.01fF
+C600 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D 0.01fF
+C601 pg_gen_optimized_unrouted_0/G3 pg_gen_optimized_unrouted_0/nand_cmos_3/a_7_n61# 0.06fF
+C602 d_ff_optimized_6/Q d_ff_optimized_6/inv_cmos_0/OUT 0.05fF
+C603 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y 0.01fF
+C604 vdd sum_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# 0.00fF
+C605 pg_gen_optimized_unrouted_0/P3 sum_gen_optimized_unrouted_0/C3 0.13fF
+C606 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D vdd 0.09fF
+C607 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A pg_gen_optimized_unrouted_0/P2 0.01fF
+C608 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_cmos_1/a_7_n61# 0.14fF
+C609 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/B 0.15fF
+C610 d_ff_optimized_11/inv_cmos_0/OUT d_ff_optimized_11/D 0.04fF
+C611 cla_gen_cmos_unrouted_0/inv_cmos_7/w_0_0# d_ff_optimized_8/Q 0.30fF
+C612 cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.27fF
+C613 pg_gen_optimized_unrouted_0/P1 pg_gen_optimized_unrouted_0/P0 0.89fF
+C614 cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y vdd 1.34fF
+C615 gnd pg_gen_optimized_unrouted_0/nand_cmos_1/Y 0.23fF
+C616 cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_23_0# pg_gen_optimized_unrouted_0/P2 0.02fF
+C617 pg_gen_optimized_unrouted_0/inv_cmos_1/w_0_0# d_ff_optimized_4/Q 0.09fF
+C618 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y cla_gen_cmos_unrouted_0/nor_5_cmos_0/a_39_0# 0.08fF
+C619 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# pg_gen_optimized_unrouted_0/P3 0.02fF
+C620 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_3_cmos_2/a_23_n81# 0.17fF
+C621 gnd cla_gen_cmos_unrouted_0/nand_cmos_3/Y 0.23fF
+C622 cla_gen_cmos_unrouted_0/nor_cmos_0/Y pg_gen_optimized_unrouted_0/G3 0.00fF
+C623 gnd sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT 0.07fF
+C624 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_5_cmos_0/C 0.30fF
+C625 pg_gen_optimized_unrouted_0/P0 vdd 0.61fF
+C626 d_ff_optimized_7/Q d_ff_optimized_7/inv_cmos_4/w_0_0# 0.30fF
+C627 cla_gen_cmos_unrouted_0/inv_cmos_3/w_0_0# pg_gen_optimized_unrouted_0/G2 0.02fF
+C628 pg_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# d_ff_optimized_0/Q 0.07fF
+C629 sum_gen_optimized_unrouted_0/C1 sum_gen_optimized_unrouted_0/C3 0.05fF
+C630 d_ff_optimized_5/Q d_ff_optimized_5/inv_cmos_4/IN 0.09fF
+C631 pg_gen_optimized_unrouted_0/P0 pg_gen_optimized_unrouted_0/G0 0.11fF
+C632 gnd pg_gen_optimized_unrouted_0/G3 0.42fF
+C633 vdd d_ff_optimized_4/Q 0.69fF
+C634 pg_gen_optimized_unrouted_0/G2 d_ff_optimized_3/Q 0.00fF
+C635 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/nor_cmos_0/Y 0.16fF
+C636 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/OUT 0.05fF
+C637 cla_gen_cmos_unrouted_0/inv_cmos_12/w_0_0# vdd 0.02fF
+C638 pg_gen_optimized_unrouted_0/P3 d_ff_optimized_11/D 0.08fF
+C639 gnd d_ff_optimized_2/inv_cmos_1/IN -0.01fF
+C640 cla_gen_cmos_unrouted_0/nor_cmos_0/w_n6_n6# vdd 0.01fF
+C641 d_ff_optimized_11/D sum_gen_optimized_unrouted_0/C3 0.05fF
+C642 pg_gen_optimized_unrouted_0/G1 pg_gen_optimized_unrouted_0/P0 0.06fF
+C643 clk d_ff_optimized_1/inv_cmos_0/w_0_0# 0.09fF
+C644 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# vdd 0.08fF
+C645 gnd d_ff_optimized_8/Q 0.70fF
+C646 cla_gen_cmos_unrouted_0/nor_cmos_0/Y cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 0.06fF
+C647 pg_gen_optimized_unrouted_0/G3 d_ff_optimized_0/Q 0.06fF
+C648 gnd cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y 0.13fF
+C649 cla_gen_cmos_unrouted_0/inv_cmos_4/IN pg_gen_optimized_unrouted_0/G3 0.04fF
+C650 sum_gen_optimized_unrouted_0/xor_optimized_3/w_26_37# d_ff_optimized_12/D 0.01fF
+C651 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B pg_gen_optimized_unrouted_0/P0 0.04fF
+C652 d_ff_optimized_3/inv_cmos_4/w_0_0# d_ff_optimized_3/Q 0.31fF
+C653 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_4/w_0_0# 0.41fF
+C654 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B pg_gen_optimized_unrouted_0/G3 0.06fF
+C655 clk d_ff_optimized_2/inv_cmos_0/w_0_0# 0.32fF
+C656 cla_gen_cmos_unrouted_0/nor_4_cmos_0/w_n6_n6# pg_gen_optimized_unrouted_0/G3 0.08fF
+C657 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_7_n121# 0.14fF
+C658 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_23_n121# 1.18fF
+C659 pg_gen_optimized_unrouted_0/P1 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# 0.08fF
+C660 d_ff_optimized_8/Q cla_gen_cmos_unrouted_0/inv_cmos_4/IN 0.80fF
+C661 d_ff_optimized_1/inv_cmos_0/OUT d_ff_optimized_1/inv_cmos_0/w_0_0# 0.00fF
+C662 cla_gen_cmos_unrouted_0/inv_cmos_5/IN pg_gen_optimized_unrouted_0/G3 0.04fF
+C663 d_ff_optimized_11/D sum_gen_optimized_unrouted_0/xor_optimized_0/w_26_37# 0.15fF
+C664 cla_gen_cmos_unrouted_0/inv_cmos_0/w_0_0# pg_gen_optimized_unrouted_0/P2 0.02fF
+C665 gnd d_ff_optimized_10/D 0.03fF
+C666 cla_gen_cmos_unrouted_0/inv_cmos_0/IN pg_gen_optimized_unrouted_0/P2 0.05fF
+C667 d_ff_optimized_2/inv_cmos_0/OUT d_ff_optimized_2/Q 0.04fF
+C668 cla_gen_cmos_unrouted_0/nor_3_cmos_0/w_n6_n6# cla_gen_cmos_unrouted_0/nor_3_cmos_0/B 0.02fF
+C669 pg_gen_optimized_unrouted_0/P3 pg_gen_optimized_unrouted_0/P2 0.94fF
+C670 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# pg_gen_optimized_unrouted_0/P1 0.07fF
+C671 d_ff_optimized_11/inv_cmos_0/w_0_0# clk 0.32fF
+C672 pg_gen_optimized_unrouted_0/G0 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# 0.17fF
+C673 d_ff_optimized_2/inv_cmos_4/w_0_0# vdd -0.00fF
+C674 gnd pg_gen_optimized_unrouted_0/nand_cmos_2/a_7_n61# 0.12fF
+C675 d_ff_optimized_12/inv_cmos_0/OUT d_ff_optimized_12/D 0.07fF
+C676 d_ff_optimized_2/inv_cmos_4/w_0_0# d_ff_optimized_2/Q 0.30fF
+C677 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A pg_gen_optimized_unrouted_0/P1 0.06fF
+C678 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A pg_gen_optimized_unrouted_0/P1 0.07fF
+C679 d_ff_optimized_13/D cla_gen_cmos_unrouted_0/nor_cmos_0/Y 0.13fF
+C680 pg_gen_optimized_unrouted_0/G1 cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_7_n101# 0.11fF
+C681 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A vdd 0.03fF
+C682 gnd cla_gen_cmos_unrouted_0/nand_5_cmos_0/a_39_n121# 0.07fF
+C683 gnd d_ff_optimized_7/Q 0.12fF
+C684 cla_gen_cmos_unrouted_0/nand_3_cmos_1/a_7_n81# pg_gen_optimized_unrouted_0/G0 0.17fF
+C685 cla_gen_cmos_unrouted_0/inv_cmos_1/w_0_0# pg_gen_optimized_unrouted_0/P2 0.37fF
+C686 d_ff_optimized_10/inv_cmos_0/w_0_0# d_ff_optimized_10/D 0.00fF
+C687 gnd cla_gen_cmos_unrouted_0/nand_4_cmos_1/a_23_n101# 0.07fF
+C688 pg_gen_optimized_unrouted_0/P0 cla_gen_cmos_unrouted_0/inv_cmos_6/w_0_0# 0.02fF
+C689 Q0s Gnd -0.08fF
+C690 C0 Gnd -0.04fF
+C691 d_ff_optimized_12/D Gnd 0.12fF
+C692 sum_gen_optimized_unrouted_0/C3 Gnd 0.12fF
+C693 d_ff_optimized_9/D Gnd 0.25fF
+C694 d_ff_optimized_10/D Gnd 0.14fF
+C695 d_ff_optimized_11/D Gnd 0.22fF
+C696 B2 Gnd 0.02fF
+C697 B3 Gnd 0.02fF
+C698 A1 Gnd 0.02fF
+C699 d_ff_optimized_0/Q Gnd -2.03fF
+C700 d_ff_optimized_3/Q Gnd 1.30fF
+C701 d_ff_optimized_5/Q Gnd -2.60fF
+C702 d_ff_optimized_2/Q Gnd 1.22fF
+C703 pg_gen_optimized_unrouted_0/P2 Gnd -7.48fF
+C704 d_ff_optimized_4/Q Gnd -3.05fF
+C705 d_ff_optimized_7/Q Gnd -1.03fF
+C706 pg_gen_optimized_unrouted_0/P3 Gnd 0.15fF
+C707 d_ff_optimized_1/Q Gnd -1.53fF
+C708 pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/OUT Gnd 0.01fF
+C709 d_ff_optimized_6/Q Gnd 0.26fF
+C710 A2 Gnd 0.02fF
+C711 vdd Gnd -1.75fF
+C712 B0 Gnd 0.02fF
+C713 B1 Gnd 0.02fF
+C714 A3 Gnd 0.02fF
+C715 A0 Gnd 0.02fF
+C716 sum_gen_optimized_unrouted_0/C1 Gnd 0.19fF
+C717 cla_gen_cmos_unrouted_0/nor_5_cmos_0/Y Gnd 0.03fF
+C718 pg_gen_optimized_unrouted_0/G3 Gnd 0.25fF
+C719 cla_gen_cmos_unrouted_0/nor_5_cmos_0/D Gnd 0.21fF
+C720 cla_gen_cmos_unrouted_0/nor_5_cmos_0/C Gnd -1.87fF
+C721 cla_gen_cmos_unrouted_0/nor_5_cmos_0/B Gnd -0.93fF
+C722 cla_gen_cmos_unrouted_0/nor_5_cmos_0/A Gnd -3.49fF
+C723 sum_gen_optimized_unrouted_0/C2 Gnd 0.48fF
+C724 cla_gen_cmos_unrouted_0/nor_3_cmos_0/Y Gnd 0.17fF
+C725 cla_gen_cmos_unrouted_0/nor_cmos_0/Y Gnd 0.25fF
+C726 d_ff_optimized_13/D Gnd -1.16fF
+C727 pg_gen_optimized_unrouted_0/G0 Gnd 0.65fF
+C728 pg_gen_optimized_unrouted_0/G2 Gnd -0.64fF
+C729 d_ff_optimized_8/Q Gnd 0.11fF
+C730 pg_gen_optimized_unrouted_0/P0 Gnd 0.44fF
+C731 pg_gen_optimized_unrouted_0/P1 Gnd 0.13fF
+C732 cla_gen_cmos_unrouted_0/nor_4_cmos_0/Y Gnd 0.03fF
+C733 cla_gen_cmos_unrouted_0/nor_cmos_0/A Gnd 0.12fF
+C734 cla_gen_cmos_unrouted_0/nor_3_cmos_0/B Gnd 0.17fF
+C735 pg_gen_optimized_unrouted_0/G1 Gnd 0.16fF
+C736 cla_gen_cmos_unrouted_0/nor_3_cmos_0/A Gnd 0.18fF
+C737 cla_gen_cmos_unrouted_0/nor_4_cmos_0/B Gnd -2.09fF
+C738 cla_gen_cmos_unrouted_0/nor_4_cmos_0/C Gnd 0.49fF
+C739 gnd Gnd 2.73fF
+C740 cla_gen_cmos_unrouted_0/nor_4_cmos_0/A Gnd 0.18fF
+C741 clk Gnd -8.01fF
+C742 Qco Gnd -0.02fF
+C743 Q3s Gnd -0.04fF
+C744 Q2s Gnd -0.02fF
+C745 Q1s Gnd -0.02fF
 .end
 
 
 
-.tran 1n 6n 
+
+
+.tran 1n 36n 
 
 * .measure tran delay_S3_r TRIG V(A3) VAL=0.5*SUPPLY RISE=1 TARG V(S3) VAL=0.5*SUPPLY RISE=1
 * .measure tran delay_S2_r TRIG V(A2) VAL=0.5*SUPPLY RISE=1 TARG V(S2) VAL=0.5*SUPPLY RISE=1
@@ -1177,11 +1811,20 @@ C220 d_ff_optimized_9/vdd Gnd -0.41fF
     set color1=black
     set color2=blue
     set color3=darkgreen
-    set color4=darkred
-    set color5=darkviolet
-    set color6=darkorange
+    set color4=darkgreen
+    set color5=darkgreen
+    set color6=darkgreen
+    set color7=darkred
+    set color8=darkred
+    set color9=darkred
+    set color10=darkred
+    set color11=darkviolet
+    set color12=darkorange
+    set color13=darkorange
+    set color14=darkorange
+    set color15=darkorange
+    set color16=red
 
     run
-    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(S3)+8 v(S2)+6 v(S1)+4 v(S0)+2 v(C4)
-    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(pg_gen_optimized_unrouted_0/G3)+10 v(pg_gen_optimized_unrouted_0/G2)+8 v(pg_gen_optimized_unrouted_0/G1)+6 v(pg_gen_optimized_unrouted_0/G0)+4 v(d_ff_optimized_0/Q)+4
+    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(Q2s)+6 v(Q1s)+4 v(Q0s)+2 v(Qco)
 .endc

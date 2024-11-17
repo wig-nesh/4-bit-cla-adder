@@ -81,8 +81,26 @@ Xdffco C4 clk Qco d_ff_optimized
     set color19=yellow
     set color20=red
     set color21=red
+    * set hcopypscolor = 1
+    * set color0=beige
+    * set color1=black
+    * set color2=blue
+    * set color3=darkgreen
+    * set color4=darkgreen
+    * set color5=darkgreen
+    * set color6=darkgreen
+    * set color7=darkred
+    * set color8=darkred
+    * set color9=darkred
+    * set color10=darkred
+    * set color11=darkviolet
+    * set color12=darkorange
+    * set color13=darkorange
+    * set color14=darkorange
+    * set color15=darkorange
+    * set color16=red
     
     run
-    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(S3)+8 v(Q2s)+6 v(S2)+6 v(Q1s)+4 v(S1)+4 v(Q0s)+2 v(S0)+2 v(Qco) v(C4)
-    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(G3)+10 v(G2)+8 v(G1)+6 v(G0)+4
+    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(S3)+8 v(Q2s)+6 v(S2)+6 v(Q1s)+4 v(S1)+4 v(Q0s)+2 v(S0)+2 v(Qco) v(C4)
+    * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(Q2s)+6 v(Q1s)+4 v(Q0s)+2 v(Qco)
 .endc

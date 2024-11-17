@@ -1,0 +1,46 @@
+magic
+tech scmos
+timestamp 1731321037
+<< metal1 >>
+rect 50 172 54 176
+rect -4 168 0 172
+rect 43 168 47 172
+rect 93 168 97 172
+rect 43 104 47 108
+rect 93 104 97 108
+rect 43 96 47 100
+rect 93 96 97 100
+rect -4 32 0 36
+rect 43 32 47 36
+rect 93 32 97 36
+rect 50 28 54 32
+use xor_optimized  xor_optimized_1 ../../../xor/optimized/post_layout
+timestamp 1731320890
+transform 1 0 55 0 1 0
+box -5 0 44 102
+use xor_optimized  xor_optimized_3
+timestamp 1731320890
+transform 1 0 55 0 -1 204
+box -5 0 44 102
+use xor_optimized  xor_optimized_2
+timestamp 1731320890
+transform 1 0 5 0 -1 204
+box -5 0 44 102
+use xor_optimized  xor_optimized_0
+timestamp 1731320890
+transform 1 0 5 0 1 0
+box -5 0 44 102
+<< labels >>
+rlabel metal1 43 32 47 36 1 S2
+rlabel metal1 43 168 47 172 1 S0
+rlabel metal1 43 104 47 108 1 C0
+rlabel metal1 93 168 97 172 7 S3
+rlabel metal1 93 32 97 36 7 S1
+rlabel metal1 43 96 47 100 1 C2
+rlabel metal1 93 104 97 108 7 C3
+rlabel metal1 93 96 97 100 7 C1
+rlabel metal1 -4 32 0 36 3 P2
+rlabel metal1 -4 168 0 172 3 P0
+rlabel metal1 50 172 54 176 1 P3
+rlabel metal1 50 28 54 32 1 P1
+<< end >>

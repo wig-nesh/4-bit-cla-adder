@@ -1,4 +1,4 @@
-timestamp 1731799201
+timestamp 1731848652
 version 8.3
 tech scmos
 style TSMC0.18um(tsmc18)from:t11b
@@ -32,330 +32,330 @@ use nand_cmos nand_cmos_1 1 0 178 0 -1 251
 use nor_4_cmos nor_4_cmos_0 1 0 240 0 -1 401
 use inv_cmos inv_cmos_6 1 0 204 0 -1 257
 use inv_cmos inv_cmos_11 1 0 312 0 -1 415
-node "a" 0 21.0864 343 -89 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C1" 0 21.0864 516 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "n" 0 21.0864 497 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C2" 0 21.0864 486 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "m" 0 21.0864 467 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C4" 0 21.0864 456 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "k" 0 21.0864 437 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "k" 0 21.0864 426 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G3" 0 21.0864 407 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "d" 0 21.0864 391 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "c" 0 21.0864 375 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "b" 0 21.0864 359 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "j" 0 21.0864 211 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_343_n89#" 0 21.0864 343 -89 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_516_n82#" 0 21.0864 516 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_497_n82#" 0 21.0864 497 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_486_n82#" 0 21.0864 486 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_467_n82#" 0 21.0864 467 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_456_n82#" 0 21.0864 456 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_437_n82#" 0 21.0864 437 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_426_n82#" 0 21.0864 426 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_407_n82#" 0 21.0864 407 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_391_n82#" 0 21.0864 391 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_375_n82#" 0 21.0864 375 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_359_n82#" 0 21.0864 359 -82 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_211_n84#" 0 21.0864 211 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_195_n84#" 0 11.2836 195 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P0" 0 21.0864 160 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "i" 0 21.0864 140 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_160_n84#" 0 21.0864 160 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_140_n84#" 0 21.0864 140 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_124_n84#" 0 11.2836 124 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P1" 0 21.0864 89 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "h" 0 21.0864 66 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_89_n84#" 0 21.0864 89 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_66_n84#" 0 21.0864 66 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_50_n84#" 0 11.2836 50 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P1" 0 21.0864 -1 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C0" 0 21.0864 176 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G0" 0 21.0864 105 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C0" 0 21.0864 31 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P0" 0 21.0864 15 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G0" 0 21.0864 300 -52 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "n" 0 21.0864 319 -45 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "j" 0 21.0864 284 -45 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G1" 0 21.0864 254 -2 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "i" 0 21.0864 238 -2 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "m" 0 21.0864 273 5 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "h" 0 21.0864 222 5 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G2" 0 21.0864 297 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G1" 0 21.0864 235 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P2" 0 21.0864 219 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G0" 0 21.0864 157 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P1" 0 21.0864 141 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P2" 0 21.0864 125 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C0" 0 21.0864 63 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P0" 0 21.0864 47 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P1" 0 21.0864 31 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P2" 0 21.0864 15 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "d" 0 21.0864 332 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_n1_n84#" 0 21.0864 -1 -84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_176_n77#" 0 21.0864 176 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_105_n77#" 0 21.0864 105 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_31_n77#" 0 21.0864 31 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_15_n77#" 0 21.0864 15 -77 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_300_n52#" 0 21.0864 300 -52 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_319_n45#" 0 21.0864 319 -45 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_284_n45#" 0 21.0864 284 -45 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_254_n2#" 0 21.0864 254 -2 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_238_n2#" 0 21.0864 238 -2 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_273_5#" 0 21.0864 273 5 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_222_5#" 0 21.0864 222 5 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_297_111#" 0 21.0864 297 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_235_111#" 0 21.0864 235 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_219_111#" 0 21.0864 219 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_157_111#" 0 21.0864 157 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_141_111#" 0 21.0864 141 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_125_111#" 0 21.0864 125 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_63_111#" 0 21.0864 63 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_47_111#" 0 21.0864 47 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_31_111#" 0 21.0864 31 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_15_111#" 0 21.0864 15 111 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_332_118#" 0 21.0864 332 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_316_118#" 0 11.2836 316 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P3" 0 21.0864 281 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "c" 0 21.0864 270 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_281_118#" 0 21.0864 281 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_270_118#" 0 21.0864 270 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_254_118#" 0 11.2836 254 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P3" 0 21.0864 203 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "b" 0 21.0864 192 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_203_118#" 0 21.0864 203 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_192_118#" 0 21.0864 192 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_176_118#" 0 11.2836 176 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P3" 0 21.0864 109 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "a" 0 21.0864 98 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_109_118#" 0 21.0864 109 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_98_118#" 0 21.0864 98 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_82_118#" 0 11.2836 82 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P3" 0 21.0864 -1 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "g" 0 21.0864 222 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_n1_118#" 0 21.0864 -1 118 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_222_258#" 0 21.0864 222 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_206_258#" 0 11.2836 206 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P2" 0 21.0864 171 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "f" 0 21.0864 160 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_171_258#" 0 21.0864 171 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_160_258#" 0 21.0864 160 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_144_258#" 0 11.2836 144 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P2" 0 21.0864 93 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "e" 0 21.0864 82 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_93_258#" 0 21.0864 93 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_82_258#" 0 21.0864 82 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
 node "m1_66_258#" 0 11.2836 66 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
-node "P2" 0 21.0864 -1 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G1" 0 21.0864 187 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G0" 0 21.0864 125 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P1" 0 21.0864 109 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C0" 0 21.0864 47 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P0" 0 21.0864 31 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "P1" 0 21.0864 15 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "G2" 0 21.0864 281 409 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "g" 0 21.0864 265 409 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "f" 0 21.0864 249 409 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "C3" 0 21.0864 330 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "l" 0 21.0864 311 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "l" 0 21.0864 300 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-node "e" 0 21.0864 233 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
-cap "c" "P3" 23.5646
-cap "k" "k" 23.5646
-cap "l" "l" 23.5646
-cap "b" "P3" 23.5646
-cap "m" "C4" 23.5646
-cap "e" "P2" 23.5646
-cap "P2" "f" 23.5646
-cap "C2" "n" 23.5646
-cap "P3" "a" 23.5646
-subcap "P1" -1.2856
-subcap "G0" -28.668
+node "m1_n1_258#" 0 21.0864 -1 258 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_187_265#" 0 21.0864 187 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_125_265#" 0 21.0864 125 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_109_265#" 0 21.0864 109 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_47_265#" 0 21.0864 47 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_31_265#" 0 21.0864 31 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_15_265#" 0 21.0864 15 265 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_281_409#" 0 21.0864 281 409 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_265_409#" 0 21.0864 265 409 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_249_409#" 0 21.0864 249 409 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_330_416#" 0 21.0864 330 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_311_416#" 0 21.0864 311 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_300_416#" 0 21.0864 300 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_233_416#" 0 21.0864 233 416 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+cap "m1_281_118#" "m1_270_118#" 23.5646
+cap "m1_486_n82#" "m1_497_n82#" 23.5646
+cap "m1_300_416#" "m1_311_416#" 23.5646
+cap "m1_426_n82#" "m1_437_n82#" 23.5646
+cap "m1_467_n82#" "m1_456_n82#" 23.5646
+cap "m1_109_118#" "m1_98_118#" 23.5646
+cap "m1_93_258#" "m1_82_258#" 23.5646
+cap "m1_192_118#" "m1_203_118#" 23.5646
+cap "m1_160_258#" "m1_171_258#" 23.5646
+subcap "m1_89_n84#" -1.2856
+subcap "m1_105_n77#" -28.668
 cap "nand_3_cmos_2/C" "nand_3_cmos_2/Y" 54.984
+cap "nand_3_cmos_2/C" "nand_3_cmos_2/a_23_n81#" 54.984
+cap "nand_3_cmos_2/C" "nand_3_cmos_2/B" 41.238
 cap "nand_3_cmos_2/Y" "nand_3_cmos_2/B" 54.984
 cap "nand_3_cmos_2/Y" "inv_cmos_7/vdd" 515.475
-cap "nand_3_cmos_2/a_7_n81#" "nand_3_cmos_2/B" 54.984
-cap "nand_3_cmos_2/C" "nand_3_cmos_2/B" 41.238
-cap "nand_3_cmos_2/C" "nand_3_cmos_2/a_23_n81#" 54.984
 cap "inv_cmos_7/gnd" "nand_3_cmos_2/Y" 92.7855
-cap "nand_cmos_3/Y" "inv_cmos_9/vdd" 257.738
-cap "nand_cmos_3/Y" "nand_cmos_3/B" 54.984
+cap "nand_3_cmos_2/B" "nand_3_cmos_2/a_7_n81#" 54.984
 cap "inv_cmos_8/vdd" "inv_cmos_8/IN" 515.475
-cap "inv_cmos_8/gnd" "inv_cmos_8/IN" 92.7855
-cap "inv_cmos_8/w_0_0#" "inv_cmos_8/IN" -1.42109e-14
-cap "nand_cmos_3/Y" "inv_cmos_9/gnd" 46.3927
 cap "nand_cmos_3/a_7_n61#" "nand_cmos_3/B" 41.238
-cap "nand_cmos_2/B" "nand_cmos_2/a_7_n61#" 41.238
+cap "nand_cmos_3/Y" "nand_cmos_3/B" 54.984
+cap "inv_cmos_8/IN" "inv_cmos_8/w_0_0#" -1.42109e-14
 cap "nand_cmos_2/B" "inv_cmos_8/IN" 54.984
-subcap "m1_195_n84#" -6.7084
+cap "nand_cmos_2/B" "nand_cmos_2/a_7_n61#" 41.238
 cap "nand_cmos_3/Y" "inv_cmos_9/gnd" 46.3927
+cap "inv_cmos_8/IN" "inv_cmos_8/gnd" 92.7855
+cap "nand_cmos_3/Y" "inv_cmos_9/vdd" 257.738
+subcap "m1_195_n84#" -6.7084
+cap "inv_cmos_9/gnd" "nand_cmos_3/Y" 46.3927
 cap "inv_cmos_9/vdd" "nand_cmos_3/Y" 257.738
-subcap "G3" -31.1952
-subcap "d" -51.9176
-cap "nor_5_cmos_0/a_23_0#" "nor_5_cmos_0/C" 17.6734
-cap "nor_5_cmos_0/C" "nor_5_cmos_0/D" 41.238
-cap "nor_5_cmos_0/B" "nor_5_cmos_0/C" 41.238
-cap "nor_5_cmos_0/B" "nor_5_cmos_0/a_7_0#" 17.6734
-cap "nor_5_cmos_0/D" "nor_5_cmos_0/a_39_0#" 17.6734
+subcap "m1_407_n82#" -31.1952
+subcap "m1_391_n82#" -51.9176
+cap "nor_5_cmos_0/a_7_0#" "nor_5_cmos_0/B" 17.6734
 cap "nor_5_cmos_0/D" "nor_5_cmos_0/Y" 54.984
+cap "nor_5_cmos_0/Y" "nor_5_cmos_0/C" 54.984
 cap "nor_5_cmos_0/B" "nor_5_cmos_0/Y" 54.984
-cap "nor_5_cmos_0/C" "nor_5_cmos_0/Y" 54.984
-subcap "n" -37.9248
-cap "nor_5_cmos_0/D" "nor_5_cmos_0/E" 41.238
-cap "nor_5_cmos_0/Y" "nor_5_cmos_0/E" 54.984
+cap "nor_5_cmos_0/D" "nor_5_cmos_0/a_39_0#" 17.6734
+cap "nor_5_cmos_0/D" "nor_5_cmos_0/C" 41.238
+cap "nor_5_cmos_0/B" "nor_5_cmos_0/C" 41.238
+cap "nor_5_cmos_0/a_23_0#" "nor_5_cmos_0/C" 17.6734
+subcap "m1_497_n82#" -37.9248
 cap "nor_5_cmos_0/a_55_0#" "nor_5_cmos_0/E" 17.6734
-subcap "G0" -11.6094
-subcap "C0" -34.0904
-subcap "P0" -34.0904
-cap "nand_3_cmos_2/B" "nand_3_cmos_2/a_7_n81#" 16.4952
-cap "nand_3_cmos_2/a_23_n81#" "nand_3_cmos_2/C" 16.4952
-cap "inv_cmos_7/gnd" "nand_3_cmos_2/Y" 206.19
-subcap "C0" -59.8404
-subcap "G0" -59.8404
-cap "nand_cmos_2/a_7_n61#" "nand_cmos_2/B" 12.3714
-cap "nand_cmos_3/Y" "inv_cmos_9/gnd" 103.095
+cap "nor_5_cmos_0/E" "nor_5_cmos_0/D" 41.238
+cap "nor_5_cmos_0/E" "nor_5_cmos_0/Y" 54.984
+subcap "m1_105_n77#" -11.6094
+subcap "m1_31_n77#" -34.0904
+subcap "m1_15_n77#" -34.0904
+cap "nand_3_cmos_2/C" "nand_3_cmos_2/a_23_n81#" 16.4952
+cap "nand_3_cmos_2/a_7_n81#" "nand_3_cmos_2/B" 16.4952
+cap "nand_3_cmos_2/Y" "inv_cmos_7/gnd" 206.19
+subcap "m1_176_n77#" -59.8404
+subcap "m1_105_n77#" -59.8404
 cap "nand_cmos_2/Y" "inv_cmos_8/gnd" 206.19
-cap "nand_cmos_3/a_7_n61#" "nand_cmos_3/B" 12.3714
-subcap "G0" -22.35
-cap "nor_3_cmos_0/B" "nor_3_cmos_0/Y" 54.984
-cap "nor_3_cmos_0/a_7_0#" "nor_3_cmos_0/B" 17.6734
-cap "nor_3_cmos_0/C" "nor_3_cmos_0/Y" 54.984
-cap "nor_3_cmos_0/B" "nor_3_cmos_0/C" 41.238
+cap "nand_cmos_3/B" "nand_cmos_3/a_7_n61#" 12.3714
+cap "nand_cmos_2/B" "nand_cmos_2/a_7_n61#" 12.3714
 cap "nand_cmos_3/Y" "inv_cmos_9/gnd" 103.095
-cap "nor_3_cmos_0/C" "nor_3_cmos_0/a_23_0#" 17.6734
-cap "nor_cmos_0/a_7_0#" "nor_cmos_0/B" 17.6734
+subcap "m1_300_n52#" -22.35
+cap "inv_cmos_9/gnd" "nand_cmos_3/Y" 103.095
+cap "nor_3_cmos_0/a_23_0#" "nor_3_cmos_0/C" 17.6734
+cap "nor_3_cmos_0/B" "nor_3_cmos_0/a_7_0#" 17.6734
+cap "nor_3_cmos_0/C" "nor_3_cmos_0/Y" 54.984
+cap "nor_3_cmos_0/B" "nor_3_cmos_0/Y" 54.984
+cap "nor_3_cmos_0/C" "nor_3_cmos_0/B" 41.238
 cap "nor_cmos_0/B" "nor_cmos_0/Y" 54.984
 cap "nor_5_cmos_0/w_n6_n6#" "nor_5_cmos_0/vdd" -7.10543e-15
-cap "nand_5_cmos_0/a_23_n121#" "nand_5_cmos_0/C" 54.984
-cap "nand_5_cmos_0/Y" "nand_5_cmos_0/C" 54.984
+cap "nor_cmos_0/B" "nor_cmos_0/a_7_0#" 17.6734
 cap "nand_5_cmos_0/D" "nand_5_cmos_0/C" 41.238
-cap "nand_5_cmos_0/C" "nand_5_cmos_0/B" 41.238
-cap "nand_5_cmos_0/a_7_n121#" "nand_5_cmos_0/B" 54.984
-cap "inv_cmos_0/gnd" "nand_5_cmos_0/Y" 298.975
-cap "nand_5_cmos_0/D" "nand_5_cmos_0/a_39_n121#" 54.984
-cap "nand_5_cmos_0/E" "nand_5_cmos_0/a_55_n121#" 54.984
-cap "nand_5_cmos_0/E" "nand_5_cmos_0/Y" 54.984
 cap "nand_5_cmos_0/E" "nand_5_cmos_0/D" 41.238
-cap "nand_5_cmos_0/Y" "inv_cmos_0/vdd" 30.9285
-cap "nand_5_cmos_0/Y" "nand_5_cmos_0/D" 54.984
-cap "nand_5_cmos_0/Y" "nand_5_cmos_0/B" 54.984
-subcap "P3" -26.1408
-subcap "a" -17.7003
-cap "nand_4_cmos_0/C" "nand_4_cmos_0/a_7_0#" 54.984
-cap "nand_4_cmos_0/C" "nand_4_cmos_0/a_23_n101#" 54.984
-cap "nand_4_cmos_0/C" "nand_4_cmos_0/B" 41.238
-cap "inv_cmos_1/vdd" "nand_4_cmos_0/a_7_0#" 30.9285
-cap "nand_4_cmos_0/B" "nand_4_cmos_0/a_7_0#" 54.984
+cap "nand_5_cmos_0/a_55_n121#" "nand_5_cmos_0/E" 54.984
+cap "nand_5_cmos_0/C" "nand_5_cmos_0/a_23_n121#" 54.984
+cap "nand_5_cmos_0/C" "nand_5_cmos_0/B" 41.238
+cap "nand_5_cmos_0/a_39_n121#" "nand_5_cmos_0/D" 54.984
+cap "inv_cmos_0/gnd" "nand_5_cmos_0/Y" 298.975
+cap "inv_cmos_0/vdd" "nand_5_cmos_0/Y" 30.9285
+cap "nand_5_cmos_0/D" "nand_5_cmos_0/Y" 54.984
+cap "nand_5_cmos_0/C" "nand_5_cmos_0/Y" 54.984
+cap "nand_5_cmos_0/B" "nand_5_cmos_0/Y" 54.984
+cap "nand_5_cmos_0/a_7_n121#" "nand_5_cmos_0/B" 54.984
+cap "nand_5_cmos_0/E" "nand_5_cmos_0/Y" 54.984
+subcap "m1_203_118#" -26.1408
+subcap "m1_98_118#" -17.7003
 cap "nand_4_cmos_0/a_7_n101#" "nand_4_cmos_0/B" 54.984
-cap "nand_4_cmos_0/D" "nand_4_cmos_0/a_39_n101#" 54.984
-cap "inv_cmos_1/gnd" "nand_4_cmos_0/a_7_0#" 298.975
-cap "nand_4_cmos_0/C" "nand_4_cmos_0/D" 41.238
 cap "nand_4_cmos_0/D" "nand_4_cmos_0/a_7_0#" 54.984
-cap "nand_4_cmos_0/w_n6_n6#" "nand_4_cmos_0/a_7_0#" 1.42109e-14
-subcap "G2" -37.9248
-subcap "b" -97.8501
-cap "nand_3_cmos_0/C" "nand_3_cmos_0/B" 41.238
-cap "inv_cmos_2/vdd" "nand_3_cmos_0/Y" 30.9285
-cap "nand_cmos_0/a_7_n61#" "nand_cmos_0/B" 27.492
+cap "nand_4_cmos_0/a_7_0#" "nand_4_cmos_0/w_n6_n6#" 1.42109e-14
+cap "nand_4_cmos_0/a_23_n101#" "nand_4_cmos_0/C" 54.984
+cap "nand_4_cmos_0/a_7_0#" "nand_4_cmos_0/C" 54.984
+cap "nand_4_cmos_0/D" "nand_4_cmos_0/a_39_n101#" 54.984
+cap "nand_4_cmos_0/B" "nand_4_cmos_0/C" 41.238
+cap "nand_4_cmos_0/a_7_0#" "inv_cmos_1/gnd" 298.975
+cap "nand_4_cmos_0/a_7_0#" "inv_cmos_1/vdd" 30.9285
+cap "nand_4_cmos_0/D" "nand_4_cmos_0/C" 41.238
+cap "nand_4_cmos_0/a_7_0#" "nand_4_cmos_0/B" 54.984
+subcap "m1_297_111#" -37.9248
+subcap "m1_192_118#" -97.8501
 cap "nand_3_cmos_0/a_7_n81#" "nand_3_cmos_0/B" 54.984
-cap "nand_3_cmos_0/w_n6_n6#" "nand_3_cmos_0/Y" 1.42109e-14
-cap "nand_3_cmos_0/C" "nand_3_cmos_0/a_23_n81#" 54.984
+cap "nand_cmos_0/B" "nand_cmos_0/Y" 27.492
+cap "nand_3_cmos_0/C" "nand_3_cmos_0/B" 41.238
 cap "nor_3_cmos_0/gnd" "nand_3_cmos_0/a_23_n81#" 47.1291
+cap "nand_3_cmos_0/C" "nand_3_cmos_0/a_23_n81#" 54.984
+cap "nand_3_cmos_0/Y" "nor_3_cmos_0/gnd" 23.5646
+cap "nand_3_cmos_0/Y" "nand_3_cmos_0/C" 54.984
+cap "nand_3_cmos_0/Y" "inv_cmos_2/gnd" 298.975
+cap "nand_3_cmos_0/Y" "nand_3_cmos_0/B" 54.984
+cap "nand_3_cmos_0/Y" "nand_3_cmos_0/w_n6_n6#" 1.42109e-14
 cap "nand_3_cmos_0/a_7_n81#" "nor_3_cmos_0/gnd" 5.89114
-cap "nand_3_cmos_0/B" "nand_3_cmos_0/Y" 54.984
-cap "nand_3_cmos_0/C" "nand_3_cmos_0/Y" 54.984
-cap "nor_3_cmos_0/gnd" "nand_3_cmos_0/Y" 23.5646
-cap "nand_cmos_0/Y" "nand_cmos_0/B" 27.492
-cap "inv_cmos_2/gnd" "nand_3_cmos_0/Y" 298.975
-cap "inv_cmos_3/IN" "nand_cmos_0/B" 27.492
-cap "inv_cmos_3/gnd" "inv_cmos_3/IN" 298.975
+cap "nand_3_cmos_0/Y" "inv_cmos_2/vdd" 30.9285
+cap "nand_cmos_0/a_7_n61#" "nand_cmos_0/B" 27.492
+cap "nand_cmos_0/B" "nand_cmos_0/a_7_n61#" 13.746
+cap "nand_cmos_0/B" "inv_cmos_3/IN" 27.492
 cap "inv_cmos_3/IN" "inv_cmos_3/vdd" 30.9285
-cap "nand_cmos_0/a_7_n61#" "nand_cmos_0/B" 13.746
-cap "nand_5_cmos_0/vdd" "nand_4_cmos_1/vdd" 536.094
+cap "inv_cmos_3/IN" "inv_cmos_3/gnd" 298.975
 cap "inv_cmos_4/vdd" "nand_4_cmos_1/a_7_0#" 319.594
-cap "inv_cmos_0/vdd" "nand_5_cmos_0/Y" 484.546
+cap "nand_4_cmos_1/vdd" "nand_5_cmos_0/vdd" 536.094
 cap "inv_cmos_4/vdd" "nand_5_cmos_0/vdd" 41.238
-cap "nand_3_cmos_1/Y" "inv_cmos_5/vdd" 319.594
-cap "nand_3_cmos_1/vdd" "nand_4_cmos_0/vdd" 206.19
-cap "inv_cmos_5/vdd" "nand_4_cmos_0/vdd" 41.238
-cap "inv_cmos_1/vdd" "nand_4_cmos_0/a_7_0#" 484.546
+cap "nand_5_cmos_0/Y" "inv_cmos_0/vdd" 484.546
 cap "inv_cmos_1/vdd" "nand_cmos_1/vdd" 41.238
-cap "inv_cmos_6/vdd" "nand_3_cmos_0/vdd" 41.238
+cap "nand_4_cmos_0/vdd" "nand_3_cmos_1/vdd" 206.19
+cap "inv_cmos_1/vdd" "nand_4_cmos_0/a_7_0#" 484.546
+cap "nand_4_cmos_0/vdd" "inv_cmos_5/vdd" 41.238
+cap "inv_cmos_5/vdd" "nand_3_cmos_1/Y" 319.594
+cap "nand_3_cmos_0/vdd" "nor_4_cmos_0/vdd" 41.238
 cap "inv_cmos_2/vdd" "nand_3_cmos_0/Y" 484.546
-cap "nand_cmos_1/Y" "inv_cmos_6/vdd" 319.594
-cap "nor_4_cmos_0/vdd" "nand_3_cmos_0/vdd" 41.238
+cap "nand_3_cmos_0/vdd" "inv_cmos_6/vdd" 41.238
+cap "inv_cmos_6/vdd" "nand_cmos_1/Y" 319.594
 cap "nand_cmos_0/Y" "inv_cmos_3/vdd" 484.546
-subcap "P2" -110.55
+subcap "m1_93_258#" -110.55
+cap "inv_cmos_4/gnd" "nand_4_cmos_1/a_7_0#" 298.976
+cap "nand_4_cmos_1/C" "nand_4_cmos_1/a_7_0#" 54.984
+cap "nand_4_cmos_1/C" "nand_4_cmos_1/a_23_n101#" 54.984
+cap "nand_4_cmos_1/B" "nand_4_cmos_1/a_7_0#" 54.984
+cap "nand_4_cmos_1/D" "nand_4_cmos_1/a_39_n101#" 54.984
+cap "nand_4_cmos_1/D" "nand_4_cmos_1/a_7_0#" 54.984
+cap "nand_4_cmos_1/B" "nand_4_cmos_1/a_7_n101#" 54.984
+cap "inv_cmos_4/vdd" "nand_4_cmos_1/a_7_0#" 195.88
 cap "nand_4_cmos_1/B" "nand_4_cmos_1/C" 41.238
-cap "nand_4_cmos_1/a_39_n101#" "nand_4_cmos_1/D" 54.984
-cap "nand_4_cmos_1/a_7_0#" "inv_cmos_4/vdd" 195.88
-cap "nand_4_cmos_1/a_7_n101#" "nand_4_cmos_1/B" 54.984
-cap "nand_4_cmos_1/a_7_0#" "nand_4_cmos_1/D" 54.984
-cap "nand_4_cmos_1/C" "nand_4_cmos_1/D" 41.238
-cap "nand_4_cmos_1/a_7_0#" "inv_cmos_4/gnd" 298.976
-cap "nand_4_cmos_1/a_23_n101#" "nand_4_cmos_1/C" 54.984
-cap "nand_4_cmos_1/a_7_0#" "nand_4_cmos_1/C" 54.984
-cap "nand_4_cmos_1/a_7_0#" "nand_4_cmos_1/B" 54.984
+cap "nand_4_cmos_1/D" "nand_4_cmos_1/C" 41.238
 subcap "m1_206_258#" -29.0331
 cap "nand_3_cmos_1/w_n6_n6#" "nand_3_cmos_1/Y" 2.84217e-14
 cap "nand_3_cmos_1/C" "nand_3_cmos_1/Y" 54.984
-cap "nand_cmos_1/B" "nand_cmos_1/a_7_n61#" 41.238
-cap "nand_3_cmos_1/B" "nand_3_cmos_1/C" 41.238
-cap "nand_3_cmos_1/C" "nand_3_cmos_1/a_23_n81#" 54.984
-cap "inv_cmos_5/vdd" "nand_3_cmos_1/Y" 195.88
-cap "nand_3_cmos_1/a_7_n81#" "nand_3_cmos_1/B" 54.984
+cap "nand_3_cmos_1/C" "nand_3_cmos_1/B" 41.238
 cap "inv_cmos_5/gnd" "nand_3_cmos_1/Y" 298.976
+cap "nand_cmos_1/B" "nand_cmos_1/a_7_n61#" 41.238
 cap "nand_3_cmos_1/B" "nand_3_cmos_1/Y" 54.984
+cap "nand_3_cmos_1/C" "nand_3_cmos_1/a_23_n81#" 54.984
 cap "nand_cmos_1/Y" "nand_cmos_1/B" 54.984
+cap "inv_cmos_5/vdd" "nand_3_cmos_1/Y" 195.88
+cap "nand_3_cmos_1/B" "nand_3_cmos_1/a_7_n81#" 54.984
+cap "inv_cmos_6/vdd" "nand_cmos_1/Y" 195.88
 cap "inv_cmos_6/gnd" "nand_cmos_1/Y" 298.976
-cap "nand_cmos_1/Y" "inv_cmos_6/vdd" 195.88
-cap "nor_4_cmos_0/Y" "nor_4_cmos_0/B" 54.984
+cap "nor_4_cmos_0/B" "nor_4_cmos_0/Y" 54.984
 cap "nor_4_cmos_0/C" "nor_4_cmos_0/D" 41.238
-cap "nor_4_cmos_0/Y" "nor_4_cmos_0/D" 54.984
-cap "nor_4_cmos_0/Y" "nor_4_cmos_0/C" 54.984
-cap "nor_4_cmos_0/B" "nor_4_cmos_0/C" 41.238
-merge "nand_4_cmos_1/D" "nand_5_cmos_0/E" -32.064 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -32 0 0 0 0 0 0 0 0 0 0
-merge "nand_5_cmos_0/E" "nand_cmos_3/B"
-merge "nand_cmos_3/B" "nand_3_cmos_2/C"
-merge "nand_3_cmos_2/C" "C0"
-merge "nand_4_cmos_1/C" "nand_5_cmos_0/D" -32.064 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -32 0 0 0 0 0 0 0 0 0 0
-merge "nand_5_cmos_0/D" "nand_cmos_3/A"
-merge "nand_cmos_3/A" "nand_3_cmos_2/B"
-merge "nand_3_cmos_2/B" "P0"
-merge "nor_3_cmos_0/Y" "inv_cmos_12/IN" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_12/IN" "m"
+cap "nor_4_cmos_0/D" "nor_4_cmos_0/Y" 54.984
+cap "nor_4_cmos_0/C" "nor_4_cmos_0/Y" 54.984
+cap "nor_4_cmos_0/C" "nor_4_cmos_0/B" 41.238
+merge "nand_4_cmos_1/D" "m1_47_265#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_3/A" "m1_160_n84#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_5_cmos_0/A" "m1_n1_118#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_2/A" "m1_n1_n84#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_6/w_0_0#" "nand_cmos_1/w_n6_n6#" -100.44 0 0 0 0 -100 -59 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_9/w_0_0#" "nand_cmos_3/w_n6_n6#" -560.455 0 0 0 0 -558 -142 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-merge "nor_3_cmos_0/A" "inv_cmos_7/OUT" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_7/OUT" "h"
-merge "nor_cmos_0/Y" "inv_cmos_13/IN" -13.5048 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_13/IN" "n"
-merge "nand_cmos_1/A" "nand_3_cmos_1/A" -45.5688 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -48 0 0 0 0 0 0 0 0 0 0
-merge "nand_3_cmos_1/A" "nand_4_cmos_1/A"
-merge "nand_4_cmos_1/A" "nand_3_cmos_0/B"
-merge "nand_3_cmos_0/B" "nand_4_cmos_0/B"
-merge "nand_4_cmos_0/B" "nand_5_cmos_0/B"
-merge "nand_5_cmos_0/B" "P2"
-merge "nand_cmos_1/B" "nand_3_cmos_0/C" -13.9392 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 -24 0 0 0 0 0 0 0 0 0 0
-merge "nand_3_cmos_0/C" "nor_3_cmos_0/C"
-merge "nor_3_cmos_0/C" "G1"
-merge "inv_cmos_11/IN" "nor_4_cmos_0/Y" -14.7684 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 -16 0 0 0 0 0 0 0 0 0 0
-merge "nor_4_cmos_0/Y" "l"
+merge "inv_cmos_7/OUT" "m1_66_n84#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_3/B" "m1_176_n77#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_cmos_0/B" "m1_300_n52#" -1.698 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_1/OUT" "m1_192_118#" 0.8292 0 0 0 0 0 0 0 0 0 0 0 0 0 0 28 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_3_cmos_0/B" "m1_238_n2#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_1/A" "m1_171_258#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_11/IN" "m1_311_416#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_1/C" "m1_125_265#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_1/B" "m1_187_265#" 2.0928 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_4_cmos_0/D" "m1_281_409#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_4_cmos_0/Y" "m1_300_416#" -6.7524 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_4/w_0_0#" "nand_4_cmos_1/w_n6_n6#" -200.88 0 0 0 0 -200 -58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_1/w_0_0#" "nand_4_cmos_0/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-merge "nand_3_cmos_1/B" "nand_4_cmos_1/B" -40.5144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 -48 0 0 0 0 0 0 0 0 0 0
-merge "nand_4_cmos_1/B" "nand_4_cmos_0/C"
-merge "nand_4_cmos_0/C" "nand_5_cmos_0/C"
-merge "nand_5_cmos_0/C" "nand_cmos_2/A"
-merge "nand_cmos_2/A" "nand_3_cmos_2/A"
-merge "nand_3_cmos_2/A" "P1"
-merge "inv_cmos_11/OUT" "C3" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_13/IN" "m1_497_n82#" -5.4888 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_5_cmos_0/B" "m1_15_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_11/OUT" "m1_330_416#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_cmos_0/Y" "m1_319_n45#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_9/IN" "nand_cmos_3/Y" -7.1868 0 0 0 0 0 0 0 0 0 0 0 0 0 0 28 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_cmos_3/Y" "m1_195_n84#"
-merge "inv_cmos_0/OUT" "nor_5_cmos_0/A" -14.7684 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 -16 0 0 0 0 0 0 0 0 0 0
-merge "nor_5_cmos_0/A" "a"
-merge "nand_cmos_0/A" "nand_3_cmos_0/A" -21.9552 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 -32 0 0 0 0 0 0 0 0 0 0
-merge "nand_3_cmos_0/A" "nand_4_cmos_0/A"
-merge "nand_4_cmos_0/A" "nand_5_cmos_0/A"
-merge "nand_5_cmos_0/A" "P3"
-merge "inv_cmos_1/OUT" "nor_5_cmos_0/B" -7.1868 0 0 0 0 0 0 0 0 0 0 0 0 0 0 28 -16 0 0 0 0 0 0 0 0 0 0
-merge "nor_5_cmos_0/B" "b"
+merge "nor_5_cmos_0/A" "m1_343_n89#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_4_cmos_1/A" "m1_n1_258#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_0/OUT" "m1_98_118#" -6.7524 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_5_cmos_0/B" "m1_359_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_7/w_0_0#" "nand_3_cmos_2/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_1/A" "m1_93_258#" -5.4888 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -8 0 0 0 0 0 0 0 0 0 0
 merge "nand_cmos_2/Y" "inv_cmos_8/IN" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_8/IN" "m1_124_n84#"
-merge "inv_cmos_2/OUT" "nor_5_cmos_0/C" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "nor_5_cmos_0/C" "c"
+merge "nor_5_cmos_0/C" "m1_375_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "nand_3_cmos_2/gnd" "nand_5_cmos_0/gnd" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_3/OUT" "nor_5_cmos_0/D" -10.9776 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 -16 0 0 0 0 0 0 0 0 0 0
-merge "nor_5_cmos_0/D" "d"
+merge "nand_5_cmos_0/C" "m1_31_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_4_cmos_0/A" "m1_233_416#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_4_cmos_0/A" "m1_109_118#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_1/B" "m1_109_265#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_2/w_0_0#" "nand_3_cmos_0/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "nor_5_cmos_0/D" "m1_391_n82#" -2.9616 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_12/IN" "m1_467_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_5_cmos_0/D" "m1_47_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_3/OUT" "m1_332_118#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_0/A" "m1_203_118#" 2.0928 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_1/IN" "nand_4_cmos_0/a_7_0#" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_4_cmos_0/a_7_0#" "m1_176_118#"
-merge "nor_5_cmos_0/E" "G3" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
-merge "nand_3_cmos_1/C" "nand_4_cmos_0/D" -35.223 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 -32 0 0 0 0 0 0 0 0 0 0
-merge "nand_4_cmos_0/D" "nor_cmos_0/B"
-merge "nor_cmos_0/B" "nand_cmos_2/B"
-merge "nand_cmos_2/B" "G0"
+merge "nor_5_cmos_0/E" "m1_407_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_5_cmos_0/E" "m1_63_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_4/IN" "nand_4_cmos_1/a_7_0#" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_4_cmos_1/a_7_0#" "m1_66_258#"
+merge "nor_3_cmos_0/Y" "m1_273_5#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "nand_cmos_0/Y" "inv_cmos_3/IN" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_3/IN" "m1_316_118#"
 merge "inv_cmos_7/IN" "nand_3_cmos_2/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_3_cmos_2/Y" "m1_50_n84#"
 merge "nand_cmos_2/w_n6_n6#" "inv_cmos_8/w_0_0#" -560.455 0 0 0 0 -558 -142 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-merge "nor_4_cmos_0/C" "inv_cmos_6/OUT" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_6/OUT" "g"
-merge "nor_4_cmos_0/D" "nand_cmos_0/B" -13.5048 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -16 0 0 0 0 0 0 0 0 0 0
-merge "nand_cmos_0/B" "G2"
-merge "nor_cmos_0/A" "inv_cmos_9/OUT" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_9/OUT" "j"
+merge "inv_cmos_6/OUT" "m1_222_258#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_10/IN" "m1_437_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_2/B" "m1_15_n77#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_2/IN" "nand_3_cmos_0/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_3_cmos_0/Y" "m1_254_118#"
-merge "nor_4_cmos_0/A" "inv_cmos_4/OUT" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_4/OUT" "e"
-merge "inv_cmos_10/OUT" "C4" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
-merge "nor_4_cmos_0/B" "inv_cmos_5/OUT" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_5/OUT" "f"
+merge "inv_cmos_9/OUT" "m1_211_n84#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_10/OUT" "m1_456_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_2/A" "m1_89_n84#" -0.4344 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_12/OUT" "m1_486_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_4_cmos_0/B" "m1_249_409#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_4_cmos_0/B" "m1_125_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_3_cmos_0/A" "m1_222_5#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_cmos_0/A" "m1_284_n45#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "nand_cmos_0/w_n6_n6#" "inv_cmos_3/w_0_0#" -560.455 0 0 0 0 -558 -142 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_6/IN" "nand_cmos_1/Y" 2.922 0 0 0 0 0 0 0 0 0 0 0 0 0 0 60 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_cmos_1/Y" "m1_206_258#"
-merge "inv_cmos_13/OUT" "C1" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_12/OUT" "C2" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_4_cmos_0/C" "m1_265_409#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_4_cmos_0/C" "m1_141_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_4_cmos_0/D" "m1_157_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_13/OUT" "m1_516_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_2/OUT" "m1_270_118#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_0/B" "m1_219_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_2/B" "m1_105_n77#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_2/C" "m1_31_n77#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_0/A" "m1_281_118#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_0/IN" "nand_5_cmos_0/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_5_cmos_0/Y" "m1_82_118#"
 merge "inv_cmos_0/w_0_0#" "nand_5_cmos_0/w_n6_n6#" -498.182 0 0 0 0 -496 -140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_5/IN" "nand_3_cmos_1/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
 merge "nand_3_cmos_1/Y" "m1_144_258#"
-merge "nor_3_cmos_0/B" "inv_cmos_8/OUT" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "inv_cmos_8/OUT" "i"
-merge "inv_cmos_10/IN" "nor_5_cmos_0/Y" -16.032 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
-merge "nor_5_cmos_0/Y" "k"
+merge "nand_4_cmos_1/B" "m1_15_265#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_5/OUT" "m1_160_258#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_cmos_0/B" "m1_297_111#" -5.4888 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_5_cmos_0/Y" "m1_426_n82#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nor_3_cmos_0/C" "m1_254_n2#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_8/OUT" "m1_140_n84#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_3_cmos_0/C" "m1_235_111#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "inv_cmos_4/OUT" "m1_82_258#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "nand_4_cmos_1/C" "m1_31_265#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_5/w_0_0#" "nand_3_cmos_1/w_n6_n6#" -200.88 0 0 0 0 -200 -58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
