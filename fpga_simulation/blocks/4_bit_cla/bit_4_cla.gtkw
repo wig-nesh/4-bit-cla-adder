@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Nov 19 18:33:50 2024
+[*]
+[dumpfile] "/home/wignesh/Desktop/sem3/vlsi/vlsi-course-project/fpga_simulation/4_bit_cla/bit_4_cla_test.vcd"
+[dumpfile_mtime] "Tue Nov 19 17:23:07 2024"
+[dumpfile_size] 28402
+[savefile] "/home/wignesh/Desktop/sem3/vlsi/vlsi-course-project/fpga_simulation/4_bit_cla/bit_4_cla.gtkw"
+[timestart] 0
+[size] 3824 1068
+[pos] 2567 751
+*-17.177935 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 224
+[signals_width] 94
+[sst_expanded] 1
+[sst_vpaned_height] 307
+@22
+bit_4_cla_test.a[3:0]
+bit_4_cla_test.b[3:0]
+@28
+bit_4_cla_test.cin
+@22
+bit_4_cla_test.sum[3:0]
+@29
+bit_4_cla_test.cout
+[pattern_trace] 1
+[pattern_trace] 0

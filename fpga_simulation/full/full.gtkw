@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Nov 19 19:35:12 2024
+[*]
+[dumpfile] "/home/wignesh/Desktop/sem3/vlsi/vlsi-course-project/fpga_simulation/full/full_test.vcd"
+[dumpfile_mtime] "Tue Nov 19 19:34:45 2024"
+[dumpfile_size] 3519
+[savefile] "/home/wignesh/Desktop/sem3/vlsi/vlsi-course-project/fpga_simulation/full/full.gtkw"
+[timestart] 0
+[size] 3824 1068
+[pos] -1 -1
+*-11.299960 6721 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 224
+[signals_width] 136
+[sst_expanded] 1
+[sst_vpaned_height] 307
+@28
+full_test.clk
+@29
+full_test.A_in[3:0]
+full_test.B_in[3:0]
+@28
+full_test.C0_in
+full_test.S_out[3:0]
+full_test.C4_out
+[pattern_trace] 1
+[pattern_trace] 0
