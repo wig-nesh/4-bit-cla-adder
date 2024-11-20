@@ -1868,5 +1868,6 @@ C745 Q1s Gnd -0.02fF
 
 
     run
-    plot v(clk)+28 v(A3)+26 v(d_ff_optimized_1/Q)+26 v(A2)+24 v(d_ff_optimized_4/Q)+24 v(A1)+22 v(d_ff_optimized_5/Q)+22 v(A0)+20 v(d_ff_optimized_0/Q)+20 v(B3)+18 v(d_ff_optimized_6/Q)+18 v(B2)+16 v(d_ff_optimized_7/Q)+16 v(B1)+14 v(d_ff_optimized_2/Q)+14 v(B0)+12 v(d_ff_optimized_3/Q)+12 v(C0)+10 v(d_ff_optimized_8/Q)+10 v(Q3s)+8 v(d_ff_optimized_12/D)+8 v(Q2s)+6 v(d_ff_optimized_11/D)+6 v(Q1s)+4 v(d_ff_optimized_10/D)+4 v(Q0s)+2 v(d_ff_optimized_9/D)+2 v(Qco) v(d_ff_optimized_13/D)
+    * plot v(clk)+28 v(A3)+26 v(d_ff_optimized_1/Q)+26 v(A2)+24 v(d_ff_optimized_4/Q)+24 v(A1)+22 v(d_ff_optimized_5/Q)+22 v(A0)+20 v(d_ff_optimized_0/Q)+20 v(B3)+18 v(d_ff_optimized_6/Q)+18 v(B2)+16 v(d_ff_optimized_7/Q)+16 v(B1)+14 v(d_ff_optimized_2/Q)+14 v(B0)+12 v(d_ff_optimized_3/Q)+12 v(C0)+10 v(d_ff_optimized_8/Q)+10 v(Q3s)+8 v(d_ff_optimized_12/D)+8 v(Q2s)+6 v(d_ff_optimized_11/D)+6 v(Q1s)+4 v(d_ff_optimized_10/D)+4 v(Q0s)+2 v(d_ff_optimized_9/D)+2 v(Qco) v(d_ff_optimized_13/D)
+    plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(Q2s)+6 v(Q1s)+4 v(Q0s)+2 v(Qco)
 .endc

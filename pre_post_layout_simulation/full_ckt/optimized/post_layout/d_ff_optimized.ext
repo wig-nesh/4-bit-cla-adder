@@ -1,4 +1,4 @@
-timestamp 1731848652
+timestamp 1732120796
 version 8.3
 tech scmos
 style TSMC0.18um(tsmc18)from:t11b
@@ -23,32 +23,32 @@ node "D" 27 41.1264 -6 48 ndc 100 50 0 0 0 0 0 0 0 0 0 0 0 0 96 56 0 0 0 0 0 0 0
 node "Q" 27 63.9996 67 73 ndif 100 50 0 0 0 0 0 0 0 0 0 0 0 0 124 70 0 0 0 0 0 0 0 0 0 0
 node "a_n6_9#" 76 1075.76 -6 9 ndc 200 100 0 0 0 0 0 0 0 0 0 0 0 0 205 118 325 170 708 362 0 0 0 0 50 40
 node "a_n5_41#" 288 563.259 -5 41 pc 0 0 0 0 0 0 0 0 0 0 172 164 0 0 192 112 0 0 292 154 0 0 0 0 50 40
-cap "a_1_9#" "gnd" 27.492
-cap "vdd" "a_n5_41#" 211.673
-cap "vdd" "gnd" 227.822
-cap "a_n6_9#" "Q" 206.19
+cap "vdd" "a_n6_9#" 310.445
+cap "a_n5_41#" "D" 222.925
+cap "a_n5_41#" "clk" 292.108
 cap "a_1_9#" "clk" 146.259
-cap "clk" "vdd" 79.0395
-cap "Q" "gnd" 115.747
-cap "a_n6_9#" "a_1_48#" 564.586
-cap "D" "a_1_48#" 206.19
-cap "a_n6_9#" "a_n5_41#" 1.512
-cap "a_n6_9#" "gnd" 416.647
-cap "D" "a_n5_41#" 222.925
-cap "m1_88_0#" "vdd" 41.238
-cap "a_1_48#" "a_n5_41#" 68.2824
-cap "a_1_48#" "gnd" 442.612
-cap "m1_n22_38#" "a_n5_41#" 41.238
-cap "a_n6_9#" "clk" 45.054
-cap "a_1_9#" "m1_32_32#" 6.48
-cap "a_n6_9#" "a_1_9#" 206.19
-cap "a_n6_9#" "vdd" 310.445
-cap "clk" "a_1_48#" 183.035
-cap "clk" "m1_n22_38#" 74.1564
-cap "clk" "a_n5_41#" 292.108
-cap "m1_88_0#" "a_n6_9#" 77.76
-cap "a_1_9#" "a_1_48#" 303.05
 cap "a_1_48#" "vdd" 192.444
+cap "Q" "a_n6_9#" 206.19
+cap "a_1_48#" "a_n6_9#" 564.586
+cap "clk" "m1_n22_38#" 74.1564
+cap "vdd" "clk" 79.0395
+cap "gnd" "a_1_9#" 27.492
+cap "clk" "a_n6_9#" 45.054
+cap "m1_32_32#" "a_1_9#" 6.48
+cap "a_1_48#" "D" 206.19
+cap "a_n5_41#" "m1_n22_38#" 41.238
+cap "a_1_48#" "clk" 183.035
+cap "vdd" "a_n5_41#" 211.673
+cap "gnd" "vdd" 227.822
+cap "vdd" "m1_88_0#" 41.238
+cap "a_n5_41#" "a_n6_9#" 1.512
+cap "a_1_9#" "a_n6_9#" 206.19
+cap "gnd" "a_n6_9#" 416.647
+cap "m1_88_0#" "a_n6_9#" 77.76
+cap "a_1_48#" "a_n5_41#" 68.2824
+cap "a_1_48#" "a_1_9#" 303.05
+cap "gnd" "Q" 115.747
+cap "gnd" "a_1_48#" 442.612
 fet nfet 57 9 58 10 40 44 "Gnd!" "clk" 4 0 "a_1_9#" 20 0 "a_1_48#" 20 0
 fet nfet -1 9 0 10 40 44 "Gnd!" "clk" 4 0 "a_n6_9#" 20 0 "a_1_9#" 20 0
 fet nfet -1 48 0 49 40 44 "Gnd!" "a_n5_41#" 4 0 "D" 20 0 "a_1_48#" 20 0
@@ -60,57 +60,57 @@ subcap "a_1_48#" -74.4603
 subcap "Q" -106.646
 subcap "a_n6_9#" -964.561
 subcap "a_n5_41#" -224.126
-cap "inv_cmos_0/OUT" "inv_cmos_1/IN" 3.352
-cap "inv_cmos_0/w_0_0#" "inv_cmos_0/IN" 106.973
-cap "inv_cmos_0/OUT" "inv_cmos_1/w_0_0#" 9.698
-cap "inv_cmos_0/IN" "inv_cmos_2/OUT" 187.84
-cap "inv_cmos_0/OUT" "inv_cmos_1/OUT" 57.8884
 cap "inv_cmos_1/IN" "inv_cmos_2/OUT" 49.64
+cap "inv_cmos_0/IN" "inv_cmos_1/IN" 5.48
+cap "a_n6_9#" "inv_cmos_0/gnd" 53.6544
+cap "inv_cmos_0/IN" "inv_cmos_2/OUT" 187.84
+cap "inv_cmos_0/OUT" "inv_cmos_0/gnd" 27.492
+cap "inv_cmos_0/vdd" "inv_cmos_1/OUT" 531.97
+cap "inv_cmos_0/vdd" "inv_cmos_1/w_0_0#" 86.8431
+cap "a_n6_9#" "inv_cmos_1/IN" 1.676
+cap "inv_cmos_0/OUT" "inv_cmos_1/IN" 3.352
+cap "inv_cmos_0/OUT" "inv_cmos_0/IN" 17.1699
+cap "inv_cmos_0/OUT" "inv_cmos_2/OUT" 54.5364
+cap "inv_cmos_0/vdd" "inv_cmos_1/IN" 68.73
+cap "inv_cmos_0/vdd" "inv_cmos_2/OUT" 566.335
+cap "inv_cmos_0/vdd" "inv_cmos_0/IN" 128.105
+cap "inv_cmos_0/IN" "inv_cmos_0/w_0_0#" 106.973
+cap "inv_cmos_0/vdd" "inv_cmos_0/OUT" 125.568
+cap "inv_cmos_1/w_0_0#" "inv_cmos_1/OUT" -1.42109e-14
+cap "inv_cmos_0/OUT" "inv_cmos_0/w_0_0#" 66.3616
+cap "inv_cmos_1/OUT" "inv_cmos_0/gnd" 233.682
+cap "inv_cmos_1/IN" "inv_cmos_1/OUT" 1.512
+cap "inv_cmos_0/IN" "inv_cmos_1/w_0_0#" 267.101
+cap "inv_cmos_1/IN" "inv_cmos_1/w_0_0#" 30.6747
 cap "inv_cmos_1/w_0_0#" "inv_cmos_2/OUT" 11.1
 cap "inv_cmos_1/OUT" "inv_cmos_2/OUT" 109.774
-cap "inv_cmos_0/gnd" "a_n6_9#" 53.6544
-cap "inv_cmos_0/gnd" "inv_cmos_1/IN" 67.6728
-cap "inv_cmos_0/w_0_0#" "inv_cmos_0/OUT" 66.3616
-cap "inv_cmos_0/gnd" "inv_cmos_1/OUT" 233.682
-cap "inv_cmos_0/OUT" "inv_cmos_2/OUT" 54.5364
-cap "inv_cmos_0/OUT" "inv_cmos_0/gnd" 27.492
-cap "inv_cmos_0/gnd" "inv_cmos_2/OUT" -1.06581e-14
-cap "inv_cmos_0/IN" "inv_cmos_0/vdd" 128.105
-cap "inv_cmos_0/vdd" "inv_cmos_1/IN" 68.73
-cap "inv_cmos_0/vdd" "inv_cmos_1/w_0_0#" 86.8431
-cap "inv_cmos_0/vdd" "inv_cmos_1/OUT" 531.97
-cap "a_n6_9#" "inv_cmos_1/IN" 1.676
-cap "inv_cmos_0/IN" "inv_cmos_1/IN" 5.48
-cap "inv_cmos_0/IN" "inv_cmos_1/w_0_0#" 267.101
-cap "inv_cmos_0/OUT" "inv_cmos_0/vdd" 125.568
-cap "a_n6_9#" "inv_cmos_1/OUT" 1.676
 cap "inv_cmos_0/IN" "inv_cmos_1/OUT" 91.5992
-cap "inv_cmos_1/w_0_0#" "inv_cmos_1/IN" 30.6747
-cap "inv_cmos_1/OUT" "inv_cmos_1/IN" 1.512
-cap "inv_cmos_1/w_0_0#" "inv_cmos_1/OUT" -1.42109e-14
-cap "inv_cmos_0/vdd" "inv_cmos_2/OUT" 566.335
-cap "inv_cmos_0/IN" "inv_cmos_0/OUT" 17.1699
-cap "inv_cmos_4/w_0_0#" "inv_cmos_4/gnd" 32.4
-cap "inv_cmos_3/IN" "inv_cmos_4/gnd" -1.42109e-14
-cap "inv_cmos_4/IN" "inv_cmos_4/gnd" 222.685
-cap "inv_cmos_4/OUT" "inv_cmos_4/gnd" 336.502
-cap "inv_cmos_4/w_0_0#" "inv_cmos_4/vdd" 132.644
-cap "inv_cmos_3/IN" "inv_cmos_4/vdd" 107.309
-cap "inv_cmos_4/vdd" "inv_cmos_4/IN" 548.465
-cap "inv_cmos_3/IN" "inv_cmos_4/w_0_0#" 39.444
-cap "inv_cmos_4/vdd" "inv_cmos_4/OUT" 679.052
+cap "inv_cmos_0/OUT" "inv_cmos_1/w_0_0#" 9.698
+cap "inv_cmos_1/IN" "inv_cmos_0/gnd" 67.6728
+cap "a_n6_9#" "inv_cmos_1/OUT" 1.676
+cap "inv_cmos_0/gnd" "inv_cmos_2/OUT" -1.06581e-14
+cap "inv_cmos_0/OUT" "inv_cmos_1/OUT" 57.8884
+cap "inv_cmos_4/IN" "inv_cmos_4/vdd" 548.465
+cap "inv_cmos_4/gnd" "inv_cmos_3/IN" -1.42109e-14
+cap "inv_cmos_4/OUT" "inv_cmos_4/vdd" 679.052
+cap "inv_cmos_4/vdd" "inv_cmos_4/w_0_0#" 132.644
 cap "inv_cmos_3/IN" "inv_cmos_4/IN" 2.896
+cap "inv_cmos_3/IN" "inv_cmos_4/vdd" 107.309
+cap "inv_cmos_4/gnd" "inv_cmos_4/IN" 222.685
+cap "inv_cmos_3/IN" "inv_cmos_4/w_0_0#" 39.444
+cap "inv_cmos_4/gnd" "inv_cmos_4/w_0_0#" 32.4
+cap "inv_cmos_4/gnd" "inv_cmos_4/OUT" 336.502
 subcap "vdd" -455.031
-cap "inv_cmos_2/w_0_0#" "inv_cmos_0/vdd" 39.0582
-cap "inv_cmos_0/vdd" "inv_cmos_0/w_0_0#" 17.4486
-cap "inv_cmos_0/OUT" "inv_cmos_0/vdd" 16.4952
+cap "inv_cmos_2/OUT" "inv_cmos_0/vdd" 16.4952
+cap "inv_cmos_0/w_0_0#" "inv_cmos_0/vdd" 17.4486
 cap "inv_cmos_1/OUT" "inv_cmos_0/vdd" 16.4952
-cap "inv_cmos_0/vdd" "inv_cmos_2/OUT" 16.4952
-cap "inv_cmos_4/gnd" "inv_cmos_4/OUT" 11.7823
-cap "a_n6_9#" "inv_cmos_4/gnd" 90.2304
-cap "a_n6_9#" "inv_cmos_3/IN" 0.756
+cap "inv_cmos_0/OUT" "inv_cmos_0/vdd" 16.4952
+cap "inv_cmos_0/vdd" "inv_cmos_2/w_0_0#" 39.0582
 cap "a_n6_9#" "inv_cmos_4/IN" 0.756
-cap "inv_cmos_4/gnd" "inv_cmos_3/OUT" 16.4952
+cap "a_n6_9#" "inv_cmos_4/gnd" 90.2304
+cap "inv_cmos_4/OUT" "inv_cmos_4/gnd" 11.7823
+cap "a_n6_9#" "inv_cmos_3/IN" 0.756
+cap "inv_cmos_3/OUT" "inv_cmos_4/gnd" 16.4952
 merge "inv_cmos_3/OUT" "inv_cmos_4/IN" -37.1184 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 -32 0 0 0 0 0 0 0 0 0 0
 merge "inv_cmos_4/IN" "m1_91_66#"
 merge "m1_91_66#" "m1_92_60#"
