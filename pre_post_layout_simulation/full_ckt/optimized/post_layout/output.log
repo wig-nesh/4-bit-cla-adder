@@ -1,0 +1,309 @@
+
+No compatibility mode selected!
+
+
+Circuit: *include ../../../tech_files/TSMC_180nm.txt
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: vinc0: no DC value, transient time 0 value used
+Warning: vinb0: no DC value, transient time 0 value used
+Warning: vinb1: no DC value, transient time 0 value used
+Warning: vinb2: no DC value, transient time 0 value used
+Warning: vinb3: no DC value, transient time 0 value used
+Warning: vina0: no DC value, transient time 0 value used
+Warning: vina1: no DC value, transient time 0 value used
+Warning: vina2: no DC value, transient time 0 value used
+Warning: vina3: no DC value, transient time 0 value used
+Warning: singular matrix:  check nodes clk and clk
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Warning: singular matrix:  check nodes clk and clk
+
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   5.6234E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   8.6596E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   9.6466E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   9.9105E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   9.9775E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   9.9944E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   9.9986E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Further gmin increment
+Trying gmin =   9.9996E-03 Warning: singular matrix:  check nodes clk and clk
+
+Warning: Last gmin step failed
+Warning: singular matrix:  check nodes clk and clk
+
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% Warning: singular matrix:  check nodes clk and clk
+
+
+Trying gmin =   1.0000E-02 Note: One successful gmin step
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: One successful source step
+Supplies reduced to   0.1000% Warning: singular matrix:  check nodes clk and clk
+
+Supplies reduced to   0.0000% Warning: singular matrix:  check nodes clk and clk
+
+Warning: source stepping failed
+Note: Transient op started
+Note: Transient op finished successfully
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+a3                                           0
+a2                                           0
+a1                                           0
+a0                                           0
+b3                                           0
+b2                                           0
+b1                                           0
+b0                                           0
+c0                                           0
+d_ff_optimized_10/inv_cmos_4/in     3.31326e-17
+d_ff_optimized_10/inv_cmos_3/in     1.24354e-17
+vdd                               -3.24241e-18
+q1s                                3.91388e-18
+d_ff_optimized_10/inv_cmos_0/out    -2.60706e-17
+clk                               -2.15878e-18
+xd_ff_optimized_10.inv_cmos_2/in    -1.47376e-17
+d_ff_optimized_10/inv_cmos_1/in      2.9075e-18
+xd_ff_optimized_10.inv_cmos_2/out    -2.20092e-17
+d_ff_optimized_10/d                6.68097e-17
+d_ff_optimized_11/inv_cmos_4/in      1.9839e-17
+d_ff_optimized_11/inv_cmos_3/in    -3.71407e-17
+q2s                                6.14407e-17
+d_ff_optimized_11/inv_cmos_0/out     7.44422e-17
+xd_ff_optimized_11.inv_cmos_2/in    -9.53311e-18
+d_ff_optimized_11/inv_cmos_1/in    -4.38626e-17
+xd_ff_optimized_11.inv_cmos_2/out     3.13945e-17
+d_ff_optimized_11/d                5.23083e-17
+d_ff_optimized_12/inv_cmos_4/in    -1.58357e-17
+d_ff_optimized_12/inv_cmos_3/in     2.11152e-17
+q3s                               -3.82183e-17
+d_ff_optimized_12/inv_cmos_0/out    -7.98924e-17
+xd_ff_optimized_12.inv_cmos_2/in     2.03611e-17
+d_ff_optimized_12/inv_cmos_1/in     4.14106e-17
+xd_ff_optimized_12.inv_cmos_2/out     3.36566e-17
+d_ff_optimized_12/d                6.05632e-17
+d_ff_optimized_13/inv_cmos_4/in    -2.63354e-17
+d_ff_optimized_13/inv_cmos_3/in    -1.99897e-17
+qco                               -3.55399e-17
+d_ff_optimized_13/inv_cmos_0/out    -1.92949e-17
+xd_ff_optimized_13.inv_cmos_2/in    -1.25569e-17
+d_ff_optimized_13/inv_cmos_1/in     3.46712e-17
+xd_ff_optimized_13.inv_cmos_2/out    -4.15411e-17
+d_ff_optimized_13/d               -7.51071e-18
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/d     2.89186e-17
+cla_gen_cmos_unrouted_0/nand_cmos_0/y    -2.98401e-17
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/a    -3.49066e-17
+cla_gen_cmos_unrouted_0/inv_cmos_4/in       4.358e-17
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/c     2.81059e-17
+cla_gen_cmos_unrouted_0/nand_cmos_1/y    -4.36453e-17
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/b    -1.05322e-16
+cla_gen_cmos_unrouted_0/inv_cmos_5/in    -2.77703e-17
+cla_gen_cmos_unrouted_0/nor_3_cmos_0/a     9.36149e-17
+cla_gen_cmos_unrouted_0/inv_cmos_7/in     1.70636e-17
+cla_gen_cmos_unrouted_0/nor_3_cmos_0/y    -6.65384e-17
+pg_gen_optimized_unrouted_0/g1    -1.52009e-17
+cla_gen_cmos_unrouted_0/nor_3_cmos_0/b     1.30725e-16
+cla_gen_cmos_unrouted_0/nand_cmos_2/y    -8.67779e-18
+cla_gen_cmos_unrouted_0/nor_cmos_0/a      1.6109e-17
+cla_gen_cmos_unrouted_0/nand_cmos_3/y     -5.4798e-17
+cla_gen_cmos_unrouted_0/inv_cmos_2/in     -3.3917e-17
+pg_gen_optimized_unrouted_0/p3     2.62781e-17
+pg_gen_optimized_unrouted_0/p2     1.10264e-17
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/y     9.42981e-18
+pg_gen_optimized_unrouted_0/g2    -1.33481e-16
+pg_gen_optimized_unrouted_0/g0     1.29515e-16
+pg_gen_optimized_unrouted_0/p1    -4.03594e-18
+d_ff_optimized_8/q                 2.73117e-17
+pg_gen_optimized_unrouted_0/p0     7.10231e-17
+sum_gen_optimized_unrouted_0/c3     1.15146e-16
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/y     1.14126e-18
+cla_gen_cmos_unrouted_0/nor_cmos_0/y     1.23178e-17
+cla_gen_cmos_unrouted_0/inv_cmos_1/in     4.16721e-17
+sum_gen_optimized_unrouted_0/c2    -7.60447e-17
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/a     6.33042e-17
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/c    -7.00961e-18
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/b     3.88462e-17
+pg_gen_optimized_unrouted_0/g3     1.98311e-17
+sum_gen_optimized_unrouted_0/c1    -3.27591e-17
+cla_gen_cmos_unrouted_0/inv_cmos_0/in      4.4685e-17
+d_ff_optimized_0/inv_cmos_4/in     2.77403e-17
+d_ff_optimized_0/inv_cmos_3/in     2.09885e-17
+d_ff_optimized_0/q                -2.55608e-17
+d_ff_optimized_0/inv_cmos_0/out    -1.61254e-17
+xd_ff_optimized_0.inv_cmos_2/in     5.56112e-17
+d_ff_optimized_0/inv_cmos_1/in     3.10245e-17
+xd_ff_optimized_0.inv_cmos_2/out     2.86344e-17
+d_ff_optimized_1/inv_cmos_4/in     7.30289e-17
+d_ff_optimized_1/inv_cmos_3/in     -7.0239e-18
+d_ff_optimized_1/q                -3.53853e-18
+d_ff_optimized_1/inv_cmos_0/out     1.59023e-16
+xd_ff_optimized_1.inv_cmos_2/in    -5.11874e-17
+d_ff_optimized_1/inv_cmos_1/in     2.18947e-17
+xd_ff_optimized_1.inv_cmos_2/out    -1.30386e-17
+d_ff_optimized_2/inv_cmos_4/in    -4.50312e-18
+d_ff_optimized_2/inv_cmos_3/in    -4.60185e-17
+d_ff_optimized_2/q                -1.52117e-17
+d_ff_optimized_2/inv_cmos_0/out     1.68978e-17
+xd_ff_optimized_2.inv_cmos_2/in    -1.67289e-17
+d_ff_optimized_2/inv_cmos_1/in    -2.09532e-17
+xd_ff_optimized_2.inv_cmos_2/out     4.68436e-17
+d_ff_optimized_3/inv_cmos_4/in    -5.35727e-17
+d_ff_optimized_3/inv_cmos_3/in    -3.79272e-17
+d_ff_optimized_3/q                -1.01339e-16
+d_ff_optimized_3/inv_cmos_0/out    -7.37607e-17
+xd_ff_optimized_3.inv_cmos_2/in    -2.22328e-17
+d_ff_optimized_3/inv_cmos_1/in    -5.15571e-17
+xd_ff_optimized_3.inv_cmos_2/out     6.15109e-18
+d_ff_optimized_4/inv_cmos_4/in     2.05762e-17
+d_ff_optimized_4/inv_cmos_3/in     1.97166e-17
+d_ff_optimized_4/q                -1.42845e-17
+d_ff_optimized_4/inv_cmos_0/out     6.71349e-17
+xd_ff_optimized_4.inv_cmos_2/in     1.85955e-17
+d_ff_optimized_4/inv_cmos_1/in     -8.3922e-18
+xd_ff_optimized_4.inv_cmos_2/out     4.32374e-17
+pg_gen_optimized_unrouted_0/nand_cmos_3/y     5.32649e-17
+d_ff_optimized_7/q                -2.75425e-17
+pg_gen_optimized_unrouted_0/nand_cmos_1/y     3.54178e-17
+d_ff_optimized_6/q                 2.10669e-17
+pg_gen_optimized_unrouted_0/nand_cmos_0/y      5.0649e-17
+pg_gen_optimized_unrouted_0/nand_cmos_2/y    -4.60033e-17
+d_ff_optimized_5/q                -1.20556e-18
+pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/out    -1.22886e-17
+pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/out    -4.44642e-17
+pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/out    -5.50918e-18
+pg_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/out    -6.63129e-17
+d_ff_optimized_5/inv_cmos_4/in     -8.8779e-19
+d_ff_optimized_5/inv_cmos_3/in    -4.30465e-17
+d_ff_optimized_5/inv_cmos_0/out     6.15777e-17
+xd_ff_optimized_5.inv_cmos_2/in     1.04246e-17
+d_ff_optimized_5/inv_cmos_1/in     7.05825e-17
+xd_ff_optimized_5.inv_cmos_2/out     3.06129e-17
+d_ff_optimized_6/inv_cmos_4/in     -1.9206e-17
+d_ff_optimized_6/inv_cmos_3/in     4.39014e-17
+d_ff_optimized_6/inv_cmos_0/out     2.20352e-19
+xd_ff_optimized_6.inv_cmos_2/in    -2.02492e-17
+d_ff_optimized_6/inv_cmos_1/in    -1.51257e-17
+xd_ff_optimized_6.inv_cmos_2/out     4.52796e-17
+d_ff_optimized_7/inv_cmos_4/in    -2.94138e-17
+d_ff_optimized_7/inv_cmos_3/in    -3.39444e-17
+d_ff_optimized_7/inv_cmos_0/out    -2.34513e-17
+xd_ff_optimized_7.inv_cmos_2/in    -3.71006e-17
+d_ff_optimized_7/inv_cmos_1/in    -2.44635e-17
+xd_ff_optimized_7.inv_cmos_2/out    -4.69413e-18
+sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/out    -9.83279e-18
+sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/out     1.46089e-16
+sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/out     4.94879e-17
+d_ff_optimized_9/d                -8.31855e-17
+sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/out      3.2857e-17
+d_ff_optimized_8/inv_cmos_4/in     1.17338e-16
+d_ff_optimized_8/inv_cmos_3/in     1.35869e-16
+d_ff_optimized_8/inv_cmos_0/out     7.48545e-17
+xd_ff_optimized_8.inv_cmos_2/in     -2.4937e-17
+d_ff_optimized_8/inv_cmos_1/in     1.72908e-16
+xd_ff_optimized_8.inv_cmos_2/out    -3.87036e-17
+d_ff_optimized_9/inv_cmos_4/in     5.81449e-18
+d_ff_optimized_9/inv_cmos_3/in     8.10614e-18
+q0s                                3.53637e-18
+d_ff_optimized_9/inv_cmos_0/out    -1.54188e-17
+xd_ff_optimized_9.inv_cmos_2/in     4.71079e-17
+d_ff_optimized_9/inv_cmos_1/in    -2.72839e-17
+xd_ff_optimized_9.inv_cmos_2/out     3.24505e-17
+s1out                              7.82221e-17
+cout                               1.33039e-17
+s3out                             -8.58648e-17
+s0out                              1.53464e-17
+s2out                              4.57414e-18
+vinc0#branch                       8.29773e-24
+vinb0#branch                       1.49277e-24
+vinb1#branch                       6.96417e-25
+vinb2#branch                      -8.67555e-24
+vinb3#branch                      -2.22812e-24
+vina0#branch                      -2.61451e-24
+vina1#branch                      -6.82232e-24
+vina2#branch                       -2.5384e-24
+vina3#branch                       -4.5515e-25
+
+
+No. of Data Rows : 86
+ERROR: (internal)  This operation is not defined for display type PrinterOnly.
+Can't open viewport for graphics.
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

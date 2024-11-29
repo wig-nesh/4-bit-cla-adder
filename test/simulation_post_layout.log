@@ -1,0 +1,260 @@
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosn
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Ps = 0 is less than W.
+
+Checking parameters for BSIM 3.2 model cmosp
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: vinc0: no DC value, transient time 0 value used
+Warning: vinb0: no DC value, transient time 0 value used
+Warning: vinb1: no DC value, transient time 0 value used
+Warning: vinb2: no DC value, transient time 0 value used
+Warning: vinb3: no DC value, transient time 0 value used
+Warning: vina0: no DC value, transient time 0 value used
+Warning: vina1: no DC value, transient time 0 value used
+Warning: vina2: no DC value, transient time 0 value used
+Warning: vina3: no DC value, transient time 0 value used
+Warning: vinclk: no DC value, transient time 0 value used
+******
+** ngspice-36 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon Mar 11 21:44:53 UTC 2024
+******
+
+No compatibility mode selected!
+
+
+Circuit: *include ../../../tech_files/TSMC_180nm.txt
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        1.8
+clk                                          0
+a3                                           0
+a2                                           0
+a1                                           0
+a0                                           0
+b3                                           0
+b2                                           0
+b1                                           0
+b0                                           0
+c0                                           0
+d_ff_optimized_10/inv_cmos_4/in             1.8
+d_ff_optimized_10/inv_cmos_3/in     3.72169e-08
+q1s                                3.72169e-08
+d_ff_optimized_10/inv_cmos_0/out             1.8
+xd_ff_optimized_10.inv_cmos_2/in             1.8
+d_ff_optimized_10/inv_cmos_1/in       0.0579216
+xd_ff_optimized_10.inv_cmos_2/out     3.89633e-08
+d_ff_optimized_10/d                  0.0579216
+d_ff_optimized_11/inv_cmos_4/in     0.000463081
+d_ff_optimized_11/inv_cmos_3/in         1.41512
+q2s                                        1.8
+d_ff_optimized_11/inv_cmos_0/out             1.8
+xd_ff_optimized_11.inv_cmos_2/in             1.8
+d_ff_optimized_11/inv_cmos_1/in       0.0579217
+xd_ff_optimized_11.inv_cmos_2/out     4.38154e-08
+d_ff_optimized_11/d                  0.0579217
+d_ff_optimized_12/inv_cmos_4/in             1.8
+d_ff_optimized_12/inv_cmos_3/in     4.92579e-08
+q3s                                4.32374e-08
+d_ff_optimized_12/inv_cmos_0/out             1.8
+xd_ff_optimized_12.inv_cmos_2/in     0.000165569
+d_ff_optimized_12/inv_cmos_1/in         1.46056
+xd_ff_optimized_12.inv_cmos_2/out             1.8
+d_ff_optimized_12/d                        1.8
+d_ff_optimized_13/inv_cmos_4/in             1.8
+d_ff_optimized_13/inv_cmos_3/in     3.72169e-08
+qco                                3.72169e-08
+d_ff_optimized_13/inv_cmos_0/out             1.8
+xd_ff_optimized_13.inv_cmos_2/in             1.8
+d_ff_optimized_13/inv_cmos_1/in     4.90271e-08
+xd_ff_optimized_13.inv_cmos_2/out     3.72169e-08
+d_ff_optimized_13/d                4.90271e-08
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/d      1.8776e-08
+cla_gen_cmos_unrouted_0/nand_cmos_0/y             1.8
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/a     1.47199e-08
+cla_gen_cmos_unrouted_0/inv_cmos_4/in             1.8
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/c      1.8776e-08
+cla_gen_cmos_unrouted_0/nand_cmos_1/y             1.8
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/b     1.61523e-08
+cla_gen_cmos_unrouted_0/inv_cmos_5/in             1.8
+cla_gen_cmos_unrouted_0/nor_3_cmos_0/a     1.61523e-08
+cla_gen_cmos_unrouted_0/inv_cmos_7/in             1.8
+cla_gen_cmos_unrouted_0/nor_3_cmos_0/y             1.8
+pg_gen_optimized_unrouted_0/g1     1.88214e-08
+cla_gen_cmos_unrouted_0/nor_3_cmos_0/b     1.86722e-08
+cla_gen_cmos_unrouted_0/nand_cmos_2/y             1.8
+cla_gen_cmos_unrouted_0/nor_cmos_0/a     1.86722e-08
+cla_gen_cmos_unrouted_0/nand_cmos_3/y             1.8
+cla_gen_cmos_unrouted_0/inv_cmos_2/in             1.8
+pg_gen_optimized_unrouted_0/p3             1.8
+pg_gen_optimized_unrouted_0/p2        0.314253
+cla_gen_cmos_unrouted_0/nor_4_cmos_0/y             1.8
+pg_gen_optimized_unrouted_0/g2     1.88214e-08
+pg_gen_optimized_unrouted_0/g0     1.94181e-08
+pg_gen_optimized_unrouted_0/p1        0.314253
+d_ff_optimized_8/q                 3.73047e-08
+pg_gen_optimized_unrouted_0/p0             1.8
+sum_gen_optimized_unrouted_0/c3     4.90271e-08
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/y             1.8
+cla_gen_cmos_unrouted_0/nor_cmos_0/y             1.8
+cla_gen_cmos_unrouted_0/inv_cmos_1/in             1.8
+sum_gen_optimized_unrouted_0/c2     4.82202e-08
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/a      1.4226e-08
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/c     1.67032e-08
+cla_gen_cmos_unrouted_0/nor_5_cmos_0/b     1.52207e-08
+pg_gen_optimized_unrouted_0/g3     1.88214e-08
+sum_gen_optimized_unrouted_0/c1      5.0842e-08
+cla_gen_cmos_unrouted_0/inv_cmos_0/in             1.8
+d_ff_optimized_0/inv_cmos_4/in             1.8
+d_ff_optimized_0/inv_cmos_3/in     3.84876e-08
+d_ff_optimized_0/q                 3.84876e-08
+d_ff_optimized_0/inv_cmos_0/out             1.8
+xd_ff_optimized_0.inv_cmos_2/in             1.8
+d_ff_optimized_0/inv_cmos_1/in     2.94571e-15
+xd_ff_optimized_0.inv_cmos_2/out     3.84876e-08
+d_ff_optimized_1/inv_cmos_4/in             1.8
+d_ff_optimized_1/inv_cmos_3/in     3.84876e-08
+d_ff_optimized_1/q                 3.84876e-08
+d_ff_optimized_1/inv_cmos_0/out             1.8
+xd_ff_optimized_1.inv_cmos_2/in             1.8
+d_ff_optimized_1/inv_cmos_1/in     2.94571e-15
+xd_ff_optimized_1.inv_cmos_2/out     3.84876e-08
+d_ff_optimized_2/inv_cmos_4/in             1.8
+d_ff_optimized_2/inv_cmos_3/in     3.95119e-08
+d_ff_optimized_2/q                 3.95119e-08
+d_ff_optimized_2/inv_cmos_0/out             1.8
+xd_ff_optimized_2.inv_cmos_2/in             1.8
+d_ff_optimized_2/inv_cmos_1/in     2.94571e-15
+xd_ff_optimized_2.inv_cmos_2/out     3.84876e-08
+d_ff_optimized_3/inv_cmos_4/in     0.000472751
+d_ff_optimized_3/inv_cmos_3/in         1.41532
+d_ff_optimized_3/q                         1.8
+d_ff_optimized_3/inv_cmos_0/out             1.8
+xd_ff_optimized_3.inv_cmos_2/in             1.8
+d_ff_optimized_3/inv_cmos_1/in     3.31458e-15
+xd_ff_optimized_3.inv_cmos_2/out     4.34641e-08
+d_ff_optimized_4/inv_cmos_4/in             1.8
+d_ff_optimized_4/inv_cmos_3/in     3.84876e-08
+d_ff_optimized_4/q                 3.84876e-08
+d_ff_optimized_4/inv_cmos_0/out             1.8
+xd_ff_optimized_4.inv_cmos_2/in             1.8
+d_ff_optimized_4/inv_cmos_1/in     2.94571e-15
+xd_ff_optimized_4.inv_cmos_2/out     3.84876e-08
+pg_gen_optimized_unrouted_0/nand_cmos_3/y             1.8
+d_ff_optimized_7/q                 3.82975e-08
+pg_gen_optimized_unrouted_0/nand_cmos_1/y             1.8
+d_ff_optimized_6/q                         1.8
+pg_gen_optimized_unrouted_0/nand_cmos_0/y             1.8
+pg_gen_optimized_unrouted_0/nand_cmos_2/y             1.8
+d_ff_optimized_5/q                 3.73047e-08
+pg_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/out     4.33922e-08
+pg_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/out             1.8
+pg_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/out             1.8
+pg_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/out     4.33922e-08
+d_ff_optimized_5/inv_cmos_4/in             1.8
+d_ff_optimized_5/inv_cmos_3/in     3.73047e-08
+d_ff_optimized_5/inv_cmos_0/out             1.8
+xd_ff_optimized_5.inv_cmos_2/in             1.8
+d_ff_optimized_5/inv_cmos_1/in     2.94037e-15
+xd_ff_optimized_5.inv_cmos_2/out     3.73047e-08
+d_ff_optimized_6/inv_cmos_4/in     0.000451016
+d_ff_optimized_6/inv_cmos_3/in          1.4159
+d_ff_optimized_6/inv_cmos_0/out             1.8
+xd_ff_optimized_6.inv_cmos_2/in             1.8
+d_ff_optimized_6/inv_cmos_1/in     3.36306e-15
+xd_ff_optimized_6.inv_cmos_2/out     4.26737e-08
+d_ff_optimized_7/inv_cmos_4/in             1.8
+d_ff_optimized_7/inv_cmos_3/in     3.82975e-08
+d_ff_optimized_7/inv_cmos_0/out             1.8
+xd_ff_optimized_7.inv_cmos_2/in             1.8
+d_ff_optimized_7/inv_cmos_1/in     2.94037e-15
+xd_ff_optimized_7.inv_cmos_2/out     3.73047e-08
+sum_gen_optimized_unrouted_0/xor_optimized_0/inv_cmos_0/out         1.79996
+sum_gen_optimized_unrouted_0/xor_optimized_1/inv_cmos_0/out         1.79996
+sum_gen_optimized_unrouted_0/xor_optimized_2/inv_cmos_0/out     4.33922e-08
+d_ff_optimized_9/d                         1.8
+sum_gen_optimized_unrouted_0/xor_optimized_3/inv_cmos_0/out     4.33922e-08
+d_ff_optimized_8/inv_cmos_4/in             1.8
+d_ff_optimized_8/inv_cmos_3/in     3.73047e-08
+d_ff_optimized_8/inv_cmos_0/out             1.8
+xd_ff_optimized_8.inv_cmos_2/in             1.8
+d_ff_optimized_8/inv_cmos_1/in     2.94037e-15
+xd_ff_optimized_8.inv_cmos_2/out     3.73047e-08
+d_ff_optimized_9/inv_cmos_4/in             1.8
+d_ff_optimized_9/inv_cmos_3/in       5.064e-08
+q0s                                4.39724e-08
+d_ff_optimized_9/inv_cmos_0/out             1.8
+xd_ff_optimized_9.inv_cmos_2/in     0.000150303
+d_ff_optimized_9/inv_cmos_1/in         1.46447
+xd_ff_optimized_9.inv_cmos_2/out             1.8
+s1out                                      1.8
+cout                                       1.8
+s3out                                      1.8
+s0out                                      1.8
+s2out                              2.18975e-08
+vinc0#branch                       8.21961e-18
+vinb0#branch                        8.6714e-18
+vinb1#branch                       7.67855e-18
+vinb2#branch                       8.21961e-18
+vinb3#branch                       9.40259e-18
+vina0#branch                       7.67855e-18
+vina1#branch                       8.21961e-18
+vina2#branch                       7.67855e-18
+vina3#branch                       7.67855e-18
+vinclk#branch                                0
+vdd#branch                        -3.99526e-06
+
+ Reference value :  2.31238e-09 Reference value :  5.56900e-09 Reference value :  8.00030e-09 Reference value :  1.00432e-08 Reference value :  1.39970e-08 Reference value :  1.61984e-08 Reference value :  1.86665e-08 Reference value :  2.02898e-08 Reference value :  2.22206e-08 Reference value :  2.72085e-08 Reference value :  3.20020e-08
+Interrupted once . . .
+Warning: clearing control structures
+
+Interrupted again (ouch)
+Warning: clearing control structures
+
+Interrupted again (ouch)
+
+Killing, since 3 interrupts have been requested
+
+
+ERROR: fatal error in ngspice, exit(1)
+
+No. of Data Rows : 557
