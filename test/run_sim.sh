@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Set variables
 NGSPICE_CMD="ngspice"
 SIM_DIR="../pre_post_layout_simulation/full_ckt/optimized/post_layout"
 CIRCUIT_FILE="full_optimized_load_post.cir"
