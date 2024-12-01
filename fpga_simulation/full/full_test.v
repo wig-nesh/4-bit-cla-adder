@@ -25,8 +25,8 @@ module full_test;
 
     initial begin
         A_in = 0; B_in = 0; C0_in = 0;
-        #3 A_in = 4'b1010; B_in = 4'b0111; C0_in = 1;
-        // #3 A_in = 4'b1010; B_in = 4'b0111; C0_in = 1;
+        #3 A_in = 4'b0100; B_in = 4'b0100; C0_in = 1;
+        // #3 A_in = 4'b0100; B_in = 4'b0100; C0_in = 1;
         // #10 A_in = 4'b1100; B_in = 4'b0011; C0_in = 0;
         // #10 A_in = 4'b1111; B_in = 4'b1111; C0_in = 1;
         #20 $finish;

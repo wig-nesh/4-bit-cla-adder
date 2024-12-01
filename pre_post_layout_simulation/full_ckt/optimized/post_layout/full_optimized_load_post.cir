@@ -7,14 +7,14 @@
 VDD vdd gnd SUPPLY
 vinClk clk gnd PULSE(0 SUPPLY 2ns 1ps 1ps 2ns 4ns)
 
-vinA3 A3 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns 0)
+vinA3 A3 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
 vinA2 A2 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
-vinA1 A1 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns 0)
-vinA0 A0 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
-vinB3 B3 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns 0)
+vinA1 A1 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
+vinA0 A0 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns 0)
+vinB3 B3 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
 vinB2 B2 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
-vinB1 B1 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns 0)
-vinB0 B0 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
+vinB1 B1 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
+vinB0 B0 gnd PWL(1.99ns 0V 2ns SUPPLY 7.99ns SUPPLY 8ns 0)
 vinC0 C0 gnd PWL(1.99ns 0V 2ns 0 7.99ns 0 8ns 0)
 
 * vinA3 A3 gnd PWL(1.99ns 0V 2ns SUPPLY)
@@ -1900,26 +1900,14 @@ C812 Q1s Gnd 0.41fF
 * .measure tran delay_S0_f TRIG V(A0) VAL=0.5*SUPPLY FALL=1 TARG V(S0) VAL=0.5*SUPPLY FALL=1
 * .measure tran delay_C4_f TRIG V(C0) VAL=0.5*SUPPLY FALL=1 TARG V(C4) VAL=0.5*SUPPLY FALL=1
 
+.measure tran C4 FIND V(Qco) AT = 11n
+.measure tran S3 FIND V(Q3s) AT = 11n
+.measure tran S2 FIND V(Q2s) AT = 11n
+.measure tran S1 FIND V(Q1s) AT = 11n
+.measure tran S0 FIND V(Q0s) AT = 11n
+
 
 .control
-    * set hcopypscolor = 1
-    * set color0=beige
-    * set color1=black
-    * set color2=blue
-    * set color3=darkgreen
-    * set color4=darkgreen
-    * set color5=darkgreen
-    * set color6=darkgreen
-    * set color7=darkred
-    * set color8=darkred
-    * set color9=darkred
-    * set color10=darkred
-    * set color11=darkviolet
-    * set color12=darkorange
-    * set color13=darkorange
-    * set color14=darkorange
-    * set color15=darkorange
-    * set color16=red
     set color0=beige
     set color1=black
     set color2=blue
@@ -1940,19 +1928,10 @@ C812 Q1s Gnd 0.41fF
     set color17=darkblue
     set color18=darkred
     set color19=orange
-    * set color20=red
-    * set color21=darkorange
-    * set color22=pink
-    * set color23=darkorange
-    * set color24=pink
-    * set color25=darkorange
-    * set color26=pink
-    * set color27=darkorange
-    * set color28=pink
-    * set color29=red
 
 
     run
-    plot v(clk)+28 v(A3)+26 v(d_ff_optimized_1/Q)+26 v(A2)+24 v(d_ff_optimized_4/Q)+24 v(A1)+22 v(d_ff_optimized_5/Q)+22 v(A0)+20 v(d_ff_optimized_0/Q)+20 v(B3)+18 v(d_ff_optimized_6/Q)+18 v(B2)+16 v(d_ff_optimized_7/Q)+16 v(B1)+14 v(d_ff_optimized_2/Q)+14 v(B0)+12 v(d_ff_optimized_3/Q)+12 v(C0)+10 v(d_ff_optimized_8/Q)+10 v(Qco)+8 v(d_ff_optimized_13/D)+8 v(Q3s)+6 v(d_ff_optimized_12/D)+6 v(Q2s)+4 v(d_ff_optimized_11/D)+4 v(Q1s)+2 v(d_ff_optimized_10/D)+2 v(Q0s) v(d_ff_optimized_9/D) 
+    * plot v(clk)+28 v(A3)+26 v(d_ff_optimized_1/Q)+26 v(A2)+24 v(d_ff_optimized_4/Q)+24 v(A1)+22 v(d_ff_optimized_5/Q)+22 v(A0)+20 v(d_ff_optimized_0/Q)+20 v(B3)+18 v(d_ff_optimized_6/Q)+18 v(B2)+16 v(d_ff_optimized_7/Q)+16 v(B1)+14 v(d_ff_optimized_2/Q)+14 v(B0)+12 v(d_ff_optimized_3/Q)+12 v(C0)+10 v(d_ff_optimized_8/Q)+10 v(Qco)+8 v(d_ff_optimized_13/D)+8 v(Q3s)+6 v(d_ff_optimized_12/D)+6 v(Q2s)+4 v(d_ff_optimized_11/D)+4 v(Q1s)+2 v(d_ff_optimized_10/D)+2 v(Q0s) v(d_ff_optimized_9/D) 
+    plot v(clk)+28 v(A3)+26 v(d_ff_optimized_1/Q)+26 v(A2)+24 v(d_ff_optimized_4/Q)+24 v(A1)+22 v(d_ff_optimized_5/Q)+22 v(A0)+20 v(d_ff_optimized_0/Q)+20 v(B3)+18 v(d_ff_optimized_6/Q)+18 v(B2)+16 v(d_ff_optimized_7/Q)+16 v(B1)+14 v(d_ff_optimized_2/Q)+14 v(B0)+12 v(d_ff_optimized_3/Q)+12 v(C0)+10 v(d_ff_optimized_8/Q)+10 v(Q3s)+8 v(d_ff_optimized_12/D)+8 v(Q2s)+6 v(d_ff_optimized_11/D)+6 v(Q1s)+4 v(d_ff_optimized_10/D)+4 v(Q0s)+2 v(d_ff_optimized_9/D)+2 v(Qco) v(d_ff_optimized_13/D)
     * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(Q2s)+6 v(Q1s)+4 v(Q0s)+2 v(Qco)
 .endc
