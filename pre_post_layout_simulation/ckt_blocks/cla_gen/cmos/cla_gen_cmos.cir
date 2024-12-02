@@ -79,4 +79,6 @@
 
 *     run
 *     plot v(C0)+16 v(G0)+14 v(P0)+12 v(G1)+10 v(P1)+8 v(G2)+6 v(P2)+4 v(G3)+2 v(P3) v(C1)-2 v(C2)-4 v(C3)-6 v(C4)-8
+*     set curplottitle="2023102019"
+*     hardcopy cla_gen_cmos_tran.eps v(C0)+16 v(G0)+14 v(P0)+12 v(G1)+10 v(P1)+8 v(G2)+6 v(P2)+4 v(G3)+2 v(P3) v(C1)-2 v(C2)-4 v(C3)-6 v(C4)-8
 * .endc

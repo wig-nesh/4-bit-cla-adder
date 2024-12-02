@@ -53,4 +53,6 @@
 
 *     run
 *     plot v(clk)+4 v(D)+2 v(Q)
+*     set curplottitle="2023102019"
+*     hardcopy d_ff_optimized_tran.eps v(clk)+4 v(D)+2 v(Q)
 * .endc

@@ -69,4 +69,6 @@
 
 *     run
 *     plot v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
+*     set curplottitle = "2023102019"
+*     hardcopy nand_5_cmos_tran.eps v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
 * .endc

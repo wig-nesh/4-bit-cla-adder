@@ -11,6 +11,7 @@
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{enumerate}
+\usepackage{subcaption}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -31,6 +32,7 @@ This document is a report on the Design and Simulation of a 4-bit Carry Look Ahe
 
 
 \section{Introduction}
+The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit binary numbers. It is faster than the Ripple Carry Adder as it generates the carry signals for all the bits at the same time. 
 
 \section{Proposed Design}
 
@@ -42,37 +44,254 @@ This document is a report on the Design and Simulation of a 4-bit Carry Look Ahe
 
 \subsection{CLA Adder}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/verilog_cla.png}
+    \caption{GTKWave Plot of CLA Adder Verilog Simulation}
+\end{figure}
+
 \subsection{D Flip Flop}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/verilog_d_ff.png}
+    \caption{GTKWave Plot of  D Flip Flop Verilog Simulation}
+\end{figure}
 \subsection{Full Circuit}
 
 \section{NGSPICE Simulation}
 
 \subsection{Inverter}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/inv_cmos_tran.eps}
+    \caption{NGSPICE Plot of Inverter}
+\end{figure}
+
 \subsection{NAND Gate}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_cmos_tran.eps}
+            \caption{2 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_3_cmos_tran.eps}
+            \caption{3 Input NAND}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_4_cmos_tran.eps}
+            \caption{4 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_5_cmos_tran.eps}
+            \caption{5 Input NAND}
+        \end{subfigure}
+    \end{tabular}
+    \caption{NGSPICE Plot of NAND Gates}
+\end{figure}
 
 \subsection{NOR Gate}
 
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_cmos_tran.eps}
+            \caption{2 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_3_cmos_tran.eps}
+            \caption{3 Input NOR}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_4_cmos_tran.eps}
+            \caption{4 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_5_cmos_tran.eps}
+            \caption{5 Input NOR}
+        \end{subfigure}
+    \end{tabular}
+    \caption{NGSPICE Plot of NOR Gates}
+\end{figure}
+
 \subsection{XOR Gate}
+
+\subsubsection{CMOS Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/xor_cmos_tran.eps}
+    \caption{NGSPICE Plot of CMOS XOR Gate}
+\end{figure}
+
+\subsubsection{Complimentary Pass Transistor Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/xor_optimized_tran.eps}
+    \caption{NGSPICE Plot of CPTL XOR Gate}
+\end{figure}
 
 \subsection{Propagate/Generate Generator}
 
+\subsubsection{CMOS Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/pg_gen_cmos_tran.eps}
+    \caption{NGSPICE Plot of CMOS Propagate/Generate Generator}
+\end{figure}
+
+\subsubsection{Complimentary Pass Transistor Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/pg_gen_optimized_tran.eps}
+    \caption{NGSPICE Plot of CPTL Propagate/Generate Generator}
+\end{figure}
+
 \subsection{Carry Look Ahead Generator}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/cla_gen_cmos_tran.eps}
+    \caption{NGSPICE Plot of CMOS Carry Look Ahead Generator}
+\end{figure}
 
 \subsection{Sum Generator}
 
+\subsubsection{CMOS Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/sum_gen_cmos_tran.eps}
+    \caption{NGSPICE Plot of CMOS Sum Generator}
+\end{figure}
+
+\subsubsection{Complimentary Pass Transistor Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/sum_gen_optimized_tran.eps}
+    \caption{NGSPICE Plot of CPTL Sum Generator}
+\end{figure}
+
 \subsection{D Flop Flop}
 
+\subsubsection{CMOS Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/d_ff_cmos_tran.eps}
+    \caption{NGSPICE Plot of CMOS D Flip FLop}
+\end{figure}
+
+\subsubsection{Optimized Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/d_ff_optimized_tran.eps}
+    \caption{NGSPICE Plot of Optimized D Flip Flop}
+\end{figure}
+
 \subsection{Full Circuit}
+
+\subsubsection{CMOS Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/full_cmos_tran.eps}
+    \caption{NGSPICE Plot of CMOS Circuit}
+\end{figure}
+
+\subsubsection{Optimized Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/full_optimized_tran.eps}
+    \caption{NGSPICE Plot of Optimized Circuit}
+\end{figure}
 
 \section{MAGIC Layout}
 
 \subsection{Inverter}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/inv_cmos_layout.png}
+    \caption{MAGIC Layout of CMOS Inverter}
+\end{figure}
+
 \subsection{NAND Gate}
 
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_cmos_layout.png}
+            \caption{2 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_3_cmos_layout.png}
+            \caption{3 Input NAND}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_4_cmos_layout.png}
+            \caption{4 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_5_cmos_layout.png}
+            \caption{5 Input NAND}
+        \end{subfigure}
+    \end{tabular}
+    \caption{MAGIC Layout of NAND Gates}
+\end{figure}
+
 \subsection{NOR Gate}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_cmos_layout.png}
+            \caption{2 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_3_cmos_layout.png}
+            \caption{3 Input NOR}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_4_cmos_layout.png}
+            \caption{4 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_5_cmos_layout.png}
+            \caption{5 Input NOR}
+        \end{subfigure}
+    \end{tabular}
+    \caption{MAGIC Layout of NOR Gates}
+\end{figure}
 
 \subsection{XOR Gate}
 

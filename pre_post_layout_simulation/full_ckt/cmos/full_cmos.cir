@@ -74,4 +74,6 @@ Xdffco C4 clk Qco Qcoi d_ff_cmos
     * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(P3)+8 v(P2)+6 v(P1)+4 v(P0)+2 v(G3) v(G2)-2 v(G1)-4 v(G0)-6
     * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(C4)+8 v(C3)+6 v(C2)+4 v(C1)+2
     * plot v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(S3)+8 v(S2)+6 v(S1)+4 v(S0)+2 v(C4)
+    set curplottitle="2023102019"
+    hardcopy full_cmos_tran.eps v(clk)+28 v(A3)+26 v(A2)+24 v(A1)+22 v(A0)+20 v(B3)+18 v(B2)+16 v(B1)+14 v(B0)+12 v(C0)+10 v(Q3s)+8 v(S3)+8 v(Q2s)+6 v(S2)+6 v(Q1s)+4 v(S1)+4 v(Q0s)+2 v(S0)+2 v(Qco) v(C4)
 .endc

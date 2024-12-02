@@ -55,4 +55,6 @@
 
 *     run
 *     plot v(A3)+30 v(A2)+28 v(A1)+26 v(A0)+24 v(B3)+22 v(B2)+20 v(B1)+18 v(B0)+16 v(P3)+14 v(P2)+12 v(P1)+10 v(P0)+8 v(G3)+6 v(G2)+4 v(G1)+2 v(G0) 
+*     set curplottitle = "2023102019"
+*     hardcopy pg_gen_optimized_tran.eps v(A3)+30 v(A2)+28 v(A1)+26 v(A0)+24 v(B3)+22 v(B2)+20 v(B1)+18 v(B0)+16 v(P3)+14 v(P2)+12 v(P1)+10 v(P0)+8 v(G3)+6 v(G2)+4 v(G1)+2 v(G0)
 * .endc

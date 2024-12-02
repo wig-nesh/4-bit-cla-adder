@@ -39,4 +39,6 @@
 
 *     run
 *     plot v(A)+2 v(Y)
+*     set curplottitle = "2023102019"
+*     hardcopy inv_cmos_tran.eps v(A)+2 v(Y)
 * .endc

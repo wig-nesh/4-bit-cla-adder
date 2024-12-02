@@ -45,4 +45,6 @@
 
 *     run
 *     plot v(P3)+22 v(P2)+20 v(P1)+18 v(P0)+16 v(C3)+14 v(C2)+12 v(C1)+10 v(C0)+8 v(S3)+6 v(S2)+4 v(S1)+2 v(S0) 
+*     set curplottitle="2023102019"
+*     hardcopy sum_gen_cmos_tran.eps v(P3)+22 v(P2)+20 v(P1)+18 v(P0)+16 v(C3)+14 v(C2)+12 v(C1)+10 v(C0)+8 v(S3)+6 v(S2)+4 v(S1)+2 v(S0)
 * .endc
