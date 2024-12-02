@@ -69,4 +69,6 @@ C25 w_n6_n6# Gnd 9.11fF
 
     run
     plot v(A)+4 v(B)+2 v(C) v(Y)-2
+    set curplottitle="2023102019"
+    hardcopy nor_3_cmos_post_tran.eps v(A)+4 v(B)+2 v(C) v(Y)-2
 .endc

@@ -77,4 +77,6 @@ C29 w_n6_n6# Gnd 15.33fF
 
     run
     plot v(A)+4 v(B)+2 v(C) v(D)-2 v(Y)-4
+    set curplottitle="2023102019"
+    hardcopy nor_4_cmos_post_tran.eps v(A)+4 v(B)+2 v(C) v(D)-2 v(Y)-4
 .endc

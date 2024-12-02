@@ -9,13 +9,15 @@ vinB B gnd PULSE(0 SUPPLY    5ns 1ps 1ps    5ns  10ns)
 vinC C gnd PULSE(0 SUPPLY  2.5ns 1ps 1ps  2.5ns   5ns)
 vinD D gnd PULSE(0 SUPPLY 1.25ns 1ps 1ps 1.25ns 2.5ns)
 
-M1000 a_7_0# D a_39_n101# Gnd CMOSN w=80 l=2
+.option scale=0.09u
+
+M1000 Y D a_39_n101# Gnd CMOSN w=80 l=2
 +  ad=400 pd=170 as=800 ps=340
-M1001 a_7_0# A vdd w_n6_n6# CMOSP w=50 l=2
+M1001 Y A vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=1000 pd=440 as=1000 ps=440
-M1002 a_7_0# C vdd w_n6_n6# CMOSP w=50 l=2
+M1002 Y C vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=0 pd=0 as=0 ps=0
-M1003 a_7_0# B vdd w_n6_n6# CMOSP w=50 l=2
+M1003 Y B vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=0 pd=0 as=0 ps=0
 M1004 a_7_n101# A gnd Gnd CMOSN w=80 l=2
 +  ad=800 pd=340 as=400 ps=170
@@ -23,27 +25,27 @@ M1005 a_39_n101# C a_23_n101# Gnd CMOSN w=80 l=2
 +  ad=0 pd=0 as=800 ps=340
 M1006 a_23_n101# B a_7_n101# Gnd CMOSN w=80 l=2
 +  ad=0 pd=0 as=0 ps=0
-M1007 a_7_0# D vdd w_n6_n6# CMOSP w=50 l=2
+M1007 Y D vdd w_n6_n6# CMOSP w=50 l=2
 +  ad=0 pd=0 as=0 ps=0
-C0 a_7_0# a_39_n101# 0.82fF
+C0 a_7_n101# a_23_n101# 0.82fF
 C1 a_23_n101# C 0.10fF
-C2 D a_39_n101# 0.10fF
-C3 a_7_0# vdd 3.78fF
-C4 a_7_0# A 0.05fF
-C5 C w_n6_n6# 0.06fF
-C6 B w_n6_n6# 0.06fF
-C7 a_7_0# w_n6_n6# 0.29fF
-C8 a_7_n101# gnd 0.82fF
-C9 D w_n6_n6# 0.06fF
-C10 a_23_n101# a_7_n101# 0.82fF
-C11 a_7_0# C 0.19fF
-C12 a_23_n101# a_39_n101# 0.82fF
-C13 a_7_0# B 0.19fF
-C14 D a_7_0# 0.24fF
-C15 vdd A 0.02fF
-C16 a_7_n101# B 0.10fF
-C17 vdd w_n6_n6# 0.34fF
-C18 A w_n6_n6# 0.06fF
+C2 Y A 0.05fF
+C3 Y vdd 3.78fF
+C4 A w_n6_n6# 0.06fF
+C5 w_n6_n6# vdd 0.34fF
+C6 a_23_n101# a_39_n101# 0.82fF
+C7 D a_39_n101# 0.10fF
+C8 a_7_n101# B 0.10fF
+C9 Y C 0.19fF
+C10 Y D 0.24fF
+C11 C w_n6_n6# 0.06fF
+C12 Y a_39_n101# 0.82fF
+C13 D w_n6_n6# 0.06fF
+C14 A vdd 0.02fF
+C15 Y B 0.19fF
+C16 a_7_n101# gnd 0.82fF
+C17 Y w_n6_n6# 0.29fF
+C18 B w_n6_n6# 0.06fF
 
 .tran 1n 20n 
 
@@ -63,4 +65,6 @@ C18 A w_n6_n6# 0.06fF
 
     run
     plot v(A)+4 v(B)+2 v(C) v(D)-2 v(Y)-4
+    set curplottitle="2023102019"
+    hardcopy nand_4_cmos_post_tran.eps v(A)+4 v(B)+2 v(C) v(D)-2 v(Y)-4
 .endc

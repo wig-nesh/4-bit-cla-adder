@@ -58,8 +58,6 @@ C21 B Y 0.19fF
 C22 w_n6_n6# vdd 0.42fF
 
 
-Xnand A B C D E Y nand_5_cmos
-
 .tran 1n 40n 
 
 .measure tran t_in WHEN v(E)=0.5*SUPPLY CROSS=31
@@ -78,4 +76,6 @@ Xnand A B C D E Y nand_5_cmos
 
     run
     plot v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
+    set curplottitle="2023102019"
+    hardcopy nand_5_cmos_post_tran.eps v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
 .endc

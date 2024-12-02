@@ -47,4 +47,6 @@ C10 Y w_n6_n6# 0.15fF
 
     run
     plot v(A)+4 v(B)+2 v(Y)
+    set curplottitle="2023102019"
+    hardcopy nand_cmos_post_tran.eps v(A)+4 v(B)+2 v(Y)
 .endc

@@ -70,7 +70,7 @@ C34 A Gnd 0.17fF
 C35 w_n6_n6# Gnd 23.16fF
 
 
-.tran 1n 80n 
+.tran 1n 40n 
 
 .measure tran t_in WHEN v(E)=0.5*SUPPLY CROSS=1
 .measure tran t_out WHEN v(Y)=0.5*SUPPLY CROSS=1
@@ -91,4 +91,6 @@ C35 w_n6_n6# Gnd 23.16fF
 
     run
     plot v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
+    set curplottitle="2023102019"
+    hardcopy nor_5_cmos_post_tran.eps v(Y) v(E)+2 v(D)+4 v(C)+6 v(B)+8 v(A)+10
 .endc

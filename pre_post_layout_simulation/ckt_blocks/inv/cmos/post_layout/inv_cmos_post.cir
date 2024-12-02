@@ -5,7 +5,7 @@
 
 
 VDD vdd gnd SUPPLY
-vinA A gnd PULSE(0 SUPPLY 10ns 1ps 1ps 10ns 20ns)
+vinA IN gnd PULSE(0 SUPPLY 10ns 1ps 1ps 10ns 20ns)
 
 .option scale=0.09u
 
@@ -46,5 +46,7 @@ C12 w_0_0# Gnd 1.49fF
     set color6=darkorange
 
     run
-    plot v(A)+2 v(Y)
+    plot v(IN)+2 v(OUT)
+    set curplottitle="2023102019"
+    hardcopy inv_cmos_post_tran.eps v(IN)+2 v(OUT)
 .endc

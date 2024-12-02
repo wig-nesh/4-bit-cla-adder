@@ -295,37 +295,187 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 \subsection{XOR Gate}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/xor_optimized_layout.png}
+    \caption{MAGIC Layout of XOR Gate}
+\end{figure}
+
 \subsection{Propagate/Generate Generator}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/pg_gen_optimized_layout.png}
+    \caption{MAGIC Layout of Propagate/Generate Generator}
+\end{figure}
 
 \subsection{Carry Look Ahead Generator}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/cla_gen_cmos_layout.png}
+    \caption{MAGIC Layout of Carry Look Ahead Generator}
+\end{figure}
+
 \subsection{Sum Generator}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/sum_gen_optimized_layout.png}
+    \caption{MAGIC Layout of Sum Generator}
+\end{figure}
 
 \subsection{D Flop Flop}
 
+\subsubsection{CMOS Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/d_ff_cmos_layout.png}
+    \caption{MAGIC Layout of CMOS D Flip Flop}
+\end{figure}
+
+\subsubsection{Optimized Implementation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/d_ff_optimized_layout.png}
+    \caption{MAGIC Layout of Optimized D Flip Flop}
+\end{figure}
+
+
 \subsection{Full Circuit}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=1\textwidth]{images/full_optimized_layout.png}
+    \caption{MAGIC Layout of Full Circuit}
+\end{figure*}
 
 \section{Post Layout Simulation}
 
 \subsection{Inverter}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/inv_cmos_post_tran.eps}
+    \caption{Post Layout NGSPICE Plot of Inverter}
+\end{figure}
+
 \subsection{NAND Gate}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_cmos_post_tran.eps}
+            \caption{2 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_3_cmos_post_tran.eps}
+            \caption{3 Input NAND}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_4_cmos_post_tran.eps}
+            \caption{4 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_5_cmos_post_tran.eps}
+            \caption{5 Input NAND}
+        \end{subfigure}
+    \end{tabular}
+    \caption{Post Layout NGSPICE Plot of NAND Gates}
+\end{figure}
 
 \subsection{NOR Gate}
 
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_cmos_post_tran.eps}
+            \caption{2 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_3_cmos_post_tran.eps}
+            \caption{3 Input NOR}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_4_cmos_post_tran.eps}
+            \caption{4 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_5_cmos_post_tran.eps}
+            \caption{5 Input NOR}
+        \end{subfigure}
+    \end{tabular}
+    \caption{Post Layout NGSPICE Plot of NOR Gates}
+\end{figure}
+
 \subsection{XOR Gate}
 
-\subsection{Propagate/Generate Generator}
-
-\subsection{Carry Look Ahead Generator}
-
-\subsection{Sum Generator}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/xor_optimized_post_tran.eps}
+    \caption{Post Layout NGSPICE Plot of XOR Gate}
+\end{figure}
 
 \subsection{D Flop Flop}
 
-\subsection{Full Circuit}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/d_ff_optimized_post_tran.eps}
+    \caption{Post Layout NGSPICE Plot of D Flip Flop}
+\end{figure}
+
+\subsection{Full Circuit (with Load Inverters)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/full_optimized_load_post_tran.eps}
+    \caption{Post Layout NGSPICE Plot of Full Circuit}
+\end{figure}
 
 \section{FPGA Simulation}
+
+\subsection{On Board LEDs}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{images/fpga_1.png}
+        \caption{1111 + 1111 + 0 = 11110}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{images/fpga_2.png}
+        \caption{1111 + 1111 + 1 = 11111}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\linewidth]{images/fpga_3.png}
+        \caption{1011 + 1001 + 1 = 10101}
+    \end{subfigure}
+    
+    \caption{FPGA Simulation}
+    \label{fig:main}
+\end{figure}
+
+\subsection{Waveform Visualization}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/fpga_waveform.png}
+    \caption{Viewing Waveform of FPGA Simulation}
+\end{figure}
 
 \section*{Acknowledgment}
 
