@@ -111,9 +111,22 @@ C57 inv_cmos_3/IN Gnd 0.11fF
 
 .tran 1n 160n 
 
-.measure tran t_in WHEN v(clk)=0.5*SUPPLY CROSS=3
-.measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=1
-.measure tran t_delay PARAM='t_out-t_in'
+.measure tran t_clk WHEN v(clk)=0.5*SUPPLY CROSS=3
+.measure tran t_q WHEN v(Q)=0.5*SUPPLY CROSS=1
+
+.measure tran t_m1_rise_l WHEN v(inv_cmos_1/IN)=0.1*1.2 CROSS=3
+.measure tran t_m1_rise_h WHEN v(inv_cmos_1/IN)=0.9*1.2 CROSS=1
+.measure tran t_m1_prop WHEN v(inv_cmos_1/IN)=0.5*1.2 CROSS=1
+.measure tran t_inv1_prop WHEN v(inv_cmos_2/IN)=0.5*SUPPLY CROSS=1
+
+.measure tran t_m2_fall_l WHEN v(inv_cmos_2/IN)=0.1*SUPPLY CROSS=1
+.measure tran t_m2_fall_h WHEN v(inv_cmos_2/IN)=0.9*SUPPLY CROSS=1
+.measure tran t_m2_prop WHEN v(inv_cmos_4/IN)=0.5*SUPPLY CROSS=1
+.measure tran t_inv2_prop WHEN v(Q)=0.5*SUPPLY CROSS=1
+
+.measure tran t_cq PARAM='t_q-t_clk'
+.measure tran t_su PARAM='t_m1_rise_h-t_m1_rise_l+t_inv1_prop-t_m1_prop'
+.measure tran t_h PARAM='t_m2_fall_l-t_m2_fall_h+t_inv2_prop-t_m2_prop'
 
 .control
     set hcopypscolor = 1

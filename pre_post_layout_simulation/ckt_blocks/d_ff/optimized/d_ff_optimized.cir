@@ -12,7 +12,7 @@
 * vinD     D gnd PULSE(0 SUPPLY  12ns 1ps 1ps  8ns 32ns)
 * vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
 
-.subckt d_ff_optimized D clk Q 
+.subckt d_ff_optimized D clk Q x z a
     Xinv1 clk clki inv_cmos
     Mn1 D clki x gnd CMOSN W={width_N} L={2*LAMBDA} 
     + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
@@ -33,13 +33,26 @@
 .ends
 
 
-* Xdff D clk Q d_ff_optimized
+* Xdff D clk Q x z a d_ff_optimized
 
 * .tran 1n 160n 
 
-* .measure tran t_in WHEN v(clk)=0.5*SUPPLY CROSS=3
-* .measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=1
-* .measure tran t_delay PARAM='t_out-t_in'
+* .measure tran t_clk WHEN v(clk)=0.5*SUPPLY CROSS=3
+* .measure tran t_q WHEN v(Q)=0.5*SUPPLY CROSS=1
+
+* .measure tran t_m1_rise_l WHEN v(x)=0.1*1.2 CROSS=3
+* .measure tran t_m1_rise_h WHEN v(x)=0.9*1.2 CROSS=1
+* .measure tran t_m1_prop WHEN v(x)=0.5*1.2 CROSS=1
+* .measure tran t_inv1_prop WHEN v(z)=0.5*SUPPLY CROSS=1
+
+* .measure tran t_m2_fall_l WHEN v(z)=0.1*SUPPLY CROSS=1
+* .measure tran t_m2_fall_h WHEN v(z)=0.9*SUPPLY CROSS=1
+* .measure tran t_m2_prop WHEN v(a)=0.5*SUPPLY CROSS=1
+* .measure tran t_inv2_prop WHEN v(Q)=0.5*SUPPLY CROSS=1
+
+* .measure tran t_cq PARAM='t_q-t_clk'
+* .measure tran t_su PARAM='t_m1_rise_h-t_m1_rise_l+t_inv1_prop-t_m1_prop'
+* .measure tran t_h PARAM='t_m2_fall_l-t_m2_fall_h+t_inv2_prop-t_m2_prop'
 
 * .control
 *     set hcopypscolor = 1

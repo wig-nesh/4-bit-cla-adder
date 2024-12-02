@@ -386,17 +386,29 @@ Making the D Flip Flop using our optimized circuit works as well:
     \caption{NGSPICE Plot of Optimized D Flip Flop}
 \end{figure}
 
+We can find the characteristics of the D Flip Flop as follows:
+
+\begin{enumerate}
+    \item $t_{\text{cq}}$ is the time taken for the output Q to change after the rising clock edge.
+    \item $t_{\text{su}}$ is the setup time, the time before the rising clock edge that the input D must be stable. We calculate this based on the rise/fall time of the mosfet that passes the input D, and the propagation delay of the inverter that stores the value in the flip flop.
+    \item $t_{\text{h}}$ is the hold time, the time after the rising clock edge that the input D must be stable. We calculate this based on the rise/fall time of the mosfet that passes the input D, and the propagation delay of the inverter that returns the output of the flip flop.
+\end{enumerate}
+
+We get these values using: 
+
+\begin{align}
+    t_{\text{cq}} &= t_q - t_{\text{clk}} \quad \text{(at } 0.5 \cdot \text{SUPPLY)} \\
+    t_{\text{su}} &= t_{\text{rise}_{M1}} + t_{\text{prop}_{\text{inv1}}} \\
+    t_{\text{h}} &= t_{\text{rise}_{M2}} + t_{\text{prop}_{\text{inv2}}}
+\end{align}
+
+\begin{verbatim}
+    t_cq                =  5.24757e-11ns
+    t_su                =  3.80793e-10ns
+    t_h                 =  2.67745e-10ns
+\end{verbatim}
+
 \subsection{Full Circuit}
-
-\subsubsection{CMOS Implementation}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.48\textwidth]{images/full_cmos_tran.eps}
-    \caption{NGSPICE Plot of CMOS Circuit}
-\end{figure}
-
-\subsubsection{Optimized Implementation}
 
 \begin{figure}[H]
     \centering
@@ -621,6 +633,14 @@ For layout, we use the free tool MAGIC. All subcircuits are laid out separately 
     \includegraphics[width=0.48\textwidth]{images/d_ff_optimized_post_tran.eps}
     \caption{Post Layout NGSPICE Plot of D Flip Flop}
 \end{figure}
+
+\begin{verbatim}
+    t_cq                =  3.04861e-10ns
+    t_su                =  4.72107e-10ns
+    t_h                 =  2.88159e-10ns
+\end{verbatim}
+
+Post layout the D flip flop has a slower $t_{\text{cq}}$ but the setup and hold times are still at low ranges.
 
 \subsection{Full Circuit (with Load Inverters)}
 

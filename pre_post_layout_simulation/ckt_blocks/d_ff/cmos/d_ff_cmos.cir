@@ -30,9 +30,9 @@ Xdff D clk Q Qi d_ff_cmos
 
 .tran 1n 160n 
 
-.measure tran t_in WHEN v(clk)=0.5*SUPPLY CROSS=3
-.measure tran t_out WHEN v(Q)=0.5*SUPPLY CROSS=1
-.measure tran t_delay PARAM='t_out-t_in'
+.measure tran t_clk WHEN v(clk)=0.5*SUPPLY CROSS=3
+.measure tran t_q WHEN v(Q)=0.5*SUPPLY CROSS=1
+.measure tran t_cq PARAM='t_q-t_clk'
 
 .control
     set hcopypscolor = 1
