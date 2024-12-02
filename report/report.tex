@@ -16,7 +16,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{4-bit CLA Adder \\ VLSI Course Project}
+\title{4-Bit CLA Adder \\ VLSI Course Project}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Vignesh Vembar}
 \IEEEauthorblockA{\textit{ECE, IIIT Hyderabad} \\
@@ -32,36 +32,107 @@ This document is a report on the Design and Simulation of a 4-bit Carry Look Ahe
 
 
 \section{Introduction}
-The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit binary numbers. It is faster than the Ripple Carry Adder as it generates the carry signals for all the bits at the same time. 
+The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit binary numbers. It is faster than the Ripple Carry Adder as it generates the carry signals for all the bits at the same time. We will also be passing the inputs and outputs through D Flip Flops to make the circuit synchronous.
 
 \section{Proposed Design}
 
-\subsection{CLA Adder}
+\subsection{CLA Adder} 
+\cite{b1} From the given inputs signals, we first generate Propagate and Generate signals. These are defined as follows \footnote{An optimization here could be to use the + operator to calculate Propagate instead of $\oplus$. Unfortunately, I did not have this insight until too late in the project.}:
+
+\begin{align}
+    P_i &= A_i \oplus B_i \\
+    G_i &= A_i \cdot B_i
+\end{align}
+
+Then, the carry signals can be generated as follows:
+
+\begin{align}
+    C_{i+1} &= G_i + P_i \cdot C_i
+\end{align}
+
+In reality, we use multi-input gates to calculate these carries instead of recursively. This is done using the following equations:
+
+\begin{align}
+    C_1 &= G_0 + P_0 \cdot C_0 \\
+    C_2 &= G_1 + G_0 \cdot P_1 + C_0 \cdot P_0 \cdot P_1 \\
+    C_3 &= G_2 + G_1 \cdot P_2 + G_0 \cdot P_1 \cdot P_2 + C_0 \cdot P_0 \cdot P_1 \cdot P_2 \\
+    C_4 &= G_3 + G_2 \cdot P_3 + G_1 \cdot P_2 \cdot P_3 \notag \\
+        &\quad + G_0 \cdot P_1 \cdot P_2 \cdot P_3 + C_0 \cdot P_0 \cdot P_1 \cdot P_2 \cdot P_3
+\end{align}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/cla_adder_circuit_diagram.png}
+    \caption{Circuit Diagram for CLA Adder}
+    \label{fig:cla}
+\end{figure}
+
 
 \subsection{D Flip Flop}
 
-\section{Verilog Simulation}
+\subsubsection{CMOS Implementation}
 
-\subsection{CLA Adder}
+The obvious and basic choice would be to use CMOS gates to implement the D Flip Flop. This uses two D Latches in a Master-Slave configuration.
 
 \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/d_ff_cmos_circuit_diagram.png}
+    \caption{Circuit Diagram for CMOS D Flip Flop}
+\end{figure}
+
+The issues with this circuit are:
+\begin{enumerate}
+    \item The circuit is slow as it has a large propagation delay.
+    \item The circuit has large area, as we will see later in the layout.
+\end{enumerate}
+
+\subsubsection{Optimized Implementation}
+
+This circuit works by storing the value of D after the first inverter when the clock signal is low. In the rising edge of the clock, D does not pass through the first MOSFET, and the stored value is passed to the output Q.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/d_ff_circuit_diagram.png}
+    \caption{Circuit Diagram for Optimized D Flip Flop}
+\end{figure}
+
+
+
+\section{Verilog Simulation}
+
+First, we test the digital logic using Verilog simulations. We use GTKWave to plot our results from the testbench. Later, we put this onto an FPGA board to test the circuit in real life.
+
+\begin{figure}[hb]
     \centering
     \includegraphics[width=0.48\textwidth]{images/verilog_cla.png}
     \caption{GTKWave Plot of CLA Adder Verilog Simulation}
 \end{figure}
 
-\subsection{D Flip Flop}
-
-\begin{figure}[H]
+\begin{figure}[hb]
     \centering
     \includegraphics[width=0.48\textwidth]{images/verilog_d_ff.png}
     \caption{GTKWave Plot of  D Flip Flop Verilog Simulation}
 \end{figure}
-\subsection{Full Circuit}
+
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/verilog_full.png}
+    \caption{GTKWave Plot of Full Circuit Verilog Simulation}
+\end{figure}
 
 \section{NGSPICE Simulation}
 
+For all my designs, I've chosen to use a CMOS inverter of $W_p/W_n = 2.5$ as basis. The technology files (180nm) used are included in the repo. \cite{b2}
+
 \subsection{Inverter}
+
+This is the standard CMOS inverter with $W_p/W_n = 2.5$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/inv_cmos_circuit_diagram.png}
+    \caption{Circuit Diagram of Inverter}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -70,6 +141,43 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 \end{figure}
 
 \subsection{NAND Gate}
+
+To size the CMOS NAND gate, we need to equalize the resistance through the Pull-Up network and Pull-Down Network. \\
+For an $n$ input NAND gate, where $W_{inv}$ is the size of the NMOS in the inverter:
+
+\begin{align}
+    \frac{n}{W_n} &= \frac{1}{W_{inv}} \\
+    W_n &= n \cdot W_{inv}
+\end{align}
+
+$W_p$ stays the same.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_cmos_circuit_diagram.png}
+            \caption{2 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_3_cmos_circuit_diagram.png}
+            \caption{3 Input NAND}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_4_cmos_circuit_diagram.png}
+            \caption{4 Input NAND}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nand_5_cmos_circuit_diagram.png}
+            \caption{5 Input NAND}
+        \end{subfigure}
+    \end{tabular}
+    \caption{Circuit Diagram of NAND Gates}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -99,6 +207,43 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 \end{figure}
 
 \subsection{NOR Gate}
+
+Similarly, for the CMOS NOR gate, we need to equalize the resistance through the Pull-Up network and Pull-Down Network. \\
+For an $n$ input NOR gate, where $W_{inv}$ is the size of the NMOS in the inverter:
+
+\begin{align}
+    \frac{n}{W_p} &= \frac{1}{2.5 \cdot W_{inv}} \\
+    W_p &= 2.5  n \cdot W_{inv}
+\end{align}
+
+$W_p$ stays the same.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{cc}
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_cmos_circuit_diagram.png}
+            \caption{2 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_3_cmos_circuit_diagram.png}
+            \caption{3 Input NOR}
+        \end{subfigure} \\
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_4_cmos_circuit_diagram.png}
+            \caption{4 Input NOR}
+        \end{subfigure} &
+        \begin{subfigure}{0.44\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/nor_5_cmos_circuit_diagram.png}
+            \caption{5 Input NOR}
+        \end{subfigure}
+    \end{tabular}
+    \caption{Circuit Diagram of NOR Gates}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -131,6 +276,14 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 \subsubsection{CMOS Implementation}
 
+The standard CMOS Implementation works, but we can do better with less gates.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/xor_cmos_circuit_diagram.png}
+    \caption{Circuit Diagram of CMOS XOR Gate}
+\end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{images/xor_cmos_tran.eps}
@@ -139,15 +292,27 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 \subsubsection{Complimentary Pass Transistor Implementation}
 
+We use a CPTL XOR gate to reduce the number of transistors used.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/xor_optimized_circuit_diagram.png}
+    \caption{Circuit Diagram of CPTL XOR Gate}
+\end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{images/xor_optimized_tran.eps}
     \caption{NGSPICE Plot of CPTL XOR Gate}
 \end{figure}
 
+Because of the nature of NMOS and PMOS and not being able to pass proper values, this does ruin the levels of the outputs, but from testing I have noticed that this does not affect the final result.
+
 \subsection{Propagate/Generate Generator}
 
 \subsubsection{CMOS Implementation}
+
+Using the circuit diagram in \ref{fig:cla}, we can implement the Propagate/Generate Generator using the previously defined gates by importing them into our NGSPICE files. First, we test it using the CMOS Implementation of XOR.
 
 \begin{figure}[H]
     \centering
@@ -157,13 +322,19 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 \subsubsection{Complimentary Pass Transistor Implementation}
 
+This is a test run using the CPTL XOR gate.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{images/pg_gen_optimized_tran.eps}
     \caption{NGSPICE Plot of CPTL Propagate/Generate Generator}
 \end{figure}
 
+We can already see massive issues in the levels of some of the outputs. This might seem concerning but it all gets fixed in the final circuit due to the nature of the D Flip Flop used.
+
 \subsection{Carry Look Ahead Generator}
+
+The Carry Look Ahead Generator is implemented only using CMOS gates.
 
 \begin{figure}[H]
     \centering
@@ -175,6 +346,8 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 \subsubsection{CMOS Implementation}
 
+We similarly use the CMOS gates to implement the Sum Generator.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{images/sum_gen_cmos_tran.eps}
@@ -182,6 +355,8 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 \end{figure}
 
 \subsubsection{Complimentary Pass Transistor Implementation}
+
+We can see that the levels of the outputs are not correct in this circuit either, due to the nature of the CPTL XOR gate.
 
 \begin{figure}[H]
     \centering
@@ -193,6 +368,8 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 \subsubsection{CMOS Implementation}
 
+We make the D Flip Flop using the CMOS gates, but as we noticed before, this is not the best way to implement it.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.48\textwidth]{images/d_ff_cmos_tran.eps}
@@ -200,6 +377,8 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 \end{figure}
 
 \subsubsection{Optimized Implementation}
+
+Making the D Flip Flop using our optimized circuit works as well:
 
 \begin{figure}[H]
     \centering
@@ -226,6 +405,13 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 \end{figure}
 
 \section{MAGIC Layout}
+For layout, we use the free tool MAGIC. All subcircuits are laid out separately and then combined to form the full circuit. Before layout, we draw stick diagrams to have a rough idea of where to place what.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/stick_diagrams.png}
+    \caption{Stick Diagrams}
+\end{figure*}
 
 \subsection{Inverter}
 
@@ -481,9 +667,10 @@ The Carry Look Ahead Adder is a digital circuit that is used to add two 4 bit bi
 
 
 \begin{thebibliography}{00}
-\bibitem{b1} 
+    \bibitem{b1} Wikipedia, "Carry-lookahead adder." Available at: \url{https://en.wikipedia.org/wiki/Carry-lookahead_adder}.
+    \bibitem{b2} Github, Repository with all project files Available at: \url{https://github.com/wig-nesh/vlsi-course-project}.
 \end{thebibliography}
-
+    
 \end{document}
 
 
