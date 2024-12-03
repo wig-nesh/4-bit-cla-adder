@@ -1,0 +1,58 @@
+timestamp 1733185569
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use xor_optimized xor_optimized_1 1 0 55 0 1 0
+use xor_optimized xor_optimized_3 1 0 55 0 -1 204
+use xor_optimized xor_optimized_2 1 0 5 0 -1 204
+use xor_optimized xor_optimized_0 1 0 5 0 1 0
+node "m1_50_28#" 0 21.0864 50 28 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_93_32#" 0 21.0864 93 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_43_32#" 0 21.0864 43 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_n4_32#" 0 21.0864 -4 32 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_93_96#" 0 21.0864 93 96 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_43_96#" 0 21.0864 43 96 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_93_104#" 0 21.0864 93 104 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_43_104#" 0 21.0864 43 104 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_93_168#" 0 21.0864 93 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_43_168#" 0 21.0864 43 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_n4_168#" 0 21.0864 -4 168 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+node "m1_50_172#" 0 21.0864 50 172 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0 0 0 0
+cap "m1_93_104#" "m1_93_96#" 41.238
+cap "m1_43_96#" "m1_43_104#" 41.238
+subcap "m1_93_104#" -61.386
+subcap "m1_43_104#" -62.6496
+cap "xor_optimized_1/w_26_37#" "xor_optimized_1/A" 1.8411
+cap "xor_optimized_0/w_26_37#" "xor_optimized_0/A" 7.7988
+cap "xor_optimized_2/A" "xor_optimized_0/A" 52.569
+cap "xor_optimized_1/B" "xor_optimized_0/Y" 78.5486
+cap "xor_optimized_3/A" "xor_optimized_1/A" 52.569
+subcap "m1_93_32#" -76.359
+subcap "m1_93_96#" -162.912
+cap "xor_optimized_1/A" "xor_optimized_1/w_26_37#" 4.9557
+subcap "m1_93_96#" -8.3444
+subcap "m1_43_96#" -7.3424
+cap "xor_optimized_1/A" "xor_optimized_3/A" 52.569
+cap "xor_optimized_0/A" "xor_optimized_2/A" 52.569
+cap "xor_optimized_3/w_26_37#" "xor_optimized_3/A" 1.8411
+cap "xor_optimized_3/B" "xor_optimized_2/Y" 78.5486
+cap "xor_optimized_2/w_26_37#" "xor_optimized_2/A" 7.7988
+subcap "m1_93_104#" -162.912
+subcap "m1_93_168#" -76.359
+cap "xor_optimized_3/A" "xor_optimized_3/w_26_37#" 4.9557
+merge "xor_optimized_3/inv_cmos_0/vdd" "xor_optimized_1/inv_cmos_0/vdd" -5.4888 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/A" "m1_93_96#" -11.022 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/B" "m1_50_28#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/A" "m1_43_104#" -15.8148 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/Y" "m1_43_168#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_3/B" "m1_50_172#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_0/Y" "m1_43_32#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_0/inv_cmos_0/vdd" "xor_optimized_2/inv_cmos_0/vdd" -5.4888 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_1/Y" "m1_93_32#" -4.2252 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_2/B" "m1_n4_168#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_0/A" "m1_43_96#" -15.8148 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_3/Y" "m1_93_168#" -4.2252 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_0/B" "m1_n4_32#" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "xor_optimized_3/A" "m1_93_104#" -14.8128 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0

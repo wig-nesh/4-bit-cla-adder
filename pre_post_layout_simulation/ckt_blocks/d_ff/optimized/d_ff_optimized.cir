@@ -12,7 +12,7 @@
 * vinD     D gnd PULSE(0 SUPPLY  12ns 1ps 1ps  8ns 32ns)
 * vinClk clk gnd PULSE(0 SUPPLY   5ns 1ps 1ps   5ns 10ns)
 
-.subckt d_ff_optimized D clk Q x z a
+.subckt d_ff_optimized D clk Q
     Xinv1 clk clki inv_cmos
     Mn1 D clki x gnd CMOSN W={width_N} L={2*LAMBDA} 
     + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N} 
