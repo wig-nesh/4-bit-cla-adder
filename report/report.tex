@@ -18,7 +18,7 @@
 
 \title{4-Bit CLA Adder \\ VLSI Course Project}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Vignesh Vembar}
+\author{\IEEEauthorblockN{Vignesh Vembar Manikantan}
 \IEEEauthorblockA{\textit{ECE, IIIT Hyderabad} \\
 \textit{2023102019}\\
 vigneshvembar.m@students.iiit.ac.in}
@@ -292,7 +292,8 @@ The standard CMOS Implementation works, but we can do better with less gates.
 
 \subsubsection{Complimentary Pass Transistor Implementation}
 
-We use a CPTL XOR gate to reduce the number of transistors used.
+We use a CPTL XOR gate to reduce the number of transistors used. \\
+It only uses 4 transistors, as opposed to the 12 used in the CMOS implementation. But, because we rely on simple CMOS and NMOS transistors to drive the output loads, the output levels are not as expected. This is normal for CPTL design.
 
 \begin{figure}[H]
     \centering
@@ -439,7 +440,7 @@ For layout, we use the free tool MAGIC. All subcircuits are laid out separately 
 
 \begin{figure*}[t]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/stick_diagrams.png}
+    \includegraphics[width=1\textwidth]{images/stick_diagrams.png}
     \caption{Stick Diagrams}
 \end{figure*}
 
@@ -716,17 +717,17 @@ Reusing the previous verilog file, we also create a constraint file to map the i
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{0.43\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \includegraphics[width=\linewidth]{images/fpga_1.png}
         \caption{1111 + 1111 + 0 = 11110}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.43\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \includegraphics[width=\linewidth]{images/fpga_2.png}
         \caption{1111 + 1111 + 1 = 11111}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.43\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \includegraphics[width=\linewidth]{images/fpga_3.png}
         \caption{1011 + 1001 + 1 = 10101}
     \end{subfigure}
@@ -744,9 +745,11 @@ For this we make an arduino oscilloscope, and change the constraint files to map
     \caption{Viewing Waveform of FPGA Simulation}
 \end{figure}
 
-\section{Conclusion}
+Video of the working output is available \href{https://iiitaphyd-my.sharepoint.com/:f:/g/personal/vigneshvembar_m_students_iiit_ac_in/Ek1zK19mmwBGhRlQdIGQBK4By9x6MJ-vOQfoJsAwDm6LJg?e=6zw7ME}{here}.
 
-We have successfully designed and simulated a 4-bit Carry Look Ahead Adder with D Flip Flops. We have also tested the circuit on an FPGA board. All my project files are available on my Github repository. \cite{b2}
+\section{Conclusion}
+We have successfully designed and simulated a 4-bit Carry Look Ahead Adder with D Flip Flops. We have also tested the circuit on an FPGA board. 
+I also wrote a simple script to automate the process of testing the addition of two numbers. All my project files are available on my Github repository. \cite{b2}
 
 \section*{Acknowledgment}
 I would like to express my gratitude to Prof. Abhishek Srivastava for the opportunity to work on this project and for his guidance throughout the course. I would also like to thank my Teaching Assistants for their support and help.
