@@ -1,4 +1,4 @@
-# 4-bit CLA Adder Simulation
+# Synchronous 4-bit CLA Adder Simulation
 
 ![layout](report/images/final_layout.png)
 
@@ -6,7 +6,7 @@ This is a 4-bit Carry Lookahead Adder implemented in NGSPICE, MAGIC, Verilog and
 
 ## Testing the NGSPICE Simulation
 
-To test the NGSPICE simulation, clone, then run the following commands:
+To test the NGSPICE simulation, clone, then run the following commands (provided obviously that you have NGSPICE):
 
 ```bash
 cd test
